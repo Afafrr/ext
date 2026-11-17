@@ -1,3 +1,5 @@
+import type { BookmarkLibrary } from './bookmark-library.ts';
+import type { FolderSuggestion } from './folder-ranking.ts';
 import type { IndexJob, IndexMetadata, IndexProgress } from './model-index.ts';
 
 export const MODEL_SETTINGS_KEY = 'modelTestSettings';
@@ -33,18 +35,25 @@ export function parseModelSettings(value: unknown): ModelSettings {
     preset: input.preset && Object.hasOwn(MODEL_PRESETS, input.preset) ? input.preset : 'minilm-q8',
   };
 }
+export interface BookmarkSuggestion {
+  bookmarkId: string;
+  title: string;
+  folders: FolderSuggestion[];
+}
 export interface ModelState {
   status: 'unloaded' | 'loading' | 'indexing' | 'running' | 'ready' | 'error';
   preset?: ModelPreset;
   pending: number;
   error?: string;
   index?: IndexProgress;
+  suggestion?: BookmarkSuggestion;
 }
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });
 export const MODEL_IDLE_MS = 15_000;
-export type ModelJob = IndexJob | { kind: 'embed'; text: string; preset: ModelPreset };
+export type ModelJob = IndexJob | { kind: 'embed'; text: string; description?: string; preset: ModelPreset; bookmarkId: string; title: string; library: BookmarkLibrary };
 export type WorkerEvent =
+  | { kind: 'page-description-permission' }
   | { kind: 'loaded' }
   | { kind: 'progress'; index: IndexProgress }
-  | { kind: 'complete'; index?: IndexMetadata }
+  | { kind: 'complete'; index?: IndexMetadata; suggestion?: BookmarkSuggestion }
   | { kind: 'error'; error: string };

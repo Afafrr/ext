@@ -3,6 +3,7 @@ import { defineBackground } from 'wxt/utils/define-background';
 import { createBookmarkLibrary, GET_LIBRARY_MESSAGE } from '../lib/bookmark-library';
 import { createBookmarkDetector } from '../lib/bookmark-detector';
 import { createModelController } from '../lib/model-controller';
+import { readFolderDescriptions } from '../lib/model-index';
 import {
   CLEAR_ACTIVITY_MESSAGE,
   STORAGE_KEY,
@@ -14,6 +15,7 @@ export default defineBackground(() => {
   const library = createBookmarkLibrary(() => browser.bookmarks.getTree());
   const model = createModelController(library.get);
   const detector = createBookmarkDetector({
+    onDetected: bookmark => observe(model.onDetected(bookmark)),
     async load() {
       const stored = await browser.storage.session.get(STORAGE_KEY);
       return (stored[STORAGE_KEY] as DetectionState | undefined) ?? emptyState();
@@ -60,15 +62,20 @@ export default defineBackground(() => {
   for (const event of [browser.bookmarks.onChanged, browser.bookmarks.onMoved]) {
     event.addListener(id => observe(detector.refresh(id)));
   }
-  browser.bookmarks.onRemoved.addListener((id) => {
+  browser.bookmarks.onRemoved.addListener((id, info) => {
     observe(detector.remove(id));
+    observe(model.onRemoved(info.node));
   });
 
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (sender.id !== browser.runtime.id) return;
     if (message?.type === GET_LIBRARY_MESSAGE) {
-      void library.get().then(
-        snapshot => sendResponse({ ok: true, library: snapshot }),
+      void Promise.all([library.get(), readFolderDescriptions()]).then(
+        ([snapshot, descriptions]) => {
+          const byId = new Map(descriptions.map(folder => [folder.id, folder.description]));
+          sendResponse({ ok: true, library: { ...snapshot,
+            folders: snapshot.folders.map(folder => ({ ...folder, description: byId.get(folder.id) })) } });
+        },
         () => sendResponse({ ok: false }),
       );
       return true;

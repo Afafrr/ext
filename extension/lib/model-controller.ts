@@ -1,6 +1,8 @@
 import { browser } from 'wxt/browser';
-import type { BookmarkLibrary } from './bookmark-library';
-import { prepareIndex, readIndexMetadata } from './model-index';
+import type { BookmarkLibrary, LibraryNode } from './bookmark-library';
+import { prepareIndex, readIndexMetadata, readFolderDescriptions, saveFolderDescription, removeFolderDescriptions } from './model-index';
+import type { DetectedBookmark } from './detection-state';
+import { PAGE_DESCRIPTION_PERMISSIONS, readPageDescription } from './page-description';
 import {
   MODEL_COMMAND, MODEL_EVENT, MODEL_SETTINGS_KEY, MODEL_STATE_KEY, MODEL_TARGET,
   emptyModelState, parseModelSettings,
@@ -32,12 +34,12 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     const saved = session[MODEL_STATE_KEY] as Partial<ModelState> | undefined;
     state = { ...emptyModelState(), status: saved?.status === 'error' ? 'error' : 'unloaded',
       ...(saved?.error ? { error: saved.error } : {}),
-      preset: settings.preset, index: await readIndexMetadata(settings.preset) };
+      preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: saved?.suggestion };
     if (await hasOffscreen()) {
       try {
         const status = await send({ action: 'status' });
         instance = status.instance;
-        state = { ...status.state, index: status.state.index ?? state.index };
+        state = { ...status.state, index: status.state.index ?? state.index, suggestion: status.state.suggestion ?? state.suggestion };
         lastSequence = status.sequence;
       } catch { await browser.offscreen.closeDocument(); }
     }
@@ -57,7 +59,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     if (await hasOffscreen()) await browser.offscreen.closeDocument();
     instance = undefined;
     lastSequence = 0;
-    state = { ...emptyModelState(), preset: settings.preset, index: await readIndexMetadata(settings.preset) };
+    state = { ...emptyModelState(), preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: state.suggestion };
     await save();
   }
   async function ensureOffscreen() {
@@ -101,7 +103,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   }
   async function startIndex() {
     try {
-      const job = await prepareIndex(await getLibrary(), settings.preset);
+      const job = await prepareIndex(await getLibrary(), settings.preset, await readFolderDescriptions());
       const previous = await readIndexMetadata(settings.preset);
       if (previous?.fingerprint === job.fingerprint) {
         state.index = previous;
@@ -118,13 +120,14 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       await submit(job);
     } catch { await reportFailure(); }
   }
-  async function command(message: { action: string; settings?: unknown }) {
+  async function command(message: { action: string; settings?: unknown; id?: unknown; description?: unknown }) {
     if (message.action === 'get') return { ok: true, settings, state };
     if (message.action === 'settings') {
       const next = parseModelSettings(message.settings);
       const shouldIndex = next.enabled && (!settings.enabled || next.preset !== settings.preset);
       if (!next.enabled || next.preset !== settings.preset) await close();
       await browser.storage.local.set({ [MODEL_SETTINGS_KEY]: next });
+      if (next.preset !== settings.preset) delete state.suggestion;
       settings = next;
       state.preset = settings.preset;
       state.index = await readIndexMetadata(settings.preset);
@@ -132,6 +135,13 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         syncRequested = false;
         await startIndex();
       } else await save();
+    } else if (message.action === 'folderDescription') {
+      if (typeof message.id !== 'string' || typeof message.description !== 'string') throw new Error('Invalid folder description.');
+      const [folder] = await browser.bookmarks.get(message.id);
+      if (!folder || folder.url !== undefined) throw new Error('Folder no longer exists.');
+      await saveFolderDescription({ id: folder.id, description: message.description.trim().slice(0, 2000) });
+      syncRequested = true;
+      await flushIndex();
     } else {
       throw new Error('Unknown model action.');
     }
@@ -150,7 +160,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         // includes this event. Its close request must still be honored.
         if (message.sequence === lastSequence && !message.close) return;
         lastSequence = message.sequence;
-        state = { ...message.state, index: message.state.index ?? state.index };
+        state = { ...message.state, index: message.state.index ?? state.index, suggestion: message.state.suggestion ?? state.suggestion };
         await save();
         if (message.close) {
           // Offscreen has already stopped accepting work. Old events are ignored.
@@ -164,6 +174,35 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     }
   });
   return {
+    onDetected(bookmark: DetectedBookmark) {
+      return enqueue(async () => {
+        if (!settings.enabled) return;
+        let description: string | undefined;
+        if (/^https?:\/\//i.test(bookmark.url) && await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)) {
+          const tabs = await browser.tabs.query({});
+          const matching = tabs.filter(tab => tab.url === bookmark.url);
+          const tab = matching.find(tab => tab.active) ?? matching[0];
+          if (tab?.id !== undefined) {
+            const results = await browser.scripting.executeScript({
+              target: { tabId: tab.id }, func: readPageDescription, args: [bookmark.url],
+              injectImmediately: true,
+            }).catch(() => []);
+            description = results[0]?.result;
+          }
+          if (!await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)) description = undefined;
+        }
+        const [node] = await browser.bookmarks.get(bookmark.id).catch(() => []);
+        if (node?.url !== bookmark.url) return;
+        const library = await getLibrary();
+        const index = await prepareIndex(library, settings.preset, await readFolderDescriptions());
+        await submit(index);
+        await submit({ kind: 'embed', preset: settings.preset, bookmarkId: node.id, title: node.title || node.url,
+          text: node.title || node.url, description, library });
+      });
+    },
+    onRemoved(node: LibraryNode) {
+      return enqueue(() => removeFolderDescriptions(node));
+    },
     onLibraryChanged() {
       clearTimeout(syncTimer);
       syncTimer = setTimeout(() => {

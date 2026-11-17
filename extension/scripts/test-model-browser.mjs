@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createServer } from 'node:http';
 import { chromium } from 'playwright';
 import { cp, mkdir, mkdtemp, readdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -26,10 +27,40 @@ const launch = () => chromium.launchPersistentContext(join(temp, 'profile'), {
   executablePath,
   args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`],
 });
+const server = createServer((request, response) => {
+  const tags = {
+    '/primary': '<meta name="description" content="  A practical guide to React hooks.  "><meta property="og:description" content="Ignored fallback">',
+    '/og': '<meta name="description" content="   "><meta property="og:description" content="Open Graph description">',
+    '/empty': '<meta name="description" content=" "><meta property="og:description" content=" ">',
+  };
+  response.setHeader('Content-Type', 'text/html; charset=utf-8');
+  response.end(`<!doctype html><html><head><title>Metadata fixture</title>${tags[request.url] ?? ''}</head><body>Fixture</body></html>`);
+});
+await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+const metadataOrigin = `http://127.0.0.1:${server.address().port}`;
 let context = await launch();
 try {
   const sw = context.serviceWorkers()[0] || await context.waitForEvent('serviceworker');
   const id = new URL(sw.url()).hostname;
+  // Upgrade the page-description schema and remove persisted page inputs.
+  await sw.evaluate(() => new Promise((resolve, reject) => {
+    const open = indexedDB.open('bookmark-embeddings', 2);
+    open.onupgradeneeded = () => {
+      open.result.createObjectStore('indexes');
+      open.result.createObjectStore('pages', { keyPath: 'id' });
+    };
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const db = open.result;
+      const tx = db.transaction(['indexes', 'pages'], 'readwrite');
+      tx.objectStore('pages').put({ id: 'legacy', url: 'https://example.test', description: 'Private page description' });
+      tx.objectStore('indexes').put([{ kind: 'bookmark', id: 'legacy', text: 'Old title\nPrivate page description', description: 'Private page description', vector: new Float32Array([1, 0]) }], 'minilm-q8:vectors');
+      tx.objectStore('indexes').put({ fingerprint: 'legacy' }, 'minilm-q8:metadata');
+      tx.objectStore('indexes').put({ vector: new Float32Array([1, 0]) }, 'migration-fixture');
+      tx.oncomplete = () => { db.close(); resolve(); };
+      tx.onabort = () => { db.close(); reject(tx.error); };
+    };
+  }));
   let page = await context.newPage();
   const errors = [];
   const headerWarnings = [];
@@ -79,6 +110,17 @@ try {
     if (!result?.ok) throw new Error('Library unavailable');
     return result.library;
   });
+  const migration = await page.evaluate(() => new Promise((resolve, reject) => {
+    const open = indexedDB.open('bookmark-embeddings', 3);
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const db = open.result;
+      const request = db.transaction('indexes').objectStore('indexes').get('migration-fixture');
+      request.onsuccess = () => { db.close(); resolve({ version: db.version, stores: Array.from(db.objectStoreNames), vector: Array.from(request.result.vector) }); };
+      request.onerror = () => { db.close(); reject(request.error); };
+    };
+  }));
+  assert.deepEqual(migration, { version: 3, stores: ['folderDescriptions', 'indexes'], vector: [1, 0] });
   const initial = await readLibrary();
   assert(initial.folders.length > 0);
   const fixture = await page.evaluate(async () => {
@@ -119,8 +161,58 @@ try {
   await create('Captured while model is disabled');
   await until(() => sw.evaluate(async () => (await chrome.storage.session.get('bookmarkDetection')).bookmarkDetection?.recent.length === 1));
   assert.equal(await offscreenCount(), 0);
+  const readDescriptions = () => page.evaluate(() => new Promise((resolve, reject) => {
+    const open = indexedDB.open('bookmark-embeddings', 3);
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const db = open.result;
+      const request = db.transaction('folderDescriptions').objectStore('folderDescriptions').getAll();
+      request.onsuccess = () => { db.close(); resolve(request.result); };
+      request.onerror = () => { db.close(); reject(request.error); };
+    };
+  }));
+  const optionalAccess = { permissions: ['scripting'], origins: ['http://*/*', 'https://*/*'] };
+  await until(async () => !await page.getByLabel('Use page descriptions', { exact: true }).isDisabled());
+  assert.equal(await page.getByLabel('Use page descriptions', { exact: true }).isChecked(), false);
+  assert.equal(await page.evaluate(access => chrome.permissions.contains(access), optionalAccess), false);
+  // Chrome's native consent dialog is outside Playwright's page automation.
+  // Simulate a prior host-access approval through Chrome settings in this test profile.
+  async function approveMetadataHosts() {
+    const settingsPage = await context.newPage();
+    try {
+      await settingsPage.goto('chrome://extensions/');
+      await settingsPage.evaluate(async id => {
+        await chrome.developerPrivate.addHostPermission(id, 'http://*/*');
+        await chrome.developerPrivate.addHostPermission(id, 'https://*/*');
+      }, id);
+    } finally { await settingsPage.close(); }
+  }
+  const blockedTab = await context.newPage();
+  await blockedTab.goto(`${metadataOrigin}/primary`);
+  const blockedBookmark = await page.evaluate(url => chrome.bookmarks.create({ title: 'No consent yet', url }), `${metadataOrigin}/primary`);
+  await until(async () => (await page.evaluate(() => chrome.storage.session.get('bookmarkDetection'))).bookmarkDetection.recent.some(row => row.id === blockedBookmark.id));
+  await request('get');
+  await blockedTab.close();
+  assert.equal((await readDescriptions()).some(row => row.id === blockedBookmark.id), false);
+  await approveMetadataHosts();
+  await page.getByLabel('Use page descriptions', { exact: true }).click();
+  await until(async () => await page.evaluate(access => chrome.permissions.contains(access), optionalAccess), 15000);
+  // Persist an editable folder description while AI is disabled.
+  await page.locator('.library-panel > details > summary').click();
+  await page.locator('.library-panel summary').filter({ hasText: 'Empty library folder' }).last().click();
+  const folderDescription = 'React and JavaScript documentation, hooks, components and software development.';
+  const descriptionField = page.getByRole('textbox', { name: `Description for ${fixture.root.title} / ${fixture.empty.title}`, exact: true });
+  await descriptionField.fill(folderDescription);
+  await descriptionField.locator('..').locator('..').getByRole('button', { name: 'Save description', exact: true }).click();
+  await until(async () => (await readDescriptions()).some(row => row.id === fixture.empty.id && row.description === folderDescription));
+  await page.locator('.library-panel > details > summary').click();
+  assert.equal(await offscreenCount(), 0);
+  await page.evaluate(async parentId => {
+    await chrome.bookmarks.create({ parentId, title: 'React useEffect hooks reference', url: 'https://example.test/react' });
+    await chrome.bookmarks.create({ title: 'Unread', url: 'https://example.test/unread' });
+  }, fixture.empty.id);
   const readIndex = (preset = 'minilm-q8') => page.evaluate(preset => new Promise((resolve, reject) => {
-    const open = indexedDB.open('bookmark-embeddings', 1);
+    const open = indexedDB.open('bookmark-embeddings', 3);
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const db = open.result;
@@ -157,6 +249,8 @@ try {
   assert.equal(firstIndex.metadata.bookmarkCount, source.bookmarks.length);
   assert.equal(firstIndex.metadata.folderCount, source.folders.length);
   assert.equal(firstIndex.entries.length, source.folders.length + source.bookmarks.length);
+  assert.equal(firstIndex.entries.find(entry => entry.id === fixture.empty.id).description, folderDescription);
+  assert(firstIndex.entries.filter(entry => entry.kind === 'bookmark').every(entry => entry.description === undefined));
   assert(firstIndex.entries.some(entry => entry.kind === 'folder' && entry.id === fixture.empty.id));
   assert(firstIndex.entries.some(entry => entry.kind === 'bookmark' && entry.text === 'JavaScript guide 0'));
   for (const entry of firstIndex.entries) {
@@ -200,6 +294,46 @@ try {
   const after = rebuilt.entries.find(entry => entry.id === changed.id).vector;
   assert(after.some((value, index) => Math.abs(value - before[index]) > 1e-5));
 
+  await context.setOffline(false);
+  const liveMetadataTab = await context.newPage();
+  await liveMetadataTab.goto(`${metadataOrigin}/primary`);
+  const liveBookmark = await page.evaluate(url => chrome.bookmarks.create({ title: 'Unread', url }), `${metadataOrigin}/primary`);
+  const suggestion = await until(async () => {
+    const result = (await request('get')).state.suggestion;
+    return result?.bookmarkId === liveBookmark.id ? result : undefined;
+  });
+  assert.equal(suggestion.folders[0].id, fixture.empty.id);
+  assert(suggestion.folders.length > 0 && suggestion.folders.length <= 3);
+  await until(async () => (await readIndex()).entries.some(entry => entry.id === liveBookmark.id));
+  const queryEntry = (await readIndex()).entries.find(entry => entry.id === liveBookmark.id);
+  assert.equal(queryEntry.text, 'Unread');
+  assert.equal(queryEntry.description, undefined);
+  const savedState = await page.evaluate(async () => JSON.stringify([await chrome.storage.local.get(null), await chrome.storage.session.get(null)]));
+  assert.equal(savedState.includes('A practical guide to React hooks.'), false);
+  assert.equal(JSON.stringify(await readIndex()).includes('A practical guide to React hooks.'), false);
+  assert.equal((await page.getByLabel('Folder suggestions', { exact: true }).innerText()).includes('Suggested folders for Unread'), true);
+
+  // Revocation changes the query back to title-only while preserving folder descriptions.
+  await page.getByLabel('Use page descriptions', { exact: true }).click();
+  await until(async () => !await page.evaluate(access => chrome.permissions.contains(access), optionalAccess));
+  const fallbackBookmark = await page.evaluate(url => chrome.bookmarks.create({ title: 'Unread', url }), `${metadataOrigin}/primary`);
+  const fallback = await until(async () => {
+    const result = (await request('get')).state.suggestion;
+    return result?.bookmarkId === fallbackBookmark.id ? result : undefined;
+  });
+  assert.equal(fallback.folders[0].id, fallbackBookmark.parentId);
+  assert((await readDescriptions()).some(row => row.id === fixture.empty.id));
+  await liveMetadataTab.close();
+  await context.setOffline(true);
+  // Removing a folder also removes its persistent description.
+  const disposable = await page.evaluate(() => chrome.bookmarks.create({ title: 'Disposable folder' }));
+  await page.evaluate(async id => {
+    const result = await chrome.runtime.sendMessage({ type: 'bookmark-model-test:command', action: 'folderDescription', id, description: 'Temporary folder description' });
+    if (!result?.ok) throw new Error('Description write failed');
+  }, disposable.id);
+  assert((await readDescriptions()).some(row => row.id === disposable.id));
+  await page.evaluate(id => chrome.bookmarks.removeTree(id), disposable.id);
+  await until(async () => !(await readDescriptions()).some(row => row.id === disposable.id));
   const bookmark = await create('A newly captured title');
   await until(async () => (await readIndex()).entries.some(entry => entry.id === bookmark.id));
   rebuilt = await readIndex();
@@ -208,7 +342,7 @@ try {
   await until(async () => (await readIndex()).entries.some(entry => entry.id === bookmark.id && entry.text === 'Updated captured title'));
   assert.deepEqual((await readIndex()).entries.find(entry => entry.id === unchanged.id).vector, unchanged.vector);
   await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Updated empty folder' }), fixture.empty.id);
-  await until(async () => (await readIndex()).entries.some(entry => entry.id === fixture.empty.id && entry.text.endsWith('Updated empty folder')));
+  await until(async () => (await readIndex()).entries.some(entry => entry.id === fixture.empty.id && entry.text.split('\n')[0].endsWith('Updated empty folder')));
   const destination = await page.evaluate(parentId => chrome.bookmarks.create({ parentId, title: 'Destination' }), fixture.root.id);
   await page.evaluate(({ id, parentId }) => chrome.bookmarks.move(id, { parentId }), { id: fixture.empty.id, parentId: destination.id });
   await until(async () => (await readIndex()).entries.some(entry => entry.id === fixture.empty.id && entry.text.includes('Destination / Updated empty folder')));
@@ -261,6 +395,7 @@ try {
   await page.goto(`chrome-extension://${id}/popup.html`);
   await until(async () => !await page.getByRole('combobox', { name: 'AI model', exact: true }).isDisabled());
   assert.deepEqual(await readIndex(), rebuilt);
+  assert((await readDescriptions()).some(row => row.id === fixture.empty.id && row.description === folderDescription));
   assert.equal((await request('get')).state.index.completed, rebuilt.entries.length);
   // Existing installations can already have AI enabled before indexes exist.
   await page.evaluate(async config => {
@@ -268,7 +403,7 @@ try {
     const key = 'https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2/resolve/2c4055b12046f11709e9df2c122e59ffbdc2f900/config.json';
     await cache.put(key, new Response(config));
     await new Promise((resolve, reject) => {
-      const open = indexedDB.open('bookmark-embeddings', 1);
+      const open = indexedDB.open('bookmark-embeddings', 3);
       open.onsuccess = () => {
         const db = open.result;
         const tx = db.transaction('indexes', 'readwrite');
@@ -291,8 +426,9 @@ try {
   assert.equal(migrated.metadata.completed, migrated.entries.length);
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
-  console.log('PASS: library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
+  console.log('PASS: transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
 } finally {
   console.log(`Artifacts: ${temp}`);
   await context.close();
+  await new Promise(resolve => server.close(resolve));
 }

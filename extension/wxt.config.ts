@@ -11,6 +11,8 @@ export default defineConfig({
     minimum_chrome_version: '127',
     permissions: ['bookmarks', 'storage', 'offscreen', 'unlimitedStorage'],
     host_permissions: ['https://huggingface.co/*', 'https://*.hf.co/*', 'https://*.huggingface.co/*'],
+    optional_permissions: ['scripting'],
+    optional_host_permissions: ['http://*/*', 'https://*/*'],
     content_security_policy: {
       extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; worker-src 'self'; connect-src 'self' https://huggingface.co https://*.hf.co https://*.huggingface.co",
     },

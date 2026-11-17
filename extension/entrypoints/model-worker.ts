@@ -1,5 +1,6 @@
 /// <reference lib="webworker" />
 import { defineUnlistedScript } from 'wxt/utils/define-unlisted-script';
+import { rankFolders } from '../lib/folder-ranking';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
 import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex } from '../lib/model-index';
 import { MODEL_CACHE, MODEL_PRESETS, type ModelJob, type WorkerEvent } from '../lib/model-state';
@@ -24,7 +25,20 @@ export default defineUnlistedScript(() => {
   wasm.numThreads = 1;
   wasm.proxy = false;
 
-  scope.onmessage = async ({ data: job }: MessageEvent<ModelJob>) => {
+  function canUsePageDescription(): Promise<boolean> {
+    return new Promise(resolve => {
+      const receive = ({ data }: MessageEvent) => {
+        if (data.kind !== 'page-description-permission') return;
+        scope.removeEventListener('message', receive);
+        resolve(data.allowed === true);
+      };
+      scope.addEventListener('message', receive);
+      emit({ kind: 'page-description-permission' });
+    });
+  }
+
+  scope.onmessage = async ({ data: job }: MessageEvent<ModelJob | { kind: 'page-description-permission' }>) => {
+    if (job.kind === 'page-description-permission') return;
     try {
       const preset = MODEL_PRESETS[job.preset];
       if (!extractor) {
@@ -65,9 +79,14 @@ export default defineUnlistedScript(() => {
         await saveIndex(index, job.entries.map(entry => byId.get(`${entry.kind}:${entry.id}`)!));
         emit({ kind: 'complete', index });
       } else {
-        const tensor = await extractor(job.text, { pooling: preset.pooling, normalize: true });
-        tensor.dispose();
-        emit({ kind: 'complete' });
+        const description = job.description && await canUsePageDescription() ? job.description : undefined;
+        const text = [job.text, description].filter(Boolean).join('\n').slice(0, 4000);
+        const tensor = await extractor(text, { pooling: preset.pooling, normalize: true });
+        try {
+          const query = (tensor.tolist() as number[][])[0]!;
+          const folders = rankFolders(query, job.library, await readIndexEntries(job.preset), job.bookmarkId);
+          emit({ kind: 'complete', suggestion: { bookmarkId: job.bookmarkId, title: job.title, folders } });
+        } finally { tensor.dispose(); }
       }
     } catch {
       // Do not expose bookmark text or URLs through errors/logs.

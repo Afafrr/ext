@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { browser } from 'wxt/browser';
+import { PAGE_DESCRIPTION_PERMISSIONS } from '../../lib/page-description';
 import {
   DEFAULT_MODEL_SETTINGS, MODEL_COMMAND, MODEL_PRESETS, MODEL_SETTINGS_KEY, MODEL_STATE_KEY,
   emptyModelState, parseModelSettings, type ModelPreset, type ModelSettings, type ModelState,
@@ -10,6 +11,8 @@ export default function ModelPanel() {
   const [state, setState] = useState<ModelState>(emptyModelState);
   const [busy, setBusy] = useState(true);
   const [error, setError] = useState('');
+  const [pageDescriptions, setPageDescriptions] = useState(false);
+  const [permissionsBusy, setPermissionsBusy] = useState(true);
 
   useEffect(() => {
     let active = true;
@@ -37,6 +40,36 @@ export default function ModelPanel() {
       .finally(() => { if (active) setBusy(false); });
     return () => { active = false; browser.storage.onChanged.removeListener(change); };
   }, []);
+
+  useEffect(() => {
+    let active = true;
+    const refresh = () => {
+      void browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)
+        .then(enabled => { if (active) setPageDescriptions(enabled); })
+        .catch(() => { if (active) setError('Could not read website access.'); })
+        .finally(() => { if (active) setPermissionsBusy(false); });
+    };
+    browser.permissions.onAdded.addListener(refresh);
+    browser.permissions.onRemoved.addListener(refresh);
+    refresh();
+    return () => {
+      active = false;
+      browser.permissions.onAdded.removeListener(refresh);
+      browser.permissions.onRemoved.removeListener(refresh);
+    };
+  }, []);
+
+  async function togglePageDescriptions(enabled: boolean) {
+    setPermissionsBusy(true);
+    setError('');
+    try {
+      if (enabled) await browser.permissions.request(PAGE_DESCRIPTION_PERMISSIONS);
+      else await browser.permissions.remove(PAGE_DESCRIPTION_PERMISSIONS);
+      setPageDescriptions(await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS));
+    } catch {
+      setError('Could not update website access. Please try again.');
+    } finally { setPermissionsBusy(false); }
+  }
 
   async function save(next: ModelSettings) {
     const previous = settings;
@@ -69,6 +102,12 @@ export default function ModelPanel() {
       Enable local AI
     </label>
     <p className="model-note">Enabling AI downloads the model and indexes bookmark titles and folder paths. The model unloads after 15 seconds of inactivity.</p>
+    <label className="model-toggle">
+      <input type="checkbox" checked={pageDescriptions} disabled={permissionsBusy}
+        onChange={event => void togglePageDescriptions(event.target.checked)} />
+      Use page descriptions
+    </label>
+    <p className="model-note">Uses page descriptions temporarily to suggest folders for new bookmarks. Enabling asks Chrome for website access. Turning this off revokes that access.</p>
     <p role="status" className="model-note">{labels[state.status]}</p>
     {state.index && <div className="model-note" aria-label="Library index">
       {state.status === 'loading' || state.status === 'indexing'
@@ -77,6 +116,12 @@ export default function ModelPanel() {
         : state.index.completed === state.index.total
           ? <p>Index saved · {state.index.bookmarkCount} titles · {state.index.folderCount} folders</p>
           : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
+    </div>}
+    {state.suggestion && <div aria-label="Folder suggestions">
+      <p>Suggested folders for {state.suggestion.title}</p>
+      {state.suggestion.folders.length
+        ? <ol>{state.suggestion.folders.map(folder => <li key={folder.id}>{folder.path.join(' / ')}</li>)}</ol>
+        : <p>No indexed writable folders available.</p>}
     </div>}
     {(error || state.error) && <p className="error" role="alert">{error || state.error}</p>}
   </section>;

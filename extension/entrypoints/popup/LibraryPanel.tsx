@@ -1,13 +1,43 @@
 import { useEffect, useMemo, useState } from 'react';
 import { browser } from 'wxt/browser';
+import { MODEL_COMMAND } from '../../lib/model-state';
 import { GET_LIBRARY_MESSAGE, type BookmarkLibrary, type LibraryBookmark, type LibraryFolder } from '../../lib/bookmark-library';
 
 function Folder({ folder, bookmarks }: { folder: LibraryFolder; bookmarks: LibraryBookmark[] }) {
   const [open, setOpen] = useState(false);
+  const [description, setDescription] = useState(folder.description ?? '');
+  const [saved, setSaved] = useState(folder.description ?? '');
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState('');
+  useEffect(() => {
+    setDescription(folder.description ?? '');
+    setSaved(folder.description ?? '');
+  }, [folder.description]);
+  async function saveDescription() {
+    setSaving(true);
+    setError('');
+    try {
+      const value = description.trim();
+      const response = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'folderDescription', id: folder.id, description: value });
+      if (!response?.ok) throw new Error();
+      setDescription(value);
+      setSaved(value);
+    } catch { setError('Could not save folder description.'); }
+    finally { setSaving(false); }
+  }
   return <li>
     <details onToggle={event => setOpen(event.currentTarget.open)}>
       <summary>{folder.path.join(' / ')} ({bookmarks.length})</summary>
       {open && <>
+        <label>
+          Folder description
+          <textarea aria-label={`Description for ${folder.path.join(' / ')}`} maxLength={2000}
+            value={description} disabled={saving} onChange={event => setDescription(event.target.value)} />
+        </label>
+        <button disabled={saving || description.trim() === saved} onClick={() => void saveDescription()}>
+          {saving ? 'Saving…' : 'Save description'}
+        </button>
+        {error && <p role="alert">{error}</p>}
         <small>ID {folder.id} · parent {folder.parentId}{!folder.writable && ' · read-only'}</small>
         {bookmarks.length === 0 ? <p>No bookmarks directly in this folder.</p>
           : <ul>{bookmarks.map(bookmark => <li key={bookmark.id}>

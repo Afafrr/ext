@@ -70,3 +70,18 @@ test('index synchronization reuses unchanged entries, embeds edits and drops del
   assert.equal(reuseIndexEntries(next, { ...metadata, configuration: 'old configuration' }, entries).reused.length, 0);
   assert.equal(reuseIndexEntries(next, { ...metadata, configuration: undefined }, entries).reused.length, 0);
 });
+
+
+test('folder descriptions enrich folder vectors while bookmark inputs remain title-only', async () => {
+  const source = library();
+  const descriptions = [{ id: 'folder', description: 'Software documentation and references.' }];
+  const job = await prepareIndex(source, 'minilm-q8', descriptions);
+  assert.equal(job.entries[0]!.text, 'Work / Docs\nSoftware documentation and references.');
+  assert.equal(job.entries[0]!.description, descriptions[0]!.description);
+  assert.equal(job.entries[1]!.text, 'A guide');
+  assert.equal(job.entries[1]!.description, undefined);
+  const original = await prepareIndex(source, 'minilm-q8');
+  assert.notEqual(job.fingerprint, original.fingerprint);
+  const changed = await prepareIndex(source, 'minilm-q8', [{ id: 'folder', description: 'Updated folder description' }]);
+  assert.notEqual(changed.fingerprint, job.fingerprint);
+});

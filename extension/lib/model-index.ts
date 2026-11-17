@@ -1,10 +1,15 @@
-import type { BookmarkLibrary } from './bookmark-library.ts';
+import type { BookmarkLibrary, LibraryNode } from './bookmark-library.ts';
 import { MODEL_PRESETS, type ModelPreset } from './model-state.ts';
 
 export interface IndexEntry {
   kind: 'folder' | 'bookmark';
   id: string;
   text: string;
+  description?: string;
+}
+export interface FolderDescription {
+  id: string;
+  description: string;
 }
 export interface IndexProgress {
   completed: number;
@@ -28,9 +33,14 @@ export interface IndexJob {
   bookmarkCount: number;
 }
 
-export async function prepareIndex(library: BookmarkLibrary, preset: ModelPreset): Promise<IndexJob> {
+export async function prepareIndex(library: BookmarkLibrary, preset: ModelPreset, descriptions: FolderDescription[] = []): Promise<IndexJob> {
+  const byId = new Map(descriptions.map(folder => [folder.id, folder.description]));
   const entries: IndexEntry[] = [
-    ...library.folders.map(folder => ({ kind: 'folder' as const, id: folder.id, text: folder.path.join(' / ').slice(0, 4000) })),
+    ...library.folders.map(folder => {
+      const description = byId.get(folder.id);
+      const text = [folder.path.join(' / '), description].filter(Boolean).join('\n').slice(0, 4000);
+      return { kind: 'folder' as const, id: folder.id, text, ...(description ? { description } : {}) };
+    }),
     ...library.bookmarks.map(bookmark => ({ kind: 'bookmark' as const, id: bookmark.id, text: (bookmark.title || bookmark.url).slice(0, 4000) })),
   ];
   const model = MODEL_PRESETS[preset];
@@ -45,8 +55,26 @@ export async function prepareIndex(library: BookmarkLibrary, preset: ModelPreset
 
 function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open('bookmark-embeddings', 1);
-    request.onupgradeneeded = () => request.result.createObjectStore('indexes');
+    const request = indexedDB.open('bookmark-embeddings', 3);
+    request.onupgradeneeded = () => {
+      const database = request.result;
+      if (!database.objectStoreNames.contains('indexes')) database.createObjectStore('indexes');
+      database.createObjectStore('folderDescriptions', { keyPath: 'id' });
+      if (database.objectStoreNames.contains('pages')) database.deleteObjectStore('pages');
+      // Rebuild indexes that previously embedded and retained page descriptions.
+      const store = request.transaction!.objectStore('indexes');
+      const cursor = store.openCursor();
+      cursor.onsuccess = () => {
+        const entry = cursor.result;
+        if (!entry) return;
+        const key = String(entry.key);
+        if (key.endsWith(':vectors') && entry.value.some((row: IndexEntry) => row.kind === 'bookmark' && row.description !== undefined)) {
+          store.delete(key);
+          store.delete(key.replace(':vectors', ':metadata'));
+        }
+        entry.continue();
+      };
+    };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);
   });
@@ -98,10 +126,52 @@ export function reuseIndexEntries(job: IndexJob, previous: IndexMetadata | undef
   for (const entry of job.entries) {
     const existing = saved.get(`${entry.kind}:${entry.id}`);
     if (previous?.configuration === job.configuration && existing?.text === entry.text) {
-      reused.push(existing);
+      reused.push({ ...entry, vector: existing.vector });
     } else {
       pending.push(entry);
     }
   }
   return { reused, pending };
+}
+
+export async function readFolderDescriptions(): Promise<FolderDescription[]> {
+  const database = await openDatabase();
+  try {
+    return await new Promise((resolve, reject) => {
+      const request = database.transaction('folderDescriptions').objectStore('folderDescriptions').getAll();
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  } finally { database.close(); }
+}
+
+export async function saveFolderDescription(folder: FolderDescription) {
+  const database = await openDatabase();
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const transaction = database.transaction('folderDescriptions', 'readwrite');
+      const store = transaction.objectStore('folderDescriptions');
+      if (folder.description) store.put(folder);
+      else store.delete(folder.id);
+      transaction.oncomplete = () => resolve();
+      transaction.onabort = () => reject(transaction.error ?? new Error('Folder description write aborted'));
+    });
+  } finally { database.close(); }
+}
+
+export async function removeFolderDescriptions(node: LibraryNode) {
+  const database = await openDatabase();
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const transaction = database.transaction('folderDescriptions', 'readwrite');
+      const store = transaction.objectStore('folderDescriptions');
+      function remove(current: LibraryNode) {
+        store.delete(current.id);
+        for (const child of current.children ?? []) remove(child);
+      }
+      remove(node);
+      transaction.oncomplete = () => resolve();
+      transaction.onabort = () => reject(transaction.error ?? new Error('Folder description removal aborted'));
+    });
+  } finally { database.close(); }
 }

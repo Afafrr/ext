@@ -17,6 +17,7 @@ export interface LibraryFolder {
   path: string[];
   index?: number;
   writable: boolean;
+  description?: string;
 }
 
 export interface LibraryBookmark {

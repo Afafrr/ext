@@ -1,4 +1,5 @@
 import { browser } from 'wxt/browser';
+import { PAGE_DESCRIPTION_PERMISSIONS } from '../../lib/page-description';
 import {
   MODEL_EVENT, MODEL_TARGET, emptyModelState, MODEL_IDLE_MS,
   type ModelJob, type ModelState, type WorkerEvent,
@@ -72,7 +73,14 @@ function processNext() {
     worker.onerror = () => stop('Model worker stopped unexpectedly. Release and retry, or choose a smaller model.');
     worker.onmessage = ({ data }: MessageEvent<WorkerEvent>) => {
       if (stopped) return;
-      if (data.kind === 'loaded') {
+      if (data.kind === 'page-description-permission') {
+        const requestingWorker = worker;
+        void browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS).catch(() => false).then(allowed => {
+          if (!stopped && worker === requestingWorker) {
+            requestingWorker?.postMessage({ kind: 'page-description-permission', allowed });
+          }
+        });
+      } else if (data.kind === 'loaded') {
         state.status = current?.kind === 'index' ? 'indexing' : 'running';
         publish();
       } else if (data.kind === 'progress') {
@@ -83,6 +91,7 @@ function processNext() {
         stop(data.error);
       } else if (data.kind === 'complete') {
         if (data.index) state.index = data.index;
+        if (data.suggestion) state.suggestion = data.suggestion;
         clearTimeout(watchdog);
         current = undefined;
         state.pending = queue.length;
