@@ -95,4 +95,5 @@ export default defineBackground(() => {
   observe(browser.action.setBadgeBackgroundColor({ color: '#206a52' }));
   observe(detector.syncBadge());
   observe(library.get());
+  observe(model.start());
 });

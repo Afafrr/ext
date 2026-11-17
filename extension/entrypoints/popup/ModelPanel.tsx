@@ -87,7 +87,7 @@ export default function ModelPanel() {
     } finally { setBusy(false); }
   }
   const labels: Record<ModelState['status'], string> = {
-    unloaded: 'Model unloaded', loading: 'Loading model…',
+    unloaded: 'Ready for new bookmarks', loading: 'Loading model…',
     indexing: 'Indexing library…', running: 'Processing bookmark…', ready: 'Model ready', error: 'Model error',
   };
   return <section className="model-panel" aria-label="AI model">
@@ -97,12 +97,7 @@ export default function ModelPanel() {
         {Object.entries(MODEL_PRESETS).map(([value, preset]) => <option key={value} value={value}>{preset.label}</option>)}
       </select>
     </label>
-    <label className="model-toggle">
-      <input type="checkbox" checked={settings.enabled} disabled={busy}
-        onChange={event => save({ ...settings, enabled: event.target.checked })} />
-      Enable local AI
-    </label>
-    <p className="model-note">Enabling AI downloads the model and indexes bookmark titles and folder paths. The model unloads after 15 seconds of inactivity.</p>
+    <p className="model-note">AI runs automatically. The model is downloaded on first use and processes bookmarks locally. It unloads after 15 seconds of inactivity.</p>
     <label className="model-toggle">
       <input type="checkbox" checked={settings.autoMove} disabled={busy}
         onChange={event => save({ ...settings, autoMove: event.target.checked })} />
@@ -115,6 +110,7 @@ export default function ModelPanel() {
     </label>
     <p className="model-note">Uses page descriptions temporarily to suggest folders for new bookmarks. Enabling asks Chrome for website access. Turning this off revokes that access.</p>
     <p role="status" className="model-note">{labels[state.status]}</p>
+    {state.status === 'error' && <button disabled={busy} onClick={() => save(settings)}>Try again</button>}
     {state.index && <div className="model-note" aria-label="Library index">
       {state.status === 'loading' || state.status === 'indexing'
         ? <><p>Indexed {state.index.completed} of {state.index.total}</p>

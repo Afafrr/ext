@@ -27,12 +27,13 @@ export interface ModelSettings {
   autoMove: boolean;
 }
 export const DEFAULT_MODEL_SETTINGS: ModelSettings = {
-  enabled: false, preset: 'minilm-q8', autoMove: true,
+  enabled: true, preset: 'minilm-q8', autoMove: true,
 };
 export function parseModelSettings(value: unknown): ModelSettings {
   const input = (value && typeof value === 'object' ? value : {}) as Partial<ModelSettings>;
   return {
-    enabled: input.enabled === true,
+    // Older installations may have explicitly disabled AI before the toggle was removed.
+    enabled: true,
     autoMove: input.autoMove !== false,
     preset: input.preset && Object.hasOwn(MODEL_PRESETS, input.preset) ? input.preset : 'minilm-q8',
   };

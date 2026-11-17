@@ -101,7 +101,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   async function reportFailure() {
     await close();
     state.status = 'error';
-    state.error = 'Could not prepare the model or index. Turn AI off and on to try again.';
+    state.error = 'Could not prepare the model or index. Click Try again to retry.';
     await save();
   }
   async function flushIndex() {
@@ -146,8 +146,8 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     }
     if (message.action === 'settings') {
       const next = parseModelSettings(message.settings);
-      const shouldIndex = next.enabled && (!settings.enabled || next.preset !== settings.preset);
-      if (!next.enabled || next.preset !== settings.preset) await close();
+      const shouldIndex = next.preset !== settings.preset || state.status === 'error';
+      if (shouldIndex) await close();
       await browser.storage.local.set({ [MODEL_SETTINGS_KEY]: next });
       if (next.preset !== settings.preset) delete state.suggestion;
       if (!next.enabled || !next.autoMove || next.preset !== settings.preset) delete state.pendingAutoMoves;
@@ -272,6 +272,9 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     }
   });
   return {
+    start() {
+      return enqueue(flushIndex);
+    },
     onDetected(bookmark: DetectedBookmark) {
       return enqueue(async () => {
         if (!settings.enabled) return;
