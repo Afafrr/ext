@@ -1,8 +1,9 @@
 /// <reference lib="webworker" />
 import { defineUnlistedScript } from 'wxt/utils/define-unlisted-script';
+import { generateFolderDescriptions } from '../lib/folder-description';
 import { rankFolders } from '../lib/folder-ranking';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
-import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex } from '../lib/model-index';
+import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex, saveGeneratedDescriptions, readFolderDescriptions } from '../lib/model-index';
 import { MODEL_CACHE, MODEL_PRESETS, type ModelJob, type WorkerEvent } from '../lib/model-state';
 
 export default defineUnlistedScript(() => {
@@ -53,31 +54,55 @@ export default defineUnlistedScript(() => {
       emit({ kind: 'loaded' });
       if (job.kind === 'index') {
         const previous = await readIndexMetadata(job.preset);
-        if (previous?.fingerprint === job.fingerprint) {
-          emit({ kind: 'complete', index: previous });
-          return;
-        }
-        const { reused: vectors, pending } = reuseIndexEntries(job, previous, await readIndexEntries(job.preset));
-        let lastProgress = 0;
-        for (let offset = 0; offset < pending.length; offset += 8) {
-          const batch = pending.slice(offset, offset + 8);
-          const tensor = await extractor(batch.map(entry => entry.text), { pooling: preset.pooling, normalize: true });
-          try {
-            const embeddings = tensor.tolist() as number[][];
-            batch.forEach((entry, index) => vectors.push({ ...entry, vector: new Float32Array(embeddings[index]!) }));
-          } finally { tensor.dispose(); }
-          if (Date.now() - lastProgress >= 250 || vectors.length === job.entries.length) {
-            emit({ kind: 'progress', index: { completed: vectors.length, total: job.entries.length,
-              folderCount: job.folderCount, bookmarkCount: job.bookmarkCount } });
-            lastProgress = Date.now();
+        let current = job;
+        let descriptionsChanged = false;
+        let cachedEntries = await readIndexEntries(current.preset);
+        let cachedMetadata = previous;
+        while (true) {
+          const { reused: vectors, pending } = reuseIndexEntries(current, cachedMetadata, cachedEntries);
+          let lastProgress = 0;
+          for (let offset = 0; offset < pending.length; offset += 8) {
+            const batch = pending.slice(offset, offset + 8);
+            const tensor = await extractor(batch.map(entry => entry.text), { pooling: preset.pooling, normalize: true });
+            try {
+              const embeddings = tensor.tolist() as number[][];
+              batch.forEach((entry, index) => vectors.push({ ...entry, vector: new Float32Array(embeddings[index]!) }));
+            } finally { tensor.dispose(); }
+            if (Date.now() - lastProgress >= 250 || vectors.length === current.entries.length) {
+              emit({ kind: 'progress', index: { completed: vectors.length, total: current.entries.length,
+                folderCount: current.folderCount, bookmarkCount: current.bookmarkCount } });
+              lastProgress = Date.now();
+            }
           }
+          const changed = await saveGeneratedDescriptions(generateFolderDescriptions(current, vectors));
+          descriptionsChanged ||= changed;
+          if (changed) {
+            const descriptions = new Map((await readFolderDescriptions()).map(folder => [folder.id, folder.description]));
+            const paths = new Map(current.folders.map(folder => [folder.id, folder.path]));
+            const entries = current.entries.map(entry => {
+              if (entry.kind !== 'folder') return entry;
+              const description = descriptions.get(entry.id);
+              const text = [(paths.get(entry.id) ?? []).join(' / '), description].filter(Boolean).join('\n').slice(0, 4000);
+              return { kind: 'folder' as const, id: entry.id, text, ...(description ? { description } : {}) };
+            });
+            const input = JSON.stringify({ configuration: current.configuration, entries, folders: current.folders });
+            const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input));
+            const fingerprint = Array.from(new Uint8Array(digest), value => value.toString(16).padStart(2, '0')).join('');
+            cachedEntries = vectors;
+            cachedMetadata = { preset: current.preset, configuration: current.configuration, fingerprint: current.fingerprint,
+              updatedAt: '', completed: vectors.length, total: vectors.length,
+              folderCount: current.folderCount, bookmarkCount: current.bookmarkCount };
+            current = { ...current, entries, fingerprint };
+            continue;
+          }
+          const index = { preset: current.preset, fingerprint: current.fingerprint, configuration: current.configuration,
+            updatedAt: new Date().toISOString(), completed: vectors.length, total: vectors.length,
+            folderCount: current.folderCount, bookmarkCount: current.bookmarkCount };
+          const byId = new Map(vectors.map(entry => [`${entry.kind}:${entry.id}`, entry]));
+          await saveIndex(index, current.entries.map(entry => byId.get(`${entry.kind}:${entry.id}`)!));
+          emit({ kind: 'complete', index, descriptionsChanged });
+          break;
         }
-        const index = { configuration: job.configuration, preset: job.preset, fingerprint: job.fingerprint, updatedAt: new Date().toISOString(),
-          completed: vectors.length, total: vectors.length,
-          folderCount: job.folderCount, bookmarkCount: job.bookmarkCount };
-        const byId = new Map(vectors.map(entry => [`${entry.kind}:${entry.id}`, entry]));
-        await saveIndex(index, job.entries.map(entry => byId.get(`${entry.kind}:${entry.id}`)!));
-        emit({ kind: 'complete', index });
       } else {
         const description = job.description && await canUsePageDescription() ? job.description : undefined;
         const text = [job.text, description].filter(Boolean).join('\n').slice(0, 4000);

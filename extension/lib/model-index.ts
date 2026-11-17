@@ -10,6 +10,8 @@ export interface IndexEntry {
 export interface FolderDescription {
   id: string;
   description: string;
+  source?: 'generated';
+  input?: string;
 }
 export interface IndexProgress {
   completed: number;
@@ -28,6 +30,7 @@ export interface IndexJob {
   configuration: string;
   preset: ModelPreset;
   entries: IndexEntry[];
+  folders: { id: string; path: string[]; bookmarks: { id: string; title: string }[] }[];
   fingerprint: string;
   folderCount: number;
   bookmarkCount: number;
@@ -43,13 +46,24 @@ export async function prepareIndex(library: BookmarkLibrary, preset: ModelPreset
     }),
     ...library.bookmarks.map(bookmark => ({ kind: 'bookmark' as const, id: bookmark.id, text: (bookmark.title || bookmark.url).slice(0, 4000) })),
   ];
+  const bookmarksByFolder = new Map<string, { id: string; title: string }[]>();
+  for (const bookmark of library.bookmarks) {
+    if (!bookmark.parentId) continue;
+    const title = (bookmark.title.trim() || bookmark.url).slice(0, 4000);
+    if (!title) continue;
+    const bookmarks = bookmarksByFolder.get(bookmark.parentId) ?? [];
+    bookmarks.push({ id: bookmark.id, title });
+    bookmarksByFolder.set(bookmark.parentId, bookmarks);
+  }
+  const folders = library.folders.map(folder => ({ id: folder.id, path: folder.path,
+    bookmarks: bookmarksByFolder.get(folder.id) ?? [] }));
   const model = MODEL_PRESETS[preset];
   const configuration = JSON.stringify({ version: 1, model: model.id, revision: model.revision,
     dtype: model.dtype, pooling: model.pooling, maxTokens: 128 });
-  const input = JSON.stringify({ configuration, entries });
+  const input = JSON.stringify({ configuration, entries, folders });
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input));
   const fingerprint = Array.from(new Uint8Array(digest), value => value.toString(16).padStart(2, '0')).join('');
-  return { kind: 'index', preset, entries, fingerprint, configuration,
+  return { kind: 'index', preset, entries, folders, fingerprint, configuration,
     folderCount: library.folders.length, bookmarkCount: library.bookmarks.length };
 }
 
@@ -151,8 +165,7 @@ export async function saveFolderDescription(folder: FolderDescription) {
     await new Promise<void>((resolve, reject) => {
       const transaction = database.transaction('folderDescriptions', 'readwrite');
       const store = transaction.objectStore('folderDescriptions');
-      if (folder.description) store.put(folder);
-      else store.delete(folder.id);
+      store.put(folder);
       transaction.oncomplete = () => resolve();
       transaction.onabort = () => reject(transaction.error ?? new Error('Folder description write aborted'));
     });
@@ -172,6 +185,33 @@ export async function removeFolderDescriptions(node: LibraryNode) {
       remove(node);
       transaction.oncomplete = () => resolve();
       transaction.onabort = () => reject(transaction.error ?? new Error('Folder description removal aborted'));
+    });
+  } finally { database.close(); }
+}
+
+/** Preserve manual edits made before or during model inference. */
+export async function saveGeneratedDescriptions(folders: FolderDescription[]): Promise<boolean> {
+  if (!folders.length) return false;
+  const database = await openDatabase();
+  try {
+    return await new Promise((resolve, reject) => {
+      let changed = false;
+      const transaction = database.transaction('folderDescriptions', 'readwrite');
+      const store = transaction.objectStore('folderDescriptions');
+      for (const folder of folders) {
+        const request = store.get(folder.id);
+        request.onsuccess = () => {
+          const existing = request.result as FolderDescription | undefined;
+          if (existing && existing.source !== 'generated') return;
+          if (!folder.description && !existing) return;
+          if (existing && existing.input === folder.input && existing.description === folder.description) return;
+          if (folder.description) store.put(folder);
+          else store.delete(folder.id);
+          changed = true;
+        };
+      }
+      transaction.oncomplete = () => resolve(changed);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Folder description write aborted'));
     });
   } finally { database.close(); }
 }

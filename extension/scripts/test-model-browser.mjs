@@ -242,10 +242,30 @@ try {
       if (area === 'session' && value?.index) globalThis.indexProgress.push(value.index.completed);
     });
   }, fixture.empty.id);
+  const generatedFixture = await page.evaluate(async parentId => {
+    const folder = await chrome.bookmarks.create({ parentId, title: 'Automatic description' });
+    const first = await chrome.bookmarks.create({ parentId: folder.id, title: 'JavaScript documentation', url: 'https://example.test/auto-1' });
+    await chrome.bookmarks.create({ parentId: folder.id, title: 'Modern JavaScript guide', url: 'https://example.test/auto-2' });
+    return { folder, first };
+  }, fixture.root.id);
   const source = await readLibrary();
+  await page.locator('.library-panel > details > summary').click();
+  await page.locator('.library-panel summary').filter({ hasText: 'Automatic description' }).last().click();
+  const draft = page.getByRole('textbox', { name: `Description for ${fixture.root.title} / Automatic description`, exact: true });
+  await draft.fill('Draft being edited');
   await page.getByLabel('Enable local AI', { exact: true }).check();
   await waitIndex();
+  await page.waitForTimeout(250);
+  assert.equal(await draft.inputValue(), 'Draft being edited');
+  await page.locator('.library-panel > details > summary').click();
   const firstIndex = await readIndex();
+  const generated = (await readDescriptions()).find(row => row.id === generatedFixture.folder.id);
+  assert.equal(generated.source, 'generated');
+  assert(generated.description.includes('Automatic description'));
+  assert(generated.description.includes('JavaScript'));
+  assert.equal(firstIndex.entries.find(entry => entry.id === generatedFixture.folder.id).description, generated.description);
+  assert.equal((await readDescriptions()).find(row => row.id === fixture.empty.id).description, folderDescription);
+
   assert.equal(firstIndex.metadata.bookmarkCount, source.bookmarks.length);
   assert.equal(firstIndex.metadata.folderCount, source.folders.length);
   assert.equal(firstIndex.entries.length, source.folders.length + source.bookmarks.length);
@@ -293,14 +313,42 @@ try {
   const before = firstIndex.entries.find(entry => entry.id === changed.id).vector;
   const after = rebuilt.entries.find(entry => entry.id === changed.id).vector;
   assert(after.some((value, index) => Math.abs(value - before[index]) > 1e-5));
+  // Automatically generated descriptions follow bookmark changes.
+  await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Updated JavaScript title' }), generatedFixture.first.id);
+  await until(async () => (await readDescriptions()).some(row => row.id === generatedFixture.folder.id && row.description.includes('Updated JavaScript title')));
+  await waitIndex();
+  const refreshedDescription = (await readDescriptions()).find(row => row.id === generatedFixture.folder.id);
+  assert.equal(refreshedDescription.source, 'generated');
+  assert.equal((await readIndex()).entries.find(entry => entry.id === generatedFixture.folder.id).description, refreshedDescription.description);
+
+  // A user edit remains authoritative when folder contents subsequently change.
+  await page.evaluate(async id => {
+    const response = await chrome.runtime.sendMessage({ type: 'bookmark-model-test:command', action: 'folderDescription', id, description: 'My manually edited description' });
+    if (!response?.ok) throw new Error('Could not save description');
+  }, generatedFixture.folder.id);
+  await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Changed JavaScript documentation' }), generatedFixture.first.id);
+  await until(async () => (await readIndex()).entries.some(entry => entry.id === generatedFixture.first.id && entry.text === 'Changed JavaScript documentation'));
+  await waitIndex();
+  assert.equal((await readDescriptions()).find(row => row.id === generatedFixture.folder.id).description, 'My manually edited description');
+  await page.evaluate(async id => {
+    const response = await chrome.runtime.sendMessage({ type: 'bookmark-model-test:command', action: 'folderDescription', id, description: '' });
+    if (!response?.ok) throw new Error('Could not clear description');
+  }, generatedFixture.folder.id);
+  await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Changed again' }), generatedFixture.first.id);
+  await until(async () => (await readIndex()).entries.some(entry => entry.id === generatedFixture.first.id && entry.text === 'Changed again'));
+  await waitIndex();
+  assert.equal((await readDescriptions()).find(row => row.id === generatedFixture.folder.id).description, '');
+  rebuilt = await readIndex();
+
 
   await context.setOffline(false);
   const liveMetadataTab = await context.newPage();
   await liveMetadataTab.goto(`${metadataOrigin}/primary`);
   const liveBookmark = await page.evaluate(url => chrome.bookmarks.create({ title: 'Unread', url }), `${metadataOrigin}/primary`);
   const suggestion = await until(async () => {
-    const result = (await request('get')).state.suggestion;
-    return result?.bookmarkId === liveBookmark.id ? result : undefined;
+    const state = (await request('get')).state;
+    if (state.error) throw new Error(state.error);
+    return state.suggestion?.bookmarkId === liveBookmark.id ? state.suggestion : undefined;
   });
   assert.equal(suggestion.folders[0].id, fixture.empty.id);
   assert(suggestion.folders.length > 0 && suggestion.folders.length <= 3);
@@ -426,7 +474,7 @@ try {
   assert.equal(migrated.metadata.completed, migrated.entries.length);
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
-  console.log('PASS: transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
+  console.log('PASS: automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
 } finally {
   console.log(`Artifacts: ${temp}`);
   await context.close();

@@ -103,12 +103,23 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   }
   async function startIndex() {
     try {
-      const job = await prepareIndex(await getLibrary(), settings.preset, await readFolderDescriptions());
+      const descriptions = await readFolderDescriptions();
+      const job = await prepareIndex(await getLibrary(), settings.preset, descriptions);
       const previous = await readIndexMetadata(settings.preset);
       if (previous?.fingerprint === job.fingerprint) {
-        state.index = previous;
-        await save();
-        return;
+        const byId = new Map(descriptions.map(folder => [folder.id, folder]));
+        const needsDescriptions = job.folders.some(folder => {
+          const saved = byId.get(folder.id);
+          if (saved && saved.source !== 'generated') return false;
+          if (!folder.bookmarks.length) return Boolean(saved);
+          const input = JSON.stringify({ path: folder.path, bookmarks: folder.bookmarks, preset: job.preset });
+          return !saved || saved.input !== input;
+        });
+        if (!needsDescriptions) {
+          state.index = previous;
+          await save();
+          return;
+        }
       }
       state.pending = 1;
       state.status = 'loading';
@@ -122,6 +133,9 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   }
   async function command(message: { action: string; settings?: unknown; id?: unknown; description?: unknown }) {
     if (message.action === 'get') return { ok: true, settings, state };
+    if (message.action === 'pageDescriptionPermission') {
+      return { ok: true, allowed: await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS).catch(() => false) };
+    }
     if (message.action === 'settings') {
       const next = parseModelSettings(message.settings);
       const shouldIndex = next.enabled && (!settings.enabled || next.preset !== settings.preset);
@@ -150,16 +164,24 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   browser.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== browser.runtime.id) return;
     if (message?.type === MODEL_COMMAND) {
-      void enqueue(() => command(message)).then(respond, () => respond({ ok: false, error: 'Could not update the model. Reload the extension and try again.' }));
+      enqueue(() => command(message)).then(respond, () => respond({ ok: false, error: 'Could not update the model. Reload the extension and try again.' }));
       return true;
     }
     if (message?.type === MODEL_EVENT) {
-      void enqueue(async () => {
+      enqueue(async () => {
         if (!instance || message.instance !== instance || message.sequence < lastSequence) return;
         // On service-worker wake, initialize() may read a snapshot that already
         // includes this event. Its close request must still be honored.
         if (message.sequence === lastSequence && !message.close) return;
         lastSequence = message.sequence;
+        if (message.descriptionsChanged) {
+          const available = new Set((await getLibrary()).folders.map(folder => folder.id));
+          for (const folder of await readFolderDescriptions()) {
+            if (folder.source === 'generated' && !available.has(folder.id)) {
+              await removeFolderDescriptions({ id: folder.id, title: '' });
+            }
+          }
+        }
         state = { ...message.state, index: message.state.index ?? state.index, suggestion: message.state.suggestion ?? state.suggestion };
         await save();
         if (message.close) {
@@ -206,7 +228,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     onLibraryChanged() {
       clearTimeout(syncTimer);
       syncTimer = setTimeout(() => {
-        void enqueue(async () => {
+        return enqueue(async () => {
           syncRequested = true;
           await flushIndex();
         }).catch(() => {});

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { browser } from 'wxt/browser';
-import { MODEL_COMMAND } from '../../lib/model-state';
+import { MODEL_COMMAND, MODEL_STATE_KEY, type ModelState } from '../../lib/model-state';
 import { GET_LIBRARY_MESSAGE, type BookmarkLibrary, type LibraryBookmark, type LibraryFolder } from '../../lib/bookmark-library';
 
 function Folder({ folder, bookmarks }: { folder: LibraryFolder; bookmarks: LibraryBookmark[] }) {
@@ -10,8 +10,9 @@ function Folder({ folder, bookmarks }: { folder: LibraryFolder; bookmarks: Libra
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   useEffect(() => {
-    setDescription(folder.description ?? '');
-    setSaved(folder.description ?? '');
+    const next = folder.description ?? '';
+    setDescription(current => current === saved ? next : current);
+    setSaved(next);
   }, [folder.description]);
   async function saveDescription() {
     setSaving(true);
@@ -34,7 +35,7 @@ function Folder({ folder, bookmarks }: { folder: LibraryFolder; bookmarks: Libra
           <textarea aria-label={`Description for ${folder.path.join(' / ')}`} maxLength={2000}
             value={description} disabled={saving} onChange={event => setDescription(event.target.value)} />
         </label>
-        <button disabled={saving || description.trim() === saved} onClick={() => void saveDescription()}>
+        <button disabled={saving || description.trim() === saved} onClick={saveDescription}>
           {saving ? 'Saving…' : 'Save description'}
         </button>
         {error && <p role="alert">{error}</p>}
@@ -79,17 +80,22 @@ export default function LibraryPanel() {
       // Coalesce import/burst events before requesting the complete snapshot.
       version++;
       clearTimeout(timer);
-      timer = setTimeout(() => { void refresh(); }, 75);
+      timer = setTimeout(refresh, 75);
     };
     const events = [browser.bookmarks.onCreated, browser.bookmarks.onChanged,
       browser.bookmarks.onMoved, browser.bookmarks.onRemoved,
       browser.bookmarks.onChildrenReordered, browser.bookmarks.onImportEnded];
     for (const event of events) event.addListener(onChange);
-    void refresh();
+    const onModelChange: Parameters<typeof browser.storage.onChanged.addListener>[0] = (changes, area) => {
+      if (area === 'session' && (changes[MODEL_STATE_KEY]?.newValue as ModelState | undefined)?.status === 'ready') onChange();
+    };
+    browser.storage.onChanged.addListener(onModelChange);
+    refresh();
     return () => {
       active = false;
       clearTimeout(timer);
       for (const event of events) event.removeListener(onChange);
+      browser.storage.onChanged.removeListener(onModelChange);
     };
   }, []);
 

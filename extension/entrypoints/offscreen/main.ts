@@ -1,7 +1,6 @@
 import { browser } from 'wxt/browser';
-import { PAGE_DESCRIPTION_PERMISSIONS } from '../../lib/page-description';
 import {
-  MODEL_EVENT, MODEL_TARGET, emptyModelState, MODEL_IDLE_MS,
+  MODEL_COMMAND, MODEL_EVENT, MODEL_TARGET, emptyModelState, MODEL_IDLE_MS,
   type ModelJob, type ModelState, type WorkerEvent,
 } from '../../lib/model-state';
 
@@ -16,8 +15,8 @@ let stopped = false;
 let sequence = 0;
 const instance = crypto.randomUUID();
 
-function publish(close = false) {
-  void browser.runtime.sendMessage({ type: MODEL_EVENT, instance, sequence: ++sequence, state, close }).catch(() => {});
+function publish(close = false, descriptionsChanged = false) {
+  return browser.runtime.sendMessage({ type: MODEL_EVENT, instance, sequence: ++sequence, state, close, descriptionsChanged }).catch(() => {});
 }
 function clearIdle() {
   clearTimeout(idleTimer);
@@ -75,11 +74,13 @@ function processNext() {
       if (stopped) return;
       if (data.kind === 'page-description-permission') {
         const requestingWorker = worker;
-        void browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS).catch(() => false).then(allowed => {
-          if (!stopped && worker === requestingWorker) {
-            requestingWorker?.postMessage({ kind: 'page-description-permission', allowed });
-          }
-        });
+        return browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'pageDescriptionPermission' })
+          .then(result => result?.ok === true && result.allowed === true, () => false)
+          .then(allowed => {
+            if (!stopped && worker === requestingWorker) {
+              requestingWorker?.postMessage({ kind: 'page-description-permission', allowed });
+            }
+          });
       } else if (data.kind === 'loaded') {
         state.status = current?.kind === 'index' ? 'indexing' : 'running';
         publish();
@@ -92,6 +93,7 @@ function processNext() {
       } else if (data.kind === 'complete') {
         if (data.index) state.index = data.index;
         if (data.suggestion) state.suggestion = data.suggestion;
+        if (data.descriptionsChanged) publish(false, true);
         clearTimeout(watchdog);
         current = undefined;
         state.pending = queue.length;

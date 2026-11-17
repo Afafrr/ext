@@ -198,6 +198,25 @@ Reproduce: `node scripts/measure-suggestion-flow.js outputs/embedding-comparison
 
 <!-- suggestion-flow:end -->
 
+## Exploratory extractive folder descriptions
+
+This comparison uses the extension's current centroid-based title selection and 30/70 scoring. It compares the folder path alone, the path with the first three bookmark titles, the path with up to three centroid-selected titles, and the path with the existing manually authored description. Folder path and description, as well as bookmark title and page description, are joined with a newline. Folder paths use the extension's ` / ` separator. The original benchmark used different separators, so its counts can differ.
+
+| Dataset | Model | Path only | First titles | Centroid titles | Manual description |
+|---|---|---:|---:|---:|---:|
+| `real` | MiniLM | 16/21 | 18/21 | 18/21 | 16/21 |
+| `real` | BGE | 13/21 | 16/21 | 16/21 | 19/21 |
+| `real-derived` | MiniLM | 94/120 | 92/120 | 92/120 | 95/120 |
+| `real-derived` | BGE | 84/120 | 83/120 | 85/120 | 96/120 |
+| `hard` | MiniLM | 124/171 | 129/171 | 128/171 | 134/171 |
+| `hard` | BGE | 134/171 | 133/171 | 136/171 | 143/171 |
+| `combined` | MiniLM | 234/312 | 239/312 | 238/312 | 245/312 |
+| `combined` | BGE | 231/312 | 232/312 | 237/312 | 258/312 |
+
+The 120 `real-derived` cases and 171 scored `hard` cases are synthetic. Nine `hard` cases without a target folder are excluded. The real and real-derived cases share six folders with at most three indexed examples each. Only one of the 30 hard folders has more than three examples, so this comparison mostly measures title ordering. It does not establish selection quality for larger folders or replace validation on independent real bookmark libraries.
+
+Run `node --experimental-strip-types scripts/compare-folder-description-methods.js` from the research directory with Node 22.18 or later and both existing Q8 model caches available. The script imports the extension's description generator and prints aggregate counts without bookmark titles.
+
 ## Conclusions
 
 - **Use BGE-M3 with manual description + closest as the current accuracy/resource compromise.** It scores 84.0% on combined, versus MiniLM's 78.2%, with roughly 20 ms query latency in the combined run.

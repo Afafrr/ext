@@ -36,7 +36,7 @@ export default function ModelPanel() {
       if (!settingsChanged) setSettings(result.settings);
       if (!stateChanged) setState(result.state);
     }
-    void load().catch(() => { if (active) setError('Reopen the popup to read settings.'); })
+    load().catch(() => { if (active) setError('Reopen the popup to read settings.'); })
       .finally(() => { if (active) setBusy(false); });
     return () => { active = false; browser.storage.onChanged.removeListener(change); };
   }, []);
@@ -44,7 +44,7 @@ export default function ModelPanel() {
   useEffect(() => {
     let active = true;
     const refresh = () => {
-      void browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)
+      return browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)
         .then(enabled => { if (active) setPageDescriptions(enabled); })
         .catch(() => { if (active) setError('Could not read website access.'); })
         .finally(() => { if (active) setPermissionsBusy(false); });
@@ -92,19 +92,19 @@ export default function ModelPanel() {
   return <section className="model-panel" aria-label="AI model">
     <label className="model-field">AI model
       <select value={settings.preset} disabled={busy}
-        onChange={event => void save({ ...settings, preset: event.target.value as ModelPreset })}>
+        onChange={event => save({ ...settings, preset: event.target.value as ModelPreset })}>
         {Object.entries(MODEL_PRESETS).map(([value, preset]) => <option key={value} value={value}>{preset.label}</option>)}
       </select>
     </label>
     <label className="model-toggle">
       <input type="checkbox" checked={settings.enabled} disabled={busy}
-        onChange={event => void save({ ...settings, enabled: event.target.checked })} />
+        onChange={event => save({ ...settings, enabled: event.target.checked })} />
       Enable local AI
     </label>
     <p className="model-note">Enabling AI downloads the model and indexes bookmark titles and folder paths. The model unloads after 15 seconds of inactivity.</p>
     <label className="model-toggle">
       <input type="checkbox" checked={pageDescriptions} disabled={permissionsBusy}
-        onChange={event => void togglePageDescriptions(event.target.checked)} />
+        onChange={event => togglePageDescriptions(event.target.checked)} />
       Use page descriptions
     </label>
     <p className="model-note">Uses page descriptions temporarily to suggest folders for new bookmarks. Enabling asks Chrome for website access. Turning this off revokes that access.</p>

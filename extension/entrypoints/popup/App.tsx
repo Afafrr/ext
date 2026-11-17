@@ -47,7 +47,7 @@ export default function App() {
 
     // Subscribe before reading so a newly detected save cannot be missed.
     browser.storage.onChanged.addListener(handleChange);
-    void browser.storage.session.get(STORAGE_KEY).then(
+    browser.storage.session.get(STORAGE_KEY).then(
       (stored) => {
         if (!active || receivedUpdate) return;
         setState((stored[STORAGE_KEY] as DetectionState | undefined) ?? emptyState());
@@ -107,7 +107,7 @@ export default function App() {
         <button
           className="clear-button"
           disabled={loading || clearing || state.recent.length === 0}
-          onClick={() => void clearActivity()}
+          onClick={clearActivity}
           title="Clear the activity list. Your bookmarks stay saved."
         >
           {clearing ? 'Clearing…' : 'Clear activity'}

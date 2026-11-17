@@ -55,5 +55,5 @@ export type WorkerEvent =
   | { kind: 'page-description-permission' }
   | { kind: 'loaded' }
   | { kind: 'progress'; index: IndexProgress }
-  | { kind: 'complete'; index?: IndexMetadata; suggestion?: BookmarkSuggestion }
+  | { kind: 'complete'; index?: IndexMetadata; suggestion?: BookmarkSuggestion; descriptionsChanged?: boolean }
   | { kind: 'error'; error: string };

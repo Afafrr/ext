@@ -34,7 +34,7 @@ export default defineBackground(() => {
   });
 
   function observe(operation: Promise<unknown>) {
-    void operation.catch(() => {
+    return operation.catch(() => {
       // Deliberately omit titles and URLs from extension logs.
       console.error('Bookmark Organizer could not update bookmark data.');
     });
@@ -70,7 +70,7 @@ export default defineBackground(() => {
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (sender.id !== browser.runtime.id) return;
     if (message?.type === GET_LIBRARY_MESSAGE) {
-      void Promise.all([library.get(), readFolderDescriptions()]).then(
+      Promise.all([library.get(), readFolderDescriptions()]).then(
         ([snapshot, descriptions]) => {
           const byId = new Map(descriptions.map(folder => [folder.id, folder.description]));
           sendResponse({ ok: true, library: { ...snapshot,
@@ -82,7 +82,7 @@ export default defineBackground(() => {
     }
     if (message?.type !== CLEAR_ACTIVITY_MESSAGE) return;
 
-    void detector.clear().then(
+    detector.clear().then(
       () => sendResponse({ ok: true }),
       () => sendResponse({ ok: false }),
     );

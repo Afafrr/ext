@@ -23,6 +23,8 @@ New bookmarks appear in the popup with their title, URL, and folder path. The li
 
 Choose MiniLM Q8 (approximately 118 MB of weights) or BGE-M3 Q8 (approximately 570 MB of weights). Select Enable local AI to index bookmark titles and folder paths with saved folder descriptions. Model files use Cache Storage. Per-model vectors and metadata use the `indexes` store in the `bookmark-embeddings` IndexedDB database.
 
+During indexing, the selected model chooses up to three representative bookmark titles for each folder and combines them with its path. A bookmark URL supplies the text when its title is empty. Descriptions are refreshed when folder contents, paths, or the selected model change. Empty folders use their paths. Manual edits, including a cleared description, are preserved.
+
 Expand a folder in Bookmark library to edit and save its description. Folder descriptions are stored in `folderDescriptions`, keyed by Chrome folder ID, and survive model switches and browser restarts. Saving or clearing a description refreshes its embedding when AI is enabled. Deleting a folder removes its saved description.
 
 Page descriptions and query embeddings are held in memory for the current job. Database version 3 removes the previous `pages` store and invalidates indexes containing persisted page descriptions so they can be rebuilt from titles. Existing title-only indexes and saved folder descriptions are retained.
@@ -60,10 +62,8 @@ score = 0.3 * folder_score + 0.7 * bookmark_score
 
 ## Planned improvements
 
-- Use a generative AI model to prefill a short, one- or two-sentence folder description from its name, full path, and the titles of bookmarks directly inside it.
 - Assess description confidence using the amount of supporting content, how informative the titles are, and their topical consistency. Validate review thresholds against user-reviewed examples.
 - Mark low-confidence descriptions as needing review and show the reason, such as too few bookmarks, vague titles, or mixed topics. Let users approve or edit them, and allow editing any description.
-- Preserve user-edited descriptions during automatic updates. For empty folders, use the folder path until a description is available.
 - Add an explicit action to move a bookmark into a suggested folder after user confirmation.
 
 ## Verification
