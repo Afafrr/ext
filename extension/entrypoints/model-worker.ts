@@ -122,7 +122,7 @@ export default defineUnlistedScript(() => {
         try {
           const query = (tensor.tolist() as number[][])[0]!;
           const folders = rankFolders(query, job.library, vectors, job.bookmarkId);
-          emit({ kind: 'complete', suggestion: { bookmarkId: job.bookmarkId, title: job.title, folders } });
+          emit({ kind: 'complete', suggestion: { bookmarkId: job.bookmarkId, title: job.title, folders, autoMove: job.autoMove } });
         } finally { tensor.dispose(); }
       }
     } catch {

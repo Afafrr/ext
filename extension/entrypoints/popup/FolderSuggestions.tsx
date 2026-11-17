@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { browser } from 'wxt/browser';
-import type { BookmarkSuggestion } from '../../lib/model-state';
+import { MODEL_COMMAND, type BookmarkSuggestion } from '../../lib/model-state';
 
 export default function FolderSuggestions({ suggestion }: { suggestion: BookmarkSuggestion }) {
   const [parentId, setParentId] = useState<string>();
@@ -49,12 +49,9 @@ export default function FolderSuggestions({ suggestion }: { suggestion: Bookmark
     setError('');
     setNotice('');
     try {
-      const [bookmark] = await browser.bookmarks.get(suggestion.bookmarkId);
-      const [folder] = await browser.bookmarks.get(folderId);
-      if (bookmark?.url === undefined || !folder || folder.url !== undefined) throw new Error();
-      if (bookmark.parentId !== folderId) {
-        await browser.bookmarks.move(bookmark.id, { parentId: folderId });
-      }
+      const response = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'moveBookmark',
+        id: suggestion.bookmarkId, parentId: folderId });
+      if (!response?.ok) throw new Error();
       setNotice('Bookmark moved.');
     } catch {
       setError('Could not move the bookmark. Check that the bookmark and folder still exist and can be changed.');

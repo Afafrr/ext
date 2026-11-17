@@ -24,14 +24,16 @@ export type ModelPreset = keyof typeof MODEL_PRESETS;
 export interface ModelSettings {
   enabled: boolean;
   preset: ModelPreset;
+  autoMove: boolean;
 }
 export const DEFAULT_MODEL_SETTINGS: ModelSettings = {
-  enabled: false, preset: 'minilm-q8',
+  enabled: false, preset: 'minilm-q8', autoMove: true,
 };
 export function parseModelSettings(value: unknown): ModelSettings {
   const input = (value && typeof value === 'object' ? value : {}) as Partial<ModelSettings>;
   return {
     enabled: input.enabled === true,
+    autoMove: input.autoMove !== false,
     preset: input.preset && Object.hasOwn(MODEL_PRESETS, input.preset) ? input.preset : 'minilm-q8',
   };
 }
@@ -39,6 +41,7 @@ export interface BookmarkSuggestion {
   bookmarkId: string;
   title: string;
   folders: FolderSuggestion[];
+  autoMove?: { parentId: string; url: string };
 }
 export interface ModelState {
   status: 'unloaded' | 'loading' | 'indexing' | 'running' | 'ready' | 'error';
@@ -47,10 +50,13 @@ export interface ModelState {
   error?: string;
   index?: IndexProgress;
   suggestion?: BookmarkSuggestion;
+  handledSuggestionId?: string;
+  autoMoveError?: string;
+  pendingAutoMoves?: { bookmarkId: string; url: string; sourceId: string; folderId: string }[];
 }
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });
 export const MODEL_IDLE_MS = 15_000;
-export type ModelJob = IndexJob | { kind: 'embed'; text: string; description?: string; preset: ModelPreset; bookmarkId: string; title: string; library: BookmarkLibrary };
+export type ModelJob = IndexJob | { kind: 'embed'; text: string; description?: string; preset: ModelPreset; bookmarkId: string; title: string; library: BookmarkLibrary; autoMove?: BookmarkSuggestion['autoMove'] };
 export type WorkerEvent =
   | { kind: 'page-description-permission' }
   | { kind: 'loaded' }

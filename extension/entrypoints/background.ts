@@ -62,6 +62,9 @@ export default defineBackground(() => {
   for (const event of [browser.bookmarks.onChanged, browser.bookmarks.onMoved]) {
     event.addListener(id => observe(detector.refresh(id)));
   }
+  browser.bookmarks.onMoved.addListener((id, info) => {
+    observe(model.onMoved(id, info));
+  });
   browser.bookmarks.onRemoved.addListener((id, info) => {
     observe(detector.remove(id));
     observe(model.onRemoved(info.node));

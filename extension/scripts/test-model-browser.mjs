@@ -152,6 +152,10 @@ try {
   await page.locator('.library-panel > details > summary').click();
   await until(async () => !await page.getByRole('combobox', { name: 'AI model', exact: true }).isDisabled());
   assert.equal((await request('get')).settings.enabled, false);
+  const autoMoveLabel = 'Automatically move new bookmarks to the first suggested folder';
+  assert.equal(await page.getByLabel(autoMoveLabel, { exact: true }).isChecked(), true);
+  await page.getByLabel(autoMoveLabel, { exact: true }).uncheck();
+  await until(async () => (await request('get')).settings.autoMove === false);
   assert.deepEqual(await page.getByRole('combobox', { name: 'AI model', exact: true }).locator('option').evaluateAll(nodes => nodes.map(n => n.value)), ['minilm-q8', 'bge-q8']);
   await page.getByRole('combobox', { name: 'AI model', exact: true }).selectOption('bge-q8');
   await until(async () => (await request('get')).settings.preset === 'bge-q8');
@@ -288,22 +292,22 @@ try {
 
   // Unchanged input reuses the persistent index, including its original timestamp.
   await context.setOffline(true);
-  await request('settings', { enabled: false, preset: 'minilm-q8' });
-  await request('settings', { enabled: true, preset: 'minilm-q8' });
+  await request('settings', { enabled: false, preset: 'minilm-q8', autoMove: false });
+  await request('settings', { enabled: true, preset: 'minilm-q8', autoMove: false });
   await waitIndex();
   assert.equal((await readIndex()).metadata.updatedAt, firstIndex.metadata.updatedAt);
 
   // Cancelling a changed snapshot leaves the previous vectors and readiness intact.
-  await request('settings', { enabled: false, preset: 'minilm-q8' });
+  await request('settings', { enabled: false, preset: 'minilm-q8', autoMove: false });
   const changed = source.bookmarks.find(bookmark => bookmark.title === 'JavaScript guide 0');
   await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Database administration reference' }), changed.id);
   await until(async () => (await readLibrary()).bookmarks.find(row => row.id === changed.id)?.title === 'Database administration reference');
-  await request('settings', { enabled: true, preset: 'minilm-q8' });
-  await request('settings', { enabled: false, preset: 'minilm-q8' });
+  await request('settings', { enabled: true, preset: 'minilm-q8', autoMove: false });
+  await request('settings', { enabled: false, preset: 'minilm-q8', autoMove: false });
   assert.equal(await offscreenCount(), 0);
   assert.deepEqual(await readIndex(), firstIndex);
 
-  await request('settings', { enabled: true, preset: 'minilm-q8' });
+  await request('settings', { enabled: true, preset: 'minilm-q8', autoMove: false });
   const cdp = await context.browser().newBrowserCDPSession();
   const workerTarget = (await cdp.send('Target.getTargets')).targetInfos.find(target => target.type === 'service_worker');
   if (workerTarget) await cdp.send('Target.closeTarget', { targetId: workerTarget.targetId });
@@ -429,11 +433,11 @@ try {
     return config;
   });
   await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Changed while disabled' }), bookmark.id);
-  await request('settings', { enabled: true, preset: 'minilm-q8' });
+  await request('settings', { enabled: true, preset: 'minilm-q8', autoMove: false });
   await until(async () => (await request('get')).state.status === 'error');
   await until(async () => await offscreenCount() === 0);
   assert.deepEqual(await readIndex(), rebuilt);
-  await request('settings', { enabled: false, preset: 'minilm-q8' });
+  await request('settings', { enabled: false, preset: 'minilm-q8', autoMove: false });
   assert.equal((await request('get')).state.status, 'unloaded');
 
   // A complete browser restart must retain IndexedDB vectors and index metadata.
@@ -472,6 +476,10 @@ try {
   const migrated = await readIndex();
   assert.equal(migrated.metadata.bookmarkCount, (await readLibrary()).bookmarks.length);
   assert.equal(migrated.metadata.completed, migrated.entries.length);
+  // Old settings without the new field receive the enabled default.
+  await until(async () => await page.getByLabel(autoMoveLabel, { exact: true }).isChecked());
+  await page.getByLabel(autoMoveLabel, { exact: true }).uncheck();
+  await until(async () => (await request('get')).settings.autoMove === false);
 
   // Identical empty folders must score equally, including the folder just used
   // to save the evaluated bookmark and after its generated description persists.
@@ -548,9 +556,71 @@ try {
   await page.evaluate(id => chrome.bookmarks.removeTree(id), comparisonFixture.right.id);
   await until(async () => (await suggestionsPanel.innerText()).includes('This bookmark is unavailable.'));
   assert(await suggestionsPanel.getByRole('button', { name: 'Move here', exact: true }).evaluateAll(buttons => buttons.every(button => button.disabled)));
+
+  await page.getByLabel(autoMoveLabel, { exact: true }).check();
+  await until(async () => (await request('get')).settings.autoMove === true);
+  const autoSource = await page.evaluate(parentId => chrome.bookmarks.create({ parentId, title: 'Unsorted automatic test' }), fixture.root.id);
+  // Automatic placement must run with the popup closed.
+  const automaticWorker = context.serviceWorkers().find(worker => new URL(worker.url()).hostname === id);
+  await page.goto('about:blank');
+  const automaticBookmark = await automaticWorker.evaluate(parentId => chrome.bookmarks.create({ parentId,
+    title: 'React useEffect hooks reference', url: 'https://example.test/automatic-placement' }), autoSource.id);
+  const automaticSuggestion = await until(() => automaticWorker.evaluate(async bookmarkId => {
+    const state = (await chrome.storage.session.get('modelTestState')).modelTestState;
+    return state?.suggestion?.bookmarkId === bookmarkId ? state.suggestion : undefined;
+  }, automaticBookmark.id));
+  assert.equal(automaticSuggestion.folders[0].id, fixture.empty.id);
+  await until(() => automaticWorker.evaluate(async ({ bookmarkId, folderId }) =>
+    (await chrome.bookmarks.get(bookmarkId))[0].parentId === folderId,
+  { bookmarkId: automaticBookmark.id, folderId: automaticSuggestion.folders[0].id }));
+  await page.goto(`chrome-extension://${id}/popup.html`);
+  await until(async () => !await page.getByLabel(autoMoveLabel, { exact: true }).isDisabled());
+  assert.equal(await page.getByLabel(autoMoveLabel, { exact: true }).isChecked(), true);
+  // Native moves complete before the debounced index synchronization starts.
+  await until(async () => {
+    const source = (await readIndex()).entries.find(entry => entry.id === autoSource.id);
+    return source && source.description === undefined;
+  });
+  await waitIndex();
+  // Reproduce Chrome's Done action committing the original folder after the AI move.
+  await page.evaluate(({ id, parentId }) => chrome.bookmarks.move(id, { parentId }), { id: automaticBookmark.id, parentId: autoSource.id });
+  await until(async () => {
+    const { state } = await request('get');
+    const [bookmark] = await page.evaluate(id => chrome.bookmarks.get(id), automaticBookmark.id);
+    return bookmark.parentId === automaticSuggestion.folders[0].id && !state.pendingAutoMoves?.some(move => move.bookmarkId === automaticBookmark.id);
+  });
+  // An explicit selection through the extension cancels automatic correction.
+  const autoIndex = (await readIndex()).metadata.fingerprint;
+  await page.evaluate(async ({ id, parentId }) => {
+    const result = await chrome.runtime.sendMessage({ type: 'bookmark-model-test:command', action: 'moveBookmark', id, parentId });
+    if (!result?.ok) throw new Error('Manual move was rejected');
+  }, { id: automaticBookmark.id, parentId: autoSource.id });
+  await until(async () => (await readIndex()).metadata.fingerprint !== autoIndex);
+  await waitIndex();
+  assert.equal((await page.evaluate(id => chrome.bookmarks.get(id), automaticBookmark.id))[0].parentId, autoSource.id);
+  await page.getByLabel(autoMoveLabel, { exact: true }).uncheck();
+  await until(async () => (await request('get')).settings.autoMove === false);
+  await page.reload();
+  await until(async () => !await page.getByLabel(autoMoveLabel, { exact: true }).isDisabled());
+  assert.equal(await page.getByLabel(autoMoveLabel, { exact: true }).isChecked(), false);
+  const manualBookmark = await page.evaluate(parentId => chrome.bookmarks.create({ parentId,
+    title: 'React useEffect hooks reference', url: 'https://example.test/manual-placement' }), autoSource.id);
+  await until(async () => (await request('get')).state.suggestion?.bookmarkId === manualBookmark.id);
+  await waitIndex();
+  assert.equal((await page.evaluate(id => chrome.bookmarks.get(id), manualBookmark.id))[0].parentId, autoSource.id);
+  await page.getByLabel(autoMoveLabel, { exact: true }).check();
+  await until(async () => (await request('get')).settings.autoMove === true);
+  await page.getByLabel('Enable local AI', { exact: true }).uncheck();
+  await until(async () => (await request('get')).settings.enabled === false);
+  const disabledBookmark = await page.evaluate(parentId => chrome.bookmarks.create({ parentId,
+    title: 'React useEffect hooks reference', url: 'https://example.test/disabled-ai-placement' }), autoSource.id);
+  await until(() => page.evaluate(async id => (await chrome.storage.session.get('bookmarkDetection')).bookmarkDetection.recent.some(bookmark => bookmark.id === id), disabledBookmark.id));
+  await page.getByLabel('Enable local AI', { exact: true }).check();
+  await waitIndex();
+  assert.equal((await page.evaluate(id => chrome.bookmarks.get(id), disabledBookmark.id))[0].parentId, autoSource.id);
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
-  console.log('PASS: bookmark moves from suggestions, current folder recovery, stale destination and removed bookmark handling, comparison isolation, automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
+  console.log('PASS: correction of simulated Chrome folder rollback, default automatic placement with popup closed, persisted opt-out and legacy defaults, manual move preservation, disabled AI, bookmark moves from suggestions, current folder recovery, stale destination and removed bookmark handling, comparison isolation, automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
 } finally {
   console.log(`Artifacts: ${temp}`);
   await context.close();

@@ -104,6 +104,11 @@ export default function ModelPanel() {
     </label>
     <p className="model-note">Enabling AI downloads the model and indexes bookmark titles and folder paths. The model unloads after 15 seconds of inactivity.</p>
     <label className="model-toggle">
+      <input type="checkbox" checked={settings.autoMove} disabled={busy}
+        onChange={event => save({ ...settings, autoMove: event.target.checked })} />
+      Automatically move new bookmarks to the first suggested folder
+    </label>
+    <label className="model-toggle">
       <input type="checkbox" checked={pageDescriptions} disabled={permissionsBusy}
         onChange={event => togglePageDescriptions(event.target.checked)} />
       Use page descriptions
@@ -119,6 +124,6 @@ export default function ModelPanel() {
           : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
     </div>}
     {state.suggestion && <FolderSuggestions key={state.suggestion.bookmarkId} suggestion={state.suggestion} />}
-    {(error || state.error) && <p className="error" role="alert">{error || state.error}</p>}
+    {(error || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.autoMoveError || state.error}</p>}
   </section>;
 }

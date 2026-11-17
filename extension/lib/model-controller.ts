@@ -1,7 +1,7 @@
 import { browser } from 'wxt/browser';
 import type { BookmarkLibrary, LibraryNode } from './bookmark-library';
 import { prepareIndex, readIndexMetadata, readFolderDescriptions, saveFolderDescription, removeFolderDescriptions } from './model-index';
-import type { DetectedBookmark } from './detection-state';
+import { MAX_RECENT_BOOKMARKS, type DetectedBookmark } from './detection-state';
 import { PAGE_DESCRIPTION_PERMISSIONS, readPageDescription } from './page-description';
 import {
   MODEL_COMMAND, MODEL_EVENT, MODEL_SETTINGS_KEY, MODEL_STATE_KEY, MODEL_TARGET,
@@ -34,12 +34,14 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     const saved = session[MODEL_STATE_KEY] as Partial<ModelState> | undefined;
     state = { ...emptyModelState(), status: saved?.status === 'error' ? 'error' : 'unloaded',
       ...(saved?.error ? { error: saved.error } : {}),
-      preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: saved?.suggestion };
+      preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: saved?.suggestion,
+      handledSuggestionId: saved?.handledSuggestionId, autoMoveError: saved?.autoMoveError, pendingAutoMoves: saved?.pendingAutoMoves };
     if (await hasOffscreen()) {
       try {
         const status = await send({ action: 'status' });
         instance = status.instance;
-        state = { ...status.state, index: status.state.index ?? state.index, suggestion: status.state.suggestion ?? state.suggestion };
+        state = { ...status.state, index: status.state.index ?? state.index, suggestion: status.state.suggestion ?? state.suggestion,
+          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
         lastSequence = status.sequence;
       } catch { await browser.offscreen.closeDocument(); }
     }
@@ -59,7 +61,8 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     if (await hasOffscreen()) await browser.offscreen.closeDocument();
     instance = undefined;
     lastSequence = 0;
-    state = { ...emptyModelState(), preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: state.suggestion };
+    state = { ...emptyModelState(), preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: state.suggestion,
+      handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
     await save();
   }
   async function ensureOffscreen() {
@@ -131,7 +134,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       await submit(job);
     } catch { await reportFailure(); }
   }
-  async function command(message: { action: string; settings?: unknown; id?: unknown; description?: unknown }) {
+  async function command(message: { action: string; settings?: unknown; id?: unknown; parentId?: unknown; description?: unknown }) {
     if (message.action === 'get') return { ok: true, settings, state };
     if (message.action === 'pageDescriptionPermission') {
       return { ok: true, allowed: await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS).catch(() => false) };
@@ -142,6 +145,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       if (!next.enabled || next.preset !== settings.preset) await close();
       await browser.storage.local.set({ [MODEL_SETTINGS_KEY]: next });
       if (next.preset !== settings.preset) delete state.suggestion;
+      if (!next.enabled || !next.autoMove || next.preset !== settings.preset) delete state.pendingAutoMoves;
       settings = next;
       state.preset = settings.preset;
       state.index = await readIndexMetadata(settings.preset);
@@ -149,6 +153,15 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         syncRequested = false;
         await startIndex();
       } else await save();
+    } else if (message.action === 'moveBookmark') {
+      if (typeof message.id !== 'string' || typeof message.parentId !== 'string') throw new Error('Invalid bookmark destination.');
+      const [bookmark] = await browser.bookmarks.get(message.id);
+      const [folder] = await browser.bookmarks.get(message.parentId);
+      if (bookmark?.url === undefined || !folder || folder.url !== undefined) throw new Error('Bookmark or folder is unavailable.');
+      // An explicit selection in the extension takes priority over automation.
+      state.pendingAutoMoves = state.pendingAutoMoves?.filter(move => move.bookmarkId !== bookmark.id);
+      await save();
+      if (bookmark.parentId !== folder.id) await browser.bookmarks.move(bookmark.id, { parentId: folder.id });
     } else if (message.action === 'folderDescription') {
       if (typeof message.id !== 'string' || typeof message.description !== 'string') throw new Error('Invalid folder description.');
       const [folder] = await browser.bookmarks.get(message.id);
@@ -160,6 +173,33 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       throw new Error('Unknown model action.');
     }
     return { ok: true, settings, state };
+  }
+  async function autoMoveBookmark() {
+    const suggestion = state.suggestion;
+    if (!suggestion || suggestion.bookmarkId === state.handledSuggestionId) return;
+    // Consume each result so status events cannot start the same automatic move again.
+    state.handledSuggestionId = suggestion.bookmarkId;
+    delete state.autoMoveError;
+    await save();
+    const folder = suggestion.folders[0];
+    if (!settings.enabled || !settings.autoMove || !suggestion.autoMove || !folder) return;
+    try {
+      const [bookmark] = await browser.bookmarks.get(suggestion.bookmarkId).catch(() => []);
+      if (bookmark?.url !== suggestion.autoMove.url || !bookmark.parentId || bookmark.parentId === folder.id) return;
+      const [destination] = await browser.bookmarks.get(folder.id);
+      if (!destination || destination.url !== undefined) throw new Error('Destination is unavailable.');
+      // Chrome's open bookmark dialog can commit its original folder after this
+      // move. Retain one correction for each recently added bookmark.
+      state.pendingAutoMoves = [...(state.pendingAutoMoves ?? []), {
+        bookmarkId: bookmark.id, url: bookmark.url, sourceId: bookmark.parentId, folderId: folder.id,
+      }].slice(-MAX_RECENT_BOOKMARKS);
+      await save();
+      await browser.bookmarks.move(bookmark.id, { parentId: folder.id });
+    } catch {
+      state.pendingAutoMoves = state.pendingAutoMoves?.filter(move => move.bookmarkId !== suggestion.bookmarkId);
+      state.autoMoveError = 'Could not move the bookmark automatically. Choose a folder and try Move here.';
+      await save();
+    }
   }
   browser.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== browser.runtime.id) return;
@@ -182,8 +222,10 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
             }
           }
         }
-        state = { ...message.state, index: message.state.index ?? state.index, suggestion: message.state.suggestion ?? state.suggestion };
+        state = { ...message.state, index: message.state.index ?? state.index, suggestion: message.state.suggestion ?? state.suggestion,
+          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
         await save();
+        await autoMoveBookmark();
         if (message.close) {
           // Offscreen has already stopped accepting work. Old events are ignored.
           instance = undefined;
@@ -219,11 +261,31 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         const index = await prepareIndex(library, settings.preset, await readFolderDescriptions());
         await submit(index);
         await submit({ kind: 'embed', preset: settings.preset, bookmarkId: node.id, title: node.title || node.url,
-          text: node.title || node.url, description, library });
+          text: node.title || node.url, description, library,
+          ...(settings.autoMove && node.parentId ? { autoMove: { parentId: node.parentId, url: node.url } } : {}) });
       });
     },
     onRemoved(node: LibraryNode) {
       return enqueue(() => removeFolderDescriptions(node));
+    },
+    onMoved(id: string, info: { parentId: string; oldParentId: string }) {
+      return enqueue(async () => {
+        const move = state.pendingAutoMoves?.find(move => move.bookmarkId === id);
+        if (!move) return;
+        // This is the event generated by our initial automatic move.
+        if (info.oldParentId === move.sourceId && info.parentId === move.folderId) return;
+        state.pendingAutoMoves = state.pendingAutoMoves?.filter(move => move.bookmarkId !== id);
+        await save();
+        if (!settings.enabled || !settings.autoMove || info.oldParentId !== move.folderId || info.parentId !== move.sourceId) return;
+        try {
+          const [bookmark] = await browser.bookmarks.get(id).catch(() => []);
+          if (bookmark?.url !== move.url || bookmark.parentId !== move.sourceId) return;
+          await browser.bookmarks.move(id, { parentId: move.folderId });
+        } catch {
+          state.autoMoveError = 'Could not restore the AI folder after the bookmark was moved. Choose a folder and try Move here.';
+          await save();
+        }
+      });
     },
     onLibraryChanged() {
       clearTimeout(syncTimer);

@@ -7,7 +7,14 @@ test('model settings reject unknown presets and removes legacy settings', () => 
     assert.deepEqual(parseModelSettings(value), DEFAULT_MODEL_SETTINGS);
   }
   assert.deepEqual(parseModelSettings({ enabled: true, preset: 'bge-q8' }), {
-    enabled: true, preset: 'bge-q8',
+    enabled: true, preset: 'bge-q8', autoMove: true,
   });
-  assert.deepEqual(parseModelSettings({ preset: 'bge-fp32', enabled: true, idleSeconds: 60 }), { enabled: true, preset: 'minilm-q8' });
+  assert.deepEqual(parseModelSettings({ preset: 'bge-fp32', enabled: true, idleSeconds: 60 }), { enabled: true, preset: 'minilm-q8', autoMove: true });
+});
+
+test('automatic moves default on for new and existing installations and preserve an explicit opt-out', () => {
+  for (const value of [undefined, {}, { enabled: true, preset: 'minilm-q8' }, { autoMove: null }, { autoMove: 'false' }]) {
+    assert.equal(parseModelSettings(value).autoMove, true);
+  }
+  assert.equal(parseModelSettings({ autoMove: false }).autoMove, false);
 });
