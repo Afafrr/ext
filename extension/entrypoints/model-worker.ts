@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 import { defineUnlistedScript } from 'wxt/utils/define-unlisted-script';
-import { generateFolderDescriptions } from '../lib/folder-description';
+import { generateFolderDescriptions, prepareComparisonIndex } from '../lib/folder-description';
 import { rankFolders } from '../lib/folder-ranking';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
 import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex, saveGeneratedDescriptions, readFolderDescriptions } from '../lib/model-index';
@@ -104,12 +104,24 @@ export default defineUnlistedScript(() => {
           break;
         }
       } else {
+        const entries = await readIndexEntries(job.preset);
+        const comparison = await prepareComparisonIndex(job.library, job.preset,
+          await readFolderDescriptions(), entries, job.bookmarkId);
+        const { reused: vectors, pending } = reuseIndexEntries(comparison, await readIndexMetadata(job.preset), entries);
+        for (let offset = 0; offset < pending.length; offset += 8) {
+          const batch = pending.slice(offset, offset + 8);
+          const tensor = await extractor(batch.map(entry => entry.text), { pooling: preset.pooling, normalize: true });
+          try {
+            const embeddings = tensor.tolist() as number[][];
+            batch.forEach((entry, index) => vectors.push({ ...entry, vector: new Float32Array(embeddings[index]!) }));
+          } finally { tensor.dispose(); }
+        }
         const description = job.description && await canUsePageDescription() ? job.description : undefined;
         const text = [job.text, description].filter(Boolean).join('\n').slice(0, 4000);
         const tensor = await extractor(text, { pooling: preset.pooling, normalize: true });
         try {
           const query = (tensor.tolist() as number[][])[0]!;
-          const folders = rankFolders(query, job.library, await readIndexEntries(job.preset), job.bookmarkId);
+          const folders = rankFolders(query, job.library, vectors, job.bookmarkId);
           emit({ kind: 'complete', suggestion: { bookmarkId: job.bookmarkId, title: job.title, folders } });
         } finally { tensor.dispose(); }
       }

@@ -472,6 +472,54 @@ try {
   const migrated = await readIndex();
   assert.equal(migrated.metadata.bookmarkCount, (await readLibrary()).bookmarks.length);
   assert.equal(migrated.metadata.completed, migrated.entries.length);
+
+  // Identical empty folders must score equally, including the folder just used
+  // to save the evaluated bookmark and after its generated description persists.
+  const comparisonFixture = await page.evaluate(async root => {
+    const title = 'Self comparison regression fixture';
+    const left = await chrome.bookmarks.create({ parentId: root.id, title });
+    const right = await chrome.bookmarks.create({ parentId: root.id, title });
+    const bookmark = await chrome.bookmarks.create({ parentId: left.id,
+      title: `${root.title} / ${title}`, url: 'https://example.test/self-comparison' });
+    return { left, right, bookmark };
+  }, fixture.root);
+  const comparisonSuggestion = await until(async () => {
+    const { state } = await request('get');
+    if (state.error) throw new Error(state.error);
+    return state.suggestion?.bookmarkId === comparisonFixture.bookmark.id ? state.suggestion : undefined;
+  });
+  function assertEqualFolderScores(suggestion) {
+    const left = suggestion.folders.find(folder => folder.id === comparisonFixture.left.id);
+    const right = suggestion.folders.find(folder => folder.id === comparisonFixture.right.id);
+    assert(left && right, 'Both identical folders must be suggested');
+    assert(Math.abs(left.score - right.score) < 1e-6, 'Saving the query in a folder must not affect its score');
+  }
+  assertEqualFolderScores(comparisonSuggestion);
+  await waitIndex();
+  const comparisonIndex = await readIndex();
+  const comparisonDescriptions = await readDescriptions();
+  assert(comparisonDescriptions.find(folder => folder.id === comparisonFixture.left.id).description.includes(comparisonFixture.bookmark.title.slice(0, 45)));
+  const retriedSuggestion = await page.evaluate(async bookmark => {
+    const completion = new Promise(resolve => {
+      const onChange = (changes, area) => {
+        const state = changes.modelTestState?.newValue;
+        if (area === 'session' && state?.status === 'ready' && state.pending === 0 && state.suggestion?.bookmarkId === bookmark.id) {
+          chrome.storage.onChanged.removeListener(onChange);
+          resolve(state.suggestion);
+        }
+      };
+      chrome.storage.onChanged.addListener(onChange);
+    });
+    const result = await chrome.runtime.sendMessage({ type: 'bookmark-organizer:get-library' });
+    const response = await chrome.runtime.sendMessage({ target: 'bookmark-model-test:offscreen', action: 'run',
+      job: { kind: 'embed', preset: 'minilm-q8', bookmarkId: bookmark.id, title: bookmark.title,
+        text: bookmark.title, library: result.library } });
+    if (!response?.accepted) throw new Error('Comparison retry was not accepted');
+    return completion;
+  }, comparisonFixture.bookmark);
+  assertEqualFolderScores(retriedSuggestion);
+  assert.deepEqual(await readIndex(), comparisonIndex);
+  assert.deepEqual(await readDescriptions(), comparisonDescriptions);
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
   console.log('PASS: automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');

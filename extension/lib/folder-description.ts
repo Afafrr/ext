@@ -1,4 +1,23 @@
-import type { FolderDescription, IndexJob, VectorEntry } from './model-index.ts';
+import type { BookmarkLibrary } from './bookmark-library.ts';
+import { prepareIndex, type FolderDescription, type IndexJob, type VectorEntry } from './model-index.ts';
+import type { ModelPreset } from './model-state.ts';
+
+/** Build transient comparison data without the evaluated bookmark's influence. */
+export async function prepareComparisonIndex(library: BookmarkLibrary, preset: ModelPreset,
+  descriptions: FolderDescription[], vectors: VectorEntry[], bookmarkId: string): Promise<IndexJob> {
+  const bookmark = library.bookmarks.find(entry => entry.id === bookmarkId);
+  const referenceLibrary = { ...library, bookmarks: library.bookmarks.filter(entry => entry.id !== bookmarkId) };
+  const affectedFolder = await prepareIndex({
+    folders: library.folders.filter(folder => folder.id === bookmark?.parentId),
+    bookmarks: referenceLibrary.bookmarks.filter(entry => entry.parentId === bookmark?.parentId),
+  }, preset);
+  const byId = new Map(descriptions.map(folder => [folder.id, folder]));
+  for (const folder of generateFolderDescriptions(affectedFolder, vectors)) {
+    const existing = byId.get(folder.id);
+    if (!existing || existing.source === 'generated') byId.set(folder.id, folder);
+  }
+  return prepareIndex(referenceLibrary, preset, [...byId.values()]);
+}
 
 /** Select titles nearest the folder centroid using the selected embedding model. */
 export function generateFolderDescriptions(job: IndexJob, vectors: VectorEntry[]): FolderDescription[] {
