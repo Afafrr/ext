@@ -61,6 +61,10 @@ footer { padding-top: 18px; margin-top: 18px; border-top: 1px solid #e1e6dd; col
 .folder-suggestions small { color: #68776f; }
 .folder-suggestions button { margin-top: 4px; padding: 4px 9px; border: 1px solid #d5dfd2; border-radius: 6px; background: white; color: #206a52; font-size: 11px; }
 .folder-suggestions button:disabled { opacity: .5; cursor: default; }
+.save-bookmark-title { margin-top: 18px; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.save-bookmark-folder { padding: 10px 12px; background: white; border: 1px solid #d5dfd2; border-radius: 6px; line-height: 1.6; overflow-wrap: anywhere; }
+.save-bookmark-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+.save-bookmark-actions button { padding: 8px 22px; border: 0; border-radius: 7px; background: #206a52; color: white; font-size: 12px; }
 
 @media (prefers-reduced-motion: no-preference) {
   button { transition: color 120ms; }

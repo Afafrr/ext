@@ -9,6 +9,8 @@ import {
   type ModelJob, type ModelSettings, type ModelState,
 } from './model-state';
 
+const SAVE_WINDOW_KEY = 'bookmark-organizer:save-window';
+
 /** Serializes lifecycle changes; inference itself runs in an offscreen worker. */
 export function createModelController(getLibrary: () => Promise<BookmarkLibrary>) {
   let chain = Promise.resolve();
@@ -35,13 +37,15 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     state = { ...emptyModelState(), status: saved?.status === 'error' ? 'error' : 'unloaded',
       ...(saved?.error ? { error: saved.error } : {}),
       preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: saved?.suggestion,
-      handledSuggestionId: saved?.handledSuggestionId, autoMoveError: saved?.autoMoveError, pendingAutoMoves: saved?.pendingAutoMoves };
+      handledSuggestionId: saved?.handledSuggestionId, autoMoveError: saved?.autoMoveError,
+      saveWindowError: saved?.saveWindowError, pendingAutoMoves: saved?.pendingAutoMoves };
     if (await hasOffscreen()) {
       try {
         const status = await send({ action: 'status' });
         instance = status.instance;
         state = { ...status.state, index: status.state.index ?? state.index, suggestion: status.state.suggestion ?? state.suggestion,
-          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
+          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError,
+          saveWindowError: state.saveWindowError, pendingAutoMoves: state.pendingAutoMoves };
         lastSequence = status.sequence;
       } catch { await browser.offscreen.closeDocument(); }
     }
@@ -62,7 +66,8 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     instance = undefined;
     lastSequence = 0;
     state = { ...emptyModelState(), preset: settings.preset, index: await readIndexMetadata(settings.preset), suggestion: state.suggestion,
-      handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
+      handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError,
+      saveWindowError: state.saveWindowError, pendingAutoMoves: state.pendingAutoMoves };
     await save();
   }
   async function ensureOffscreen() {
@@ -188,8 +193,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       if (bookmark?.url !== suggestion.autoMove.url || !bookmark.parentId || bookmark.parentId === folder.id) return;
       const [destination] = await browser.bookmarks.get(folder.id);
       if (!destination || destination.url !== undefined) throw new Error('Destination is unavailable.');
-      // Chrome's open bookmark dialog can commit its original folder after this
-      // move. Retain one correction for each recently added bookmark.
+      // Chrome can still commit its original folder after our window opens.
       state.pendingAutoMoves = [...(state.pendingAutoMoves ?? []), {
         bookmarkId: bookmark.id, url: bookmark.url, sourceId: bookmark.parentId, folderId: folder.id,
       }].slice(-MAX_RECENT_BOOKMARKS);
@@ -200,6 +204,35 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       state.autoMoveError = 'Could not move the bookmark automatically. Choose a folder and try Move here.';
       await save();
     }
+  }
+  async function showSaveWindow(bookmarkId: string) {
+    const baseUrl = browser.runtime.getURL('/popup.html');
+    const url = `${baseUrl}?bookmark=${encodeURIComponent(bookmarkId)}`;
+    const [stored, parent] = await Promise.all([
+      browser.storage.session.get(SAVE_WINDOW_KEY),
+      browser.windows.getLastFocused({ windowTypes: ['normal'] }).catch(() => undefined),
+    ]);
+    const bounds: { width: number; height: number; left?: number; top?: number } = { width: 420, height: 600 };
+    if (parent?.left !== undefined && parent.top !== undefined && parent.width !== undefined && parent.height !== undefined) {
+      bounds.width = Math.min(bounds.width, parent.width);
+      bounds.height = Math.min(bounds.height, parent.height);
+      // Keep the save window near the toolbar and inside the browser's bounds.
+      bounds.left = parent.left + Math.max(0, parent.width - bounds.width - 16);
+      bounds.top = parent.top + Math.min(88, Math.max(0, parent.height - bounds.height));
+    }
+    const windowId = stored[SAVE_WINDOW_KEY];
+    if (typeof windowId === 'number') {
+      const existing = await browser.windows.get(windowId, { populate: true }).catch(() => undefined);
+      const tab = existing?.tabs?.[0];
+      if (existing?.type === 'popup' && tab?.id !== undefined && (tab.url ?? tab.pendingUrl)?.startsWith(`${baseUrl}?bookmark=`)) {
+        await browser.tabs.update(tab.id, { url });
+        await browser.windows.update(windowId, { focused: true, state: 'normal', ...bounds });
+        return;
+      }
+    }
+    const created = await browser.windows.create({ url, type: 'popup', focused: true, ...bounds });
+    if (created?.id === undefined) throw new Error('Save window was not created.');
+    await browser.storage.session.set({ [SAVE_WINDOW_KEY]: created.id });
   }
   browser.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== browser.runtime.id) return;
@@ -223,7 +256,8 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
           }
         }
         state = { ...message.state, index: message.state.index ?? state.index, suggestion: message.state.suggestion ?? state.suggestion,
-          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError, pendingAutoMoves: state.pendingAutoMoves };
+          handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError,
+          saveWindowError: state.saveWindowError, pendingAutoMoves: state.pendingAutoMoves };
         await save();
         await autoMoveBookmark();
         if (message.close) {
@@ -241,6 +275,11 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     onDetected(bookmark: DetectedBookmark) {
       return enqueue(async () => {
         if (!settings.enabled) return;
+        delete state.saveWindowError;
+        await showSaveWindow(bookmark.id).catch(async () => {
+          state.saveWindowError = 'Could not open the save window. Open the extension to see folder suggestions.';
+          await save();
+        });
         let description: string | undefined;
         if (/^https?:\/\//i.test(bookmark.url) && await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)) {
           const tabs = await browser.tabs.query({});

@@ -52,6 +52,7 @@ export interface ModelState {
   suggestion?: BookmarkSuggestion;
   handledSuggestionId?: string;
   autoMoveError?: string;
+  saveWindowError?: string;
   pendingAutoMoves?: { bookmarkId: string; url: string; sourceId: string; folderId: string }[];
 }
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });

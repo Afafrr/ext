@@ -124,6 +124,6 @@ export default function ModelPanel() {
           : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
     </div>}
     {state.suggestion && <FolderSuggestions key={state.suggestion.bookmarkId} suggestion={state.suggestion} />}
-    {(error || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.autoMoveError || state.error}</p>}
+    {(error || state.saveWindowError || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.saveWindowError || state.autoMoveError || state.error}</p>}
   </section>;
 }
