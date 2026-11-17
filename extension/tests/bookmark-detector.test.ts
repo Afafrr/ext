@@ -10,6 +10,7 @@ import {
 function harness(initialState = emptyState(), onDetected?: Parameters<typeof createBookmarkDetector>[0]['onDetected']) {
   let state = structuredClone(initialState);
   let badgeCount = 0;
+  let badgeWrites = 0;
   let writes = 0;
   let failNextSave = false;
   const nodes = new Map<string, BookmarkNode>([
@@ -41,7 +42,7 @@ function harness(initialState = emptyState(), onDetected?: Parameters<typeof cre
         writes++;
       },
       async getNode(id) { return nodes.get(id); },
-      async setBadgeCount(count) { badgeCount = count; },
+      async setBadgeCount(count) { badgeCount = count; badgeWrites++; },
       now: () => 1_800_000_000_000,
     });
   }
@@ -52,6 +53,7 @@ function harness(initialState = emptyState(), onDetected?: Parameters<typeof cre
     createDetector,
     get state() { return state; },
     get badgeCount() { return badgeCount; },
+    get badgeWrites() { return badgeWrites; },
     get writes() { return writes; },
     failNextSave() { failNextSave = true; },
   };
@@ -271,4 +273,21 @@ test('folder traversal supports deep nesting and cannot loop on malformed ancest
   h.nodes.set('2', { id: '2', title: 'Cycle', parentId });
   await detector.refresh('2');
   assert.equal(h.state.recent[0]?.folderPath.length, 101);
+});
+
+test('badge writes occur only when the number of detected bookmarks changes', async () => {
+  const h = harness();
+  const detector = h.createDetector();
+  await detector.syncBadge();
+  await detector.syncBadge();
+  assert.equal(h.badgeWrites, 1);
+  const node = h.add('page');
+  await detector.record(node.id, node);
+  assert.equal(h.badgeWrites, 2);
+  await detector.refresh(node.id);
+  await detector.record(node.id, node);
+  await detector.setImporting(true);
+  assert.equal(h.badgeWrites, 2);
+  await detector.remove(node.id);
+  assert.equal(h.badgeWrites, 3);
 });

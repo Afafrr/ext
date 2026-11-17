@@ -73,6 +73,40 @@ try {
     }
     throw new Error('Timed out waiting for model test');
   }
+  const readLibrary = () => page.evaluate(async () => {
+    const result = await chrome.runtime.sendMessage({ type: 'bookmark-organizer:get-library' });
+    if (!result?.ok) throw new Error('Library unavailable');
+    return result.library;
+  });
+  const initial = await readLibrary();
+  assert(initial.folders.length > 0);
+  const fixture = await page.evaluate(async () => {
+    const root = (await chrome.bookmarks.getTree())[0].children.find(node => node.url === undefined);
+    const folder = await chrome.bookmarks.create({ parentId: root.id, title: 'Library test' });
+    const nested = await chrome.bookmarks.create({ parentId: folder.id, title: 'Nested' });
+    const empty = await chrome.bookmarks.create({ parentId: root.id, title: 'Empty library folder' });
+    const bookmark = await chrome.bookmarks.create({ parentId: nested.id, title: 'Existing library page', url: 'https://library.example/test' });
+    return { root, folder, nested, empty, bookmark };
+  });
+  await until(async () => (await readLibrary()).bookmarks.some(row => row.id === fixture.bookmark.id));
+  const snapshot = await readLibrary();
+  assert(snapshot.folders.some(row => row.id === fixture.empty.id));
+  assert.deepEqual(snapshot.bookmarks.find(row => row.id === fixture.bookmark.id).folderPath,
+    [fixture.root.title, 'Library test', 'Nested']);
+  await page.locator('.library-panel > details > summary').click();
+  await page.evaluate(id => chrome.bookmarks.update(id, { title: 'Library renamed' }), fixture.folder.id);
+  await until(async () => (await readLibrary()).bookmarks.find(row => row.id === fixture.bookmark.id)?.folderPath.includes('Library renamed'));
+  await until(async () => (await page.locator('.library-panel').innerText()).includes('Library renamed / Nested'));
+  await page.evaluate(({ id, parentId }) => chrome.bookmarks.move(id, { parentId }), { id: fixture.bookmark.id, parentId: fixture.empty.id });
+  await until(async () => (await readLibrary()).bookmarks.find(row => row.id === fixture.bookmark.id)?.parentId === fixture.empty.id);
+  await page.evaluate(id => chrome.bookmarks.removeTree(id), fixture.folder.id);
+  await until(async () => !(await readLibrary()).folders.some(row => row.id === fixture.nested.id));
+  await page.evaluate(id => chrome.bookmarks.remove(id), fixture.bookmark.id);
+  await until(async () => !(await readLibrary()).bookmarks.some(row => row.id === fixture.bookmark.id));
+  const beforeClear = await readLibrary();
+  await page.evaluate(() => chrome.runtime.sendMessage({ type: 'bookmark-organizer:clear-activity' }));
+  assert.deepEqual(await readLibrary(), beforeClear);
+  await page.locator('.library-panel > details > summary').click();
   await until(async () => !await page.getByRole('combobox', { name: 'Model AI', exact: true }).isDisabled());
   assert.equal((await request('get')).settings.enabled, false);
   assert.deepEqual(await page.getByRole('combobox', { name: 'Model AI', exact: true }).locator('option').evaluateAll(nodes => nodes.map(n => n.value)), ['minilm-q8', 'bge-q8']);
@@ -93,6 +127,16 @@ try {
     return state.status === 'ready';
   }, 600000);
   assert.equal(await offscreenCount(), 1);
+  const cdp = await context.browser().newBrowserCDPSession();
+  const workerTarget = (await cdp.send('Target.getTargets')).targetInfos.find(target => target.type === 'service_worker');
+  if (workerTarget) {
+    await cdp.send('Target.closeTarget', { targetId: workerTarget.targetId });
+    const resumed = await request('get');
+    assert.equal(resumed.settings.enabled, true);
+    assert.equal(resumed.settings.preset, 'minilm-q8');
+    assert.equal(resumed.state.status, 'ready');
+    assert.equal((await readLibrary()).bookmarks.some(row => row.id === bookmark.id), true);
+  }
   await page.screenshot({ path: join(temp, 'popup.png') });
   await until(async () => await offscreenCount() === 0, 30000);
   assert.equal((await request('get')).state.status, 'unloaded');
@@ -112,9 +156,21 @@ try {
   const current = await page.evaluate(id => chrome.bookmarks.get(id), bookmark.id);
   assert.equal(current[0].parentId, bookmark.parentId);
   assert.equal(await page.getByRole('button', { name: 'Export JSON' }).count(), 0);
+  // A corrupt cached config produces a deterministic load error without a download.
+  await page.evaluate(async () => {
+    const cache = await caches.open('bookmark-model-test-v1');
+    const key = 'https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2/resolve/2c4055b12046f11709e9df2c122e59ffbdc2f900/config.json';
+    await cache.put(key, new Response('invalid-json'));
+  });
+  await request('settings', { enabled: true, preset: 'minilm-q8' });
+  await create('Offline failure recovery');
+  await until(async () => (await request('get')).state.status === 'error');
+  await until(async () => await offscreenCount() === 0);
+  await request('settings', { enabled: false, preset: 'minilm-q8' });
+  assert.equal((await request('get')).state.status, 'unloaded');
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
-  console.log('PASS: detection, two model choices, real MiniLM, idle release, offline reload and model switch teardown.');
+  console.log('PASS: full library, live rename/move/delete updates, detection, two model choices, real MiniLM, service-worker recovery, idle release, offline reload, error recovery and model switch teardown.');
 } finally {
   console.log(`Artifacts: ${temp}`);
   await context.close();

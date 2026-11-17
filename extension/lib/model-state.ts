@@ -40,9 +40,8 @@ export interface ModelState {
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });
 export const MODEL_IDLE_MS = 15_000;
 export interface ModelJob {
-  id: string;
   text: string;
-  settings: ModelSettings;
+  preset: ModelPreset;
 }
 export type WorkerEvent =
   | { kind: 'loaded' }

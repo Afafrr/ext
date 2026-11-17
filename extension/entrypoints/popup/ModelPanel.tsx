@@ -13,29 +13,25 @@ export default function ModelPanel() {
 
   useEffect(() => {
     let active = true;
-    let version = 0;
+    let settingsChanged = false;
+    let stateChanged = false;
     const change: Parameters<typeof browser.storage.onChanged.addListener>[0] = (changes, area) => {
       if (area === 'local' && changes[MODEL_SETTINGS_KEY]) {
-        version++;
+        settingsChanged = true;
         setSettings(parseModelSettings(changes[MODEL_SETTINGS_KEY].newValue));
       }
       if (area === 'session' && changes[MODEL_STATE_KEY]) {
-        version++;
+        stateChanged = true;
         setState((changes[MODEL_STATE_KEY].newValue as ModelState) ?? emptyModelState());
       }
     };
     browser.storage.onChanged.addListener(change);
     async function load() {
-      for (let attempt = 0; attempt < 3; attempt++) {
-        const before = version;
-        const result = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'get' });
-        if (!result?.ok) throw new Error('Nie udało się odczytać ustawień modelu.');
-        if (!active) return;
-        if (version !== before) continue;
-        setSettings(result.settings);
-        setState(result.state);
-        return;
-      }
+      const result = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'get' });
+      if (!result?.ok) throw new Error('Nie udało się odczytać ustawień modelu.');
+      if (!active) return;
+      if (!settingsChanged) setSettings(result.settings);
+      if (!stateChanged) setState(result.state);
     }
     void load().catch(() => { if (active) setError('Otwórz ponownie okienko, aby odczytać ustawienia.'); })
       .finally(() => { if (active) setBusy(false); });

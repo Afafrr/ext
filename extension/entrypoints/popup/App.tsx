@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { browser } from 'wxt/browser';
 import ModelPanel from './ModelPanel';
+import LibraryPanel from './LibraryPanel';
 import {
   CLEAR_ACTIVITY_MESSAGE,
   STORAGE_KEY,
@@ -146,6 +147,7 @@ export default function App() {
       )}
 
       <ModelPanel />
+      <LibraryPanel />
 
       <footer>
         <p>Activity stays on this device and clears when Chrome restarts.</p>

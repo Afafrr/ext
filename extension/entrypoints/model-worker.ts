@@ -12,8 +12,7 @@ export default defineUnlistedScript(() => {
   env.useCustomCache = true;
   env.customCache = {
     async match(request: RequestInfo) {
-      const response = await (await caches.open(MODEL_CACHE)).match(request);
-      return response;
+      return (await caches.open(MODEL_CACHE)).match(request);
     },
     async put(request: RequestInfo, response: Response) {
       await (await caches.open(MODEL_CACHE)).put(request, response);
@@ -26,14 +25,13 @@ export default defineUnlistedScript(() => {
 
   scope.onmessage = async ({ data: job }: MessageEvent<ModelJob>) => {
     try {
-      const preset = MODEL_PRESETS[job.settings.preset];
+      const preset = MODEL_PRESETS[job.preset];
       if (!extractor) {
         // Without a progress callback, Transformers.js reads through arrayBuffer().
         // This handles cached/CDN responses that omit Content-Length.
-        const model = await pipeline<'feature-extraction'>('feature-extraction', preset.id, {
+        extractor = await pipeline<'feature-extraction'>('feature-extraction', preset.id, {
           revision: preset.revision, dtype: preset.dtype, device: 'wasm',
         });
-        extractor = model;
         // Bound per-save work even for BGE-M3's 8192-token context.
         extractor.tokenizer.model_max_length = 128;
       }

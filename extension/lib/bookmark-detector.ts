@@ -23,6 +23,7 @@ interface DetectorDependencies {
 /** Observes new bookmarks only. This module has no bookmark write operations. */
 export function createBookmarkDetector(deps: DetectorDependencies) {
   let queue = Promise.resolve();
+  let badgeCount: number | undefined;
 
   // Chrome dispatches events synchronously, but storage calls are asynchronous.
   // Serialize the whole read/modify/write operation to avoid losing rapid saves
@@ -32,7 +33,10 @@ export function createBookmarkDetector(deps: DetectorDependencies) {
       const state = await deps.load();
       const next = await update(state);
       if (next !== state) await deps.save(next);
-      await deps.setBadgeCount(next.recent.length);
+      if (badgeCount !== next.recent.length) {
+        await deps.setBadgeCount(next.recent.length);
+        badgeCount = next.recent.length;
+      }
     });
 
     // A failed operation must not prevent later events from being handled.

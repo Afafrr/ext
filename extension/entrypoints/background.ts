@@ -1,5 +1,6 @@
 import { browser } from 'wxt/browser';
 import { defineBackground } from 'wxt/utils/define-background';
+import { createBookmarkLibrary, GET_LIBRARY_MESSAGE } from '../lib/bookmark-library';
 import { createBookmarkDetector } from '../lib/bookmark-detector';
 import { createModelController } from '../lib/model-controller';
 import {
@@ -11,6 +12,7 @@ import {
 
 export default defineBackground(() => {
   const model = createModelController();
+  const library = createBookmarkLibrary(() => browser.bookmarks.getTree());
   const detector = createBookmarkDetector({
     onDetected: model.onDetected,
     async load() {
@@ -26,16 +28,21 @@ export default defineBackground(() => {
       return nodes[0];
     },
     async setBadgeCount(count) {
-      await browser.action.setBadgeBackgroundColor({ color: '#206a52' });
       await browser.action.setBadgeText({ text: count ? String(count) : '' });
     },
   });
 
-  function observe(operation: Promise<void>) {
+  function observe(operation: Promise<unknown>) {
     void operation.catch(() => {
       // Deliberately omit titles and URLs from extension logs.
-      console.error('Bookmark Organizer could not update its detection activity.');
+      console.error('Bookmark Organizer could not update bookmark data.');
     });
+  }
+
+  for (const event of [browser.bookmarks.onCreated, browser.bookmarks.onChanged,
+    browser.bookmarks.onMoved, browser.bookmarks.onRemoved, browser.bookmarks.onChildrenReordered,
+    browser.bookmarks.onImportBegan, browser.bookmarks.onImportEnded]) {
+    event.addListener(() => library.invalidate());
   }
 
   // Register listeners synchronously on every worker start, before any awaits.
@@ -48,23 +55,23 @@ export default defineBackground(() => {
   browser.bookmarks.onImportEnded.addListener(() => {
     observe(detector.setImporting(false));
   });
-  browser.bookmarks.onChanged.addListener((id) => {
-    observe(detector.refresh(id));
-  });
-  browser.bookmarks.onMoved.addListener((id) => {
-    observe(detector.refresh(id));
-  });
+  for (const event of [browser.bookmarks.onChanged, browser.bookmarks.onMoved]) {
+    event.addListener(id => observe(detector.refresh(id)));
+  }
   browser.bookmarks.onRemoved.addListener((id) => {
     observe(detector.remove(id));
   });
 
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (
-      sender.id !== browser.runtime.id ||
-      message?.type !== CLEAR_ACTIVITY_MESSAGE
-    ) {
-      return;
+    if (sender.id !== browser.runtime.id) return;
+    if (message?.type === GET_LIBRARY_MESSAGE) {
+      void library.get().then(
+        snapshot => sendResponse({ ok: true, library: snapshot }),
+        () => sendResponse({ ok: false }),
+      );
+      return true;
     }
+    if (message?.type !== CLEAR_ACTIVITY_MESSAGE) return;
 
     void detector.clear().then(
       () => sendResponse({ ok: true }),
@@ -73,5 +80,7 @@ export default defineBackground(() => {
     return true;
   });
 
+  observe(browser.action.setBadgeBackgroundColor({ color: '#206a52' }));
   observe(detector.syncBadge());
+  observe(library.get());
 });

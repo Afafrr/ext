@@ -13,6 +13,10 @@ npm run typecheck
 
 W Chrome otwórz `chrome://extensions`, włącz tryb dewelopera i załaduj `.output/chrome-mv3`.
 
+## Biblioteka zakładek
+
+Rozszerzenie odczytuje pełne drzewo przez `bookmarks.getTree()` przy uruchomieniu tła. Wiadomość `bookmark-organizer:get-library` udostępnia listę folderów i stron z ID, parentId, kolejnością i pełnymi ścieżkami. Uwzględnia puste foldery i dziedziczone ograniczenia folderów zarządzanych. Cache w pamięci jest unieważniany po dodaniu, zmianie, przeniesieniu, usunięciu, zmianie kolejności lub imporcie. Kolejny odczyt pobiera aktualne drzewo. Otwarty popup automatycznie aktualizuje sekcję „Biblioteka zakładek”.
+
 ## Obsługa
 
 Nowo dodana zakładka pojawia się w okienku z tytułem, adresem i ścieżką folderu. Lista zawiera do 20 pozycji z bieżącej sesji. Zmiany zakładek aktualizują listę, a zgłoszone importy są pomijane.
