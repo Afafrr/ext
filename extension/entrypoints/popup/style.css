@@ -54,6 +54,13 @@ footer { padding-top: 18px; margin-top: 18px; border-top: 1px solid #e1e6dd; col
 .model-toggle input { accent-color: #206a52; }
 .model-field { display: grid; gap: 6px; margin: 12px 0; font-size: 11px; }
 .model-field select { width: 100%; padding: 8px; font: inherit; background: white; border: 1px solid #d5dfd2; border-radius: 6px; }
+.folder-suggestions { font-size: 12px; line-height: 1.6; }
+.folder-suggestions ol { padding-left: 20px; }
+.folder-suggestions li { padding: 6px 0; }
+.folder-suggestions li span { display: block; overflow-wrap: anywhere; }
+.folder-suggestions small { color: #68776f; }
+.folder-suggestions button { margin-top: 4px; padding: 4px 9px; border: 1px solid #d5dfd2; border-radius: 6px; background: white; color: #206a52; font-size: 11px; }
+.folder-suggestions button:disabled { opacity: .5; cursor: default; }
 
 @media (prefers-reduced-motion: no-preference) {
   button { transition: color 120ms; }

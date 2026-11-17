@@ -520,9 +520,37 @@ try {
   assertEqualFolderScores(retriedSuggestion);
   assert.deepEqual(await readIndex(), comparisonIndex);
   assert.deepEqual(await readDescriptions(), comparisonDescriptions);
+
+  const suggestionsPanel = page.getByLabel('Folder suggestions', { exact: true });
+  const matchingFolders = suggestionsPanel.getByRole('listitem').filter({ hasText: comparisonFixture.right.title });
+  assert.equal(await matchingFolders.getByText('Current folder', { exact: true }).count(), 1);
+  await matchingFolders.getByRole('button', { name: 'Move here', exact: true }).click();
+  await until(() => page.evaluate(async ({ id, parentId }) => (await chrome.bookmarks.get(id))[0].parentId === parentId,
+    { id: comparisonFixture.bookmark.id, parentId: comparisonFixture.right.id }));
+  await until(async () => (await suggestionsPanel.innerText()).includes('Bookmark moved.'));
+  await until(async () => (await readLibrary()).bookmarks.find(bookmark => bookmark.id === comparisonFixture.bookmark.id)?.parentId === comparisonFixture.right.id);
+  await until(() => page.evaluate(async ({ id, parentId }) => {
+    const state = (await chrome.storage.session.get('bookmarkDetection')).bookmarkDetection;
+    return state.recent.find(bookmark => bookmark.id === id)?.folderIds.includes(parentId);
+  }, { id: comparisonFixture.bookmark.id, parentId: comparisonFixture.right.id }));
+  await until(async () => (await readIndex()).entries.some(entry => entry.id === comparisonFixture.right.id && entry.description?.includes('Self comparison')));
+  await waitIndex();
+  await suggestionsPanel.screenshot({ path: join(temp, 'bookmark-moved.png') });
+  await page.reload();
+  await until(async () => await matchingFolders.getByText('Current folder', { exact: true }).count() === 1);
+
+  // A stale suggestion must report a failed move and preserve the bookmark.
+  await page.evaluate(id => chrome.bookmarks.removeTree(id), comparisonFixture.left.id);
+  await matchingFolders.getByRole('button', { name: 'Move here', exact: true }).click();
+  await until(async () => (await suggestionsPanel.innerText()).includes('Could not move the bookmark.'));
+  assert.equal(await page.evaluate(async id => (await chrome.bookmarks.get(id))[0].parentId, comparisonFixture.bookmark.id), comparisonFixture.right.id);
+  // Ancestor removal must disable moves even without an event for the bookmark ID.
+  await page.evaluate(id => chrome.bookmarks.removeTree(id), comparisonFixture.right.id);
+  await until(async () => (await suggestionsPanel.innerText()).includes('This bookmark is unavailable.'));
+  assert(await suggestionsPanel.getByRole('button', { name: 'Move here', exact: true }).evaluateAll(buttons => buttons.every(button => button.disabled)));
   assert.deepEqual(errors, []);
   assert.deepEqual(headerWarnings, []);
-  console.log('PASS: automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
+  console.log('PASS: bookmark moves from suggestions, current folder recovery, stale destination and removed bookmark handling, comparison isolation, automatic folder descriptions and refresh, manual edits and drafts, transient query descriptions, folder description editing/persistence, consent revocation, title-only vectors, legacy page cleanup, 30/70 suggestions, library updates, first-enable indexing, normalized vectors, progress, persistent reuse, cancellation, service-worker/browser recovery, model separation, failed-write preservation and existing-enabled migration.');
 } finally {
   console.log(`Artifacts: ${temp}`);
   await context.close();

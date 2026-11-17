@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { browser } from 'wxt/browser';
+import FolderSuggestions from './FolderSuggestions';
 import { PAGE_DESCRIPTION_PERMISSIONS } from '../../lib/page-description';
 import {
   DEFAULT_MODEL_SETTINGS, MODEL_COMMAND, MODEL_PRESETS, MODEL_SETTINGS_KEY, MODEL_STATE_KEY,
@@ -117,12 +118,7 @@ export default function ModelPanel() {
           ? <p>Index saved · {state.index.bookmarkCount} titles · {state.index.folderCount} folders</p>
           : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
     </div>}
-    {state.suggestion && <div aria-label="Folder suggestions">
-      <p>Suggested folders for {state.suggestion.title}</p>
-      {state.suggestion.folders.length
-        ? <ol>{state.suggestion.folders.map(folder => <li key={folder.id}>{folder.path.join(' / ')}</li>)}</ol>
-        : <p>No indexed writable folders available.</p>}
-    </div>}
+    {state.suggestion && <FolderSuggestions key={state.suggestion.bookmarkId} suggestion={state.suggestion} />}
     {(error || state.error) && <p className="error" role="alert">{error || state.error}</p>}
   </section>;
 }
