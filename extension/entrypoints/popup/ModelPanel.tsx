@@ -7,11 +7,12 @@ import {
   emptyModelState, parseModelSettings, type ModelPreset, type ModelSettings, type ModelState,
 } from '../../lib/model-state';
 
-export default function ModelPanel() {
+export default function ModelPanel({ configuration = false }: { configuration?: boolean }) {
   const [settings, setSettings] = useState<ModelSettings>(DEFAULT_MODEL_SETTINGS);
   const [state, setState] = useState<ModelState>(emptyModelState);
   const [busy, setBusy] = useState(true);
   const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
   const [pageDescriptions, setPageDescriptions] = useState(false);
   const [permissionsBusy, setPermissionsBusy] = useState(true);
 
@@ -37,12 +38,13 @@ export default function ModelPanel() {
       if (!settingsChanged) setSettings(result.settings);
       if (!stateChanged) setState(result.state);
     }
-    load().catch(() => { if (active) setError('Reopen the popup to read settings.'); })
+    load().catch(() => { if (active) setError('Could not read settings. Reopen this page to try again.'); })
       .finally(() => { if (active) setBusy(false); });
     return () => { active = false; browser.storage.onChanged.removeListener(change); };
   }, []);
 
   useEffect(() => {
+    if (!configuration) return;
     let active = true;
     const refresh = () => {
       return browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)
@@ -58,15 +60,18 @@ export default function ModelPanel() {
       browser.permissions.onAdded.removeListener(refresh);
       browser.permissions.onRemoved.removeListener(refresh);
     };
-  }, []);
+  }, [configuration]);
 
   async function togglePageDescriptions(enabled: boolean) {
     setPermissionsBusy(true);
     setError('');
+    setNotice('');
     try {
       if (enabled) await browser.permissions.request(PAGE_DESCRIPTION_PERMISSIONS);
       else await browser.permissions.remove(PAGE_DESCRIPTION_PERMISSIONS);
-      setPageDescriptions(await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS));
+      const allowed = await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS);
+      setPageDescriptions(allowed);
+      if (allowed === enabled) setNotice('Settings saved.');
     } catch {
       setError('Could not update website access. Please try again.');
     } finally { setPermissionsBusy(false); }
@@ -77,10 +82,12 @@ export default function ModelPanel() {
     setSettings(next);
     setBusy(true);
     setError('');
+    setNotice('');
     try {
       const response = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'settings', settings: next });
       if (!response?.ok) throw new Error('Could not change the model.');
       setSettings(response.settings);
+      setNotice('Settings saved.');
     } catch {
       setSettings(previous);
       setError('Could not update settings. Please try again.');
@@ -90,7 +97,8 @@ export default function ModelPanel() {
     unloaded: 'Ready for new bookmarks', loading: 'Loading model…',
     indexing: 'Indexing library…', running: 'Processing bookmark…', ready: 'Model ready', error: 'Model error',
   };
-  return <section className="model-panel" aria-label="AI model">
+  return <section className="model-panel" aria-label={configuration ? 'AI settings' : 'AI model'}>
+    {configuration && <>
     <label className="model-field">AI model
       <select value={settings.preset} disabled={busy}
         onChange={event => save({ ...settings, preset: event.target.value as ModelPreset })}>
@@ -109,6 +117,9 @@ export default function ModelPanel() {
       Use page descriptions
     </label>
     <p className="model-note">Uses page descriptions temporarily to suggest folders for new bookmarks. Enabling asks Chrome for website access. Turning this off revokes that access.</p>
+    <p className="model-note">Changes are saved automatically.</p>
+    {notice && <p className="model-note" role="status">{notice}</p>}
+    </>}
     <p role="status" className="model-note">{labels[state.status]}</p>
     {state.status === 'error' && <button disabled={busy} onClick={() => save(settings)}>Try again</button>}
     {state.index && <div className="model-note" aria-label="Library index">
@@ -119,7 +130,7 @@ export default function ModelPanel() {
           ? <p>Index saved · {state.index.bookmarkCount} titles · {state.index.folderCount} folders</p>
           : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
     </div>}
-    {state.suggestion && <FolderSuggestions key={state.suggestion.bookmarkId} suggestion={state.suggestion} />}
+    {!configuration && state.suggestion && <FolderSuggestions key={state.suggestion.bookmarkId} suggestion={state.suggestion} />}
     {(error || state.saveWindowError || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.saveWindowError || state.autoMoveError || state.error}</p>}
   </section>;
 }

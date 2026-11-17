@@ -47,6 +47,10 @@ time { color: #758278; font-variant-numeric: tabular-nums; }
 .folder-path span { flex: 0 0 auto; }
 .error { padding: 10px 12px; margin-bottom: 12px; border-radius: 8px; background: #faeae5; color: #8a3f2c; font-size: 11px; line-height: 1.5; }
 footer { padding-top: 18px; margin-top: 18px; border-top: 1px solid #e1e6dd; color: #758278; font-size: 9px; line-height: 1.8; }
+.settings-link { font-size: 12px; }
+.settings-button { padding: 7px 12px; border: 1px solid #d5dfd2; border-radius: 6px; background: white; color: #206a52; }
+.settings-button:disabled { opacity: .5; cursor: default; }
+footer .settings-link { margin-bottom: 12px; }
 .model-panel { margin-top: 24px; padding-top: 2px; border-top: 1px solid #d9e5d8; }
 .model-panel .section-heading { margin: 16px 0 10px; }
 .model-note { font-size: 11px; line-height: 1.6; color: #4e6557; margin: 9px 0; overflow-wrap: anywhere; }
@@ -63,8 +67,8 @@ footer { padding-top: 18px; margin-top: 18px; border-top: 1px solid #e1e6dd; col
 .folder-suggestions button:disabled { opacity: .5; cursor: default; }
 .save-bookmark-title { margin-top: 18px; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
 .save-bookmark-folder { padding: 10px 12px; background: white; border: 1px solid #d5dfd2; border-radius: 6px; line-height: 1.6; overflow-wrap: anywhere; }
-.save-bookmark-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
-.save-bookmark-actions button { padding: 8px 22px; border: 0; border-radius: 7px; background: #206a52; color: white; font-size: 12px; }
+.save-bookmark-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 18px; }
+.save-bookmark-actions > button { padding: 8px 22px; border: 0; border-radius: 7px; background: #206a52; color: white; font-size: 12px; }
 
 @media (prefers-reduced-motion: no-preference) {
   button { transition: color 120ms; }

@@ -3,6 +3,7 @@ import { browser } from 'wxt/browser';
 import { GET_LIBRARY_MESSAGE, type BookmarkLibrary, type LibraryNode } from '../../lib/bookmark-library';
 import { MODEL_COMMAND, MODEL_STATE_KEY, emptyModelState, type ModelState } from '../../lib/model-state';
 import FolderSuggestions from './FolderSuggestions';
+import SettingsButton from './SettingsButton';
 
 export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId: string }) {
   const bookmarkId = initialBookmarkId;
@@ -84,6 +85,7 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
     {suggestion && <FolderSuggestions key={bookmarkId} suggestion={suggestion} />}
     {(error || state.saveWindowError || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.saveWindowError || state.autoMoveError || state.error}</p>}
     <div className="save-bookmark-actions">
+      <SettingsButton />
       <button autoFocus onClick={() => window.close()}>Done</button>
     </div>
   </main>;
