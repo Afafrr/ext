@@ -1,0 +1,38 @@
+{
+  "dataset": "real",
+  "model": {
+    "model": "Xenova/bge-m3",
+    "dtype": "q8",
+    "pooling": "cls",
+    "maxLength": 8192
+  },
+  "fields": [
+    "title",
+    "description"
+  ],
+  "descriptions": "datasets/real/descriptions.json",
+  "strategies": [
+    "closest",
+    "folder-closest",
+    "manual-closest",
+    "generated-closest",
+    "top3-average",
+    "centroid",
+    "domain-closest",
+    "hybrid",
+    "rerank"
+  ],
+  "reranker": {
+    "model": "onnx-community/bge-reranker-v2-m3-ONNX",
+    "dtype": "q8",
+    "candidates": 3,
+    "maxLength": 512
+  },
+  "thresholds": {
+    "newFolder": 0.55,
+    "askUserMargin": 0.05
+  },
+  "cacheDir": ".cache/models",
+  "localFilesOnly": false,
+  "report": true
+}

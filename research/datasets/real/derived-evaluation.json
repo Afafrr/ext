@@ -1,0 +1,2576 @@
+[
+  {
+    "id": "real-derived-1-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Gdy mózg odpoczywa — książka popularnonaukowa",
+    "description": "Opis papierowej książki o śnie i pamięci. Porównaj wydania i dodaj do listy zakupów.",
+    "headings": [
+      "Gdy mózg odpoczywa — książka popularnonaukowa"
+    ],
+    "url": "https://real-derived.example/1/1",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-01"
+  },
+  {
+    "id": "real-derived-1-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "The Patient Engineer — paperback edition",
+    "description": "A book about building a sustainable career in software. Publisher description and purchase options.",
+    "headings": [
+      "The Patient Engineer — paperback edition"
+    ],
+    "url": "https://real-derived.example/1/2",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-02"
+  },
+  {
+    "id": "real-derived-1-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Atlas zapomnianych wierzeń | Księgarnia",
+    "description": "Album o dawnych obrzędach Europy, dostępny w twardej oprawie.",
+    "headings": [
+      "Atlas zapomnianych wierzeń | Księgarnia"
+    ],
+    "url": "https://real-derived.example/1/3",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-03"
+  },
+  {
+    "id": "real-derived-1-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Decisions Under Uncertainty — book review",
+    "description": "A reader reviews a nonfiction book on practical reasoning and links to the paperback.",
+    "headings": [
+      "Decisions Under Uncertainty — book review"
+    ],
+    "url": "https://real-derived.example/1/4",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-04"
+  },
+  {
+    "id": "real-derived-1-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Programowanie bez pośpiechu",
+    "description": "Książka dla programistów: spis treści, fragment i cena wydania drukowanego.",
+    "headings": [
+      "Programowanie bez pośpiechu"
+    ],
+    "url": "https://real-derived.example/1/5",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-05"
+  },
+  {
+    "id": "real-derived-1-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Tomorrow's Machines: reading sample",
+    "description": "Sample chapter from a science book about automation, followed by an order form.",
+    "headings": [
+      "Tomorrow's Machines: reading sample"
+    ],
+    "url": "https://real-derived.example/1/6",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-06"
+  },
+  {
+    "id": "real-derived-1-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Jak powstaje wspomnienie — premiera",
+    "description": "Nowa książka o psychologii pamięci. Opis wydawcy, autor i liczba stron.",
+    "headings": [
+      "Jak powstaje wspomnienie — premiera"
+    ],
+    "url": "https://real-derived.example/1/7",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-07"
+  },
+  {
+    "id": "real-derived-1-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "A Small History of Oceans | Books",
+    "description": "An illustrated science book about marine discoveries, available in hardcover.",
+    "headings": [
+      "A Small History of Oceans | Books"
+    ],
+    "url": "https://real-derived.example/1/8",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-08"
+  },
+  {
+    "id": "real-derived-1-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby od środka — wydanie drugie",
+    "description": "Oferta książki technicznej o języku Ruby; format, ISBN i dostawa.",
+    "headings": [
+      "Ruby od środka — wydanie drugie"
+    ],
+    "url": "https://real-derived.example/1/9",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn > rb"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-1-09"
+  },
+  {
+    "id": "real-derived-1-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "SQL at Work — paperback, 320 pages",
+    "description": "A printed database book to purchase, with a contents preview.",
+    "headings": [
+      "SQL at Work — paperback, 320 pages"
+    ],
+    "url": "https://real-derived.example/1/10",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-1-10"
+  },
+  {
+    "id": "real-derived-1-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Coś na później",
+    "description": "Recenzja książki o podejmowaniu decyzji, z odnośnikiem do księgarni.",
+    "headings": [
+      "Coś na później"
+    ],
+    "url": "https://real-derived.example/1/11",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-1-11"
+  },
+  {
+    "id": "real-derived-1-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Product details",
+    "description": "Hardcover book on the history of computing. Author biography, dimensions and delivery options.",
+    "headings": [
+      "Product details"
+    ],
+    "url": "https://real-derived.example/1/12",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-1-12"
+  },
+  {
+    "id": "real-derived-1-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Zapisane",
+    "description": "Książka popularnonaukowa o genetyce, którą można zamówić w przedsprzedaży.",
+    "headings": [
+      "Zapisane"
+    ],
+    "url": "https://real-derived.example/1/13",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-1-13"
+  },
+  {
+    "id": "real-derived-1-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Książka o nawykach | Darmowa dostawa",
+    "description": "Opis wydania, opinie czytelników. Akceptuj cookies, newsletter, produkty sponsorowane.",
+    "headings": [
+      "Książka o nawykach | Darmowa dostawa",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/1/14",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-1-14"
+  },
+  {
+    "id": "real-derived-1-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "The Curious Mathematician | Buy now",
+    "description": "Book synopsis and edition details. Free shipping, account login, recommended products.",
+    "headings": [
+      "The Curious Mathematician | Buy now",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/1/15",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-1-15"
+  },
+  {
+    "id": "real-derived-1-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Historia liczb — książka, oprawa miękka",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/1/16",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-1-16"
+  },
+  {
+    "id": "real-derived-1-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Short books for a long train journey",
+    "description": "A reading list of nonfiction books, with descriptions and links to editions.",
+    "headings": [
+      "Short books for a long train journey"
+    ],
+    "url": "https://real-derived.example/1/17",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-1-17"
+  },
+  {
+    "id": "real-derived-1-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Muzyka od kuchni — książka",
+    "description": "Popularnonaukowa książka o tym, jak słyszymy rytm. Cena i dostępność w księgarni.",
+    "headings": [
+      "Muzyka od kuchni — książka"
+    ],
+    "url": "https://real-derived.example/1/18",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "music"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-1-18"
+  },
+  {
+    "id": "real-derived-1-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Biblioteka programisty: co przeczytać zimą",
+    "description": "Zestawienie książek do przeczytania o projektowaniu oprogramowania.",
+    "headings": [
+      "Biblioteka programisty: co przeczytać zimą"
+    ],
+    "url": "https://real-derived.example/1/19",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-1-19"
+  },
+  {
+    "id": "real-derived-1-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "A Guide to Changing Careers — ebook",
+    "description": "A career advice book listing, with an ebook sample and purchase price.",
+    "headings": [
+      "A Guide to Changing Careers — ebook"
+    ],
+    "url": "https://real-derived.example/1/20",
+    "expectedFolder": "ksiazki",
+    "explanation": "A book listing, review or reading list belongs with saved books, even when its topic is programming or careers.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "jobs"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-1-20"
+  },
+  {
+    "id": "real-derived-2-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Join queries: interactive practice",
+    "description": "Solve SQL join problems in a browser and check your answers against sample tables.",
+    "headings": [
+      "Join queries: interactive practice"
+    ],
+    "url": "https://real-derived.example/2/1",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-01"
+  },
+  {
+    "id": "real-derived-2-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ćwiczenia z funkcji okienkowych",
+    "description": "Zadania SQL z rankingiem wyników i wyjaśnieniem rozwiązań.",
+    "headings": [
+      "Ćwiczenia z funkcji okienkowych"
+    ],
+    "url": "https://real-derived.example/2/2",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-02"
+  },
+  {
+    "id": "real-derived-2-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "JavaScript closures: guided exercises",
+    "description": "A lesson followed by small coding challenges and automatic feedback.",
+    "headings": [
+      "JavaScript closures: guided exercises"
+    ],
+    "url": "https://real-derived.example/2/3",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-03"
+  },
+  {
+    "id": "real-derived-2-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "HTTP essentials — free learning path",
+    "description": "A sequence of lessons on requests, status codes and browser caching.",
+    "headings": [
+      "HTTP essentials — free learning path"
+    ],
+    "url": "https://real-derived.example/2/4",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-04"
+  },
+  {
+    "id": "real-derived-2-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Laboratorium bezpiecznych formularzy",
+    "description": "Ćwiczenia z walidacji i ochrony formularzy przed typowymi atakami.",
+    "headings": [
+      "Laboratorium bezpiecznych formularzy"
+    ],
+    "url": "https://real-derived.example/2/5",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-05"
+  },
+  {
+    "id": "real-derived-2-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "React state workshop",
+    "description": "Build a small interface through hands-on lessons and exercises.",
+    "headings": [
+      "React state workshop"
+    ],
+    "url": "https://real-derived.example/2/6",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-06"
+  },
+  {
+    "id": "real-derived-2-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Od podstaw do pierwszego API",
+    "description": "Kurs tworzenia serwera JavaScript, podzielony na moduły z zadaniami.",
+    "headings": [
+      "Od podstaw do pierwszego API"
+    ],
+    "url": "https://real-derived.example/2/7",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-07"
+  },
+  {
+    "id": "real-derived-2-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "SQL interview exercises: aggregate queries",
+    "description": "Practice technical interview questions with worked database solutions.",
+    "headings": [
+      "SQL interview exercises: aggregate queries"
+    ],
+    "url": "https://real-derived.example/2/8",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "jobs"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-2-08"
+  },
+  {
+    "id": "real-derived-2-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Wprowadzenie do testowania aplikacji",
+    "description": "Bezpłatny kurs z przykładami testów jednostkowych i zadaniami domowymi.",
+    "headings": [
+      "Wprowadzenie do testowania aplikacji"
+    ],
+    "url": "https://real-derived.example/2/9",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-09"
+  },
+  {
+    "id": "real-derived-2-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Git branches without fear",
+    "description": "An interactive branching tutorial with a sandbox repository.",
+    "headings": [
+      "Git branches without fear"
+    ],
+    "url": "https://real-derived.example/2/10",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-10"
+  },
+  {
+    "id": "real-derived-2-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Lekcja 7",
+    "description": "Ćwiczenia SQL z podzapytaniami i sprawdzaniem poprawności wyniku.",
+    "headings": [
+      "Lekcja 7"
+    ],
+    "url": "https://real-derived.example/2/11",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-2-11"
+  },
+  {
+    "id": "real-derived-2-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Start here",
+    "description": "A beginner web development course with videos, quizzes and coding assignments.",
+    "headings": [
+      "Start here"
+    ],
+    "url": "https://real-derived.example/2/12",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-2-12"
+  },
+  {
+    "id": "real-derived-2-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Przydatne",
+    "description": "Zestaw ćwiczeń o nagłówkach HTTP i zabezpieczeniach przeglądarki.",
+    "headings": [
+      "Przydatne"
+    ],
+    "url": "https://real-derived.example/2/13",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-2-13"
+  },
+  {
+    "id": "real-derived-2-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Learn backend basics | Join our community",
+    "description": "A structured course in Node APIs. Sign in, subscribe, cookie preferences, related courses.",
+    "headings": [
+      "Learn backend basics | Join our community",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/2/14",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-2-14"
+  },
+  {
+    "id": "real-derived-2-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Kurs relacyjnych baz danych — zapisy",
+    "description": "Moduły o SQL i modelowaniu tabel. Promocja, newsletter i reklamy szkoleń.",
+    "headings": [
+      "Kurs relacyjnych baz danych — zapisy",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/2/15",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-2-15"
+  },
+  {
+    "id": "real-derived-2-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "TypeScript: exercises on narrowing",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/2/16",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-2-16"
+  },
+  {
+    "id": "real-derived-2-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Build a tiny recommendation engine",
+    "description": "A guided coding lab on embeddings and nearest-neighbour search.",
+    "headings": [
+      "Build a tiny recommendation engine"
+    ],
+    "url": "https://real-derived.example/2/17",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-17"
+  },
+  {
+    "id": "real-derived-2-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Zadania z podstaw Pythona",
+    "description": "Pętle, słowniki i funkcje w krótkich ćwiczeniach z testami.",
+    "headings": [
+      "Zadania z podstaw Pythona"
+    ],
+    "url": "https://real-derived.example/2/18",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-18"
+  },
+  {
+    "id": "real-derived-2-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Upload security reference checklist",
+    "description": "A security learning reference explaining file extension checks and safe storage.",
+    "headings": [
+      "Upload security reference checklist"
+    ],
+    "url": "https://real-derived.example/2/19",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-19"
+  },
+  {
+    "id": "real-derived-2-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "How to read an execution plan",
+    "description": "An educational walkthrough of SQL query plans with practice questions.",
+    "headings": [
+      "How to read an execution plan"
+    ],
+    "url": "https://real-derived.example/2/20",
+    "expectedFolder": "learn",
+    "explanation": "A general programming course, exercise or technical learning reference belongs in learn; Ruby-specific material has its own subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-2-20"
+  },
+  {
+    "id": "real-derived-3-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby enumerators through small examples",
+    "description": "Learn lazy enumerators and iteration patterns with runnable Ruby snippets.",
+    "headings": [
+      "Ruby enumerators through small examples"
+    ],
+    "url": "https://real-derived.example/3/1",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-01"
+  },
+  {
+    "id": "real-derived-3-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Rails migrations: reversible changes",
+    "description": "A tutorial on evolving database schemas in Ruby on Rails applications.",
+    "headings": [
+      "Rails migrations: reversible changes"
+    ],
+    "url": "https://real-derived.example/3/2",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-02"
+  },
+  {
+    "id": "real-derived-3-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ćwiczenia z bloków i lambd w Ruby",
+    "description": "Krótkie zadania pokazujące przekazywanie bloków i domknięć.",
+    "headings": [
+      "Ćwiczenia z bloków i lambd w Ruby"
+    ],
+    "url": "https://real-derived.example/3/3",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-03"
+  },
+  {
+    "id": "real-derived-3-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Active Record transactions explained",
+    "description": "A practical reference for transactional updates in Rails.",
+    "headings": [
+      "Active Record transactions explained"
+    ],
+    "url": "https://real-derived.example/3/4",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-04"
+  },
+  {
+    "id": "real-derived-3-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby pattern matching workshop",
+    "description": "Hands-on exercises on destructuring hashes and arrays in Ruby.",
+    "headings": [
+      "Ruby pattern matching workshop"
+    ],
+    "url": "https://real-derived.example/3/5",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-05"
+  },
+  {
+    "id": "real-derived-3-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Rails background jobs: retry safely",
+    "description": "A technical article about job retries and idempotency in Rails.",
+    "headings": [
+      "Rails background jobs: retry safely"
+    ],
+    "url": "https://real-derived.example/3/6",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-06"
+  },
+  {
+    "id": "real-derived-3-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Routing w Rails krok po kroku",
+    "description": "Przewodnik po zasobach, zagnieżdżaniu tras i kontrolerach Rails.",
+    "headings": [
+      "Routing w Rails krok po kroku"
+    ],
+    "url": "https://real-derived.example/3/7",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-07"
+  },
+  {
+    "id": "real-derived-3-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Debugging memory growth in a Ruby service",
+    "description": "A worked investigation with heap profiles and Ruby code examples.",
+    "headings": [
+      "Debugging memory growth in a Ruby service"
+    ],
+    "url": "https://real-derived.example/3/8",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-08"
+  },
+  {
+    "id": "real-derived-3-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Open-source Rails inventory application",
+    "description": "Repository with a Ruby on Rails stock-tracking app and installation instructions.",
+    "headings": [
+      "Open-source Rails inventory application"
+    ],
+    "url": "https://real-derived.example/3/9",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-09"
+  },
+  {
+    "id": "real-derived-3-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "RSpec request specs for beginners",
+    "description": "A tutorial on testing API responses in a Rails project.",
+    "headings": [
+      "RSpec request specs for beginners"
+    ],
+    "url": "https://real-derived.example/3/10",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-10"
+  },
+  {
+    "id": "real-derived-3-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Notatki do projektu",
+    "description": "Przykłady eager loading i rozwiązywania problemu N+1 w Active Record.",
+    "headings": [
+      "Notatki do projektu"
+    ],
+    "url": "https://real-derived.example/3/11",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-3-11"
+  },
+  {
+    "id": "real-derived-3-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Guide",
+    "description": "How Ruby modules, include and prepend change method lookup.",
+    "headings": [
+      "Guide"
+    ],
+    "url": "https://real-derived.example/3/12",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-3-12"
+  },
+  {
+    "id": "real-derived-3-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Do sprawdzenia",
+    "description": "Konfiguracja połączenia Rails z PostgreSQL i ustawienia puli.",
+    "headings": [
+      "Do sprawdzenia"
+    ],
+    "url": "https://real-derived.example/3/13",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-3-13"
+  },
+  {
+    "id": "real-derived-3-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Rails performance digest | Subscribe",
+    "description": "Article on caching rendered Rails partials. Newsletter, cookie banner and unrelated job advertisements.",
+    "headings": [
+      "Rails performance digest | Subscribe",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/3/14",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-3-14"
+  },
+  {
+    "id": "real-derived-3-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby exceptions — poradnik",
+    "description": "Obsługa błędów i ensure w Ruby. Kup kurs, zapisz się, akceptuj cookies.",
+    "headings": [
+      "Ruby exceptions — poradnik",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/3/15",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-3-15"
+  },
+  {
+    "id": "real-derived-3-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby fibers: an illustrated tutorial",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/3/16",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-3-16"
+  },
+  {
+    "id": "real-derived-3-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "SQL queries from a Rails model",
+    "description": "Examples of database querying through Active Record scopes.",
+    "headings": [
+      "SQL queries from a Rails model"
+    ],
+    "url": "https://real-derived.example/3/17",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-3-17"
+  },
+  {
+    "id": "real-derived-3-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Full-stack project using Rails and a little JavaScript",
+    "description": "A Rails-focused tutorial building controllers, views and models.",
+    "headings": [
+      "Full-stack project using Rails and a little JavaScript"
+    ],
+    "url": "https://real-derived.example/3/18",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-3-18"
+  },
+  {
+    "id": "real-derived-3-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby collection exercises, intermediate level",
+    "description": "Practice transforming arrays and hashes with the Ruby standard library.",
+    "headings": [
+      "Ruby collection exercises, intermediate level"
+    ],
+    "url": "https://real-derived.example/3/19",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-19"
+  },
+  {
+    "id": "real-derived-3-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Building a Rails checkout flow",
+    "description": "Source-code walkthrough of a small ecommerce checkout using Rails services.",
+    "headings": [
+      "Building a Rails checkout flow"
+    ],
+    "url": "https://real-derived.example/3/20",
+    "expectedFolder": "learn > rb",
+    "explanation": "Ruby or Rails technical learning material belongs in the existing Ruby subfolder.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-3-20"
+  },
+  {
+    "id": "real-derived-4-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Midnight Harbour — live electronic session",
+    "description": "A recorded electronic music performance to listen to, with a track list.",
+    "headings": [
+      "Midnight Harbour — live electronic session"
+    ],
+    "url": "https://real-derived.example/4/1",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-01"
+  },
+  {
+    "id": "real-derived-4-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Wieczorny set house z małego klubu",
+    "description": "Nagranie muzyczne z didżejskiego występu, bez materiałów szkoleniowych.",
+    "headings": [
+      "Wieczorny set house z małego klubu"
+    ],
+    "url": "https://real-derived.example/4/2",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-02"
+  },
+  {
+    "id": "real-derived-4-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Glass Streets — extended dance remix",
+    "description": "An audio upload of an electronic track with an extended instrumental intro.",
+    "headings": [
+      "Glass Streets — extended dance remix"
+    ],
+    "url": "https://real-derived.example/4/3",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-03"
+  },
+  {
+    "id": "real-derived-4-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ambient textures for a quiet morning",
+    "description": "A playlist of ambient instrumental music for listening.",
+    "headings": [
+      "Ambient textures for a quiet morning"
+    ],
+    "url": "https://real-derived.example/4/4",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-04"
+  },
+  {
+    "id": "real-derived-4-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Nowy singiel: Deszcz na peronie",
+    "description": "Oficjalny teledysk do elektronicznego utworu polskiego duetu.",
+    "headings": [
+      "Nowy singiel: Deszcz na peronie"
+    ],
+    "url": "https://real-derived.example/4/5",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-05"
+  },
+  {
+    "id": "real-derived-4-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Rooftop rhythms: full DJ mix",
+    "description": "A ninety-minute house music set with chapter timestamps.",
+    "headings": [
+      "Rooftop rhythms: full DJ mix"
+    ],
+    "url": "https://real-derived.example/4/6",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-06"
+  },
+  {
+    "id": "real-derived-4-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Piano loops and broken beats — live",
+    "description": "A live recording combining piano samples and electronic percussion.",
+    "headings": [
+      "Piano loops and broken beats — live"
+    ],
+    "url": "https://real-derived.example/4/7",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-07"
+  },
+  {
+    "id": "real-derived-4-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Set na zakończenie lata",
+    "description": "Godzinny miks muzyki klubowej z listą wykonawców.",
+    "headings": [
+      "Set na zakończenie lata"
+    ],
+    "url": "https://real-derived.example/4/8",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-08"
+  },
+  {
+    "id": "real-derived-4-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Soft Signal — instrumental version",
+    "description": "The instrumental edition of a new electronic single.",
+    "headings": [
+      "Soft Signal — instrumental version"
+    ],
+    "url": "https://real-derived.example/4/9",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-09"
+  },
+  {
+    "id": "real-derived-4-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Afterhours radio episode 12",
+    "description": "A radio mix featuring house, garage and electronic remixes.",
+    "headings": [
+      "Afterhours radio episode 12"
+    ],
+    "url": "https://real-derived.example/4/10",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-10"
+  },
+  {
+    "id": "real-derived-4-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Posłuchaj",
+    "description": "Nagranie koncertu elektronicznego z festiwalowej sceny.",
+    "headings": [
+      "Posłuchaj"
+    ],
+    "url": "https://real-derived.example/4/11",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-4-11"
+  },
+  {
+    "id": "real-derived-4-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Track 04",
+    "description": "A complete dance track from an EP, uploaded for listening.",
+    "headings": [
+      "Track 04"
+    ],
+    "url": "https://real-derived.example/4/12",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-4-12"
+  },
+  {
+    "id": "real-derived-4-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Na weekend",
+    "description": "Playlista utworów deep house z płynnymi przejściami między nagraniami.",
+    "headings": [
+      "Na weekend"
+    ],
+    "url": "https://real-derived.example/4/13",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-4-13"
+  },
+  {
+    "id": "real-derived-4-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Now playing | Sign in to continue",
+    "description": "Full electronic music video. Subscribe, related videos, premium trial and comments.",
+    "headings": [
+      "Now playing | Sign in to continue",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/4/14",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-4-14"
+  },
+  {
+    "id": "real-derived-4-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Koncert na żywo — odtwórz",
+    "description": "Nagranie występu muzycznego. Reklamy przed filmem i propozycje kanałów.",
+    "headings": [
+      "Koncert na żywo — odtwórz",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/4/15",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-4-15"
+  },
+  {
+    "id": "real-derived-4-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Night Drive — original club mix",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/4/16",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-4-16"
+  },
+  {
+    "id": "real-derived-4-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby Lights — official audio",
+    "description": "An electronic duo named Ruby Lights releases a new song.",
+    "headings": [
+      "Ruby Lights — official audio"
+    ],
+    "url": "https://real-derived.example/4/17",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn > rb"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-4-17"
+  },
+  {
+    "id": "real-derived-4-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "The Programmer — techno remix",
+    "description": "A track titled The Programmer; audio playback and artist credits.",
+    "headings": [
+      "The Programmer — techno remix"
+    ],
+    "url": "https://real-derived.example/4/18",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-4-18"
+  },
+  {
+    "id": "real-derived-4-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Study playlist: warm electronic instrumentals",
+    "description": "Music to listen to while studying, with no course or exercises.",
+    "headings": [
+      "Study playlist: warm electronic instrumentals"
+    ],
+    "url": "https://real-derived.example/4/19",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-4-19"
+  },
+  {
+    "id": "real-derived-4-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Nowa płyta w odsłuchu: Miejskie echa",
+    "description": "Pełny odsłuch albumu elektronicznego, z opisem utworów i czasem nagrań.",
+    "headings": [
+      "Nowa płyta w odsłuchu: Miejskie echa"
+    ],
+    "url": "https://real-derived.example/4/20",
+    "expectedFolder": "music",
+    "explanation": "The purpose is listening to a track, recording or playlist, matching the existing music example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-4-20"
+  },
+  {
+    "id": "real-derived-5-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Spodnie z szeroką nogawką — granatowe",
+    "description": "Oferta sklepu odzieżowego: tabela rozmiarów, skład materiału i cena.",
+    "headings": [
+      "Spodnie z szeroką nogawką — granatowe"
+    ],
+    "url": "https://real-derived.example/5/1",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-01"
+  },
+  {
+    "id": "real-derived-5-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Relaxed linen shirt — product details",
+    "description": "A clothing product page with available sizes, fabric composition and checkout.",
+    "headings": [
+      "Relaxed linen shirt — product details"
+    ],
+    "url": "https://real-derived.example/5/2",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-02"
+  },
+  {
+    "id": "real-derived-5-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Kurtka przejściowa z kapturem",
+    "description": "Strona produktu odzieżowego z wymiarami i opcjami dostawy.",
+    "headings": [
+      "Kurtka przejściowa z kapturem"
+    ],
+    "url": "https://real-derived.example/5/3",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-03"
+  },
+  {
+    "id": "real-derived-5-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Cotton crew-neck sweatshirt in sage",
+    "description": "A sweatshirt listing with fit photos and selectable sizes.",
+    "headings": [
+      "Cotton crew-neck sweatshirt in sage"
+    ],
+    "url": "https://real-derived.example/5/4",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-04"
+  },
+  {
+    "id": "real-derived-5-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Spódnica midi z kieszeniami",
+    "description": "Opis fasonu, dostępne kolory i cena ubrania w sklepie internetowym.",
+    "headings": [
+      "Spódnica midi z kieszeniami"
+    ],
+    "url": "https://real-derived.example/5/5",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-05"
+  },
+  {
+    "id": "real-derived-5-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Straight-leg jeans, washed black",
+    "description": "An online jeans listing with waist measurements and stock availability.",
+    "headings": [
+      "Straight-leg jeans, washed black"
+    ],
+    "url": "https://real-derived.example/5/6",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-06"
+  },
+  {
+    "id": "real-derived-5-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Wełniany sweter w paski",
+    "description": "Skład tkaniny, zalecenia prania i możliwość zakupu swetra.",
+    "headings": [
+      "Wełniany sweter w paski"
+    ],
+    "url": "https://real-derived.example/5/7",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-07"
+  },
+  {
+    "id": "real-derived-5-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Oversized T-shirt, heavyweight cotton",
+    "description": "A product page for a cotton T-shirt with size options.",
+    "headings": [
+      "Oversized T-shirt, heavyweight cotton"
+    ],
+    "url": "https://real-derived.example/5/8",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-08"
+  },
+  {
+    "id": "real-derived-5-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Płaszcz na jesień — beżowy",
+    "description": "Oferta zakupu płaszcza, zdjęcia sylwetki i tabela rozmiarów.",
+    "headings": [
+      "Płaszcz na jesień — beżowy"
+    ],
+    "url": "https://real-derived.example/5/9",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-09"
+  },
+  {
+    "id": "real-derived-5-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Cargo trousers with adjustable hem",
+    "description": "A clothing store listing with fabric details, price and delivery.",
+    "headings": [
+      "Cargo trousers with adjustable hem"
+    ],
+    "url": "https://real-derived.example/5/10",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-5-10"
+  },
+  {
+    "id": "real-derived-5-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Może ten",
+    "description": "Oferta sklepu: luźny kardigan z bawełny, dostępny w trzech rozmiarach.",
+    "headings": [
+      "Może ten"
+    ],
+    "url": "https://real-derived.example/5/11",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-5-11"
+  },
+  {
+    "id": "real-derived-5-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Item 8721",
+    "description": "Women's wide-fit denim trousers. Choose size, add to bag and select shipping.",
+    "headings": [
+      "Item 8721"
+    ],
+    "url": "https://real-derived.example/5/12",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-5-12"
+  },
+  {
+    "id": "real-derived-5-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Zapisz na później",
+    "description": "Koszula lniana z długim rękawem. Cena i dostępność w sklepie.",
+    "headings": [
+      "Zapisz na później"
+    ],
+    "url": "https://real-derived.example/5/13",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-5-13"
+  },
+  {
+    "id": "real-derived-5-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "SALE | Jeans up to 40% off",
+    "description": "Product listing for loose-fit jeans. Sign up, cookie settings, delivery promotion.",
+    "headings": [
+      "SALE | Jeans up to 40% off",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/5/14",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-5-14"
+  },
+  {
+    "id": "real-derived-5-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Bluza basic — darmowa dostawa",
+    "description": "Opis kroju i rozmiary. Akceptuj cookies, oferta dnia i newsletter.",
+    "headings": [
+      "Bluza basic — darmowa dostawa",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/5/15",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-5-15"
+  },
+  {
+    "id": "real-derived-5-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Sukienka koszulowa — tabela rozmiarów",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/5/16",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-5-16"
+  },
+  {
+    "id": "real-derived-5-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Ruby red knitted cardigan",
+    "description": "A red cardigan named Ruby, sold in an online clothing store.",
+    "headings": [
+      "Ruby red knitted cardigan"
+    ],
+    "url": "https://real-derived.example/5/17",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn > rb"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-5-17"
+  },
+  {
+    "id": "real-derived-5-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "T-shirt with a JavaScript print",
+    "description": "A shirt product listing with programmer-themed artwork and size selection.",
+    "headings": [
+      "T-shirt with a JavaScript print"
+    ],
+    "url": "https://real-derived.example/5/18",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-5-18"
+  },
+  {
+    "id": "real-derived-5-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Concert hoodie — black, unisex",
+    "description": "A wearable concert merchandise hoodie, with a size guide and order button.",
+    "headings": [
+      "Concert hoodie — black, unisex"
+    ],
+    "url": "https://real-derived.example/5/19",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "music"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-5-19"
+  },
+  {
+    "id": "real-derived-5-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Eleganckie spodnie do biura",
+    "description": "Oferta spodni odzieżowych, zdjęcia, wymiary i cena.",
+    "headings": [
+      "Eleganckie spodnie do biura"
+    ],
+    "url": "https://real-derived.example/5/20",
+    "expectedFolder": "ubrania",
+    "explanation": "The page offers clothing to buy, matching the existing clothing-shopping example.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "jobs"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-5-20"
+  },
+  {
+    "id": "real-derived-6-01",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Frontend Developer — remote in Poland",
+    "description": "A job listing with salary range, responsibilities and an application form.",
+    "headings": [
+      "Frontend Developer — remote in Poland"
+    ],
+    "url": "https://real-derived.example/6/1",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-01"
+  },
+  {
+    "id": "real-derived-6-02",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Praca: Junior JavaScript Developer, Kraków",
+    "description": "Oferta zatrudnienia z wymaganiami, widełkami i przyciskiem aplikowania.",
+    "headings": [
+      "Praca: Junior JavaScript Developer, Kraków"
+    ],
+    "url": "https://real-derived.example/6/2",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-02"
+  },
+  {
+    "id": "real-derived-6-03",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Senior Node.js Engineer — Warsaw",
+    "description": "An open engineering role describing team responsibilities and recruitment stages.",
+    "headings": [
+      "Senior Node.js Engineer — Warsaw"
+    ],
+    "url": "https://real-derived.example/6/3",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-03"
+  },
+  {
+    "id": "real-derived-6-04",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Oferty pracy React — hybrydowo",
+    "description": "Lista aktualnych stanowisk frontendowych z wynagrodzeniem i lokalizacją.",
+    "headings": [
+      "Oferty pracy React — hybrydowo"
+    ],
+    "url": "https://real-derived.example/6/4",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-04"
+  },
+  {
+    "id": "real-derived-6-05",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Full-stack developer, B2B contract",
+    "description": "A software job advertisement with tech stack and hiring contact.",
+    "headings": [
+      "Full-stack developer, B2B contract"
+    ],
+    "url": "https://real-derived.example/6/5",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-05"
+  },
+  {
+    "id": "real-derived-6-06",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Programista TypeScript — Poznań",
+    "description": "Rekrutacja do zespołu produktowego, zakres obowiązków i formularz zgłoszenia.",
+    "headings": [
+      "Programista TypeScript — Poznań"
+    ],
+    "url": "https://real-derived.example/6/6",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-06"
+  },
+  {
+    "id": "real-derived-6-07",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "JavaScript jobs with published salary ranges",
+    "description": "A job board filtered to JavaScript positions and remote work.",
+    "headings": [
+      "JavaScript jobs with published salary ranges"
+    ],
+    "url": "https://real-derived.example/6/7",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-07"
+  },
+  {
+    "id": "real-derived-6-08",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Software engineer — payments team",
+    "description": "An employer hiring page with role requirements and application instructions.",
+    "headings": [
+      "Software engineer — payments team"
+    ],
+    "url": "https://real-derived.example/6/8",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "ordinary"
+    ],
+    "duplicateGroup": "real-derived-6-08"
+  },
+  {
+    "id": "real-derived-6-09",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Backend Developer — Ruby on Rails",
+    "description": "An employment listing for a Rails role, salary and application deadline.",
+    "headings": [
+      "Backend Developer — Ruby on Rails"
+    ],
+    "url": "https://real-derived.example/6/9",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn > rb"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-09"
+  },
+  {
+    "id": "real-derived-6-10",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "SQL developer wanted — apply today",
+    "description": "A paid database developer role, not a training course.",
+    "headings": [
+      "SQL developer wanted — apply today"
+    ],
+    "url": "https://real-derived.example/6/10",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-10"
+  },
+  {
+    "id": "real-derived-6-11",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Nowa oferta",
+    "description": "Stanowisko frontend developera, pełny etat, wymagania i formularz CV.",
+    "headings": [
+      "Nowa oferta"
+    ],
+    "url": "https://real-derived.example/6/11",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-6-11"
+  },
+  {
+    "id": "real-derived-6-12",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Join us",
+    "description": "An open JavaScript engineering position with compensation and interview details.",
+    "headings": [
+      "Join us"
+    ],
+    "url": "https://real-derived.example/6/12",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-6-12"
+  },
+  {
+    "id": "real-derived-6-13",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Do rozważenia",
+    "description": "Oferta pracy zdalnej dla programisty Node, warunki zatrudnienia i kontakt do rekrutera.",
+    "headings": [
+      "Do rozważenia"
+    ],
+    "url": "https://real-derived.example/6/13",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "vague-title"
+    ],
+    "duplicateGroup": "real-derived-6-13"
+  },
+  {
+    "id": "real-derived-6-14",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Tech jobs | Create your account",
+    "description": "Browse open frontend roles with salaries. Cookie banner, newsletter and recruitment ads.",
+    "headings": [
+      "Tech jobs | Create your account",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/6/14",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-6-14"
+  },
+  {
+    "id": "real-derived-6-15",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "React Developer — aplikuj teraz",
+    "description": "Ogłoszenie rekrutacyjne. Załóż konto, polecane oferty i zgody marketingowe.",
+    "headings": [
+      "React Developer — aplikuj teraz",
+      "Newsletter",
+      "Privacy settings"
+    ],
+    "url": "https://real-derived.example/6/15",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "real-derived-6-15"
+  },
+  {
+    "id": "real-derived-6-16",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Mid JavaScript Developer — remote job",
+    "description": "",
+    "headings": [],
+    "url": "https://real-derived.example/6/16",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "synthetic-real-derived",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "real-derived-6-16"
+  },
+  {
+    "id": "real-derived-6-17",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Graduate engineering programme — hiring now",
+    "description": "A paid entry-level role with mentoring and on-the-job training.",
+    "headings": [
+      "Graduate engineering programme — hiring now"
+    ],
+    "url": "https://real-derived.example/6/17",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "learn"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-17"
+  },
+  {
+    "id": "real-derived-6-18",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Developer at an online bookshop",
+    "description": "An engineering vacancy at a book retailer, with an application form.",
+    "headings": [
+      "Developer at an online bookshop"
+    ],
+    "url": "https://real-derived.example/6/18",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "ksiazki"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-18"
+  },
+  {
+    "id": "real-derived-6-19",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Frontend engineer for a music streaming platform",
+    "description": "An advertised software position with salary and recruitment process.",
+    "headings": [
+      "Frontend engineer for a music streaming platform"
+    ],
+    "url": "https://real-derived.example/6/19",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "music"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-19"
+  },
+  {
+    "id": "real-derived-6-20",
+    "collectionId": "real-user",
+    "synthetic": true,
+    "provenance": "Authored synthetic page inspired by the original real folder purposes; not scraped or saved by the real user.",
+    "title": "Programista sklepu odzieżowego — rekrutacja",
+    "description": "Oferta zatrudnienia do zespołu ecommerce z wymaganiami i stawką.",
+    "headings": [
+      "Programista sklepu odzieżowego — rekrutacja"
+    ],
+    "url": "https://real-derived.example/6/20",
+    "expectedFolder": "jobs",
+    "explanation": "An actual vacancy or job-search listing belongs in jobs, even when it mentions a course, bookshop or technology.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "ubrania"
+    ],
+    "tags": [
+      "synthetic-real-derived",
+      "overlap"
+    ],
+    "duplicateGroup": "real-derived-6-20"
+  }
+]

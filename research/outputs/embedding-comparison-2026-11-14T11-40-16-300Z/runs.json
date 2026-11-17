@@ -1,0 +1,164 @@
+[
+  {
+    "dataset": "real",
+    "variant": "minilm-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-16-853Z-01ef33cc/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-17-628Z-d80da1f0/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-8192",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-19-774Z-60a42efa/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-21-761Z-ad2fbe3d/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-22-678Z-197014e7/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-8192",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-25-815Z-4cbc1d74/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-28-906Z-7f8b3d31/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-30-211Z-30a09c2e/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-8192",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T11-40-35-457Z-c7da7903/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-40-718Z-440dd6bf/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-8192",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-42-690Z-ee7f2e38/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "minilm-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-44-670Z-fc211085/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-45-389Z-1a5dafcc/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-8192",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-48-507Z-ca35b65a/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-51-604Z-d36d01b2/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-52-526Z-bdc04415/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-8192",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-40-57-713Z-39436e78/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T11-41-03-032Z-7cb864fb/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-8192",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-04-402Z-d5eefb2f/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "minilm-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-06-472Z-faea9ce3/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "bge-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-07-153Z-963984dd/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-8192",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-09-157Z-ae90f80d/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-12-299Z-ea65290f/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "bge-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-13-253Z-e2e38b82/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-8192",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-16-406Z-6a480d69/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-21-716Z-55b5f97b/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "bge-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T11-41-23-140Z-10b744c1/run.json"
+  }
+]

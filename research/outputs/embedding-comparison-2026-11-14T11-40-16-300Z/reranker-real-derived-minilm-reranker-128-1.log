@@ -1,0 +1,146 @@
+{
+  dataset: 'real-derived',
+  collections: 1,
+  indexed: 11,
+  cases: 120,
+  review: 21,
+  noFolder: 0,
+  duplicateCopies: 0,
+  fingerprint: '68ce3595461aedbe9160ade8702a9b32f068140bd047a9b1806d7f4508b4d4f9'
+}
+Loading Xenova/paraphrase-multilingual-MiniLM-L12-v2 embeddings…
+Loading reranker (first run downloads its weights)…
+Case 1/120
+Case 2/120
+Case 3/120
+Case 4/120
+Case 5/120
+Case 6/120
+Case 7/120
+Case 8/120
+Case 9/120
+Case 10/120
+Case 11/120
+Case 12/120
+Case 13/120
+Case 14/120
+Case 15/120
+Case 16/120
+Case 17/120
+Case 18/120
+Case 19/120
+Case 20/120
+Case 21/120
+Case 22/120
+Case 23/120
+Case 24/120
+Case 25/120
+Case 26/120
+Case 27/120
+Case 28/120
+Case 29/120
+Case 30/120
+Case 31/120
+Case 32/120
+Case 33/120
+Case 34/120
+Case 35/120
+Case 36/120
+Case 37/120
+Case 38/120
+Case 39/120
+Case 40/120
+Case 41/120
+Case 42/120
+Case 43/120
+Case 44/120
+Case 45/120
+Case 46/120
+Case 47/120
+Case 48/120
+Case 49/120
+Case 50/120
+Case 51/120
+Case 52/120
+Case 53/120
+Case 54/120
+Case 55/120
+Case 56/120
+Case 57/120
+Case 58/120
+Case 59/120
+Case 60/120
+Case 61/120
+Case 62/120
+Case 63/120
+Case 64/120
+Case 65/120
+Case 66/120
+Case 67/120
+Case 68/120
+Case 69/120
+Case 70/120
+Case 71/120
+Case 72/120
+Case 73/120
+Case 74/120
+Case 75/120
+Case 76/120
+Case 77/120
+Case 78/120
+Case 79/120
+Case 80/120
+Case 81/120
+Case 82/120
+Case 83/120
+Case 84/120
+Case 85/120
+Case 86/120
+Case 87/120
+Case 88/120
+Case 89/120
+Case 90/120
+Case 91/120
+Case 92/120
+Case 93/120
+Case 94/120
+Case 95/120
+Case 96/120
+Case 97/120
+Case 98/120
+Case 99/120
+Case 100/120
+Case 101/120
+Case 102/120
+Case 103/120
+Case 104/120
+Case 105/120
+Case 106/120
+Case 107/120
+Case 108/120
+Case 109/120
+Case 110/120
+Case 111/120
+Case 112/120
+Case 113/120
+Case 114/120
+Case 115/120
+Case 116/120
+Case 117/120
+Case 118/120
+Case 119/120
+Case 120/120
+┌─────────┬─────────────────────┬─────────┬───────┬────────────────────┬──────────────────────┬────────────────────┐
+│ (index) │ strategy            │ correct │ wrong │ accuracy           │ certainEnough        │ meanQueryMs        │
+├─────────┼─────────────────────┼─────────┼───────┼────────────────────┼──────────────────────┼────────────────────┤
+│ 0       │ 'closest'           │ 88      │ 32    │ 0.7333333333333333 │ 0.2                  │ 4.6640878916666395 │
+│ 1       │ 'folder-closest'    │ 94      │ 26    │ 0.7833333333333333 │ 0.058333333333333334 │ 4.677447241666584  │
+│ 2       │ 'manual-closest'    │ 97      │ 23    │ 0.8083333333333333 │ 0.15833333333333333  │ 4.67521358333334   │
+│ 3       │ 'generated-closest' │ 93      │ 27    │ 0.775              │ 0.058333333333333334 │ 4.676598675000139  │
+│ 4       │ 'top3-average'      │ 90      │ 30    │ 0.75               │ 0.1                  │ 4.663890016666632  │
+│ 5       │ 'centroid'          │ 92      │ 28    │ 0.7666666666666667 │ 0.18333333333333332  │ 4.680523333333309  │
+│ 6       │ 'domain-closest'    │ 92      │ 28    │ 0.7666666666666667 │ 0.06666666666666667  │ 4.675582733333463  │
+│ 7       │ 'hybrid'            │ 87      │ 33    │ 0.725              │ 0.05                 │ 4.742736124999895  │
+│ 8       │ 'rerank'            │ 102     │ 18    │ 0.85               │ null                 │ 133.66704999999996 │
+└─────────┴─────────────────────┴─────────┴───────┴────────────────────┴──────────────────────┴────────────────────┘
+Saved results/2026-11-14T13-29-15-349Z-b5ebb1eb/run.json

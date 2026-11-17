@@ -1,0 +1,30 @@
+{
+  "name": "bookmark-classification-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dataset:build": "node scripts/build-dataset.js",
+    "dataset:build:real-derived": "node scripts/build-real-derived.js",
+    "dataset:build:hard": "node scripts/build-hard-dataset.js",
+    "validate": "node scripts/validate.js",
+    "test": "node --test",
+    "bench": "node scripts/bench.js",
+    "bench:compare:embeddings": "node scripts/compare-embeddings.js",
+    "report:embeddings": "node scripts/report-embeddings.js",
+    "bench:mini:synthetic": "node scripts/bench.js benchmark.minilm.synthetic.config.json",
+    "bench:mini:real-derived": "node scripts/bench.js benchmark.minilm.real-derived.config.json",
+    "bench:mini:light-reranker": "node scripts/bench.js benchmark.minilm.light-reranker.config.json",
+    "bench:mini:hard": "node scripts/bench.js benchmark.minilm.hard.config.json",
+    "report": "node scripts/report.js",
+    "dataset:build:combined": "node scripts/build-combined-dataset.js",
+    "bench:mini:combined": "node scripts/bench.js benchmark.minilm.combined.config.json",
+    "bench:compare:reranker": "node scripts/compare-reranker.js"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.2"
+  }
+}

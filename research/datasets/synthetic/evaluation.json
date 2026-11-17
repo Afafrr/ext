@@ -1,0 +1,2915 @@
+[
+  {
+    "id": "developer-01",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Container queries in a real component",
+    "description": "Adapt a card layout to its parent width, with CSS examples.",
+    "headings": [
+      "Container queries in a real component"
+    ],
+    "url": "https://developer.example/page/1",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Adapt a card layout to its parent width, with CSS examples. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-01"
+  },
+  {
+    "id": "developer-02",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Dlaczego przycisk nie ma fokusu?",
+    "description": "Diagnostyka kolejności tabulacji i focus-visible w formularzu.",
+    "headings": [
+      "Dlaczego przycisk nie ma fokusu?"
+    ],
+    "url": "https://developer.example/page/2",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Diagnostyka kolejności tabulacji i focus-visible w formularzu. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-02"
+  },
+  {
+    "id": "developer-03",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Notes",
+    "description": "Fix a React effect that subscribes twice after mounting.",
+    "headings": [
+      "Notes"
+    ],
+    "url": "https://developer.example/page/3",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Fix a React effect that subscribes twice after mounting. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "developer-03"
+  },
+  {
+    "id": "developer-04",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Slow endpoint after a release",
+    "description": "An investigation into missing indexes and SQL joins.",
+    "headings": [
+      "Slow endpoint after a release"
+    ],
+    "url": "https://developer.example/page/4",
+    "expectedFolder": "Work / Backend",
+    "explanation": "An investigation into missing indexes and SQL joins. Matches: Server APIs, SQL databases and service operations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-04"
+  },
+  {
+    "id": "developer-05",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Kolejka zadań w Node",
+    "description": "Retry i idempotencja przy przetwarzaniu płatności w API.",
+    "headings": [
+      "Kolejka zadań w Node"
+    ],
+    "url": "https://developer.example/page/5",
+    "expectedFolder": "Work / Backend",
+    "explanation": "Retry i idempotencja przy przetwarzaniu płatności w API. Matches: Server APIs, SQL databases and service operations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-05"
+  },
+  {
+    "id": "developer-06",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Reference: HTTP cache validators",
+    "description": "ETag and conditional requests for a REST service.",
+    "headings": [
+      "Reference: HTTP cache validators"
+    ],
+    "url": "https://developer.example/page/6",
+    "expectedFolder": "Work / Backend",
+    "explanation": "ETag and conditional requests for a REST service. Matches: Server APIs, SQL databases and service operations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-06"
+  },
+  {
+    "id": "developer-07",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "React from zero: 8-week course",
+    "description": "Lessons, homework and mentor feedback for beginning developers.",
+    "headings": [
+      "React from zero: 8-week course"
+    ],
+    "url": "https://developer.example/page/7",
+    "expectedFolder": "Learn / Courses",
+    "explanation": "Lessons, homework and mentor feedback for beginning developers. Matches: Structured courses and exercises, including programming courses.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-07"
+  },
+  {
+    "id": "developer-08",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Kurs SQL z zadaniami",
+    "description": "Dwanaście lekcji i sprawdzane ćwiczenia z baz danych.",
+    "headings": [
+      "Kurs SQL z zadaniami"
+    ],
+    "url": "https://developer.example/page/8",
+    "expectedFolder": "Learn / Courses",
+    "explanation": "Dwanaście lekcji i sprawdzane ćwiczenia z baz danych. Matches: Structured courses and exercises, including programming courses.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-08"
+  },
+  {
+    "id": "developer-09",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Quantization and nearest neighbours",
+    "description": "Measuring retrieval quality after quantizing embeddings.",
+    "headings": [
+      "Quantization and nearest neighbours"
+    ],
+    "url": "https://developer.example/page/9",
+    "expectedFolder": "Learn / AI",
+    "explanation": "Measuring retrieval quality after quantizing embeddings. Matches: Embedding models, machine learning papers and experiments.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-09"
+  },
+  {
+    "id": "developer-10",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Czy embedding rozumie polski?",
+    "description": "Porównanie reprezentacji zdań w dwóch językach.",
+    "headings": [
+      "Czy embedding rozumie polski?"
+    ],
+    "url": "https://developer.example/page/10",
+    "expectedFolder": "Learn / AI",
+    "explanation": "Porównanie reprezentacji zdań w dwóch językach. Matches: Embedding models, machine learning papers and experiments.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-10"
+  },
+  {
+    "id": "developer-11",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Zupa z pieczonych pomidorów",
+    "description": "Prosty przepis na kolację z bazylią i grzankami.",
+    "headings": [
+      "Zupa z pieczonych pomidorów"
+    ],
+    "url": "https://developer.example/page/11",
+    "expectedFolder": "Personal / Cooking",
+    "explanation": "Prosty przepis na kolację z bazylią i grzankami. Matches: Recipes and meal preparation.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-11"
+  },
+  {
+    "id": "developer-12",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Weeknight tofu tray bake",
+    "description": "A recipe with vegetables and a sesame dressing.",
+    "headings": [
+      "Weeknight tofu tray bake"
+    ],
+    "url": "https://developer.example/page/12",
+    "expectedFolder": "Personal / Cooking",
+    "explanation": "A recipe with vegetables and a sesame dressing. Matches: Recipes and meal preparation.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-12"
+  },
+  {
+    "id": "developer-13",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Tubeless tyre losing air overnight",
+    "description": "Find a leaking valve and refresh bicycle sealant.",
+    "headings": [
+      "Tubeless tyre losing air overnight"
+    ],
+    "url": "https://developer.example/page/13",
+    "expectedFolder": "Personal / Cycling",
+    "explanation": "Find a leaking valve and refresh bicycle sealant. Matches: Bike maintenance and weekend rides.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "developer-13"
+  },
+  {
+    "id": "developer-14",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Pętla rowerowa nad Wisłą",
+    "description": "Spokojna trasa na sobotni przejazd z mapą.",
+    "headings": [
+      "Pętla rowerowa nad Wisłą"
+    ],
+    "url": "https://developer.example/page/14",
+    "expectedFolder": "Personal / Cycling",
+    "explanation": "Spokojna trasa na sobotni przejazd z mapą. Matches: Bike maintenance and weekend rides.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "developer-14"
+  },
+  {
+    "id": "developer-15",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Read this later",
+    "description": "Accessible names for icon-only buttons in a browser toolbar.",
+    "headings": [
+      "Read this later"
+    ],
+    "url": "https://developer.example/page/15",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Accessible names for icon-only buttons in a browser toolbar. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "developer-15"
+  },
+  {
+    "id": "developer-16",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Strona główna",
+    "description": "Konfiguracja puli połączeń PostgreSQL w aplikacji Node.",
+    "headings": [
+      "Strona główna"
+    ],
+    "url": "https://developer.example/page/16",
+    "expectedFolder": "Work / Backend",
+    "explanation": "Konfiguracja puli połączeń PostgreSQL w aplikacji Node. Matches: Server APIs, SQL databases and service operations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "developer-16"
+  },
+  {
+    "id": "developer-17",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Attention in plain language",
+    "description": "Visual explanation of transformer attention and token vectors.",
+    "headings": [
+      "Attention in plain language"
+    ],
+    "url": "https://developer.example/page/17",
+    "expectedFolder": "Learn / AI",
+    "explanation": "Visual explanation of transformer attention and token vectors. Matches: Embedding models, machine learning papers and experiments.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-17"
+  },
+  {
+    "id": "developer-18",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Build your first classifier: guided lab",
+    "description": "A sequential course with quizzes and graded exercises.",
+    "headings": [
+      "Build your first classifier: guided lab"
+    ],
+    "url": "https://developer.example/page/18",
+    "expectedFolder": "Learn / Courses",
+    "explanation": "A sequential course with quizzes and graded exercises. Matches: Structured courses and exercises, including programming courses.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Learn / AI"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "developer-18"
+  },
+  {
+    "id": "developer-19",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "AI autocomplete for a web form",
+    "description": "Implement keyboard navigation and screen-reader announcements.",
+    "headings": [
+      "AI autocomplete for a web form"
+    ],
+    "url": "https://developer.example/page/19",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Implement keyboard navigation and screen-reader announcements. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Learn / AI"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "developer-19"
+  },
+  {
+    "id": "developer-20",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Deploy a vector search endpoint",
+    "description": "API pagination, timeout handling and production database indexes.",
+    "headings": [
+      "Deploy a vector search endpoint"
+    ],
+    "url": "https://developer.example/page/20",
+    "expectedFolder": "Work / Backend",
+    "explanation": "API pagination, timeout handling and production database indexes. Matches: Server APIs, SQL databases and service operations.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Learn / AI"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "developer-20"
+  },
+  {
+    "id": "developer-21",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Przepis dnia | Akceptuj cookies",
+    "description": "Pierogi z soczewicą. Newsletter, reklama, polecane produkty.",
+    "headings": [
+      "Przepis dnia | Akceptuj cookies",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://developer.example/page/21",
+    "expectedFolder": "Personal / Cooking",
+    "explanation": "Pierogi z soczewicą. Newsletter, reklama, polecane produkty. Matches: Recipes and meal preparation.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "developer-21"
+  },
+  {
+    "id": "developer-22",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Sticky header jumps on mobile",
+    "description": "Subscribe now. CSS viewport units and browser address bar resizing.",
+    "headings": [
+      "Sticky header jumps on mobile",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://developer.example/page/22",
+    "expectedFolder": "Work / Frontend",
+    "explanation": "Subscribe now. CSS viewport units and browser address bar resizing. Matches: Production browser UI, CSS, accessibility and React reference.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "developer-22"
+  },
+  {
+    "id": "developer-23",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Model card: sentence encoder",
+    "description": "",
+    "headings": [],
+    "url": "https://developer.example/page/23",
+    "expectedFolder": "Learn / AI",
+    "explanation": "Model card: sentence encoder Matches: Embedding models, machine learning papers and experiments.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "missing-metadata"
+    ],
+    "duplicateGroup": "developer-23"
+  },
+  {
+    "id": "developer-24",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Chleb bez wyrabiania",
+    "description": "Mąka, woda, drożdże i długi czas wyrastania.",
+    "headings": [
+      "Chleb bez wyrabiania"
+    ],
+    "url": "https://developer.example/page/24",
+    "expectedFolder": "Personal / Cooking",
+    "explanation": "Mąka, woda, drożdże i długi czas wyrastania. Matches: Recipes and meal preparation.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-24"
+  },
+  {
+    "id": "developer-25",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Chleb bez wyrabiania",
+    "description": "Mąka, woda, drożdże i długi czas wyrastania.",
+    "headings": [
+      "Chleb bez wyrabiania"
+    ],
+    "url": "https://developer.example/page/24?utm_source=second-save",
+    "expectedFolder": "Personal / Cooking",
+    "explanation": "Mąka, woda, drożdże i długi czas wyrastania. Matches: Recipes and meal preparation.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "duplicate"
+    ],
+    "duplicateGroup": "developer-24"
+  },
+  {
+    "id": "developer-26",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Finding a divorce mediator",
+    "description": "How to arrange family mediation and prepare documents.",
+    "headings": [
+      "Finding a divorce mediator"
+    ],
+    "url": "https://developer.example/page/26",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "developer-26"
+  },
+  {
+    "id": "developer-27",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Bilety do opery na grudzień",
+    "description": "Repertuar sceny operowej i wybór miejsc.",
+    "headings": [
+      "Bilety do opery na grudzień"
+    ],
+    "url": "https://developer.example/page/27",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "developer-27"
+  },
+  {
+    "id": "developer-28",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Brake pads for wet commutes",
+    "description": "Comparison of disc brake compounds for a commuter bicycle.",
+    "headings": [
+      "Brake pads for wet commutes"
+    ],
+    "url": "https://developer.example/page/28",
+    "expectedFolder": "Personal / Cycling",
+    "explanation": "Comparison of disc brake compounds for a commuter bicycle. Matches: Bike maintenance and weekend rides.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-28"
+  },
+  {
+    "id": "developer-29",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Python exercises, chapter 4",
+    "description": "Loops and functions with automated feedback for students.",
+    "headings": [
+      "Python exercises, chapter 4"
+    ],
+    "url": "https://developer.example/page/29",
+    "expectedFolder": "Learn / Courses",
+    "explanation": "Loops and functions with automated feedback for students. Matches: Structured courses and exercises, including programming courses.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "developer-29"
+  },
+  {
+    "id": "developer-30",
+    "collectionId": "developer",
+    "synthetic": true,
+    "title": "Untitled",
+    "description": "",
+    "headings": [],
+    "url": "https://developer.example/page/30",
+    "expectedFolder": null,
+    "explanation": "Insufficient page information to justify any existing folder; review required.",
+    "ambiguous": true,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "developer-30"
+  },
+  {
+    "id": "family-01",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Szafka pod umywalkę 80 cm",
+    "description": "Wymiary i montaż mebla do remontowanej łazienki.",
+    "headings": [
+      "Szafka pod umywalkę 80 cm"
+    ],
+    "url": "https://family.example/page/1",
+    "expectedFolder": "Dom / Remont",
+    "explanation": "Wymiary i montaż mebla do remontowanej łazienki. Matches: Renovating the kitchen and bathroom; project purchases and instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-01"
+  },
+  {
+    "id": "family-02",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "How to seal a shower tray",
+    "description": "Replace old silicone around bathroom fittings.",
+    "headings": [
+      "How to seal a shower tray"
+    ],
+    "url": "https://family.example/page/2",
+    "expectedFolder": "Dom / Remont",
+    "explanation": "Replace old silicone around bathroom fittings. Matches: Renovating the kitchen and bathroom; project purchases and instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-02"
+  },
+  {
+    "id": "family-03",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Makaron z brokułem w 20 minut",
+    "description": "Przepis na obiad dla całej rodziny.",
+    "headings": [
+      "Makaron z brokułem w 20 minut"
+    ],
+    "url": "https://family.example/page/3",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Przepis na obiad dla całej rodziny. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-03"
+  },
+  {
+    "id": "family-04",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Lunchbox without nuts",
+    "description": "Five packed lunch recipes for children.",
+    "headings": [
+      "Lunchbox without nuts"
+    ],
+    "url": "https://family.example/page/4",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Five packed lunch recipes for children. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Dzieci / Szkoła"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "family-04"
+  },
+  {
+    "id": "family-05",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Zgoda na wycieczkę klasową",
+    "description": "Formularz i termin oddania do wychowawcy.",
+    "headings": [
+      "Zgoda na wycieczkę klasową"
+    ],
+    "url": "https://family.example/page/5",
+    "expectedFolder": "Dzieci / Szkoła",
+    "explanation": "Formularz i termin oddania do wychowawcy. Matches: School administration, homework and educational activities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-05"
+  },
+  {
+    "id": "family-06",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Fractions with paper strips",
+    "description": "A printable maths activity for primary school pupils.",
+    "headings": [
+      "Fractions with paper strips"
+    ],
+    "url": "https://family.example/page/6",
+    "expectedFolder": "Dzieci / Szkoła",
+    "explanation": "A printable maths activity for primary school pupils. Matches: School administration, homework and educational activities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-06"
+  },
+  {
+    "id": "family-07",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Hel poza sezonem",
+    "description": "Rodzinny weekend nad morzem, noclegi i spacery.",
+    "headings": [
+      "Hel poza sezonem"
+    ],
+    "url": "https://family.example/page/7",
+    "expectedFolder": "Wyjazdy / Polska",
+    "explanation": "Rodzinny weekend nad morzem, noclegi i spacery. Matches: Domestic holidays and family weekend trips.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-07"
+  },
+  {
+    "id": "family-08",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Family walks near Kraków",
+    "description": "Short routes with pushchair access and picnic stops.",
+    "headings": [
+      "Family walks near Kraków"
+    ],
+    "url": "https://family.example/page/8",
+    "expectedFolder": "Wyjazdy / Polska",
+    "explanation": "Short routes with pushchair access and picnic stops. Matches: Domestic holidays and family weekend trips.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-08"
+  },
+  {
+    "id": "family-09",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Wizyta kontrolna u dentysty",
+    "description": "Jak przygotować dziecko do pierwszej wizyty.",
+    "headings": [
+      "Wizyta kontrolna u dentysty"
+    ],
+    "url": "https://family.example/page/9",
+    "expectedFolder": "Zdrowie",
+    "explanation": "Jak przygotować dziecko do pierwszej wizyty. Matches: Appointments, preventive care and exercise guidance.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-09"
+  },
+  {
+    "id": "family-10",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Stretching after sitting all day",
+    "description": "Gentle mobility routine for adults.",
+    "headings": [
+      "Stretching after sitting all day"
+    ],
+    "url": "https://family.example/page/10",
+    "expectedFolder": "Zdrowie",
+    "explanation": "Gentle mobility routine for adults. Matches: Appointments, preventive care and exercise guidance.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-10"
+  },
+  {
+    "id": "family-11",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Zmiana taryfy energii",
+    "description": "Porównanie godzin rozliczeń za prąd w domu.",
+    "headings": [
+      "Zmiana taryfy energii"
+    ],
+    "url": "https://family.example/page/11",
+    "expectedFolder": "Finanse / Rachunki",
+    "explanation": "Porównanie godzin rozliczeń za prąd w domu. Matches: Household utility bills and recurring costs.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "family-11"
+  },
+  {
+    "id": "family-12",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Water bill explained",
+    "description": "Meter readings, fixed charges and payment dates.",
+    "headings": [
+      "Water bill explained"
+    ],
+    "url": "https://family.example/page/12",
+    "expectedFolder": "Finanse / Rachunki",
+    "explanation": "Meter readings, fixed charges and payment dates. Matches: Household utility bills and recurring costs.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "family-12"
+  },
+  {
+    "id": "family-13",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "To kupić",
+    "description": "Wodoodporna farba do ścian w łazience, wydajność i kolory.",
+    "headings": [
+      "To kupić"
+    ],
+    "url": "https://family.example/page/13",
+    "expectedFolder": "Dom / Remont",
+    "explanation": "Wodoodporna farba do ścian w łazience, wydajność i kolory. Matches: Renovating the kitchen and bathroom; project purchases and instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "family-13"
+  },
+  {
+    "id": "family-14",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Saved page",
+    "description": "Baked salmon with potatoes: ingredients and cooking time.",
+    "headings": [
+      "Saved page"
+    ],
+    "url": "https://family.example/page/14",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Baked salmon with potatoes: ingredients and cooking time. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "family-14"
+  },
+  {
+    "id": "family-15",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Ważne",
+    "description": "Zapisy na świetlicę i harmonogram zebrań rodziców.",
+    "headings": [
+      "Ważne"
+    ],
+    "url": "https://family.example/page/15",
+    "expectedFolder": "Dzieci / Szkoła",
+    "explanation": "Zapisy na świetlicę i harmonogram zebrań rodziców. Matches: School administration, homework and educational activities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "family-15"
+  },
+  {
+    "id": "family-16",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Mapa",
+    "description": "Łatwa trasa spacerowa wokół jeziora na Mazurach.",
+    "headings": [
+      "Mapa"
+    ],
+    "url": "https://family.example/page/16",
+    "expectedFolder": "Wyjazdy / Polska",
+    "explanation": "Łatwa trasa spacerowa wokół jeziora na Mazurach. Matches: Domestic holidays and family weekend trips.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "family-16"
+  },
+  {
+    "id": "family-17",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Serwis pacjenta | Logowanie",
+    "description": "Rezerwacja terminu szczepienia w przychodni.",
+    "headings": [
+      "Serwis pacjenta | Logowanie",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://family.example/page/17",
+    "expectedFolder": "Zdrowie",
+    "explanation": "Rezerwacja terminu szczepienia w przychodni. Matches: Appointments, preventive care and exercise guidance.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "family-17"
+  },
+  {
+    "id": "family-18",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Bateria kuchenna - promocja!",
+    "description": "Dostawa gratis, kup teraz. Wylewka obrotowa, przyłącze 3/8.",
+    "headings": [
+      "Bateria kuchenna - promocja!",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://family.example/page/18",
+    "expectedFolder": "Dom / Remont",
+    "explanation": "Dostawa gratis, kup teraz. Wylewka obrotowa, przyłącze 3/8. Matches: Renovating the kitchen and bathroom; project purchases and instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "family-18"
+  },
+  {
+    "id": "family-19",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Low-salt soup ideas",
+    "description": "Recipes for vegetable soups with herbs instead of salt.",
+    "headings": [
+      "Low-salt soup ideas"
+    ],
+    "url": "https://family.example/page/19",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Recipes for vegetable soups with herbs instead of salt. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Zdrowie"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "family-19"
+  },
+  {
+    "id": "family-20",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Wyjazd szkolny do Torunia: co zobaczyć",
+    "description": "Pomysły na rodzinne zwiedzanie miasta po wycieczce.",
+    "headings": [
+      "Wyjazd szkolny do Torunia: co zobaczyć"
+    ],
+    "url": "https://family.example/page/20",
+    "expectedFolder": "Wyjazdy / Polska",
+    "explanation": "Pomysły na rodzinne zwiedzanie miasta po wycieczce. Matches: Domestic holidays and family weekend trips.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Dzieci / Szkoła"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "family-20"
+  },
+  {
+    "id": "family-21",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Insulation and the heating bill",
+    "description": "Estimate how much household heating costs change after insulation.",
+    "headings": [
+      "Insulation and the heating bill"
+    ],
+    "url": "https://family.example/page/21",
+    "expectedFolder": "Finanse / Rachunki",
+    "explanation": "Estimate how much household heating costs change after insulation. Matches: Household utility bills and recurring costs.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Dom / Remont"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "family-21"
+  },
+  {
+    "id": "family-22",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Dyktando: rz czy ż?",
+    "description": "",
+    "headings": [],
+    "url": "https://family.example/page/22",
+    "expectedFolder": "Dzieci / Szkoła",
+    "explanation": "Dyktando: rz czy ż? Matches: School administration, homework and educational activities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "missing-metadata"
+    ],
+    "duplicateGroup": "family-22"
+  },
+  {
+    "id": "family-23",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Placki z cukinii",
+    "description": "Lista składników i sposób smażenia.",
+    "headings": [
+      "Placki z cukinii"
+    ],
+    "url": "https://family.example/page/23",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Lista składników i sposób smażenia. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-23"
+  },
+  {
+    "id": "family-24",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Placki z cukinii",
+    "description": "Lista składników i sposób smażenia.",
+    "headings": [
+      "Placki z cukinii"
+    ],
+    "url": "https://family.example/page/23?utm_source=second-save",
+    "expectedFolder": "Dom / Obiady",
+    "explanation": "Lista składników i sposób smażenia. Matches: Family recipes and weekly meal plans.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "duplicate"
+    ],
+    "duplicateGroup": "family-23"
+  },
+  {
+    "id": "family-25",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Rust lifetime annotations",
+    "description": "Borrow checker examples for systems programmers.",
+    "headings": [
+      "Rust lifetime annotations"
+    ],
+    "url": "https://family.example/page/25",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "family-25"
+  },
+  {
+    "id": "family-26",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Winylowy album ambientowy",
+    "description": "Recenzja nowego wydania muzycznego.",
+    "headings": [
+      "Winylowy album ambientowy"
+    ],
+    "url": "https://family.example/page/26",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "family-26"
+  },
+  {
+    "id": "family-27",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Badanie wzroku dziecka",
+    "description": "Kiedy umówić kontrolę u okulisty.",
+    "headings": [
+      "Badanie wzroku dziecka"
+    ],
+    "url": "https://family.example/page/27",
+    "expectedFolder": "Zdrowie",
+    "explanation": "Kiedy umówić kontrolę u okulisty. Matches: Appointments, preventive care and exercise guidance.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-27"
+  },
+  {
+    "id": "family-28",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Tile grout cracking at the corner",
+    "description": "Repairing movement joints around a bathtub.",
+    "headings": [
+      "Tile grout cracking at the corner"
+    ],
+    "url": "https://family.example/page/28",
+    "expectedFolder": "Dom / Remont",
+    "explanation": "Repairing movement joints around a bathtub. Matches: Renovating the kitchen and bathroom; project purchases and instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-28"
+  },
+  {
+    "id": "family-29",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Agroturystyka z placem zabaw",
+    "description": "Nocleg na Podlasiu na długi weekend.",
+    "headings": [
+      "Agroturystyka z placem zabaw"
+    ],
+    "url": "https://family.example/page/29",
+    "expectedFolder": "Wyjazdy / Polska",
+    "explanation": "Nocleg na Podlasiu na długi weekend. Matches: Domestic holidays and family weekend trips.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "family-29"
+  },
+  {
+    "id": "family-30",
+    "collectionId": "family",
+    "synthetic": true,
+    "title": "Oferta",
+    "description": "",
+    "headings": [],
+    "url": "https://family.example/page/30",
+    "expectedFolder": null,
+    "explanation": "Insufficient page information to justify any existing folder; review required.",
+    "ambiguous": true,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "family-30"
+  },
+  {
+    "id": "researcher-01",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Bilingualism and task switching: a replication",
+    "description": "A preregistered experiment reports reaction-time effects.",
+    "headings": [
+      "Bilingualism and task switching: a replication"
+    ],
+    "url": "https://researcher.example/page/1",
+    "expectedFolder": "Research / Papers",
+    "explanation": "A preregistered experiment reports reaction-time effects. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-01"
+  },
+  {
+    "id": "researcher-02",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Sen a pamięć robocza",
+    "description": "Wyniki badania 240 uczestników po ograniczeniu snu.",
+    "headings": [
+      "Sen a pamięć robocza"
+    ],
+    "url": "https://researcher.example/page/2",
+    "expectedFolder": "Research / Papers",
+    "explanation": "Wyniki badania 240 uczestników po ograniczeniu snu. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-02"
+  },
+  {
+    "id": "researcher-03",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "When residuals are not normal",
+    "description": "Robust regression diagnostics and worked R examples.",
+    "headings": [
+      "When residuals are not normal"
+    ],
+    "url": "https://researcher.example/page/3",
+    "expectedFolder": "Research / Methods",
+    "explanation": "Robust regression diagnostics and worked R examples. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-03"
+  },
+  {
+    "id": "researcher-04",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Braki danych w ankiecie",
+    "description": "Porównanie imputacji i analizy kompletnych przypadków.",
+    "headings": [
+      "Braki danych w ankiecie"
+    ],
+    "url": "https://researcher.example/page/4",
+    "expectedFolder": "Research / Methods",
+    "explanation": "Porównanie imputacji i analizy kompletnych przypadków. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-04"
+  },
+  {
+    "id": "researcher-05",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Demonstrating the Stroop effect in class",
+    "description": "A 20-minute activity and discussion questions for students.",
+    "headings": [
+      "Demonstrating the Stroop effect in class"
+    ],
+    "url": "https://researcher.example/page/5",
+    "expectedFolder": "Teaching",
+    "explanation": "A 20-minute activity and discussion questions for students. Matches: Lesson plans, student assignments and classroom demonstrations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-05"
+  },
+  {
+    "id": "researcher-06",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Karta pracy: korelacja i przyczynowość",
+    "description": "Ćwiczenia do rozdania studentom podczas zajęć.",
+    "headings": [
+      "Karta pracy: korelacja i przyczynowość"
+    ],
+    "url": "https://researcher.example/page/6",
+    "expectedFolder": "Teaching",
+    "explanation": "Ćwiczenia do rozdania studentom podczas zajęć. Matches: Lesson plans, student assignments and classroom demonstrations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-06"
+  },
+  {
+    "id": "researcher-07",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Responding to reviewer two",
+    "description": "How to structure a response letter and revision table.",
+    "headings": [
+      "Responding to reviewer two"
+    ],
+    "url": "https://researcher.example/page/7",
+    "expectedFolder": "Writing / Sources",
+    "explanation": "How to structure a response letter and revision table. Matches: Citation management, academic writing and publishing.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-07"
+  },
+  {
+    "id": "researcher-08",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Zotero: łączenie duplikatów",
+    "description": "Porządkowanie bibliografii przed wysłaniem artykułu.",
+    "headings": [
+      "Zotero: łączenie duplikatów"
+    ],
+    "url": "https://researcher.example/page/8",
+    "expectedFolder": "Writing / Sources",
+    "explanation": "Porządkowanie bibliografii przed wysłaniem artykułu. Matches: Citation management, academic writing and publishing.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-08"
+  },
+  {
+    "id": "researcher-09",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "An easy ridge walk in autumn",
+    "description": "Trail conditions, elevation profile and public transport.",
+    "headings": [
+      "An easy ridge walk in autumn"
+    ],
+    "url": "https://researcher.example/page/9",
+    "expectedFolder": "Outside / Hiking",
+    "explanation": "Trail conditions, elevation profile and public transport. Matches: Mountain walks, outdoor equipment and route planning.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-09"
+  },
+  {
+    "id": "researcher-10",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Raki czy raczki na szlak?",
+    "description": "Dobór sprzętu do zimowych spacerów górskich.",
+    "headings": [
+      "Raki czy raczki na szlak?"
+    ],
+    "url": "https://researcher.example/page/10",
+    "expectedFolder": "Outside / Hiking",
+    "explanation": "Dobór sprzętu do zimowych spacerów górskich. Matches: Mountain walks, outdoor equipment and route planning.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-10"
+  },
+  {
+    "id": "researcher-11",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Aeropress for one cup",
+    "description": "Brewing ratio and steep time for a small coffee.",
+    "headings": [
+      "Aeropress for one cup"
+    ],
+    "url": "https://researcher.example/page/11",
+    "expectedFolder": "Outside / Coffee",
+    "explanation": "Brewing ratio and steep time for a small coffee. Matches: Coffee brewing and equipment.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "researcher-11"
+  },
+  {
+    "id": "researcher-12",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Woda do kawy przelewowej",
+    "description": "Mineralizacja wody i smak naparu.",
+    "headings": [
+      "Woda do kawy przelewowej"
+    ],
+    "url": "https://researcher.example/page/12",
+    "expectedFolder": "Outside / Coffee",
+    "explanation": "Mineralizacja wody i smak naparu. Matches: Coffee brewing and equipment.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "researcher-12"
+  },
+  {
+    "id": "researcher-13",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "PDF download",
+    "description": "Longitudinal study of stress and episodic memory in adults.",
+    "headings": [
+      "PDF download"
+    ],
+    "url": "https://researcher.example/page/13",
+    "expectedFolder": "Research / Papers",
+    "explanation": "Longitudinal study of stress and episodic memory in adults. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "researcher-13"
+  },
+  {
+    "id": "researcher-14",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Useful script",
+    "description": "R code for bootstrap confidence intervals in paired data.",
+    "headings": [
+      "Useful script"
+    ],
+    "url": "https://researcher.example/page/14",
+    "expectedFolder": "Research / Methods",
+    "explanation": "R code for bootstrap confidence intervals in paired data. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "researcher-14"
+  },
+  {
+    "id": "researcher-15",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Tydzień 3",
+    "description": "Scenariusz laboratorium dla studentów: randomizacja i grupa kontrolna.",
+    "headings": [
+      "Tydzień 3"
+    ],
+    "url": "https://researcher.example/page/15",
+    "expectedFolder": "Teaching",
+    "explanation": "Scenariusz laboratorium dla studentów: randomizacja i grupa kontrolna. Matches: Lesson plans, student assignments and classroom demonstrations.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "researcher-15"
+  },
+  {
+    "id": "researcher-16",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Journal home",
+    "description": "Author guidelines: references, figure captions and submission checklist.",
+    "headings": [
+      "Journal home",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://researcher.example/page/16",
+    "expectedFolder": "Writing / Sources",
+    "explanation": "Author guidelines: references, figure captions and submission checklist. Matches: Citation management, academic writing and publishing.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "researcher-16"
+  },
+  {
+    "id": "researcher-17",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Attention networks | Accept cookies",
+    "description": "Open access. Sign up for alerts. A meta-analysis of 62 experiments.",
+    "headings": [
+      "Attention networks | Accept cookies",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://researcher.example/page/17",
+    "expectedFolder": "Research / Papers",
+    "explanation": "Open access. Sign up for alerts. A meta-analysis of 62 experiments. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "researcher-17"
+  },
+  {
+    "id": "researcher-18",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "A simulation of low-powered experiments",
+    "description": "Practical code to select sample size before data collection.",
+    "headings": [
+      "A simulation of low-powered experiments"
+    ],
+    "url": "https://researcher.example/page/18",
+    "expectedFolder": "Research / Methods",
+    "explanation": "Practical code to select sample size before data collection. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Research / Papers"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "researcher-18"
+  },
+  {
+    "id": "researcher-19",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Teaching students to use Zotero",
+    "description": "Workshop handout with activities and learning outcomes.",
+    "headings": [
+      "Teaching students to use Zotero"
+    ],
+    "url": "https://researcher.example/page/19",
+    "expectedFolder": "Teaching",
+    "explanation": "Workshop handout with activities and learning outcomes. Matches: Lesson plans, student assignments and classroom demonstrations.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Writing / Sources"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "researcher-19"
+  },
+  {
+    "id": "researcher-20",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Caffeine and sustained attention",
+    "description": "A randomized trial of caffeine and cognitive performance.",
+    "headings": [
+      "Caffeine and sustained attention"
+    ],
+    "url": "https://researcher.example/page/20",
+    "expectedFolder": "Research / Papers",
+    "explanation": "A randomized trial of caffeine and cognitive performance. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Outside / Coffee"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "researcher-20"
+  },
+  {
+    "id": "researcher-21",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Fieldwork on a mountain trail",
+    "description": "Walking route and shelter options for a weekend outdoors.",
+    "headings": [
+      "Fieldwork on a mountain trail"
+    ],
+    "url": "https://researcher.example/page/21",
+    "expectedFolder": "Outside / Hiking",
+    "explanation": "Walking route and shelter options for a weekend outdoors. Matches: Mountain walks, outdoor equipment and route planning.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Research / Papers"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "researcher-21"
+  },
+  {
+    "id": "researcher-22",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Checklist for transparent reporting",
+    "description": "",
+    "headings": [],
+    "url": "https://researcher.example/page/22",
+    "expectedFolder": "Writing / Sources",
+    "explanation": "Checklist for transparent reporting Matches: Citation management, academic writing and publishing.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "missing-metadata"
+    ],
+    "duplicateGroup": "researcher-22"
+  },
+  {
+    "id": "researcher-23",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Bayesian priors in a small sample",
+    "description": "A worked example with sensitivity analysis.",
+    "headings": [
+      "Bayesian priors in a small sample"
+    ],
+    "url": "https://researcher.example/page/23",
+    "expectedFolder": "Research / Methods",
+    "explanation": "A worked example with sensitivity analysis. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-23"
+  },
+  {
+    "id": "researcher-24",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Bayesian priors in a small sample",
+    "description": "A worked example with sensitivity analysis.",
+    "headings": [
+      "Bayesian priors in a small sample"
+    ],
+    "url": "https://researcher.example/page/23?utm_source=second-save",
+    "expectedFolder": "Research / Methods",
+    "explanation": "A worked example with sensitivity analysis. Matches: Statistical methods, experimental design and analysis code.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "duplicate"
+    ],
+    "duplicateGroup": "researcher-23"
+  },
+  {
+    "id": "researcher-25",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Kitchen cabinet clearance sale",
+    "description": "Discounted cupboards and installation packages.",
+    "headings": [
+      "Kitchen cabinet clearance sale"
+    ],
+    "url": "https://researcher.example/page/25",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "researcher-25"
+  },
+  {
+    "id": "researcher-26",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Oferty pracy kierowcy autobusu",
+    "description": "Rekrutacja i warunki zatrudnienia w komunikacji miejskiej.",
+    "headings": [
+      "Oferty pracy kierowcy autobusu"
+    ],
+    "url": "https://researcher.example/page/26",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "researcher-26"
+  },
+  {
+    "id": "researcher-27",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Schronisko otwarte zimą",
+    "description": "Dojście piesze i nocleg na dwudniowej trasie.",
+    "headings": [
+      "Schronisko otwarte zimą"
+    ],
+    "url": "https://researcher.example/page/27",
+    "expectedFolder": "Outside / Hiking",
+    "explanation": "Dojście piesze i nocleg na dwudniowej trasie. Matches: Mountain walks, outdoor equipment and route planning.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-27"
+  },
+  {
+    "id": "researcher-28",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Does spaced practice generalize?",
+    "description": "Experimental results on transfer across learning tasks.",
+    "headings": [
+      "Does spaced practice generalize?"
+    ],
+    "url": "https://researcher.example/page/28",
+    "expectedFolder": "Research / Papers",
+    "explanation": "Experimental results on transfer across learning tasks. Matches: Empirical psychology papers, preprints and systematic reviews.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-28"
+  },
+  {
+    "id": "researcher-29",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Choosing a journal for a manuscript",
+    "description": "Scope, readership and submission requirements.",
+    "headings": [
+      "Choosing a journal for a manuscript"
+    ],
+    "url": "https://researcher.example/page/29",
+    "expectedFolder": "Writing / Sources",
+    "explanation": "Scope, readership and submission requirements. Matches: Citation management, academic writing and publishing.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "researcher-29"
+  },
+  {
+    "id": "researcher-30",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "title": "Supplement",
+    "description": "",
+    "headings": [],
+    "url": "https://researcher.example/page/30",
+    "expectedFolder": null,
+    "explanation": "Insufficient page information to justify any existing folder; review required.",
+    "ambiguous": true,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "researcher-30"
+  },
+  {
+    "id": "freelancer-01",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Luna menu photos for the homepage",
+    "description": "Client assets: espresso, pastries and opening hours for the cafe site.",
+    "headings": [
+      "Luna menu photos for the homepage"
+    ],
+    "url": "https://freelancer.example/page/1",
+    "expectedFolder": "Clients / Cafe Luna",
+    "explanation": "Client assets: espresso, pastries and opening hours for the cafe site. Matches: Website and visual identity for a small coffee shop.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-01"
+  },
+  {
+    "id": "freelancer-02",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Karta kawiarni Luna — wersja mobilna",
+    "description": "Układ menu i przycisk rezerwacji w witrynie klienta.",
+    "headings": [
+      "Karta kawiarni Luna — wersja mobilna"
+    ],
+    "url": "https://freelancer.example/page/2",
+    "expectedFolder": "Clients / Cafe Luna",
+    "explanation": "Układ menu i przycisk rezerwacji w witrynie klienta. Matches: Website and visual identity for a small coffee shop.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-02"
+  },
+  {
+    "id": "freelancer-03",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Green Shop checkout review",
+    "description": "Shipping options and basket errors for the plant store project.",
+    "headings": [
+      "Green Shop checkout review"
+    ],
+    "url": "https://freelancer.example/page/3",
+    "expectedFolder": "Clients / Green Shop",
+    "explanation": "Shipping options and basket errors for the plant store project. Matches: Online plant shop checkout, product photos and branding.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-03"
+  },
+  {
+    "id": "freelancer-04",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Zdjęcia monster do Green Shop",
+    "description": "Kadrowanie kart produktów do sklepu klienta.",
+    "headings": [
+      "Zdjęcia monster do Green Shop"
+    ],
+    "url": "https://freelancer.example/page/4",
+    "expectedFolder": "Clients / Green Shop",
+    "explanation": "Kadrowanie kart produktów do sklepu klienta. Matches: Online plant shop checkout, product photos and branding.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-04"
+  },
+  {
+    "id": "freelancer-05",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Twenty expressive poster layouts",
+    "description": "A general gallery of graphic design references.",
+    "headings": [
+      "Twenty expressive poster layouts"
+    ],
+    "url": "https://freelancer.example/page/5",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "A general gallery of graphic design references. Matches: General design examples not tied to a client project.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-05"
+  },
+  {
+    "id": "freelancer-06",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Polskie szyldy z lat 60.",
+    "description": "Zbiór inspiracji literniczych i fotografii ulicznych.",
+    "headings": [
+      "Polskie szyldy z lat 60."
+    ],
+    "url": "https://freelancer.example/page/6",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "Zbiór inspiracji literniczych i fotografii ulicznych. Matches: General design examples not tied to a client project.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-06"
+  },
+  {
+    "id": "freelancer-07",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Figma variables for spacing",
+    "description": "A reusable workflow for maintaining design tokens.",
+    "headings": [
+      "Figma variables for spacing"
+    ],
+    "url": "https://freelancer.example/page/7",
+    "expectedFolder": "Studio / Tools",
+    "explanation": "A reusable workflow for maintaining design tokens. Matches: Design software techniques and reusable workflow utilities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-07"
+  },
+  {
+    "id": "freelancer-08",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Jak eksportować SVG bez pustych ramek",
+    "description": "Instrukcja obsługi narzędzia do projektowania.",
+    "headings": [
+      "Jak eksportować SVG bez pustych ramek"
+    ],
+    "url": "https://freelancer.example/page/8",
+    "expectedFolder": "Studio / Tools",
+    "explanation": "Instrukcja obsługi narzędzia do projektowania. Matches: Design software techniques and reusable workflow utilities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-08"
+  },
+  {
+    "id": "freelancer-09",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Invoice correction after a refund",
+    "description": "How to record a corrected invoice in freelance bookkeeping.",
+    "headings": [
+      "Invoice correction after a refund"
+    ],
+    "url": "https://freelancer.example/page/9",
+    "expectedFolder": "Business / Admin",
+    "explanation": "How to record a corrected invoice in freelance bookkeeping. Matches: Invoices, taxes, contracts and freelance administration.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-09"
+  },
+  {
+    "id": "freelancer-10",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Umowa o projekt identyfikacji",
+    "description": "Zakres prac, odbiór i prawa do materiałów dla klienta.",
+    "headings": [
+      "Umowa o projekt identyfikacji"
+    ],
+    "url": "https://freelancer.example/page/10",
+    "expectedFolder": "Business / Admin",
+    "explanation": "Zakres prac, odbiór i prawa do materiałów dla klienta. Matches: Invoices, taxes, contracts and freelance administration.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-10"
+  },
+  {
+    "id": "freelancer-11",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "A quiet piano record for late evenings",
+    "description": "Album review and listening notes.",
+    "headings": [
+      "A quiet piano record for late evenings"
+    ],
+    "url": "https://freelancer.example/page/11",
+    "expectedFolder": "Personal / Music",
+    "explanation": "Album review and listening notes. Matches: Albums, playlists and concert recordings.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "freelancer-11"
+  },
+  {
+    "id": "freelancer-12",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Koncert kwartetu w radiu",
+    "description": "Nagranie jazzowe z wieczornego występu.",
+    "headings": [
+      "Koncert kwartetu w radiu"
+    ],
+    "url": "https://freelancer.example/page/12",
+    "expectedFolder": "Personal / Music",
+    "explanation": "Nagranie jazzowe z wieczornego występu. Matches: Albums, playlists and concert recordings.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "freelancer-12"
+  },
+  {
+    "id": "freelancer-13",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Final final v3",
+    "description": "Luna cafe hero image options and menu link placement.",
+    "headings": [
+      "Final final v3"
+    ],
+    "url": "https://freelancer.example/page/13",
+    "expectedFolder": "Clients / Cafe Luna",
+    "explanation": "Luna cafe hero image options and menu link placement. Matches: Website and visual identity for a small coffee shop.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "freelancer-13"
+  },
+  {
+    "id": "freelancer-14",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Do poprawy",
+    "description": "Green Shop: koszyk zasłania wybór dostawy na telefonie.",
+    "headings": [
+      "Do poprawy"
+    ],
+    "url": "https://freelancer.example/page/14",
+    "expectedFolder": "Clients / Green Shop",
+    "explanation": "Green Shop: koszyk zasłania wybór dostawy na telefonie. Matches: Online plant shop checkout, product photos and branding.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "freelancer-14"
+  },
+  {
+    "id": "freelancer-15",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Quick fix",
+    "description": "Convert outlined text back to editable layers in a design tool.",
+    "headings": [
+      "Quick fix"
+    ],
+    "url": "https://freelancer.example/page/15",
+    "expectedFolder": "Studio / Tools",
+    "explanation": "Convert outlined text back to editable layers in a design tool. Matches: Design software techniques and reusable workflow utilities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "freelancer-15"
+  },
+  {
+    "id": "freelancer-16",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Design archive | Join our newsletter",
+    "description": "Collection of historic exhibition posters. Subscribe, privacy, cookies.",
+    "headings": [
+      "Design archive | Join our newsletter",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://freelancer.example/page/16",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "Collection of historic exhibition posters. Subscribe, privacy, cookies. Matches: General design examples not tied to a client project.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "freelancer-16"
+  },
+  {
+    "id": "freelancer-17",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Portal przedsiębiorcy",
+    "description": "Logowanie. Ewidencja kosztów działalności, pobierz formularz.",
+    "headings": [
+      "Portal przedsiębiorcy",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://freelancer.example/page/17",
+    "expectedFolder": "Business / Admin",
+    "explanation": "Logowanie. Ewidencja kosztów działalności, pobierz formularz. Matches: Invoices, taxes, contracts and freelance administration.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "freelancer-17"
+  },
+  {
+    "id": "freelancer-18",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Coffee packaging moodboard for Luna",
+    "description": "Selected visual references for the cafe client presentation.",
+    "headings": [
+      "Coffee packaging moodboard for Luna"
+    ],
+    "url": "https://freelancer.example/page/18",
+    "expectedFolder": "Clients / Cafe Luna",
+    "explanation": "Selected visual references for the cafe client presentation. Matches: Website and visual identity for a small coffee shop.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Studio / Inspiration"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "freelancer-18"
+  },
+  {
+    "id": "freelancer-19",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Green Shop brand tokens in Figma",
+    "description": "The client-specific palette and type styles for the plant store.",
+    "headings": [
+      "Green Shop brand tokens in Figma"
+    ],
+    "url": "https://freelancer.example/page/19",
+    "expectedFolder": "Clients / Green Shop",
+    "explanation": "The client-specific palette and type styles for the plant store. Matches: Online plant shop checkout, product photos and branding.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Studio / Tools"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "freelancer-19"
+  },
+  {
+    "id": "freelancer-20",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Luna invoice payment terms",
+    "description": "Administrative payment schedule for the cafe contract.",
+    "headings": [
+      "Luna invoice payment terms"
+    ],
+    "url": "https://freelancer.example/page/20",
+    "expectedFolder": "Business / Admin",
+    "explanation": "Administrative payment schedule for the cafe contract. Matches: Invoices, taxes, contracts and freelance administration.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Clients / Cafe Luna"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "freelancer-20"
+  },
+  {
+    "id": "freelancer-21",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Record sleeve typography archive",
+    "description": "Graphic design inspiration drawn from jazz album covers.",
+    "headings": [
+      "Record sleeve typography archive"
+    ],
+    "url": "https://freelancer.example/page/21",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "Graphic design inspiration drawn from jazz album covers. Matches: General design examples not tied to a client project.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "Personal / Music"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "freelancer-21"
+  },
+  {
+    "id": "freelancer-22",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Keyboard shortcuts for vector editing",
+    "description": "",
+    "headings": [],
+    "url": "https://freelancer.example/page/22",
+    "expectedFolder": "Studio / Tools",
+    "explanation": "Keyboard shortcuts for vector editing Matches: Design software techniques and reusable workflow utilities.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "missing-metadata"
+    ],
+    "duplicateGroup": "freelancer-22"
+  },
+  {
+    "id": "freelancer-23",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Museum identity collection",
+    "description": "Logos and signage from contemporary museums.",
+    "headings": [
+      "Museum identity collection"
+    ],
+    "url": "https://freelancer.example/page/23",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "Logos and signage from contemporary museums. Matches: General design examples not tied to a client project.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-23"
+  },
+  {
+    "id": "freelancer-24",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Museum identity collection",
+    "description": "Logos and signage from contemporary museums.",
+    "headings": [
+      "Museum identity collection"
+    ],
+    "url": "https://freelancer.example/page/23?utm_source=second-save",
+    "expectedFolder": "Studio / Inspiration",
+    "explanation": "Logos and signage from contemporary museums. Matches: General design examples not tied to a client project.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "duplicate"
+    ],
+    "duplicateGroup": "freelancer-23"
+  },
+  {
+    "id": "freelancer-25",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Sourdough feeding schedule",
+    "description": "How to keep a bread starter alive while away.",
+    "headings": [
+      "Sourdough feeding schedule"
+    ],
+    "url": "https://freelancer.example/page/25",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "freelancer-25"
+  },
+  {
+    "id": "freelancer-26",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Trening do pierwszego maratonu",
+    "description": "Plan biegowy na szesnaście tygodni.",
+    "headings": [
+      "Trening do pierwszego maratonu"
+    ],
+    "url": "https://freelancer.example/page/26",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "freelancer-26"
+  },
+  {
+    "id": "freelancer-27",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Green Shop delivery badges",
+    "description": "Client product page labels for shipping live plants.",
+    "headings": [
+      "Green Shop delivery badges"
+    ],
+    "url": "https://freelancer.example/page/27",
+    "expectedFolder": "Clients / Green Shop",
+    "explanation": "Client product page labels for shipping live plants. Matches: Online plant shop checkout, product photos and branding.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-27"
+  },
+  {
+    "id": "freelancer-28",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Luna opening hours sign",
+    "description": "Bilingual door signage for the cafe rebrand.",
+    "headings": [
+      "Luna opening hours sign"
+    ],
+    "url": "https://freelancer.example/page/28",
+    "expectedFolder": "Clients / Cafe Luna",
+    "explanation": "Bilingual door signage for the cafe rebrand. Matches: Website and visual identity for a small coffee shop.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-28"
+  },
+  {
+    "id": "freelancer-29",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Tracking freelance business expenses",
+    "description": "Separating software subscriptions from personal purchases.",
+    "headings": [
+      "Tracking freelance business expenses"
+    ],
+    "url": "https://freelancer.example/page/29",
+    "expectedFolder": "Business / Admin",
+    "explanation": "Separating software subscriptions from personal purchases. Matches: Invoices, taxes, contracts and freelance administration.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "freelancer-29"
+  },
+  {
+    "id": "freelancer-30",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "title": "Link",
+    "description": "",
+    "headings": [],
+    "url": "https://freelancer.example/page/30",
+    "expectedFolder": null,
+    "explanation": "Insufficient page information to justify any existing folder; review required.",
+    "ambiguous": true,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "freelancer-30"
+  },
+  {
+    "id": "collector-01",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Why cities need dark skies",
+    "description": "A long essay about urban lighting and astronomy.",
+    "headings": [
+      "Why cities need dark skies"
+    ],
+    "url": "https://collector.example/page/1",
+    "expectedFolder": "read",
+    "explanation": "A long essay about urban lighting and astronomy. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-01"
+  },
+  {
+    "id": "collector-02",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Historia jednego dworca",
+    "description": "Reportaż o zmianach w małym mieście.",
+    "headings": [
+      "Historia jednego dworca"
+    ],
+    "url": "https://collector.example/page/2",
+    "expectedFolder": "read",
+    "explanation": "Reportaż o zmianach w małym mieście. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-02"
+  },
+  {
+    "id": "collector-03",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Watch: repairing a bicycle wheel",
+    "description": "A 25-minute video demonstration of spoke tension.",
+    "headings": [
+      "Watch: repairing a bicycle wheel"
+    ],
+    "url": "https://collector.example/page/3",
+    "expectedFolder": "watch",
+    "explanation": "A 25-minute video demonstration of spoke tension. Matches: Videos, recorded talks and tutorials to watch.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-03"
+  },
+  {
+    "id": "collector-04",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Nagranie wykładu o śnie",
+    "description": "Film z konferencji, pełny wykład z napisami.",
+    "headings": [
+      "Nagranie wykładu o śnie"
+    ],
+    "url": "https://collector.example/page/4",
+    "expectedFolder": "watch",
+    "explanation": "Film z konferencji, pełny wykład z napisami. Matches: Videos, recorded talks and tutorials to watch.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-04"
+  },
+  {
+    "id": "collector-05",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Waterproof walking shoes — size guide",
+    "description": "Product page with sizes, stock and a buy button.",
+    "headings": [
+      "Waterproof walking shoes — size guide"
+    ],
+    "url": "https://collector.example/page/5",
+    "expectedFolder": "buy",
+    "explanation": "Product page with sizes, stock and a buy button. Matches: Products to consider buying; shopping pages across topics.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-05"
+  },
+  {
+    "id": "collector-06",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Atlas ptaków — kup książkę",
+    "description": "Cena, dostępność i dostawa papierowego wydania.",
+    "headings": [
+      "Atlas ptaków — kup książkę"
+    ],
+    "url": "https://collector.example/page/6",
+    "expectedFolder": "buy",
+    "explanation": "Cena, dostępność i dostawa papierowego wydania. Matches: Products to consider buying; shopping pages across topics.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-06"
+  },
+  {
+    "id": "collector-07",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Book a night at the observatory",
+    "description": "Visitor sessions, dates and reservation form.",
+    "headings": [
+      "Book a night at the observatory"
+    ],
+    "url": "https://collector.example/page/7",
+    "expectedFolder": "go",
+    "explanation": "Visitor sessions, dates and reservation form. Matches: Places, events and trips to visit or book.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-07"
+  },
+  {
+    "id": "collector-08",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Muzeum neonu — bilety",
+    "description": "Godziny otwarcia i rezerwacja wejścia na wystawę.",
+    "headings": [
+      "Muzeum neonu — bilety"
+    ],
+    "url": "https://collector.example/page/8",
+    "expectedFolder": "go",
+    "explanation": "Godziny otwarcia i rezerwacja wejścia na wystawę. Matches: Places, events and trips to visit or book.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-08"
+  },
+  {
+    "id": "collector-09",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Crispy roast chickpeas",
+    "description": "Ingredients and oven timings for a snack.",
+    "headings": [
+      "Crispy roast chickpeas"
+    ],
+    "url": "https://collector.example/page/9",
+    "expectedFolder": "make / food",
+    "explanation": "Ingredients and oven timings for a snack. Matches: Recipes to actually cook.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-09"
+  },
+  {
+    "id": "collector-10",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Zupa ogórkowa babci",
+    "description": "Przepis, proporcje składników i czas gotowania.",
+    "headings": [
+      "Zupa ogórkowa babci"
+    ],
+    "url": "https://collector.example/page/10",
+    "expectedFolder": "make / food",
+    "explanation": "Przepis, proporcje składników i czas gotowania. Matches: Recipes to actually cook.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-10"
+  },
+  {
+    "id": "collector-11",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "How to fix a loose chair leg",
+    "description": "Written steps for gluing and clamping a wooden joint.",
+    "headings": [
+      "How to fix a loose chair leg"
+    ],
+    "url": "https://collector.example/page/11",
+    "expectedFolder": "make / repairs",
+    "explanation": "Written steps for gluing and clamping a wooden joint. Matches: Written DIY repair instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "collector-11"
+  },
+  {
+    "id": "collector-12",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Wymiana uszczelki w kranie",
+    "description": "Instrukcja tekstowa ze zdjęciami krok po kroku.",
+    "headings": [
+      "Wymiana uszczelki w kranie"
+    ],
+    "url": "https://collector.example/page/12",
+    "expectedFolder": "make / repairs",
+    "explanation": "Instrukcja tekstowa ze zdjęciami krok po kroku. Matches: Written DIY repair instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "sparse-folder"
+    ],
+    "duplicateGroup": "collector-12"
+  },
+  {
+    "id": "collector-13",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "This is interesting",
+    "description": "An investigative feature about disappearing night trains.",
+    "headings": [
+      "This is interesting"
+    ],
+    "url": "https://collector.example/page/13",
+    "expectedFolder": "read",
+    "explanation": "An investigative feature about disappearing night trains. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "collector-13"
+  },
+  {
+    "id": "collector-14",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Zobacz",
+    "description": "Wideo: spacer po dawnej fabryce, 45 minut.",
+    "headings": [
+      "Zobacz"
+    ],
+    "url": "https://collector.example/page/14",
+    "expectedFolder": "watch",
+    "explanation": "Wideo: spacer po dawnej fabryce, 45 minut. Matches: Videos, recorded talks and tutorials to watch.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "collector-14"
+  },
+  {
+    "id": "collector-15",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Może kiedyś",
+    "description": "Oferta sklepu: kompaktowy ekspres do kawy, cena i dostawa.",
+    "headings": [
+      "Może kiedyś"
+    ],
+    "url": "https://collector.example/page/15",
+    "expectedFolder": "buy",
+    "explanation": "Oferta sklepu: kompaktowy ekspres do kawy, cena i dostawa. Matches: Products to consider buying; shopping pages across topics.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "collector-15"
+  },
+  {
+    "id": "collector-16",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Sobota",
+    "description": "Zapisy na lokalny spacer architektoniczny z przewodnikiem.",
+    "headings": [
+      "Sobota"
+    ],
+    "url": "https://collector.example/page/16",
+    "expectedFolder": "go",
+    "explanation": "Zapisy na lokalny spacer architektoniczny z przewodnikiem. Matches: Places, events and trips to visit or book.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title"
+    ],
+    "duplicateGroup": "collector-16"
+  },
+  {
+    "id": "collector-17",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Magazine | Subscribe today",
+    "description": "An essay on the social history of coffee. Cookies, newsletter, related stories.",
+    "headings": [
+      "Magazine | Subscribe today",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://collector.example/page/17",
+    "expectedFolder": "read",
+    "explanation": "An essay on the social history of coffee. Cookies, newsletter, related stories. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "collector-17"
+  },
+  {
+    "id": "collector-18",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "SALE - ostatnie sztuki",
+    "description": "Zestaw narzędzi ręcznych, dodaj do koszyka, darmowa dostawa.",
+    "headings": [
+      "SALE - ostatnie sztuki",
+      "Privacy policy",
+      "Polecane produkty",
+      "Subscribe to newsletter"
+    ],
+    "url": "https://collector.example/page/18",
+    "expectedFolder": "buy",
+    "explanation": "Zestaw narzędzi ręcznych, dodaj do koszyka, darmowa dostawa. Matches: Products to consider buying; shopping pages across topics.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "collector-18"
+  },
+  {
+    "id": "collector-19",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Video recipe: dumplings from scratch",
+    "description": "A cook demonstrates folding dumplings in a 15-minute film.",
+    "headings": [
+      "Video recipe: dumplings from scratch"
+    ],
+    "url": "https://collector.example/page/19",
+    "expectedFolder": "watch",
+    "explanation": "A cook demonstrates folding dumplings in a 15-minute film. Matches: Videos, recorded talks and tutorials to watch.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "make / food"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "collector-19"
+  },
+  {
+    "id": "collector-20",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "The repair movement is changing cities",
+    "description": "Long-form reporting about repair cafes, not a how-to guide.",
+    "headings": [
+      "The repair movement is changing cities"
+    ],
+    "url": "https://collector.example/page/20",
+    "expectedFolder": "read",
+    "explanation": "Long-form reporting about repair cafes, not a how-to guide. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "make / repairs"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "collector-20"
+  },
+  {
+    "id": "collector-21",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Coffee tasting workshop tickets",
+    "description": "Reserve a place at a Saturday event in a local roastery.",
+    "headings": [
+      "Coffee tasting workshop tickets"
+    ],
+    "url": "https://collector.example/page/21",
+    "expectedFolder": "go",
+    "explanation": "Reserve a place at a Saturday event in a local roastery. Matches: Places, events and trips to visit or book.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "make / food"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "collector-21"
+  },
+  {
+    "id": "collector-22",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Buy the complete recorded photography course",
+    "description": "A product listing with a price and checkout for video lessons.",
+    "headings": [
+      "Buy the complete recorded photography course"
+    ],
+    "url": "https://collector.example/page/22",
+    "expectedFolder": "buy",
+    "explanation": "A product listing with a price and checkout for video lessons. Matches: Products to consider buying; shopping pages across topics.",
+    "ambiguous": true,
+    "acceptableAlternatives": [
+      "watch"
+    ],
+    "tags": [
+      "overlap"
+    ],
+    "duplicateGroup": "collector-22"
+  },
+  {
+    "id": "collector-23",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Apple crumble: ingredients and method",
+    "description": "",
+    "headings": [],
+    "url": "https://collector.example/page/23",
+    "expectedFolder": "make / food",
+    "explanation": "Apple crumble: ingredients and method Matches: Recipes to actually cook.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "missing-metadata"
+    ],
+    "duplicateGroup": "collector-23"
+  },
+  {
+    "id": "collector-24",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Noc muzeów: program spaceru",
+    "description": "Miejsca spotkań i bezpłatne wejściówki.",
+    "headings": [
+      "Noc muzeów: program spaceru"
+    ],
+    "url": "https://collector.example/page/24",
+    "expectedFolder": "go",
+    "explanation": "Miejsca spotkań i bezpłatne wejściówki. Matches: Places, events and trips to visit or book.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-24"
+  },
+  {
+    "id": "collector-25",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Noc muzeów: program spaceru",
+    "description": "Miejsca spotkań i bezpłatne wejściówki.",
+    "headings": [
+      "Noc muzeów: program spaceru"
+    ],
+    "url": "https://collector.example/page/24?utm_source=second-save",
+    "expectedFolder": "go",
+    "explanation": "Miejsca spotkań i bezpłatne wejściówki. Matches: Places, events and trips to visit or book.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "duplicate"
+    ],
+    "duplicateGroup": "collector-24"
+  },
+  {
+    "id": "collector-26",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Account recovery code",
+    "description": "One-time account recovery notice without useful article content.",
+    "headings": [
+      "Account recovery code"
+    ],
+    "url": "https://collector.example/page/26",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "collector-26"
+  },
+  {
+    "id": "collector-27",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Panel firmowej poczty",
+    "description": "Ekran logowania do służbowej skrzynki.",
+    "headings": [
+      "Panel firmowej poczty"
+    ],
+    "url": "https://collector.example/page/27",
+    "expectedFolder": null,
+    "explanation": "This collection has no folder matching the purpose of this bookmark.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "collector-27"
+  },
+  {
+    "id": "collector-28",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Sewing a button back onto a coat",
+    "description": "Illustrated written instructions for a small clothing repair.",
+    "headings": [
+      "Sewing a button back onto a coat"
+    ],
+    "url": "https://collector.example/page/28",
+    "expectedFolder": "make / repairs",
+    "explanation": "Illustrated written instructions for a small clothing repair. Matches: Written DIY repair instructions.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-28"
+  },
+  {
+    "id": "collector-29",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "How a forgotten language returned",
+    "description": "A magazine feature about language revival.",
+    "headings": [
+      "How a forgotten language returned"
+    ],
+    "url": "https://collector.example/page/29",
+    "expectedFolder": "read",
+    "explanation": "A magazine feature about language revival. Matches: Long-form articles and essays to read later, across subjects.",
+    "ambiguous": false,
+    "acceptableAlternatives": [],
+    "tags": [
+      "ordinary"
+    ],
+    "duplicateGroup": "collector-29"
+  },
+  {
+    "id": "collector-30",
+    "collectionId": "collector",
+    "synthetic": true,
+    "title": "Home",
+    "description": "",
+    "headings": [],
+    "url": "https://collector.example/page/30",
+    "expectedFolder": null,
+    "explanation": "Insufficient page information to justify any existing folder; review required.",
+    "ambiguous": true,
+    "acceptableAlternatives": [],
+    "tags": [
+      "vague-title",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "collector-30"
+  }
+]

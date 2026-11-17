@@ -1,0 +1,722 @@
+[
+  {
+    "id": "hard-engineer-index-atlas-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas",
+    "title": "Atlas release milestones and team contacts",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/atlas/1"
+  },
+  {
+    "id": "hard-engineer-index-atlas-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas",
+    "title": "Atlas discovery notes: scope and stakeholders",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/atlas/2"
+  },
+  {
+    "id": "hard-engineer-index-web-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Web",
+    "title": "Atlas account settings screen requirements",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/web/1"
+  },
+  {
+    "id": "hard-engineer-index-web-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Web",
+    "title": "Makiety panelu Atlas: widok mobilny",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/web/2"
+  },
+  {
+    "id": "hard-engineer-index-web-3",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Web",
+    "title": "Atlas frontend error boundary plan",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/web/3"
+  },
+  {
+    "id": "hard-engineer-index-api-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/API",
+    "title": "Atlas customer endpoint contract",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/api/1"
+  },
+  {
+    "id": "hard-engineer-index-api-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/API",
+    "title": "Migracje tabel klientów w projekcie Atlas",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/api/2"
+  },
+  {
+    "id": "hard-engineer-index-api-3",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/API",
+    "title": "Atlas service token validation notes",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/api/3"
+  },
+  {
+    "id": "hard-engineer-index-ops-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Ops",
+    "title": "Atlas deployment rollback runbook",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ops/1"
+  },
+  {
+    "id": "hard-engineer-index-ops-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Ops",
+    "title": "Alerty dostępności usługi Atlas",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ops/2"
+  },
+  {
+    "id": "hard-engineer-index-ops-3",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Atlas/Ops",
+    "title": "Atlas container resource limits",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ops/3"
+  },
+  {
+    "id": "hard-engineer-index-ref-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Ref/Web",
+    "title": "Intrinsic image sizing in CSS",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ref/1"
+  },
+  {
+    "id": "hard-engineer-index-ref-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Ref/Web",
+    "title": "Accessible live region reference",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ref/2"
+  },
+  {
+    "id": "hard-engineer-index-ref-3",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Ref/Web",
+    "title": "Przeglądarkowe API schowka: dokumentacja",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ref/3"
+  },
+  {
+    "id": "hard-engineer-index-ref-4",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Work/Ref/Web",
+    "title": "Responsive typography without breakpoints",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/ref/4"
+  },
+  {
+    "id": "hard-engineer-index-nlp-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Learn/ML/NLP",
+    "title": "Ćwiczenia z klasyfikacji tekstu",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/nlp/1"
+  },
+  {
+    "id": "hard-engineer-index-nlp-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Learn/ML/NLP",
+    "title": "Sentence representation evaluation notes",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/nlp/2"
+  },
+  {
+    "id": "hard-engineer-index-nlp-3",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Learn/ML/NLP",
+    "title": "Tokenization across writing systems",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/nlp/3"
+  },
+  {
+    "id": "hard-engineer-index-gear-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Bike/Gear",
+    "title": "Dobór szerokości opon do obręczy",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/gear/1"
+  },
+  {
+    "id": "hard-engineer-index-gear-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Bike/Gear",
+    "title": "Bike torque wrench buying guide",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/gear/2"
+  },
+  {
+    "id": "hard-engineer-index-trips-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Bike/Trips",
+    "title": "Weekend gravel loop through the forest",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/trips/1"
+  },
+  {
+    "id": "hard-engineer-index-books-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Buy/Books",
+    "title": "Popular science hardbacks to order",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/books/1"
+  },
+  {
+    "id": "hard-engineer-index-books-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Buy/Books",
+    "title": "Reportaż o historii internetu: wydanie papierowe",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/books/2"
+  },
+  {
+    "id": "hard-engineer-index-tech-1",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Buy/Tech",
+    "title": "USB-C hub product comparison",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/tech/1"
+  },
+  {
+    "id": "hard-engineer-index-tech-2",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "folder": "Life/Buy/Tech",
+    "title": "Klawiatura mechaniczna: oferty i wymiary",
+    "description": "",
+    "headings": [],
+    "url": "https://engineer.example/saved/tech/2"
+  },
+  {
+    "id": "hard-household-index-kitchen-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Remont/Kuchnia",
+    "title": "Wymiary wnęki na piekarnik",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/kitchen/1"
+  },
+  {
+    "id": "hard-household-index-kitchen-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Remont/Kuchnia",
+    "title": "Kitchen worktop joint planning",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/kitchen/2"
+  },
+  {
+    "id": "hard-household-index-kitchen-3",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Remont/Kuchnia",
+    "title": "Dobór prowadnic do szuflad kuchennych",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/kitchen/3"
+  },
+  {
+    "id": "hard-household-index-bath-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Remont/Łazienka",
+    "title": "Brodzik i odpływ: pomiary",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/bath/1"
+  },
+  {
+    "id": "hard-household-index-bath-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Remont/Łazienka",
+    "title": "Bathroom tile waterproofing layers",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/bath/2"
+  },
+  {
+    "id": "hard-household-index-bills-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Rachunki",
+    "title": "Odczyt licznika energii online",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/bills/1"
+  },
+  {
+    "id": "hard-household-index-bills-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Rachunki",
+    "title": "Water utility payment schedule",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/bills/2"
+  },
+  {
+    "id": "hard-household-index-bills-3",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Dom/Rachunki",
+    "title": "Porównanie abonamentów internetu domowego",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/bills/3"
+  },
+  {
+    "id": "hard-household-index-school-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Rodzina/Szkoła",
+    "title": "Zebranie rodziców i dziennik elektroniczny",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/school/1"
+  },
+  {
+    "id": "hard-household-index-school-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Rodzina/Szkoła",
+    "title": "Printable spelling practice for primary school",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/school/2"
+  },
+  {
+    "id": "hard-household-index-school-3",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Rodzina/Szkoła",
+    "title": "Formularz zgody na zajęcia pozalekcyjne",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/school/3"
+  },
+  {
+    "id": "hard-household-index-health-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Rodzina/Zdrowie",
+    "title": "Przygotowanie do wizyty u okulisty",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/health/1"
+  },
+  {
+    "id": "hard-household-index-health-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Rodzina/Zdrowie",
+    "title": "Vaccination appointment checklist",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/health/2"
+  },
+  {
+    "id": "hard-household-index-berlin-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Wyjazdy/2027/Berlin",
+    "title": "Berlin family hotel shortlist",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/berlin/1"
+  },
+  {
+    "id": "hard-household-index-berlin-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Wyjazdy/2027/Berlin",
+    "title": "Anreise nach Berlin mit der Bahn",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/berlin/2"
+  },
+  {
+    "id": "hard-household-index-berlin-3",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Wyjazdy/2027/Berlin",
+    "title": "Mapa atrakcji na rodzinny weekend w Berlinie",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/berlin/3"
+  },
+  {
+    "id": "hard-household-index-ideas-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Wyjazdy/Pomysły",
+    "title": "Pomysły na jesienny weekend w górach",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/ideas/1"
+  },
+  {
+    "id": "hard-household-index-clothes-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Kupić/Ubrania",
+    "title": "Dziecięce buty przeciwdeszczowe: rozmiary",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/clothes/1"
+  },
+  {
+    "id": "hard-household-index-clothes-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Kupić/Ubrania",
+    "title": "Winter jacket fit comparison",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/clothes/2"
+  },
+  {
+    "id": "hard-household-index-books-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Czytanie/Książki",
+    "title": "Nowości książkowe do przeczytania",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/books/1"
+  },
+  {
+    "id": "hard-household-index-books-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Czytanie/Książki",
+    "title": "Illustrated history book review",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/books/2"
+  },
+  {
+    "id": "hard-household-index-food-1",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Gotowanie/Obiady",
+    "title": "Zapiekanka z kaszą i warzywami",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/food/1"
+  },
+  {
+    "id": "hard-household-index-food-2",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Gotowanie/Obiady",
+    "title": "Fast weeknight lentil stew",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/food/2"
+  },
+  {
+    "id": "hard-household-index-food-3",
+    "collectionId": "household",
+    "synthetic": true,
+    "folder": "Gotowanie/Obiady",
+    "title": "Plan obiadów na szkolny tydzień",
+    "description": "",
+    "headings": [],
+    "url": "https://household.example/saved/food/3"
+  },
+  {
+    "id": "hard-designer-index-obrand-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Orbit/Brand",
+    "title": "Orbit brand palette options",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/obrand/1"
+  },
+  {
+    "id": "hard-designer-index-obrand-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Orbit/Brand",
+    "title": "Orbit logo delivery specifications",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/obrand/2"
+  },
+  {
+    "id": "hard-designer-index-obrand-3",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Orbit/Brand",
+    "title": "Orbit stationery mockup review",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/obrand/3"
+  },
+  {
+    "id": "hard-designer-index-oweb-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Orbit/Web",
+    "title": "Orbit landing page content map",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/oweb/1"
+  },
+  {
+    "id": "hard-designer-index-oweb-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Orbit/Web",
+    "title": "Orbit site form acceptance notes",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/oweb/2"
+  },
+  {
+    "id": "hard-designer-index-mbrand-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Brand",
+    "title": "Maple packaging label dimensions",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mbrand/1"
+  },
+  {
+    "id": "hard-designer-index-mbrand-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Brand",
+    "title": "Maple logo sign-off notes",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mbrand/2"
+  },
+  {
+    "id": "hard-designer-index-mbrand-3",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Brand",
+    "title": "Maple print color proof",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mbrand/3"
+  },
+  {
+    "id": "hard-designer-index-mweb-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Web",
+    "title": "Maple basket interaction prototype",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mweb/1"
+  },
+  {
+    "id": "hard-designer-index-mweb-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Web",
+    "title": "Maple product gallery mobile layout",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mweb/2"
+  },
+  {
+    "id": "hard-designer-index-mweb-3",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Clients/Maple/Web",
+    "title": "Maple shipping selector error states",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/mweb/3"
+  },
+  {
+    "id": "hard-designer-index-type-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Studio/Ref/Type",
+    "title": "Variable font specimen collection",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/type/1"
+  },
+  {
+    "id": "hard-designer-index-type-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Studio/Ref/Type",
+    "title": "Czytelność długich akapitów: przykłady",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/type/2"
+  },
+  {
+    "id": "hard-designer-index-ux-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Studio/Ref/UX",
+    "title": "Keyboard-friendly form pattern library",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/ux/1"
+  },
+  {
+    "id": "hard-designer-index-ux-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Studio/Ref/UX",
+    "title": "Research on checkout abandonment",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/ux/2"
+  },
+  {
+    "id": "hard-designer-index-ux-3",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Studio/Ref/UX",
+    "title": "Przykłady dostępnych komunikatów błędu",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/ux/3"
+  },
+  {
+    "id": "hard-designer-index-pl-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Firma/Admin/PL",
+    "title": "Polskie faktury: pola obowiązkowe",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/pl/1"
+  },
+  {
+    "id": "hard-designer-index-pl-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Firma/Admin/PL",
+    "title": "Rozliczenie kosztów działalności w Polsce",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/pl/2"
+  },
+  {
+    "id": "hard-designer-index-de-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Firma/Admin/DE",
+    "title": "German invoice numbering checklist",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/de/1"
+  },
+  {
+    "id": "hard-designer-index-camera-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Osobiste/Foto/Sprzęt",
+    "title": "Porównanie obiektywów do portretów",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/camera/1"
+  },
+  {
+    "id": "hard-designer-index-camera-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Osobiste/Foto/Sprzęt",
+    "title": "Camera sensor cleaning kit guide",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/camera/2"
+  },
+  {
+    "id": "hard-designer-index-places-1",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Osobiste/Foto/Plenery",
+    "title": "Photo walk along the old docks",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/places/1"
+  },
+  {
+    "id": "hard-designer-index-places-2",
+    "collectionId": "designer",
+    "synthetic": true,
+    "folder": "Osobiste/Foto/Plenery",
+    "title": "Punkty widokowe na wieczorne zdjęcia",
+    "description": "",
+    "headings": [],
+    "url": "https://designer.example/saved/places/2"
+  }
+]

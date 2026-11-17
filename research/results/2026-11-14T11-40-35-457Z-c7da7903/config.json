@@ -1,0 +1,29 @@
+{
+  "dataset": "hard",
+  "model": {
+    "model": "Xenova/bge-m3",
+    "dtype": "q8",
+    "pooling": "cls",
+    "maxLength": 8192
+  },
+  "fields": [
+    "title",
+    "description"
+  ],
+  "descriptions": "datasets/hard/descriptions.json",
+  "strategies": [
+    "closest",
+    "folder-closest",
+    "manual-closest",
+    "top3-average",
+    "centroid",
+    "hybrid"
+  ],
+  "thresholds": {
+    "newFolder": 0.55,
+    "askUserMargin": 0.05
+  },
+  "cacheDir": ".cache/models",
+  "localFilesOnly": true,
+  "report": false
+}

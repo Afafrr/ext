@@ -1,0 +1,157 @@
+[
+  {
+    "id": "developer",
+    "synthetic": true,
+    "habit": "Topic-based nested folders. Courses go under Learn; reference and production debugging go under Work.",
+    "folders": [
+      {
+        "path": "Work / Frontend",
+        "description": "Production browser UI, CSS, accessibility and React reference."
+      },
+      {
+        "path": "Work / Backend",
+        "description": "Server APIs, SQL databases and service operations."
+      },
+      {
+        "path": "Learn / Courses",
+        "description": "Structured courses and exercises, including programming courses."
+      },
+      {
+        "path": "Learn / AI",
+        "description": "Embedding models, machine learning papers and experiments."
+      },
+      {
+        "path": "Personal / Cooking",
+        "description": "Recipes and meal preparation."
+      },
+      {
+        "path": "Personal / Cycling",
+        "description": "Bike maintenance and weekend rides."
+      }
+    ]
+  },
+  {
+    "id": "family",
+    "synthetic": true,
+    "habit": "Polish household. Shopping links are stored by project, not by shop; recipes are separate from health.",
+    "folders": [
+      {
+        "path": "Dom / Remont",
+        "description": "Renovating the kitchen and bathroom; project purchases and instructions."
+      },
+      {
+        "path": "Dom / Obiady",
+        "description": "Family recipes and weekly meal plans."
+      },
+      {
+        "path": "Dzieci / Szkoła",
+        "description": "School administration, homework and educational activities."
+      },
+      {
+        "path": "Wyjazdy / Polska",
+        "description": "Domestic holidays and family weekend trips."
+      },
+      {
+        "path": "Zdrowie",
+        "description": "Appointments, preventive care and exercise guidance."
+      },
+      {
+        "path": "Finanse / Rachunki",
+        "description": "Household utility bills and recurring costs."
+      }
+    ]
+  },
+  {
+    "id": "researcher",
+    "synthetic": true,
+    "habit": "English folder labels, bilingual reading. Papers, practical methods and teaching materials are organized by use.",
+    "folders": [
+      {
+        "path": "Research / Papers",
+        "description": "Empirical psychology papers, preprints and systematic reviews."
+      },
+      {
+        "path": "Research / Methods",
+        "description": "Statistical methods, experimental design and analysis code."
+      },
+      {
+        "path": "Teaching",
+        "description": "Lesson plans, student assignments and classroom demonstrations."
+      },
+      {
+        "path": "Writing / Sources",
+        "description": "Citation management, academic writing and publishing."
+      },
+      {
+        "path": "Outside / Hiking",
+        "description": "Mountain walks, outdoor equipment and route planning."
+      },
+      {
+        "path": "Outside / Coffee",
+        "description": "Coffee brewing and equipment."
+      }
+    ]
+  },
+  {
+    "id": "freelancer",
+    "synthetic": true,
+    "habit": "Project-first filing. Client work overrides general topic; business administration and reference inspiration stay separate.",
+    "folders": [
+      {
+        "path": "Clients / Cafe Luna",
+        "description": "Website and visual identity for a small coffee shop."
+      },
+      {
+        "path": "Clients / Green Shop",
+        "description": "Online plant shop checkout, product photos and branding."
+      },
+      {
+        "path": "Studio / Inspiration",
+        "description": "General design examples not tied to a client project."
+      },
+      {
+        "path": "Studio / Tools",
+        "description": "Design software techniques and reusable workflow utilities."
+      },
+      {
+        "path": "Business / Admin",
+        "description": "Invoices, taxes, contracts and freelance administration."
+      },
+      {
+        "path": "Personal / Music",
+        "description": "Albums, playlists and concert recordings."
+      }
+    ]
+  },
+  {
+    "id": "collector",
+    "synthetic": true,
+    "habit": "Loose short labels: read stores long essays, watch stores videos, buy stores products, go stores places. Format and intent override topic.",
+    "folders": [
+      {
+        "path": "read",
+        "description": "Long-form articles and essays to read later, across subjects."
+      },
+      {
+        "path": "watch",
+        "description": "Videos, recorded talks and tutorials to watch."
+      },
+      {
+        "path": "buy",
+        "description": "Products to consider buying; shopping pages across topics."
+      },
+      {
+        "path": "go",
+        "description": "Places, events and trips to visit or book."
+      },
+      {
+        "path": "make / food",
+        "description": "Recipes to actually cook."
+      },
+      {
+        "path": "make / repairs",
+        "description": "Written DIY repair instructions."
+      }
+    ]
+  }
+]

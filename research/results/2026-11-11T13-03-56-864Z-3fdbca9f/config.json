@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    "synthetic",
+    "real"
+  ],
+  "models": [
+    {
+      "id": "minilm",
+      "model": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+      "dtype": "q8",
+      "pooling": "mean",
+      "maxLength": 128
+    },
+    {
+      "id": "bge-m3",
+      "model": "Xenova/bge-m3",
+      "dtype": "q8",
+      "pooling": "cls",
+      "maxLength": 8192
+    }
+  ],
+  "strategies": [
+    {
+      "id": "closest",
+      "type": "closest"
+    },
+    {
+      "id": "weighted",
+      "type": "weighted",
+      "folderWeight": 0.3
+    }
+  ],
+  "inputs": [
+    {
+      "id": "title",
+      "fields": [
+        "title"
+      ]
+    },
+    {
+      "id": "metadata",
+      "fields": [
+        "title",
+        "description",
+        "headings"
+      ]
+    }
+  ],
+  "indexFields": [
+    "title"
+  ],
+  "folderFields": [
+    "path",
+    "description"
+  ],
+  "thresholds": {
+    "newFolder": 0.55,
+    "askUserMargin": 0.05
+  },
+  "baseline": "minilm/closest/title",
+  "cacheDir": ".cache/models",
+  "localFilesOnly": false,
+  "report": true
+}

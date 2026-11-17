@@ -1,0 +1,97 @@
+{
+  "provenance": {
+    "manual": "Authored synthetic folder scopes defined with the index before evaluation; no generated/domain variants."
+  },
+  "folders": {
+    "engineer/Work/Atlas": {
+      "manual": "General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder."
+    },
+    "engineer/Work/Atlas/Web": {
+      "manual": "Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web."
+    },
+    "engineer/Work/Atlas/API": {
+      "manual": "Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops."
+    },
+    "engineer/Work/Atlas/Ops": {
+      "manual": "Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability."
+    },
+    "engineer/Work/Ref/Web": {
+      "manual": "Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work."
+    },
+    "engineer/Learn/ML/NLP": {
+      "manual": "Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents."
+    },
+    "engineer/Life/Bike/Gear": {
+      "manual": "Bicycle equipment purchases, fit and mechanical maintenance."
+    },
+    "engineer/Life/Bike/Trips": {
+      "manual": "Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping."
+    },
+    "engineer/Life/Buy/Books": {
+      "manual": "Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references."
+    },
+    "engineer/Life/Buy/Tech": {
+      "manual": "Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation."
+    },
+    "household/Dom/Remont/Kuchnia": {
+      "manual": "Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances."
+    },
+    "household/Dom/Remont/Łazienka": {
+      "manual": "Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures."
+    },
+    "household/Dom/Rachunki": {
+      "manual": "Household electricity, water, heating and internet bills, meter readings and tariffs."
+    },
+    "household/Rodzina/Szkoła": {
+      "manual": "School notices, parent forms, homework and pupil activities; medical care goes under health."
+    },
+    "household/Rodzina/Zdrowie": {
+      "manual": "Family appointments, preventive health information and medical visit preparation."
+    },
+    "household/Wyjazdy/2027/Berlin": {
+      "manual": "Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations."
+    },
+    "household/Wyjazdy/Pomysły": {
+      "manual": "Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder."
+    },
+    "household/Kupić/Ubrania": {
+      "manual": "Clothes and shoes for the family, including school and travel clothing purchases."
+    },
+    "household/Czytanie/Książki": {
+      "manual": "Books and ebooks to read or buy, including travel, food and parenting books."
+    },
+    "household/Gotowanie/Obiady": {
+      "manual": "Recipes and practical meal plans to cook at home, including family lunchbox meals."
+    },
+    "designer/Clients/Orbit/Brand": {
+      "manual": "Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web."
+    },
+    "designer/Clients/Orbit/Web": {
+      "manual": "Orbit website layouts, responsive behavior, accessibility and implementation handoff."
+    },
+    "designer/Clients/Maple/Brand": {
+      "manual": "Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior."
+    },
+    "designer/Clients/Maple/Web": {
+      "manual": "Maple ecommerce site navigation, product pages, checkout and implementation handoff."
+    },
+    "designer/Studio/Ref/Type": {
+      "manual": "Reusable typeface, typography and lettering references not committed to a specific client."
+    },
+    "designer/Studio/Ref/UX": {
+      "manual": "Reusable interaction design and accessibility research, independent of a client deliverable."
+    },
+    "designer/Firma/Admin/PL": {
+      "manual": "Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source."
+    },
+    "designer/Firma/Admin/DE": {
+      "manual": "German freelance invoicing, tax and business administration, regardless of the source language."
+    },
+    "designer/Osobiste/Foto/Sprzęt": {
+      "manual": "Camera and lens purchases, compatibility and maintenance, rather than photo locations."
+    },
+    "designer/Osobiste/Foto/Plenery": {
+      "manual": "Places and routes for personal photo walks, access notes and light conditions."
+    }
+  }
+}

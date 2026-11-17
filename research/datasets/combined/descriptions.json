@@ -1,0 +1,275 @@
+{
+  "provenance": {
+    "real": {
+      "manual": "Copied from prototype folders.described.human.js; authored from indexed titles only.",
+      "generated": {
+        "source": "folders/folders.real.js",
+        "model": "onnx-community/Qwen3-0.6B-ONNX",
+        "createdAt": "2026-11-10T14:38:14.001Z",
+        "promptVersion": 3,
+        "language": "en"
+      },
+      "domain": {
+        "source": "folders/folders.domains.js",
+        "model": "onnx-community/Qwen3-0.6B-ONNX",
+        "createdAt": "2026-11-10T15:08:21.754Z",
+        "promptVersion": 3,
+        "method": "titles-and-domain-homepages",
+        "language": "en"
+      },
+      "note": "Descriptions and domain metadata copied unchanged; homepage domains were supplied for the prototype experiment, not recovered original bookmark URLs. No evaluation content used."
+    },
+    "real-derived": {
+      "manual": "Copied from prototype folders.described.human.js; authored from indexed titles only.",
+      "generated": {
+        "source": "folders/folders.real.js",
+        "model": "onnx-community/Qwen3-0.6B-ONNX",
+        "createdAt": "2026-11-10T14:38:14.001Z",
+        "promptVersion": 3,
+        "language": "en"
+      },
+      "domain": {
+        "source": "folders/folders.domains.js",
+        "model": "onnx-community/Qwen3-0.6B-ONNX",
+        "createdAt": "2026-11-10T15:08:21.754Z",
+        "promptVersion": 3,
+        "method": "titles-and-domain-homepages",
+        "language": "en"
+      },
+      "note": "Descriptions and domain metadata copied unchanged; homepage domains were supplied for the prototype experiment, not recovered original bookmark URLs. No evaluation content used."
+    },
+    "hard": {
+      "manual": "Authored synthetic folder scopes defined with the index before evaluation; no generated/domain variants."
+    }
+  },
+  "folders": {
+    "real-user/ksiazki": {
+      "manual": "Books to buy in the future.",
+      "generated": "Category: Books. Common content type: Books.",
+      "domain": "Category: Books.",
+      "domainContext": [
+        {
+          "origin": "https://lubimyczytac.pl",
+          "finalUrl": "https://lubimyczytac.pl/",
+          "status": "ok",
+          "title": "Największy serwis o książkach. Porównywarka cen książek, opinie, oceny, rekomendacje, wywiady, aktualności.",
+          "description": "Największa baza informacji o książkach: opinie i oceny, recenzje, cytaty, nowości i zapowiedzi, społeczność.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.amazon.com",
+          "finalUrl": "https://www.amazon.com/",
+          "status": "ok",
+          "title": "Amazon.com. Spend less. Smile more.",
+          "description": "Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.empik.com",
+          "finalUrl": "https://www.empik.com/",
+          "status": "ok",
+          "title": "Empik.com | 10 000 000 produktów i pomysłów na prezent | Dostawa za 0 zł z Empik Premium",
+          "description": "Ponad 10 000 000 pomysłów na prezent w kategoriach Książka, Muzyka, Film, Zdrowie i uroda, Zabawki, Dom i ogród, Elektronika, AGD, Sport. Z Empik Premium taniej.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "real-user/learn": {
+      "manual": "Courses and exercises for learning full stack web development and SQL.",
+      "generated": "Category: Learning and Education",
+      "domain": "Category: Learning and Education",
+      "domainContext": [
+        {
+          "origin": "https://fullstackopen.com",
+          "finalUrl": "https://fullstackopen.com/",
+          "status": "ok",
+          "title": "Full stack open",
+          "description": "Helsingin yliopiston ja Houston Inc:n kaikille avoin ja ilmainen moderniin JavaScript-pohjaiseen web-sovelluskehitykseen keskittyvä kurssi. Osallistujilta edellytetään vahvaa ohjelmointirutiinia, pitkäjänteistyyttä ja valmiuksia omatoimiseen ongelmanratkaisuun.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://sqlbolt.com",
+          "finalUrl": "https://sqlbolt.com/",
+          "status": "ok",
+          "title": "SQLBolt - Learn SQL - Introduction to SQL",
+          "description": "SQLBolt provides a set of interactive lessons and exercises to help you learn SQL",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "real-user/learn > rb": {
+      "manual": "Exercises and learning resources for Ruby and Ruby on Rails.",
+      "generated": "Category: Learning resources.",
+      "domain": "category: learning and development",
+      "domainContext": [
+        {
+          "origin": "https://exercism.org",
+          "finalUrl": "https://exercism.org/",
+          "status": "ok",
+          "title": "Exercism",
+          "description": "Learn, practice and get world-class mentoring in over 50 languages. 100% free.",
+          "siteName": "Exercism",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.theodinproject.com",
+          "finalUrl": "https://www.theodinproject.com/",
+          "status": "ok",
+          "title": "Your Career in Web Development Starts Here | The Odin Project",
+          "description": "The Odin Project empowers aspiring web developers to learn together for free",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "real-user/music": {
+      "manual": "Electronic music tracks and remixes to listen to on YouTube.",
+      "generated": "Category: Music. Common content type: Music.",
+      "domain": "Category: Music. Common content type: Music. Topic: Music.",
+      "domainContext": [
+        {
+          "origin": "https://www.youtube.com",
+          "finalUrl": "https://www.youtube.com/",
+          "status": "ok",
+          "title": "YouTube",
+          "description": "W YouTube możesz cieszyć się filmami i muzyką, które lubisz, przesyłać oryginalne treści i udostępniać je swoim bliskim, znajomym i całemu światu.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "real-user/ubrania": {
+      "manual": "Online clothes shopping.",
+      "generated": "Category: Polish food.",
+      "domain": "Category: Polish food.",
+      "domainContext": [
+        {
+          "origin": "https://www.hm.com",
+          "status": "unavailable",
+          "reason": "HTTP 403",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "real-user/jobs": {
+      "manual": "Job boards listing.",
+      "generated": "Category: Job Search & Employment",
+      "domain": "Category: IT job offers.",
+      "domainContext": [
+        {
+          "origin": "https://nofluffjobs.com",
+          "finalUrl": "https://nofluffjobs.com/",
+          "status": "ok",
+          "title": "Portal with IT, marketing, sales, HR, remote work job offers | No Fluff Jobs.",
+          "description": "Job offers on No Fluff Jobs. Thousands of offers in your specialization with salary ranges. Jobs in IT, marketing, sales, HR, customer service, finance, office administration, logistics, law, consulting.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://justjoin.it",
+          "finalUrl": "https://justjoin.it/",
+          "status": "ok",
+          "title": "Jobs - 20 191 job offers (November 2026) | Just Join IT",
+          "description": "Jobs: 20 191 job offers",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "engineer/Work/Atlas": {
+      "manual": "General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder."
+    },
+    "engineer/Work/Atlas/Web": {
+      "manual": "Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web."
+    },
+    "engineer/Work/Atlas/API": {
+      "manual": "Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops."
+    },
+    "engineer/Work/Atlas/Ops": {
+      "manual": "Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability."
+    },
+    "engineer/Work/Ref/Web": {
+      "manual": "Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work."
+    },
+    "engineer/Learn/ML/NLP": {
+      "manual": "Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents."
+    },
+    "engineer/Life/Bike/Gear": {
+      "manual": "Bicycle equipment purchases, fit and mechanical maintenance."
+    },
+    "engineer/Life/Bike/Trips": {
+      "manual": "Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping."
+    },
+    "engineer/Life/Buy/Books": {
+      "manual": "Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references."
+    },
+    "engineer/Life/Buy/Tech": {
+      "manual": "Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation."
+    },
+    "household/Dom/Remont/Kuchnia": {
+      "manual": "Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances."
+    },
+    "household/Dom/Remont/Łazienka": {
+      "manual": "Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures."
+    },
+    "household/Dom/Rachunki": {
+      "manual": "Household electricity, water, heating and internet bills, meter readings and tariffs."
+    },
+    "household/Rodzina/Szkoła": {
+      "manual": "School notices, parent forms, homework and pupil activities; medical care goes under health."
+    },
+    "household/Rodzina/Zdrowie": {
+      "manual": "Family appointments, preventive health information and medical visit preparation."
+    },
+    "household/Wyjazdy/2027/Berlin": {
+      "manual": "Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations."
+    },
+    "household/Wyjazdy/Pomysły": {
+      "manual": "Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder."
+    },
+    "household/Kupić/Ubrania": {
+      "manual": "Clothes and shoes for the family, including school and travel clothing purchases."
+    },
+    "household/Czytanie/Książki": {
+      "manual": "Books and ebooks to read or buy, including travel, food and parenting books."
+    },
+    "household/Gotowanie/Obiady": {
+      "manual": "Recipes and practical meal plans to cook at home, including family lunchbox meals."
+    },
+    "designer/Clients/Orbit/Brand": {
+      "manual": "Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web."
+    },
+    "designer/Clients/Orbit/Web": {
+      "manual": "Orbit website layouts, responsive behavior, accessibility and implementation handoff."
+    },
+    "designer/Clients/Maple/Brand": {
+      "manual": "Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior."
+    },
+    "designer/Clients/Maple/Web": {
+      "manual": "Maple ecommerce site navigation, product pages, checkout and implementation handoff."
+    },
+    "designer/Studio/Ref/Type": {
+      "manual": "Reusable typeface, typography and lettering references not committed to a specific client."
+    },
+    "designer/Studio/Ref/UX": {
+      "manual": "Reusable interaction design and accessibility research, independent of a client deliverable."
+    },
+    "designer/Firma/Admin/PL": {
+      "manual": "Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source."
+    },
+    "designer/Firma/Admin/DE": {
+      "manual": "German freelance invoicing, tax and business administration, regardless of the source language."
+    },
+    "designer/Osobiste/Foto/Sprzęt": {
+      "manual": "Camera and lens purchases, compatibility and maintenance, rather than photo locations."
+    },
+    "designer/Osobiste/Foto/Plenery": {
+      "manual": "Places and routes for personal photo walks, access notes and light conditions."
+    }
+  }
+}

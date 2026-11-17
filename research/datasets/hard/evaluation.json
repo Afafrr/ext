@@ -1,0 +1,4451 @@
+[
+  {
+    "id": "hard-engineer-01",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas — scope v3 / do piątku",
+    "description": "Zakres wydania, otwarte decyzje biznesowe i właściciele zadań zespołów.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-01",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-engineer-01"
+  },
+  {
+    "id": "hard-engineer-02",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "QBR notes, WIP",
+    "description": "Atlas quarterly review: adoption goals, support workload and decisions for next quarter.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-02",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-02"
+  },
+  {
+    "id": "hard-engineer-03",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas: Übergabe an das neue Team",
+    "description": "Projektübersicht, Ansprechpartner und offene Produktentscheidungen für die Übergabe.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-03",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-03"
+  },
+  {
+    "id": "hard-engineer-04",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Do sprawdzenia",
+    "description": "Atlas: ustalenia dotyczące nowej roli administratora; zmiany obejmą aplikację i serwer.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-04",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/API"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "vague-title",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-04"
+  },
+  {
+    "id": "hard-engineer-05",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas launch checklist | Sign in",
+    "description": "Owner approvals, documentation readiness and rollout communications. Cookies. Log in to your workspace.",
+    "headings": [
+      "Account",
+      "Cookie preferences",
+      "Newsletter"
+    ],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-05",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "hard-engineer-05"
+  },
+  {
+    "id": "hard-engineer-06",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "a11y: err msg + focus po submit",
+    "description": "Atlas signup: screen reader announcement and moving focus to the invalid field.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-06",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-engineer-06"
+  },
+  {
+    "id": "hard-engineer-07",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "FE: CLS on PDP, repro inside",
+    "description": "Atlas product detail cards shift when thumbnails arrive; screenshots and frontend acceptance criteria.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-07",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-07"
+  },
+  {
+    "id": "hard-engineer-08",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas — bouton désactivé sur mobile",
+    "description": "Le formulaire du portail Atlas ne permet plus de valider sur petit écran; étapes de reproduction.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-08",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-08"
+  },
+  {
+    "id": "hard-engineer-09",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Specs",
+    "description": "Atlas settings page: empty state, keyboard order and inline validation.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-09",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-engineer-09"
+  },
+  {
+    "id": "hard-engineer-10",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "SSO callback — spinner forever",
+    "description": "Atlas browser callback screen stays loading after a successful response. Frontend reproduction attached.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-10",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/API"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-10"
+  },
+  {
+    "id": "hard-engineer-11",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "BE: 409 przy retry / idem key",
+    "description": "Atlas orders endpoint rejects repeated requests; proposal for server-side idempotency storage.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-11",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-engineer-11"
+  },
+  {
+    "id": "hard-engineer-12",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas API — AuthZ vs AuthN",
+    "description": "Contract for validating identity and checking permissions on customer endpoints.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-12",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-12"
+  },
+  {
+    "id": "hard-engineer-13",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas: миграція customer_id",
+    "description": "Зміна схеми PostgreSQL для клієнтського API та сумісність старих запитів.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-13",
+    "languages": [
+      "uk"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-13"
+  },
+  {
+    "id": "hard-engineer-14",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Notatki",
+    "description": "Atlas: wygaszanie refresh tokenów w serwisie uwierzytelniania.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-14",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-engineer-14"
+  },
+  {
+    "id": "hard-engineer-15",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "JWT rotate — rollout plan",
+    "description": "Atlas endpoint contract for signing-key rotation and backward compatibility.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-15",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/Ops"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-15"
+  },
+  {
+    "id": "hard-engineer-16",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "P1 / EU-west / 5xx",
+    "description": "Atlas incident timeline: failed deployment, error-rate graph and rollback procedure.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-16",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-16"
+  },
+  {
+    "id": "hard-engineer-17",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "k8s OOMKilled — co podnieść?",
+    "description": "Atlas worker pod exceeds its memory limit. Dashboard graphs and deployment resource settings.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-17",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-engineer-17"
+  },
+  {
+    "id": "hard-engineer-18",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas — sauvegarde et restauration",
+    "description": "Procédure de restauration de la base après un incident, avec responsabilités de garde.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-18",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-18"
+  },
+  {
+    "id": "hard-engineer-19",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "SLO burn-rate cheatsheet (Atlas)",
+    "description": "On-call alert windows for Atlas availability, with Prometheus expressions.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-19",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-19"
+  },
+  {
+    "id": "hard-engineer-20",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "DB pool exhausted, re: deploy",
+    "description": "Atlas incident notes: connection saturation, temporary mitigation and service restart order.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-20",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/API"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-20"
+  },
+  {
+    "id": "hard-engineer-21",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "MDN-ish notes: IO vs RO",
+    "description": "Generic browser reference comparing IntersectionObserver and ResizeObserver with reusable examples.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-21",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-21"
+  },
+  {
+    "id": "hard-engineer-22",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "focus trap bez liba",
+    "description": "Uniwersalny przykład obsługi klawiatury w oknie dialogowym, niezwiązany z konkretnym projektem.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-22",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-engineer-22"
+  },
+  {
+    "id": "hard-engineer-23",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "CSS: overflow bei langen Wörtern",
+    "description": "Allgemeine Beispiele für Zeilenumbrüche und lange Wörter in schmalen Karten.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-23",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-23"
+  },
+  {
+    "id": "hard-engineer-24",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "ARIA APG: combobox",
+    "description": "",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-24",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "hard-engineer-24"
+  },
+  {
+    "id": "hard-engineer-25",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "How Atlas fixed its tabs",
+    "description": "A public technical write-up with reusable keyboard-navigation examples extracted from the Atlas UI work.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-25",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-25"
+  },
+  {
+    "id": "hard-engineer-26",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "RAG eval: MRR != nDCG",
+    "description": "Notes from a personal experiment evaluating retrieved passages for multilingual questions.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-26",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Learn/ML/NLP",
+    "explanation": "Use Learn/ML/NLP: Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-26"
+  },
+  {
+    "id": "hard-engineer-27",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "emb pl/en — wyniki, v2",
+    "description": "Porównanie wektorów zdań po polsku i angielsku w prywatnym notatniku do nauki.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-27",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Learn/ML/NLP",
+    "explanation": "Use Learn/ML/NLP: Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-engineer-27"
+  },
+  {
+    "id": "hard-engineer-28",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Retrieval sin etiquetas",
+    "description": "Ejercicio sobre búsqueda semántica de textos cortos y evaluación de vecinos cercanos.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-28",
+    "languages": [
+      "es"
+    ],
+    "expectedFolder": "Learn/ML/NLP",
+    "explanation": "Use Learn/ML/NLP: Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-28"
+  },
+  {
+    "id": "hard-engineer-29",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "BPE vs unigram, tl;dr",
+    "description": "A compact explanation of subword tokenizers and how they split inflected words.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-29",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Learn/ML/NLP",
+    "explanation": "Use Learn/ML/NLP: Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-29"
+  },
+  {
+    "id": "hard-engineer-30",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas search POC",
+    "description": "Personal notebook exploring multilingual embeddings using the Atlas search idea as an exercise.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-30",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Learn/ML/NLP",
+    "explanation": "Use Learn/ML/NLP: Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Atlas/API"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-30"
+  },
+  {
+    "id": "hard-engineer-31",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "szosa: klocki żyw. czy metal?",
+    "description": "Porównanie klocków hamulcowych do roweru na mokre dojazdy.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-31",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Gear",
+    "explanation": "Use Life/Bike/Gear: Bicycle equipment purchases, fit and mechanical maintenance.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-engineer-31"
+  },
+  {
+    "id": "hard-engineer-32",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "11s HG / 12s MS compatibility",
+    "description": "Which bicycle freehub accepts this cassette? Compatibility table and installation dimensions.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-32",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Bike/Gear",
+    "explanation": "Use Life/Bike/Gear: Bicycle equipment purchases, fit and mechanical maintenance.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-32"
+  },
+  {
+    "id": "hard-engineer-33",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Tubeless: Luftverlust am Ventil",
+    "description": "Reparaturhinweise für das undichte Ventil eines Fahrradreifens.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-33",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Life/Bike/Gear",
+    "explanation": "Use Life/Bike/Gear: Bicycle equipment purchases, fit and mechanical maintenance.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-33"
+  },
+  {
+    "id": "hard-engineer-34",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Do kupienia — 28 mm",
+    "description": "Opona szosowa: szerokość obręczy, masa i cena w sklepie rowerowym.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-34",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Gear",
+    "explanation": "Use Life/Bike/Gear: Bicycle equipment purchases, fit and mechanical maintenance.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-engineer-34"
+  },
+  {
+    "id": "hard-engineer-35",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "USB lampka na zimę",
+    "description": "Przednia lampka rowerowa z ładowaniem USB-C, uchwyt na kierownicę i test wiązki.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-35",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Gear",
+    "explanation": "Use Life/Bike/Gear: Bicycle equipment purchases, fit and mechanical maintenance.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Life/Buy/Tech"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-35"
+  },
+  {
+    "id": "hard-engineer-36",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "sob. 70k / bez asfaltu",
+    "description": "Ślad GPX pętli gravelowej, miejsca z wodą i możliwość skrócenia przejazdu.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-36",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-engineer-36"
+  },
+  {
+    "id": "hard-engineer-37",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "R1 detour, w/ train back",
+    "description": "A bike route with a closed bridge bypass and return connections from the station.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-37",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-37"
+  },
+  {
+    "id": "hard-engineer-38",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Trasa przez las — objazd",
+    "description": "",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-38",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "missing-metadata"
+    ],
+    "duplicateGroup": "hard-engineer-38"
+  },
+  {
+    "id": "hard-engineer-39",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Vélo: boucle facile près de la rivière",
+    "description": "Parcours cyclable, dénivelé et points de ravitaillement pour une sortie à la journée.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-39",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-39"
+  },
+  {
+    "id": "hard-engineer-40",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Mapy na licznik, jak wrzucić GPX?",
+    "description": "Przygotowanie pliku z trasą na sobotni przejazd i import śladu do nawigacji.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-40",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Life/Bike/Gear"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-40"
+  },
+  {
+    "id": "hard-engineer-41",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "DDIA, 2nd ed — sample",
+    "description": "Book listing with table of contents, print formats, preorder price and shipping.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-41",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-41"
+  },
+  {
+    "id": "hard-engineer-42",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "SQL. Małe kroki — ebook",
+    "description": "Strona zakupu książki technicznej w formacie EPUB i PDF.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-42",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Ref/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-42"
+  },
+  {
+    "id": "hard-engineer-43",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Comprendre les réseaux — édition poche",
+    "description": "Présentation du livre, avis des lecteurs et options de commande.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-43",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-43"
+  },
+  {
+    "id": "hard-engineer-44",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "to read",
+    "description": "Review of a nonfiction book about software teams, with links to available editions.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-44",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-engineer-44"
+  },
+  {
+    "id": "hard-engineer-45",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Practical NLP — chapters + code",
+    "description": "A publisher offers a technical book with downloadable exercises and a purchase link.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-45",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Learn/ML/NLP"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-45"
+  },
+  {
+    "id": "hard-engineer-46",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "USB-C PD 100W / DP alt mode?",
+    "description": "Product comparison of laptop docks, display output and charging compatibility.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-46",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Buy/Tech",
+    "explanation": "Use Life/Buy/Tech: Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-46"
+  },
+  {
+    "id": "hard-engineer-47",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "klaw. mech. 75%, ISO-PL",
+    "description": "Oferta klawiatury do prywatnego komputera, układ klawiszy i dostępność.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-47",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Buy/Tech",
+    "explanation": "Use Life/Buy/Tech: Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-engineer-47"
+  },
+  {
+    "id": "hard-engineer-48",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "ANC casque — comparaison",
+    "description": "Comparatif de casques audio sans fil, autonomie, prix et confort.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-48",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Life/Buy/Tech",
+    "explanation": "Use Life/Buy/Tech: Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-engineer-48"
+  },
+  {
+    "id": "hard-engineer-49",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Ten mniejszy",
+    "description": "Monitor 24 cale: porty, regulacja wysokości i cena w sklepie.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-49",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Buy/Tech",
+    "explanation": "Use Life/Buy/Tech: Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-engineer-49"
+  },
+  {
+    "id": "hard-engineer-50",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Garmin mount + powerbank bundle",
+    "description": "Shopping page for a general-purpose USB power bank bundled with a bike computer accessory.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-50",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Life/Buy/Tech",
+    "explanation": "Use Life/Buy/Tech: Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Life/Bike/Gear"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-50"
+  },
+  {
+    "id": "hard-engineer-51",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "atlas moblie nav fix",
+    "description": "Repro: menu in Atlas overlaps the account button on a narrow screen.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-51",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/Web",
+    "explanation": "Use Work/Atlas/Web: Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "typo"
+    ],
+    "duplicateGroup": "hard-engineer-51"
+  },
+  {
+    "id": "hard-engineer-52",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "ETag / If-None-Match for Atlas",
+    "description": "Endpoint response contract and conditional request examples for the Atlas service.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-52",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Atlas/API",
+    "explanation": "Use Work/Atlas/API: Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-52"
+  },
+  {
+    "id": "hard-engineer-53",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "inert vs aria-hidden",
+    "description": "Reusable guidance about disabling background UI while a dialog is open.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-53",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Work/Ref/Web",
+    "explanation": "Use Work/Ref/Web: Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-53"
+  },
+  {
+    "id": "hard-engineer-54",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Rust od podstaw — druk",
+    "description": "Książka, oprawa miękka, ISBN i formularz zamówienia.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-54",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Buy/Books",
+    "explanation": "Use Life/Buy/Books: Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Work/Ref/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-engineer-54"
+  },
+  {
+    "id": "hard-engineer-55",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "pętla 40km, PKP na koniec",
+    "description": "Rowerowy ślad trasy ze stacją kolejową przy końcu przejazdu.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-55",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Life/Bike/Trips",
+    "explanation": "Use Life/Bike/Trips: Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-engineer-55"
+  },
+  {
+    "id": "hard-engineer-56",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Wniosek o odpis aktu urodzenia",
+    "description": "Instrukcja urzędowa dotycząca uzyskania dokumentu stanu cywilnego.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-56",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-engineer-56"
+  },
+  {
+    "id": "hard-engineer-57",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Lease renewal appointment",
+    "description": "A landlord portal showing appointment options for renewing a residential lease.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-57",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-engineer-57"
+  },
+  {
+    "id": "hard-engineer-58",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Bez tytułu",
+    "description": "",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-58",
+    "languages": [
+      "und"
+    ],
+    "expectedFolder": null,
+    "explanation": "No usable page content supports a folder choice; the bookmark needs review.",
+    "ambiguous": true,
+    "reviewReason": "Insufficient metadata to infer the page purpose.",
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-engineer-58"
+  },
+  {
+    "id": "hard-engineer-59",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas — scope v3 / do piątku",
+    "description": "Zakres wydania, otwarte decyzje biznesowe i właściciele zadań zespołów.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://engineer.example/new/hard-engineer-01?utm_source=second-save#saved",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Work/Atlas",
+    "explanation": "Use Work/Atlas: General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-engineer-01"
+  },
+  {
+    "id": "hard-engineer-60",
+    "collectionId": "engineer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Atlas — sauvegarde et restauration",
+    "description": "Procédure de restauration de la base après un incident, avec responsabilités de garde.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://engineer.example/new/hard-engineer-18?utm_source=second-save#saved",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Work/Atlas/Ops",
+    "explanation": "Use Work/Atlas/Ops: Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-engineer-18"
+  },
+  {
+    "id": "hard-household-01",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "zmyw. 45 do zabud. — porówn.",
+    "description": "Wymiary urządzeń, poziom hałasu i front meblowy do remontowanej kuchni.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-01",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-01"
+  },
+  {
+    "id": "hard-household-02",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Spüle: 1 Becken, Unterschrank 60",
+    "description": "Produktmaße und Einbauzeichnung für eine neue Küchenspüle.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-02",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-02"
+  },
+  {
+    "id": "hard-household-03",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "AGD, lista v4",
+    "description": "Piekarnik i płyta do zabudowy: pomiary wnęk kuchennych oraz podłączenie.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-03",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-03"
+  },
+  {
+    "id": "hard-household-04",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Warto sprawdzić",
+    "description": "Bateria nad zlewem: zasięg wylewki dopasowany do zabudowy kuchennej.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-04",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-04"
+  },
+  {
+    "id": "hard-household-05",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Zlew z wyciąganą słuchawką",
+    "description": "Oferta armatury z dokumentacją montażową; nagłówek kategorii zawiera też wyposażenie łazienek.",
+    "headings": [
+      "Account",
+      "Cookie preferences",
+      "Newsletter"
+    ],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-05",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Dom/Remont/Łazienka"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "noisy-metadata"
+    ],
+    "duplicateGroup": "hard-household-05"
+  },
+  {
+    "id": "hard-household-06",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "WC podw., stelaż 112 — karta tech.",
+    "description": "Rysunek montażowy miski i stelaża do remontu łazienki.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-06",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-06"
+  },
+  {
+    "id": "hard-household-07",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Duschrinne 80 cm, bodengleich",
+    "description": "Einbauhöhe und Abdichtung für die Dusche im renovierten Badezimmer.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-07",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-07"
+  },
+  {
+    "id": "hard-household-08",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "PP czy PEX pod prysznic?",
+    "description": "Porównanie rur do zasilania baterii prysznicowej i sposobu ich łączenia.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-08",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-08"
+  },
+  {
+    "id": "hard-household-09",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Montaż — PDF",
+    "description": "Umywalka nablatowa: sposób mocowania i uszczelnienie przy ścianie łazienki.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-09",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-09"
+  },
+  {
+    "id": "hard-household-10",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Silikon sanitarny do mokrych stref",
+    "description": "Materiały uszczelniające do prysznica, z instrukcją również dla zlewozmywaków.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-10",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Dom/Remont/Kuchnia"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-10"
+  },
+  {
+    "id": "hard-household-11",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "G11 vs G12w, czy ma sens?",
+    "description": "Porównanie taryf energii na podstawie zużycia w mieszkaniu.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-11",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-11"
+  },
+  {
+    "id": "hard-household-12",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "FV za prąd — korekta",
+    "description": "Objaśnienie skorygowanego rachunku i terminu płatności u dostawcy energii.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-12",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-12"
+  },
+  {
+    "id": "hard-household-13",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Abschlag für Fernwärme",
+    "description": "Kundeninformation zur monatlichen Vorauszahlung für die Heizung der Wohnung.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-13",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-13"
+  },
+  {
+    "id": "hard-household-14",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Rozliczenie",
+    "description": "Odczyt wodomierza, zużycie i niedopłata za ostatni okres.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-14",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-14"
+  },
+  {
+    "id": "hard-household-15",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Wymiana AGD a zużycie kWh",
+    "description": "Kalkulator kosztu energii urządzeń używany do porównania przyszłych rachunków domowych.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-15",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Dom/Remont/Kuchnia"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-15"
+  },
+  {
+    "id": "hard-household-16",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "WF — zwoln. jednorazowe",
+    "description": "Wzór wiadomości do wychowawcy w sprawie nieobecności dziecka na zajęciach.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-16",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-16"
+  },
+  {
+    "id": "hard-household-17",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "RR, składka i terminy",
+    "description": "Informacja rady rodziców o dobrowolnej wpłacie oraz harmonogramie spotkań.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-17",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-17"
+  },
+  {
+    "id": "hard-household-18",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Wyjście do teatru — zg.",
+    "description": "Formularz zgody opiekuna na szkolne wyjście i godzina powrotu klasy.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-18",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-18"
+  },
+  {
+    "id": "hard-household-19",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Homework: les fractions",
+    "description": "Worksheet supplied by the teacher for practising fractions at home.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-19",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-household-19"
+  },
+  {
+    "id": "hard-household-20",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Alergia w klasie — formularz szkoły",
+    "description": "Informacja dla wychowawcy o ograniczeniach żywieniowych ucznia i zasadach opieki.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-20",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Rodzina/Zdrowie"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-20"
+  },
+  {
+    "id": "hard-household-21",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "POZ — teleporada, zapisy",
+    "description": "Panel przychodni umożliwiający umówienie konsultacji lekarza rodzinnego.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-21",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-21"
+  },
+  {
+    "id": "hard-household-22",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "USG j. brzusznej — przygot.",
+    "description": "Informacja placówki o przygotowaniu do umówionego badania; bez danych pacjenta.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-22",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-22"
+  },
+  {
+    "id": "hard-household-23",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Ordonnance: renouvellement",
+    "description": "Informations du cabinet pour demander un rendez-vous de renouvellement de prescription.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-23",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-23"
+  },
+  {
+    "id": "hard-household-24",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Для батьків: перевірка зору",
+    "description": "Інформація клініки про запис дитини на перевірку зору.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-24",
+    "languages": [
+      "uk"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-24"
+  },
+  {
+    "id": "hard-household-25",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Dieta przy niedoborach — konsultacja",
+    "description": "Poradnia wyjaśnia zakres wizyty dietetycznej i potrzebne wyniki badań.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-25",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Gotowanie/Obiady"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-25"
+  },
+  {
+    "id": "hard-household-26",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "BER -> Hbf, ABC czy AB?",
+    "description": "Notatka do wyjazdu do Berlina: przejazd z lotniska do hotelu i wybór strefy biletu.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-26",
+    "languages": [
+      "pl",
+      "de"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-household-26"
+  },
+  {
+    "id": "hard-household-27",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Fewo f. 2 Erw. + 1 Kind",
+    "description": "Ferienwohnung in Berlin, Schlafplätze und Anreiseinformationen für den Familienaufenthalt.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-27",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-27"
+  },
+  {
+    "id": "hard-household-28",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Berlin: musée avec enfants",
+    "description": "Présentation des activités familiales et du système de réservation du musée berlinois.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-28",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-28"
+  },
+  {
+    "id": "hard-household-29",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Na ten weekend",
+    "description": "Hotel w Berlinie: pokój rodzinny, dojazd z dworca i zasady przyjazdu.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-29",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-29"
+  },
+  {
+    "id": "hard-household-30",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Berlin z rowerem",
+    "description": "Pomysły na spokojne przejazdy w czasie zaplanowanego rodzinnego pobytu w mieście.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-30",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Wyjazdy/Pomysły"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-30"
+  },
+  {
+    "id": "hard-household-31",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "city break bez auta / 2-3 dni",
+    "description": "Zestaw propozycji przyszłych weekendów w kilku miastach Europy.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-31",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Wyjazdy/Pomysły",
+    "explanation": "Use Wyjazdy/Pomysły: Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-household-31"
+  },
+  {
+    "id": "hard-household-32",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Kurztrip mit Kindern: Seen und Wald",
+    "description": "Ideen für spätere Familienausflüge, mit verschiedenen Regionen zur Auswahl.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-32",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Wyjazdy/Pomysły",
+    "explanation": "Use Wyjazdy/Pomysły: Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-32"
+  },
+  {
+    "id": "hard-household-33",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Escapadas de otoño en tren",
+    "description": "Inspiración para futuros viajes cortos sin destino reservado.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-33",
+    "languages": [
+      "es"
+    ],
+    "expectedFolder": "Wyjazdy/Pomysły",
+    "explanation": "Use Wyjazdy/Pomysły: Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-33"
+  },
+  {
+    "id": "hard-household-34",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Kiedyś tam",
+    "description": "Reportaż podróżniczy z Alp, zapisany jako inspiracja na nieustalony jeszcze urlop.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-34",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Wyjazdy/Pomysły",
+    "explanation": "Use Wyjazdy/Pomysły: Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-34"
+  },
+  {
+    "id": "hard-household-35",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Berlin czy Drezno na kolejny raz?",
+    "description": "Ogólne porównanie miast do przyszłych wyjazdów, oddzielne od planu aktualnej podróży.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-35",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Wyjazdy/Pomysły",
+    "explanation": "Use Wyjazdy/Pomysły: Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Wyjazdy/2027/Berlin"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-35"
+  },
+  {
+    "id": "hard-household-36",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "buty p/deszcz. dla młodego",
+    "description": "Produkt w sklepie obuwniczym: rozmiary dziecięce, materiał i cena.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-36",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Kupić/Ubrania",
+    "explanation": "Use Kupić/Ubrania: Clothes and shoes for the family, including school and travel clothing purchases.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-36"
+  },
+  {
+    "id": "hard-household-37",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Übergangsjacke Gr. 128",
+    "description": "Kinderjacke im Onlineshop, Größentabelle und Materialangaben.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-37",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Kupić/Ubrania",
+    "explanation": "Use Kupić/Ubrania: Clothes and shoes for the family, including school and travel clothing purchases.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-37"
+  },
+  {
+    "id": "hard-household-38",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "wf: spodenki granat, 140",
+    "description": "Oferta zakupu krótkich spodenek na zajęcia szkolne, wybór rozmiaru i cena.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-38",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Kupić/Ubrania",
+    "explanation": "Use Kupić/Ubrania: Clothes and shoes for the family, including school and travel clothing purchases.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Rodzina/Szkoła"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-38"
+  },
+  {
+    "id": "hard-household-39",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Ten model",
+    "description": "Lekka kurtka przeciwdeszczowa do kupienia przed podróżą, tabela wymiarów i sklepowy koszyk.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-39",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Kupić/Ubrania",
+    "explanation": "Use Kupić/Ubrania: Clothes and shoes for the family, including school and travel clothing purchases.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-39"
+  },
+  {
+    "id": "hard-household-40",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Buty na Berlin — przecena",
+    "description": "Oferta obuwia do chodzenia po mieście; dostępność rozmiaru i zamówienie.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-40",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Kupić/Ubrania",
+    "explanation": "Use Kupić/Ubrania: Clothes and shoes for the family, including school and travel clothing purchases.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Wyjazdy/2027/Berlin"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-40"
+  },
+  {
+    "id": "hard-household-41",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Książka kuch. — wyd. kieszonkowe",
+    "description": "Oferta zakupu książki z przepisami, ISBN i wybór wydania.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-41",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Czytanie/Książki",
+    "explanation": "Use Czytanie/Książki: Books and ebooks to read or buy, including travel, food and parenting books.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Gotowanie/Obiady"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-41"
+  },
+  {
+    "id": "hard-household-42",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Berlin mit Kindern — Reiseführer",
+    "description": "Buchvorstellung, gedruckte Ausgabe und Bestellmöglichkeit beim Verlag.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-42",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Czytanie/Książki",
+    "explanation": "Use Czytanie/Książki: Books and ebooks to read or buy, including travel, food and parenting books.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Wyjazdy/2027/Berlin"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-42"
+  },
+  {
+    "id": "hard-household-43",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Le cerveau des ados — extrait",
+    "description": "Extrait du livre, présentation de l’auteur et formats disponibles à l’achat.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-43",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Czytanie/Książki",
+    "explanation": "Use Czytanie/Książki: Books and ebooks to read or buy, including travel, food and parenting books.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-43"
+  },
+  {
+    "id": "hard-household-44",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Do przeczytania",
+    "description": "Recenzja reportażu o historii miast, z informacją o wydaniu papierowym.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-44",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Czytanie/Książki",
+    "explanation": "Use Czytanie/Książki: Books and ebooks to read or buy, including travel, food and parenting books.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-44"
+  },
+  {
+    "id": "hard-household-45",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Szkoła bez stresu — ebook",
+    "description": "Strona sprzedaży książki dla rodziców z fragmentem do pobrania.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-45",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Czytanie/Książki",
+    "explanation": "Use Czytanie/Książki: Books and ebooks to read or buy, including travel, food and parenting books.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Rodzina/Szkoła"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-45"
+  },
+  {
+    "id": "hard-household-46",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "obiad 15 min, bez nab.",
+    "description": "Przepis na makaron z warzywami bez produktów mlecznych, składniki i przygotowanie.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-46",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Gotowanie/Obiady",
+    "explanation": "Use Gotowanie/Obiady: Recipes and practical meal plans to cook at home, including family lunchbox meals.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-46"
+  },
+  {
+    "id": "hard-household-47",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "meal prep na pn-śr",
+    "description": "Gotowanie trzech porcji obiadowych z listą składników i czasem pieczenia.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-47",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Gotowanie/Obiady",
+    "explanation": "Use Gotowanie/Obiady: Recipes and practical meal plans to cook at home, including family lunchbox meals.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-household-47"
+  },
+  {
+    "id": "hard-household-48",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Soupe de lentilles, sans lait",
+    "description": "Ingrédients et étapes de préparation d’un repas familial.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-48",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Gotowanie/Obiady",
+    "explanation": "Use Gotowanie/Obiady: Recipes and practical meal plans to cook at home, including family lunchbox meals.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-household-48"
+  },
+  {
+    "id": "hard-household-49",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Zapisany przepis",
+    "description": "Placki warzywne: proporcje składników, smażenie i propozycja podania.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-49",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Gotowanie/Obiady",
+    "explanation": "Use Gotowanie/Obiady: Recipes and practical meal plans to cook at home, including family lunchbox meals.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-49"
+  },
+  {
+    "id": "hard-household-50",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Lunchbox do szkoły, bez orzechów",
+    "description": "Pięć przepisów na posiłki do pudełka, wraz z instrukcjami przygotowania.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-50",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Gotowanie/Obiady",
+    "explanation": "Use Gotowanie/Obiady: Recipes and practical meal plans to cook at home, including family lunchbox meals.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Rodzina/Szkoła"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-household-50"
+  },
+  {
+    "id": "hard-household-51",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "harmonogrm konsult. z wych.",
+    "description": "Godziny spotkań z nauczycielem i zapisy przez dziennik elektroniczny.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-51",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "typo",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-household-51"
+  },
+  {
+    "id": "hard-household-52",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "eBOK: zmiana nr rach.",
+    "description": "Dostawca wody informuje o numerze konta do opłacania faktur.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-52",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Rachunki",
+    "explanation": "Use Dom/Rachunki: Household electricity, water, heating and internet bills, meter readings and tariffs.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-52"
+  },
+  {
+    "id": "hard-household-53",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "IP44, 60 cm nad lustrem",
+    "description": "Lampa do lustra w łazience: strefa montażu, stopień ochrony i wymiary.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-53",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Łazienka",
+    "explanation": "Use Dom/Remont/Łazienka: Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-53"
+  },
+  {
+    "id": "hard-household-54",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Kinderwagen im ÖPNV",
+    "description": "Praktische Hinweise für Fahrten mit einem Kinderwagen in Berlin.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-54",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Wyjazdy/2027/Berlin",
+    "explanation": "Use Wyjazdy/2027/Berlin: Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-household-54"
+  },
+  {
+    "id": "hard-household-55",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Do sprawdzenia",
+    "description": "Informacja przychodni o zapisach na konsultację alergologiczną dziecka.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-55",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Zdrowie",
+    "explanation": "Use Rodzina/Zdrowie: Family appointments, preventive health information and medical visit preparation.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-household-55"
+  },
+  {
+    "id": "hard-household-56",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Kubernetes ingress annotations",
+    "description": "Reference documentation for routing traffic to containerized applications.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-56",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-household-56"
+  },
+  {
+    "id": "hard-household-57",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Live techno set — warehouse session",
+    "description": "A two-hour recording of an electronic music performance.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-57",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-household-57"
+  },
+  {
+    "id": "hard-household-58",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Bez tytułu",
+    "description": "",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://household.example/new/hard-household-58",
+    "languages": [
+      "und"
+    ],
+    "expectedFolder": null,
+    "explanation": "No usable page content supports a folder choice; the bookmark needs review.",
+    "ambiguous": true,
+    "reviewReason": "Insufficient metadata to infer the page purpose.",
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-household-58"
+  },
+  {
+    "id": "hard-household-59",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "zmyw. 45 do zabud. — porówn.",
+    "description": "Wymiary urządzeń, poziom hałasu i front meblowy do remontowanej kuchni.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-01?utm_source=second-save#saved",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Dom/Remont/Kuchnia",
+    "explanation": "Use Dom/Remont/Kuchnia: Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-household-01"
+  },
+  {
+    "id": "hard-household-60",
+    "collectionId": "household",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Wyjście do teatru — zg.",
+    "description": "Formularz zgody opiekuna na szkolne wyjście i godzina powrotu klasy.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://household.example/new/hard-household-18?utm_source=second-save#saved",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Rodzina/Szkoła",
+    "explanation": "Use Rodzina/Szkoła: School notices, parent forms, homework and pupil activities; medical care goes under health.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-household-18"
+  },
+  {
+    "id": "hard-designer-01",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit KV / CMYK / final-ish",
+    "description": "Print key visual for the Orbit identity presentation; color proof and crop marks.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-01",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-01"
+  },
+  {
+    "id": "hard-designer-02",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "OR: logo negatyw + sygnet",
+    "description": "Eksporty znaku Orbit do druku na ciemnym papierze i specyfikacja marginesów.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-02",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-designer-02"
+  },
+  {
+    "id": "hard-designer-03",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit — identité, retour client",
+    "description": "Commentaires du client sur le symbole et les couleurs de son identité visuelle.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-03",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-03"
+  },
+  {
+    "id": "hard-designer-04",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Doku",
+    "description": "Orbit: brand color values for packaging and stationery, with print production notes.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-04",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-04"
+  },
+  {
+    "id": "hard-designer-05",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit tokens v2",
+    "description": "Brand colors and type styles intended for both the identity guide and the website.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-05",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Orbit/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-05"
+  },
+  {
+    "id": "hard-designer-06",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit LP: CTA above fold?",
+    "description": "Website hero layout, button wording and mobile breakpoints for client review.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-06",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Web",
+    "explanation": "Use Clients/Orbit/Web: Orbit website layouts, responsive behavior, accessibility and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-06"
+  },
+  {
+    "id": "hard-designer-07",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit a11y pass / nav",
+    "description": "Keyboard order, menu announcements and focus handling on the client website.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-07",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Web",
+    "explanation": "Use Clients/Orbit/Web: Orbit website layouts, responsive behavior, accessibility and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-07"
+  },
+  {
+    "id": "hard-designer-08",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit: Fehler im Kontaktformular",
+    "description": "Website-Abnahme: Fehlermeldungen und Verhalten beim Absenden auf Mobilgeräten.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-08",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Clients/Orbit/Web",
+    "explanation": "Use Clients/Orbit/Web: Orbit website layouts, responsive behavior, accessibility and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-08"
+  },
+  {
+    "id": "hard-designer-09",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "v7 poprawki",
+    "description": "Orbit: układ strony kontaktu, odległości między polami i zachowanie przy błędzie serwera.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-09",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Clients/Orbit/Web",
+    "explanation": "Use Clients/Orbit/Web: Orbit website layouts, responsive behavior, accessibility and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-09"
+  },
+  {
+    "id": "hard-designer-10",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Font weight for Orbit checkout",
+    "description": "Website implementation handoff showing typography in form controls and purchase steps.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-10",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Web",
+    "explanation": "Use Clients/Orbit/Web: Orbit website layouts, responsive behavior, accessibility and implementation handoff.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Orbit/Brand"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-10"
+  },
+  {
+    "id": "hard-designer-11",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple — DTP, spady 3 mm",
+    "description": "Plik etykiety do drukarni, profil kolorów i wymiary opakowania klienta Maple.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-11",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Clients/Maple/Brand",
+    "explanation": "Use Clients/Maple/Brand: Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-11"
+  },
+  {
+    "id": "hard-designer-12",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "MPL brandbook / RGB+CMYK",
+    "description": "Maple identity guide with color values, mark variants and stationery examples.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-12",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Brand",
+    "explanation": "Use Clients/Maple/Brand: Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-12"
+  },
+  {
+    "id": "hard-designer-13",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple: étiquette, bon à tirer",
+    "description": "Validation de l’étiquette imprimée et de la couleur du logo avant production.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-13",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Clients/Maple/Brand",
+    "explanation": "Use Clients/Maple/Brand: Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-13"
+  },
+  {
+    "id": "hard-designer-14",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "To zatwierdzić",
+    "description": "Maple: propozycje znaku oraz wariant monochromatyczny do małej etykiety.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-14",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Clients/Maple/Brand",
+    "explanation": "Use Clients/Maple/Brand: Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-14"
+  },
+  {
+    "id": "hard-designer-15",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple typography scale",
+    "description": "Client type styles proposed for packaging and the upcoming ecommerce site.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-15",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Brand",
+    "explanation": "Use Clients/Maple/Brand: Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Maple/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-15"
+  },
+  {
+    "id": "hard-designer-16",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple PDP: ATC disabled OOS",
+    "description": "Product-page behavior when an item is out of stock and the add-to-cart button is unavailable.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-16",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-16"
+  },
+  {
+    "id": "hard-designer-17",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple PLP — filtry na mob.",
+    "description": "Zachowanie filtrów i sortowania na mobilnej liście produktów sklepu Maple.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-17",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-designer-17"
+  },
+  {
+    "id": "hard-designer-18",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple: pago como invitado",
+    "description": "Diseño del formulario de compra sin crear cuenta en la tienda del cliente.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-18",
+    "languages": [
+      "es"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-18"
+  },
+  {
+    "id": "hard-designer-19",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Do sprawdzenia",
+    "description": "Maple checkout: przesunięcie pola kodu pocztowego i opis błędu płatności.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-19",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-designer-19"
+  },
+  {
+    "id": "hard-designer-20",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple label preview on product page",
+    "description": "Client website layout for viewing a product label before adding the item to the basket.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-20",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Maple/Brand"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-20"
+  },
+  {
+    "id": "hard-designer-21",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "VF: opsz vs wght demo",
+    "description": "Reusable type specimen explaining optical size and weight axes in variable fonts.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-21",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-21"
+  },
+  {
+    "id": "hard-designer-22",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "kerning / tracking — ściąga",
+    "description": "Ogólna notatka o odstępach między literami i czytelności nagłówków.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-22",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-designer-22"
+  },
+  {
+    "id": "hard-designer-23",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Schriftmischung: Serif + Sans",
+    "description": "Allgemeine Beispiele für die Kombination zweier Schriftfamilien in redaktionellen Layouts.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-23",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-23"
+  },
+  {
+    "id": "hard-designer-24",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Aa 0123",
+    "description": "Typeface specimen with lowercase forms, numeral styles and licensing options.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-24",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-24"
+  },
+  {
+    "id": "hard-designer-25",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Readable forms: font comparison",
+    "description": "A general typeface comparison for small form labels and interface text.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-25",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Studio/Ref/UX"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-25"
+  },
+  {
+    "id": "hard-designer-26",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "WCAG: 3.3.1 vs 3.3.3",
+    "description": "Reusable explanation of identifying form errors and offering useful correction suggestions.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-26",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/UX",
+    "explanation": "Use Studio/Ref/UX: Reusable interaction design and accessibility research, independent of a client deliverable.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-26"
+  },
+  {
+    "id": "hard-designer-27",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "UXR: checkout dropoff notes",
+    "description": "General research summary on why customers abandon checkout; no client-specific brief.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-27",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/UX",
+    "explanation": "Use Studio/Ref/UX: Reusable interaction design and accessibility research, independent of a client deliverable.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-27"
+  },
+  {
+    "id": "hard-designer-28",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Jak skrócić formularz, tl;dr",
+    "description": "Wzorce projektowe do biblioteki referencji: etykiety, wskazówki i walidacja.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-28",
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/UX",
+    "explanation": "Use Studio/Ref/UX: Reusable interaction design and accessibility research, independent of a client deliverable.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-designer-28"
+  },
+  {
+    "id": "hard-designer-29",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Contraste et daltonisme",
+    "description": "Référence générale sur le contraste des contrôles et les indications qui ne reposent pas uniquement sur la couleur.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-29",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Studio/Ref/UX",
+    "explanation": "Use Studio/Ref/UX: Reusable interaction design and accessibility research, independent of a client deliverable.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-29"
+  },
+  {
+    "id": "hard-designer-30",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit case study: reusable menu patterns",
+    "description": "A public article discussing general interaction patterns through an Orbit redesign example.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-30",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/UX",
+    "explanation": "Use Studio/Ref/UX: Reusable interaction design and accessibility research, independent of a client deliverable.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Orbit/Web"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-30"
+  },
+  {
+    "id": "hard-designer-31",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "FV / korekta / NIP, check",
+    "description": "Notatka biura księgowego o poprawianiu polskiej faktury za usługę projektową.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-31",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Firma/Admin/PL",
+    "explanation": "Use Firma/Admin/PL: Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-31"
+  },
+  {
+    "id": "hard-designer-32",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Polnische Umsatzsteuer für Freelancer",
+    "description": "Überblick über Rechnungen und Steuerverwaltung für eine in Polen registrierte Tätigkeit.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-32",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Firma/Admin/PL",
+    "explanation": "Use Firma/Admin/PL: Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language",
+      "jurisdiction"
+    ],
+    "duplicateGroup": "hard-designer-32"
+  },
+  {
+    "id": "hard-designer-33",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "B2B: um. ramowa + zał.",
+    "description": "Wzór umowy na usługi projektowe dla działalności prowadzonej w Polsce.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-33",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Firma/Admin/PL",
+    "explanation": "Use Firma/Admin/PL: Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-designer-33"
+  },
+  {
+    "id": "hard-designer-34",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "VAT UE — rejestracja",
+    "description": "Informacja administracyjna dla przedsiębiorcy z polskim numerem identyfikacyjnym.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-34",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Firma/Admin/PL",
+    "explanation": "Use Firma/Admin/PL: Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "jurisdiction"
+    ],
+    "duplicateGroup": "hard-designer-34"
+  },
+  {
+    "id": "hard-designer-35",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit — termin płatności FV",
+    "description": "Administracyjna korespondencja o polskiej fakturze za projekt, bez materiałów projektowych.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-35",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Firma/Admin/PL",
+    "explanation": "Use Firma/Admin/PL: Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Orbit/Brand"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-35"
+  },
+  {
+    "id": "hard-designer-36",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "USt / Kleinunt. — Merkblatt",
+    "description": "Hinweise zur Rechnungsstellung für eine in Deutschland angemeldete freiberufliche Tätigkeit.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-36",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-36"
+  },
+  {
+    "id": "hard-designer-37",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Niemcy: nr Steuernr. na FV?",
+    "description": "Omówienie danych na fakturze wystawianej w ramach działalności zarejestrowanej w Niemczech.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-37",
+    "languages": [
+      "pl",
+      "de"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language",
+      "jurisdiction"
+    ],
+    "duplicateGroup": "hard-designer-37"
+  },
+  {
+    "id": "hard-designer-38",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "ELSTER — Belege sortieren",
+    "description": "Checkliste zur Ablage von Ausgabenbelegen für die deutsche Steuerverwaltung.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-38",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-38"
+  },
+  {
+    "id": "hard-designer-39",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Invoice template, DE business",
+    "description": "An English-language invoice template for a freelancer registered in Germany.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-39",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language",
+      "jurisdiction"
+    ],
+    "duplicateGroup": "hard-designer-39"
+  },
+  {
+    "id": "hard-designer-40",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple Rechnung — Zahlungsziel",
+    "description": "Buchhaltungsnotiz zu einer Rechnung aus der deutschen Tätigkeit für den Kunden Maple.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-40",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Clients/Maple/Brand"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-40"
+  },
+  {
+    "id": "hard-designer-41",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "RF vs EF + adapter, AF?",
+    "description": "Lens mount compatibility and autofocus limitations for a camera equipment purchase.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-41",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-41"
+  },
+  {
+    "id": "hard-designer-42",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "szkło 35/1.8 — używka",
+    "description": "Oferta używanego obiektywu fotograficznego, stan soczewek i mocowanie.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-42",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-designer-42"
+  },
+  {
+    "id": "hard-designer-43",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Batteriegriff gebraucht, passt?",
+    "description": "Kompatibilität eines gebrauchten Batteriegriffs mit dem vorhandenen Kameragehäuse.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-43",
+    "languages": [
+      "de"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-43"
+  },
+  {
+    "id": "hard-designer-44",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Ten drugi",
+    "description": "Aparat bezlusterkowy: porównanie masy, wizjera i ceny dwóch modeli.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-44",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-44"
+  },
+  {
+    "id": "hard-designer-45",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Lightweight tripod for city walks",
+    "description": "A tripod product comparison with folded dimensions, load capacity and purchase links.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-45",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Osobiste/Foto/Plenery"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-45"
+  },
+  {
+    "id": "hard-designer-46",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "wsch. słońca / most / parking",
+    "description": "Miejsce na poranne zdjęcia, dojście piesze i notatka o dozwolonym postoju.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-46",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Osobiste/Foto/Plenery",
+    "explanation": "Use Osobiste/Foto/Plenery: Places and routes for personal photo walks, access notes and light conditions.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-designer-46"
+  },
+  {
+    "id": "hard-designer-47",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Golden hr, west quay",
+    "description": "Photo location notes with viewing direction, public access and evening light.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-47",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Osobiste/Foto/Plenery",
+    "explanation": "Use Osobiste/Foto/Plenery: Places and routes for personal photo walks, access notes and light conditions.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-47"
+  },
+  {
+    "id": "hard-designer-48",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Spots photo près du canal",
+    "description": "Promenade photographique, points de vue et accès à pied le long du canal.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-48",
+    "languages": [
+      "fr"
+    ],
+    "expectedFolder": "Osobiste/Foto/Plenery",
+    "explanation": "Use Osobiste/Foto/Plenery: Places and routes for personal photo walks, access notes and light conditions.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-48"
+  },
+  {
+    "id": "hard-designer-49",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Miejscówka",
+    "description": "Stare magazyny nad rzeką: trasa dojścia i plan punktów do fotografowania.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-49",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": "Osobiste/Foto/Plenery",
+    "explanation": "Use Osobiste/Foto/Plenery: Places and routes for personal photo walks, access notes and light conditions.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "vague-title"
+    ],
+    "duplicateGroup": "hard-designer-49"
+  },
+  {
+    "id": "hard-designer-50",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Street portraits: where to practise",
+    "description": "A map of public places for a personal portrait photo walk, with access notes.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-50",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Osobiste/Foto/Plenery",
+    "explanation": "Use Osobiste/Foto/Plenery: Places and routes for personal photo walks, access notes and light conditions.",
+    "ambiguous": true,
+    "reviewReason": "A neighbouring scope is plausible; primary label follows the stated user filing policy.",
+    "acceptableAlternatives": [
+      "Osobiste/Foto/Sprzęt"
+    ],
+    "tags": [
+      "hard-synthetic",
+      "overlap"
+    ],
+    "duplicateGroup": "hard-designer-50"
+  },
+  {
+    "id": "hard-designer-51",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Mapel chekout err states",
+    "description": "Maple client handoff: validation and error messages on the payment page.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-51",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "typo"
+    ],
+    "duplicateGroup": "hard-designer-51"
+  },
+  {
+    "id": "hard-designer-52",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit — Друк етикеток",
+    "description": "Макет етикетки клієнта Orbit, кольори та поля для друкарні.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-52",
+    "languages": [
+      "uk"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language"
+    ],
+    "duplicateGroup": "hard-designer-52"
+  },
+  {
+    "id": "hard-designer-53",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "USt-IdNr. vs Steuernummer",
+    "description": "General administration note for the German freelance activity, explaining identifiers on invoices.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-53",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "expectedFolder": "Firma/Admin/DE",
+    "explanation": "Use Firma/Admin/DE: German freelance invoicing, tax and business administration, regardless of the source language.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "mixed-language"
+    ],
+    "duplicateGroup": "hard-designer-53"
+  },
+  {
+    "id": "hard-designer-54",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "lic. desktop/webfont?",
+    "description": "A reusable font licensing reference explaining desktop and web embedding terms.",
+    "headings": [],
+    "titleSource": "user-edited",
+    "url": "https://designer.example/new/hard-designer-54",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Studio/Ref/Type",
+    "explanation": "Use Studio/Ref/Type: Reusable typeface, typography and lettering references not committed to a specific client.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "shorthand"
+    ],
+    "duplicateGroup": "hard-designer-54"
+  },
+  {
+    "id": "hard-designer-55",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "PD strap / quick release",
+    "description": "A camera strap product page with attachment compatibility, dimensions and purchase options.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-55",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Osobiste/Foto/Sprzęt",
+    "explanation": "Use Osobiste/Foto/Sprzęt: Camera and lens purchases, compatibility and maintenance, rather than photo locations.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation"
+    ],
+    "duplicateGroup": "hard-designer-55"
+  },
+  {
+    "id": "hard-designer-56",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Mieszkanie: protokół zdawczo-odbiorczy",
+    "description": "Prywatna umowa najmu i lista stanu wyposażenia lokalu.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-56",
+    "languages": [
+      "pl"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-designer-56"
+  },
+  {
+    "id": "hard-designer-57",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Sourdough starter, day 3",
+    "description": "A home bread recipe with feeding quantities and kitchen instructions.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-57",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": null,
+    "explanation": "This user has no suitable folder for the purpose of this page.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-designer-57"
+  },
+  {
+    "id": "hard-designer-58",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Bez tytułu",
+    "description": "",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-58",
+    "languages": [
+      "und"
+    ],
+    "expectedFolder": null,
+    "explanation": "No usable page content supports a folder choice; the bookmark needs review.",
+    "ambiguous": true,
+    "reviewReason": "Insufficient metadata to infer the page purpose.",
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "no-suitable-folder"
+    ],
+    "duplicateGroup": "hard-designer-58"
+  },
+  {
+    "id": "hard-designer-59",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Orbit KV / CMYK / final-ish",
+    "description": "Print key visual for the Orbit identity presentation; color proof and crop marks.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-01?utm_source=second-save#saved",
+    "languages": [
+      "en"
+    ],
+    "expectedFolder": "Clients/Orbit/Brand",
+    "explanation": "Use Clients/Orbit/Brand: Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "abbreviation",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-designer-01"
+  },
+  {
+    "id": "hard-designer-60",
+    "collectionId": "designer",
+    "synthetic": true,
+    "provenance": "Authored synthetic browser bookmark; fictional URL and extracted metadata, not a real saved page.",
+    "title": "Maple: pago como invitado",
+    "description": "Diseño del formulario de compra sin crear cuenta en la tienda del cliente.",
+    "headings": [],
+    "titleSource": "page",
+    "url": "https://designer.example/new/hard-designer-18?utm_source=second-save#saved",
+    "languages": [
+      "es"
+    ],
+    "expectedFolder": "Clients/Maple/Web",
+    "explanation": "Use Clients/Maple/Web: Maple ecommerce site navigation, product pages, checkout and implementation handoff.",
+    "ambiguous": false,
+    "reviewReason": null,
+    "acceptableAlternatives": [],
+    "tags": [
+      "hard-synthetic",
+      "cross-language",
+      "duplicate"
+    ],
+    "duplicateGroup": "hard-designer-18"
+  }
+]

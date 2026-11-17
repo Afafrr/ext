@@ -1,0 +1,110 @@
+[
+  {
+    "dataset": "real",
+    "variant": "minilm-reranker-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-28-56-949Z-9fd09cd0/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "minilm-reranker-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-29-03-258Z-34dff477/run.json"
+  },
+  {
+    "dataset": "real",
+    "variant": "minilm-reranker-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-29-09-161Z-ce24b3a3/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-reranker-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-29-15-349Z-b5ebb1eb/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-reranker-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-29-33-084Z-180f6e1d/run.json"
+  },
+  {
+    "dataset": "real-derived",
+    "variant": "minilm-reranker-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-29-51-530Z-eacac7ed/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-reranker-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-30-09-573Z-5b1e623f/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-reranker-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-30-36-819Z-3a9d7e7f/run.json"
+  },
+  {
+    "dataset": "hard",
+    "variant": "minilm-reranker-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-31-03-849Z-8e1cdab2/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-31-30-997Z-7390098e/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "bge-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-31-33-210Z-86fbb943/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-reranker-128",
+    "repeat": 1,
+    "runPath": "results/2026-11-14T13-31-42-909Z-cb3df80a/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-32-30-369Z-b109abf4/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "bge-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-32-32-587Z-c01f7002/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-reranker-128",
+    "repeat": 2,
+    "runPath": "results/2026-11-14T13-32-42-112Z-7395261c/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-33-30-960Z-534cfc75/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "bge-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-33-33-610Z-81151ff1/run.json"
+  },
+  {
+    "dataset": "combined",
+    "variant": "minilm-reranker-128",
+    "repeat": 3,
+    "runPath": "results/2026-11-14T13-33-43-351Z-9d095134/run.json"
+  }
+]

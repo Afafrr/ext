@@ -1,0 +1,31 @@
+{
+  "dataset": "real",
+  "model": {
+    "model": "Xenova/bge-m3",
+    "dtype": "q8",
+    "pooling": "cls",
+    "maxLength": 8192
+  },
+  "fields": [
+    "title",
+    "description"
+  ],
+  "descriptions": "datasets/real/descriptions.json",
+  "strategies": [
+    "closest",
+    "folder-closest",
+    "manual-closest",
+    "generated-closest",
+    "top3-average",
+    "centroid",
+    "domain-closest",
+    "hybrid"
+  ],
+  "thresholds": {
+    "newFolder": 0.55,
+    "askUserMargin": 0.05
+  },
+  "cacheDir": ".cache/models",
+  "localFilesOnly": true,
+  "report": false
+}

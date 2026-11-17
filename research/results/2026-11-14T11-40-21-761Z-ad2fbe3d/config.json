@@ -1,0 +1,31 @@
+{
+  "dataset": "real-derived",
+  "model": {
+    "model": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "dtype": "q8",
+    "pooling": "mean",
+    "maxLength": 128
+  },
+  "fields": [
+    "title",
+    "description"
+  ],
+  "descriptions": "datasets/real/descriptions.json",
+  "strategies": [
+    "closest",
+    "folder-closest",
+    "manual-closest",
+    "generated-closest",
+    "top3-average",
+    "centroid",
+    "domain-closest",
+    "hybrid"
+  ],
+  "thresholds": {
+    "newFolder": 0.55,
+    "askUserMargin": 0.05
+  },
+  "cacheDir": ".cache/models",
+  "localFilesOnly": true,
+  "report": false
+}

@@ -1,0 +1,204 @@
+{
+  dataset: 'hard',
+  collections: 3,
+  indexed: 72,
+  cases: 180,
+  review: 38,
+  noFolder: 9,
+  duplicateCopies: 6,
+  fingerprint: '823b557594e0ce1bd428647f6573dbb4b98671fcfb9bc29c7a8db5ee858ab5cb'
+}
+Loading Xenova/paraphrase-multilingual-MiniLM-L12-v2 embeddings…
+Loading reranker (first run downloads its weights)…
+Case 1/180
+Case 2/180
+Case 3/180
+Case 4/180
+Case 5/180
+Case 6/180
+Case 7/180
+Case 8/180
+Case 9/180
+Case 10/180
+Case 11/180
+Case 12/180
+Case 13/180
+Case 14/180
+Case 15/180
+Case 16/180
+Case 17/180
+Case 18/180
+Case 19/180
+Case 20/180
+Case 21/180
+Case 22/180
+Case 23/180
+Case 24/180
+Case 25/180
+Case 26/180
+Case 27/180
+Case 28/180
+Case 29/180
+Case 30/180
+Case 31/180
+Case 32/180
+Case 33/180
+Case 34/180
+Case 35/180
+Case 36/180
+Case 37/180
+Case 38/180
+Case 39/180
+Case 40/180
+Case 41/180
+Case 42/180
+Case 43/180
+Case 44/180
+Case 45/180
+Case 46/180
+Case 47/180
+Case 48/180
+Case 49/180
+Case 50/180
+Case 51/180
+Case 52/180
+Case 53/180
+Case 54/180
+Case 55/180
+Case 56/180
+Case 57/180
+Case 58/180
+Case 59/180
+Case 60/180
+Case 61/180
+Case 62/180
+Case 63/180
+Case 64/180
+Case 65/180
+Case 66/180
+Case 67/180
+Case 68/180
+Case 69/180
+Case 70/180
+Case 71/180
+Case 72/180
+Case 73/180
+Case 74/180
+Case 75/180
+Case 76/180
+Case 77/180
+Case 78/180
+Case 79/180
+Case 80/180
+Case 81/180
+Case 82/180
+Case 83/180
+Case 84/180
+Case 85/180
+Case 86/180
+Case 87/180
+Case 88/180
+Case 89/180
+Case 90/180
+Case 91/180
+Case 92/180
+Case 93/180
+Case 94/180
+Case 95/180
+Case 96/180
+Case 97/180
+Case 98/180
+Case 99/180
+Case 100/180
+Case 101/180
+Case 102/180
+Case 103/180
+Case 104/180
+Case 105/180
+Case 106/180
+Case 107/180
+Case 108/180
+Case 109/180
+Case 110/180
+Case 111/180
+Case 112/180
+Case 113/180
+Case 114/180
+Case 115/180
+Case 116/180
+Case 117/180
+Case 118/180
+Case 119/180
+Case 120/180
+Case 121/180
+Case 122/180
+Case 123/180
+Case 124/180
+Case 125/180
+Case 126/180
+Case 127/180
+Case 128/180
+Case 129/180
+Case 130/180
+Case 131/180
+Case 132/180
+Case 133/180
+Case 134/180
+Case 135/180
+Case 136/180
+Case 137/180
+Case 138/180
+Case 139/180
+Case 140/180
+Case 141/180
+Case 142/180
+Case 143/180
+Case 144/180
+Case 145/180
+Case 146/180
+Case 147/180
+Case 148/180
+Case 149/180
+Case 150/180
+Case 151/180
+Case 152/180
+Case 153/180
+Case 154/180
+Case 155/180
+Case 156/180
+Case 157/180
+Case 158/180
+Case 159/180
+Case 160/180
+Case 161/180
+Case 162/180
+Case 163/180
+Case 164/180
+Case 165/180
+Case 166/180
+Case 167/180
+Case 168/180
+Case 169/180
+Case 170/180
+Case 171/180
+Case 172/180
+Case 173/180
+Case 174/180
+Case 175/180
+Case 176/180
+Case 177/180
+Case 178/180
+Case 179/180
+Case 180/180
+┌─────────┬──────────────────┬─────────┬───────┬────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ strategy         │ correct │ wrong │ accuracy           │ certainEnough       │ meanQueryMs        │
+├─────────┼──────────────────┼─────────┼───────┼────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'closest'        │ 117     │ 54    │ 0.6842105263157895 │ 0.4502923976608187  │ 4.460810855555535  │
+│ 1       │ 'folder-closest' │ 119     │ 52    │ 0.695906432748538  │ 0.25146198830409355 │ 4.494409433333206  │
+│ 2       │ 'manual-closest' │ 130     │ 41    │ 0.7602339181286549 │ 0.38011695906432746 │ 4.46532037777775   │
+│ 3       │ 'top3-average'   │ 133     │ 38    │ 0.7777777777777778 │ 0.26900584795321636 │ 4.44082287222215   │
+│ 4       │ 'centroid'       │ 130     │ 41    │ 0.7602339181286549 │ 0.4619883040935672  │ 4.473205294444329  │
+│ 5       │ 'hybrid'         │ 119     │ 52    │ 0.695906432748538  │ 0.16374269005847952 │ 4.540933799999921  │
+│ 6       │ 'rerank'         │ 149     │ 22    │ 0.8713450292397661 │ null                │ 140.36711368888894 │
+└─────────┴──────────────────┴─────────┴───────┴────────────────────┴─────────────────────┴────────────────────┘
+Saved results/2026-11-14T13-30-09-573Z-5b1e623f/run.json

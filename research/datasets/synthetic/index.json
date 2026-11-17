@@ -1,0 +1,552 @@
+[
+  {
+    "id": "developer-index-0-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Work / Frontend",
+    "title": "CSS grid intrinsic sizing",
+    "url": "https://developer.example/index/0/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-0-1",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Work / Frontend",
+    "title": "Debugging React hydration mismatches",
+    "url": "https://developer.example/index/0/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-1-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Work / Backend",
+    "title": "PostgreSQL query plan reference",
+    "url": "https://developer.example/index/1/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-1-1",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Work / Backend",
+    "title": "Node server graceful shutdown",
+    "url": "https://developer.example/index/1/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-2-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Learn / Courses",
+    "title": "Full stack curriculum with weekly assignments",
+    "url": "https://developer.example/index/2/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-2-1",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Learn / Courses",
+    "title": "Ćwiczenia z algorytmów dla początkujących",
+    "url": "https://developer.example/index/2/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-3-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Learn / AI",
+    "title": "Evaluating multilingual sentence embeddings",
+    "url": "https://developer.example/index/3/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-3-1",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Learn / AI",
+    "title": "Wprowadzenie do wektorowych baz danych",
+    "url": "https://developer.example/index/3/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-4-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Personal / Cooking",
+    "title": "Pieczona dynia z ciecierzycą",
+    "url": "https://developer.example/index/4/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-4-1",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Personal / Cooking",
+    "title": "How to make sourdough starter",
+    "url": "https://developer.example/index/4/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "developer-index-5-0",
+    "collectionId": "developer",
+    "synthetic": true,
+    "folder": "Personal / Cycling",
+    "title": "Regulacja przerzutki tylnej",
+    "url": "https://developer.example/index/5/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-0-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dom / Remont",
+    "title": "Jak dobrać fugę do płytek",
+    "url": "https://family.example/index/0/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-0-1",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dom / Remont",
+    "title": "Kitchen cabinet hinge adjustment",
+    "url": "https://family.example/index/0/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-1-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dom / Obiady",
+    "title": "Jadłospis na pięć dni",
+    "url": "https://family.example/index/1/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-1-1",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dom / Obiady",
+    "title": "Quick vegetable curry recipe",
+    "url": "https://family.example/index/1/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-2-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dzieci / Szkoła",
+    "title": "Plan lekcji klasy czwartej",
+    "url": "https://family.example/index/2/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-2-1",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Dzieci / Szkoła",
+    "title": "Printable multiplication games",
+    "url": "https://family.example/index/2/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-3-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Wyjazdy / Polska",
+    "title": "Weekend w Kazimierzu z dziećmi",
+    "url": "https://family.example/index/3/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-3-1",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Wyjazdy / Polska",
+    "title": "Szlaki spacerowe w Beskidach",
+    "url": "https://family.example/index/3/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-4-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Zdrowie",
+    "title": "Jak przygotować się do badania krwi",
+    "url": "https://family.example/index/4/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-4-1",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Zdrowie",
+    "title": "Home stretches for desk workers",
+    "url": "https://family.example/index/4/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "family-index-5-0",
+    "collectionId": "family",
+    "synthetic": true,
+    "folder": "Finanse / Rachunki",
+    "title": "Jak odczytać rachunek za prąd",
+    "url": "https://family.example/index/5/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-0-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Research / Papers",
+    "title": "Sleep restriction and memory consolidation study",
+    "url": "https://researcher.example/index/0/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-0-1",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Research / Papers",
+    "title": "Przegląd badań nad uwagą selektywną",
+    "url": "https://researcher.example/index/0/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-1-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Research / Methods",
+    "title": "Mixed effects regression tutorial",
+    "url": "https://researcher.example/index/1/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-1-1",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Research / Methods",
+    "title": "Power analysis for repeated measures",
+    "url": "https://researcher.example/index/1/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-2-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Teaching",
+    "title": "Designing a first-year psychology seminar",
+    "url": "https://researcher.example/index/2/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-2-1",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Teaching",
+    "title": "Materiały do ćwiczeń z metodologii",
+    "url": "https://researcher.example/index/2/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-3-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Writing / Sources",
+    "title": "Organizing a Zotero group library",
+    "url": "https://researcher.example/index/3/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-3-1",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Writing / Sources",
+    "title": "How to write a clear abstract",
+    "url": "https://researcher.example/index/3/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-4-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Outside / Hiking",
+    "title": "Packing for a day in the Tatras",
+    "url": "https://researcher.example/index/4/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-4-1",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Outside / Hiking",
+    "title": "Reading contour lines on a trail map",
+    "url": "https://researcher.example/index/4/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "researcher-index-5-0",
+    "collectionId": "researcher",
+    "synthetic": true,
+    "folder": "Outside / Coffee",
+    "title": "Adjusting grind size for a V60",
+    "url": "https://researcher.example/index/5/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-0-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Clients / Cafe Luna",
+    "title": "Cafe Luna menu typography exploration",
+    "url": "https://freelancer.example/index/0/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-0-1",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Clients / Cafe Luna",
+    "title": "Luna coffee shop landing page brief",
+    "url": "https://freelancer.example/index/0/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-1-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Clients / Green Shop",
+    "title": "Green Shop product page requirements",
+    "url": "https://freelancer.example/index/1/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-1-1",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Clients / Green Shop",
+    "title": "Plant store ecommerce color palette",
+    "url": "https://freelancer.example/index/1/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-2-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Studio / Inspiration",
+    "title": "Editorial layouts with oversized type",
+    "url": "https://freelancer.example/index/2/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-2-1",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Studio / Inspiration",
+    "title": "Gallery of minimalist packaging",
+    "url": "https://freelancer.example/index/2/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-3-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Studio / Tools",
+    "title": "Figma component property reference",
+    "url": "https://freelancer.example/index/3/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-3-1",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Studio / Tools",
+    "title": "Exporting print-ready PDFs",
+    "url": "https://freelancer.example/index/3/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-4-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Business / Admin",
+    "title": "Szablon faktury dla klienta zagranicznego",
+    "url": "https://freelancer.example/index/4/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-4-1",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Business / Admin",
+    "title": "Freelance project contract checklist",
+    "url": "https://freelancer.example/index/4/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "freelancer-index-5-0",
+    "collectionId": "freelancer",
+    "synthetic": true,
+    "folder": "Personal / Music",
+    "title": "Live jazz trio session in a small club",
+    "url": "https://freelancer.example/index/5/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-0-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "read",
+    "title": "An essay on how cities remember",
+    "url": "https://collector.example/index/0/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-0-1",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "read",
+    "title": "Historia map: długi reportaż",
+    "url": "https://collector.example/index/0/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-1-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "watch",
+    "title": "Recorded talk: the future of public libraries",
+    "url": "https://collector.example/index/1/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-1-1",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "watch",
+    "title": "Filmowy poradnik naprawy starego radia",
+    "url": "https://collector.example/index/1/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-2-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "buy",
+    "title": "Compact binoculars product comparison",
+    "url": "https://collector.example/index/2/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-2-1",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "buy",
+    "title": "Skórzany plecak miejski — oferta",
+    "url": "https://collector.example/index/2/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-3-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "go",
+    "title": "Weekend jazz festival tickets",
+    "url": "https://collector.example/index/3/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-3-1",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "go",
+    "title": "Ogród botaniczny: godziny otwarcia",
+    "url": "https://collector.example/index/3/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-4-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "make / food",
+    "title": "Domowy ramen krok po kroku",
+    "url": "https://collector.example/index/4/0",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-4-1",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "make / food",
+    "title": "Lemon cake ingredients and method",
+    "url": "https://collector.example/index/4/1",
+    "description": "",
+    "headings": []
+  },
+  {
+    "id": "collector-index-5-0",
+    "collectionId": "collector",
+    "synthetic": true,
+    "folder": "make / repairs",
+    "title": "Replacing a broken zipper by hand",
+    "url": "https://collector.example/index/5/0",
+    "description": "",
+    "headings": []
+  }
+]

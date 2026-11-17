@@ -1,0 +1,450 @@
+[
+  {
+    "id": "real-user",
+    "synthetic": false,
+    "habit": "Original prototype folders and labels.",
+    "folders": [
+      {
+        "path": "ksiazki",
+        "description": ""
+      },
+      {
+        "path": "learn",
+        "description": ""
+      },
+      {
+        "path": "learn > rb",
+        "description": ""
+      },
+      {
+        "path": "music",
+        "description": ""
+      },
+      {
+        "path": "ubrania",
+        "description": ""
+      },
+      {
+        "path": "jobs",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "engineer",
+    "synthetic": true,
+    "habit": "Project-specific material goes under Atlas. Reusable frontend references go under Ref. Learning is separate from production work; shopping is separated by product type.",
+    "folders": [
+      {
+        "path": "Work/Atlas",
+        "description": "General Atlas project planning and decisions spanning several teams; specialist implementation pages belong in the relevant child folder."
+      },
+      {
+        "path": "Work/Atlas/Web",
+        "description": "Atlas frontend implementation, browser UI and accessibility. Generic reusable web references go in Work/Ref/Web."
+      },
+      {
+        "path": "Work/Atlas/API",
+        "description": "Atlas backend endpoints, authentication contracts and database changes; infrastructure operations go in Ops."
+      },
+      {
+        "path": "Work/Atlas/Ops",
+        "description": "Deployments, incidents, monitoring and infrastructure for Atlas, including operational security and availability."
+      },
+      {
+        "path": "Work/Ref/Web",
+        "description": "Reusable browser, CSS and accessibility documentation without Atlas-specific implementation work."
+      },
+      {
+        "path": "Learn/ML/NLP",
+        "description": "Language models, text embeddings and retrieval experiments for personal learning, rather than Atlas production incidents."
+      },
+      {
+        "path": "Life/Bike/Gear",
+        "description": "Bicycle equipment purchases, fit and mechanical maintenance."
+      },
+      {
+        "path": "Life/Bike/Trips",
+        "description": "Cycling routes, GPX tracks and practical ride planning, rather than equipment shopping."
+      },
+      {
+        "path": "Life/Buy/Books",
+        "description": "Books and ebooks to buy or read, including technical books; interactive tutorials go in learning or references."
+      },
+      {
+        "path": "Life/Buy/Tech",
+        "description": "Personal electronics and computer accessory purchases, rather than cycling equipment or work implementation."
+      }
+    ],
+    "folderTree": [
+      {
+        "path": "Work",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Work/Atlas",
+        "parentPath": "Work",
+        "selectable": true
+      },
+      {
+        "path": "Work/Atlas/Web",
+        "parentPath": "Work/Atlas",
+        "selectable": true
+      },
+      {
+        "path": "Work/Atlas/API",
+        "parentPath": "Work/Atlas",
+        "selectable": true
+      },
+      {
+        "path": "Work/Atlas/Ops",
+        "parentPath": "Work/Atlas",
+        "selectable": true
+      },
+      {
+        "path": "Work/Ref",
+        "parentPath": "Work",
+        "selectable": false
+      },
+      {
+        "path": "Work/Ref/Web",
+        "parentPath": "Work/Ref",
+        "selectable": true
+      },
+      {
+        "path": "Learn",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Learn/ML",
+        "parentPath": "Learn",
+        "selectable": false
+      },
+      {
+        "path": "Learn/ML/NLP",
+        "parentPath": "Learn/ML",
+        "selectable": true
+      },
+      {
+        "path": "Life",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Life/Bike",
+        "parentPath": "Life",
+        "selectable": false
+      },
+      {
+        "path": "Life/Bike/Gear",
+        "parentPath": "Life/Bike",
+        "selectable": true
+      },
+      {
+        "path": "Life/Bike/Trips",
+        "parentPath": "Life/Bike",
+        "selectable": true
+      },
+      {
+        "path": "Life/Buy",
+        "parentPath": "Life",
+        "selectable": false
+      },
+      {
+        "path": "Life/Buy/Books",
+        "parentPath": "Life/Buy",
+        "selectable": true
+      },
+      {
+        "path": "Life/Buy/Tech",
+        "parentPath": "Life/Buy",
+        "selectable": true
+      }
+    ]
+  },
+  {
+    "id": "household",
+    "synthetic": true,
+    "habit": "Renovation shopping is filed by room. Berlin-specific travel is separate from unplanned trip ideas. School administration and health are separate from recipes and books.",
+    "folders": [
+      {
+        "path": "Dom/Remont/Kuchnia",
+        "description": "Kitchen renovation purchases, measurements and installation instructions, including kitchen appliances."
+      },
+      {
+        "path": "Dom/Remont/Łazienka",
+        "description": "Bathroom renovation, plumbing fixtures and installation details, separate from kitchen fixtures."
+      },
+      {
+        "path": "Dom/Rachunki",
+        "description": "Household electricity, water, heating and internet bills, meter readings and tariffs."
+      },
+      {
+        "path": "Rodzina/Szkoła",
+        "description": "School notices, parent forms, homework and pupil activities; medical care goes under health."
+      },
+      {
+        "path": "Rodzina/Zdrowie",
+        "description": "Family appointments, preventive health information and medical visit preparation."
+      },
+      {
+        "path": "Wyjazdy/2027/Berlin",
+        "description": "Practical planning for the family Berlin trip: accommodation, local transport, visits and reservations."
+      },
+      {
+        "path": "Wyjazdy/Pomysły",
+        "description": "Inspiration for future trips without an active destination plan; material specifically for Berlin goes in its trip folder."
+      },
+      {
+        "path": "Kupić/Ubrania",
+        "description": "Clothes and shoes for the family, including school and travel clothing purchases."
+      },
+      {
+        "path": "Czytanie/Książki",
+        "description": "Books and ebooks to read or buy, including travel, food and parenting books."
+      },
+      {
+        "path": "Gotowanie/Obiady",
+        "description": "Recipes and practical meal plans to cook at home, including family lunchbox meals."
+      }
+    ],
+    "folderTree": [
+      {
+        "path": "Dom",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Dom/Remont",
+        "parentPath": "Dom",
+        "selectable": false
+      },
+      {
+        "path": "Dom/Remont/Kuchnia",
+        "parentPath": "Dom/Remont",
+        "selectable": true
+      },
+      {
+        "path": "Dom/Remont/Łazienka",
+        "parentPath": "Dom/Remont",
+        "selectable": true
+      },
+      {
+        "path": "Dom/Rachunki",
+        "parentPath": "Dom",
+        "selectable": true
+      },
+      {
+        "path": "Rodzina",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Rodzina/Szkoła",
+        "parentPath": "Rodzina",
+        "selectable": true
+      },
+      {
+        "path": "Rodzina/Zdrowie",
+        "parentPath": "Rodzina",
+        "selectable": true
+      },
+      {
+        "path": "Wyjazdy",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Wyjazdy/2027",
+        "parentPath": "Wyjazdy",
+        "selectable": false
+      },
+      {
+        "path": "Wyjazdy/2027/Berlin",
+        "parentPath": "Wyjazdy/2027",
+        "selectable": true
+      },
+      {
+        "path": "Wyjazdy/Pomysły",
+        "parentPath": "Wyjazdy",
+        "selectable": true
+      },
+      {
+        "path": "Kupić",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Kupić/Ubrania",
+        "parentPath": "Kupić",
+        "selectable": true
+      },
+      {
+        "path": "Czytanie",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Czytanie/Książki",
+        "parentPath": "Czytanie",
+        "selectable": true
+      },
+      {
+        "path": "Gotowanie",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Gotowanie/Obiady",
+        "parentPath": "Gotowanie",
+        "selectable": true
+      }
+    ]
+  },
+  {
+    "id": "designer",
+    "synthetic": true,
+    "habit": "Client identity takes priority over design topic. Generic references are separate. Tax administration is filed by jurisdiction, not by the page language. Camera shopping and photo locations are separate.",
+    "folders": [
+      {
+        "path": "Clients/Orbit/Brand",
+        "description": "Orbit client identity: logos, colors, packaging and print collateral. Website behavior belongs in Orbit/Web."
+      },
+      {
+        "path": "Clients/Orbit/Web",
+        "description": "Orbit website layouts, responsive behavior, accessibility and implementation handoff."
+      },
+      {
+        "path": "Clients/Maple/Brand",
+        "description": "Maple client identity: logo, palette, packaging and print materials, separate from Orbit and website behavior."
+      },
+      {
+        "path": "Clients/Maple/Web",
+        "description": "Maple ecommerce site navigation, product pages, checkout and implementation handoff."
+      },
+      {
+        "path": "Studio/Ref/Type",
+        "description": "Reusable typeface, typography and lettering references not committed to a specific client."
+      },
+      {
+        "path": "Studio/Ref/UX",
+        "description": "Reusable interaction design and accessibility research, independent of a client deliverable."
+      },
+      {
+        "path": "Firma/Admin/PL",
+        "description": "Polish freelance invoices, contracts, taxes and administration, regardless of the language of the source."
+      },
+      {
+        "path": "Firma/Admin/DE",
+        "description": "German freelance invoicing, tax and business administration, regardless of the source language."
+      },
+      {
+        "path": "Osobiste/Foto/Sprzęt",
+        "description": "Camera and lens purchases, compatibility and maintenance, rather than photo locations."
+      },
+      {
+        "path": "Osobiste/Foto/Plenery",
+        "description": "Places and routes for personal photo walks, access notes and light conditions."
+      }
+    ],
+    "folderTree": [
+      {
+        "path": "Clients",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Clients/Orbit",
+        "parentPath": "Clients",
+        "selectable": false
+      },
+      {
+        "path": "Clients/Orbit/Brand",
+        "parentPath": "Clients/Orbit",
+        "selectable": true
+      },
+      {
+        "path": "Clients/Orbit/Web",
+        "parentPath": "Clients/Orbit",
+        "selectable": true
+      },
+      {
+        "path": "Clients/Maple",
+        "parentPath": "Clients",
+        "selectable": false
+      },
+      {
+        "path": "Clients/Maple/Brand",
+        "parentPath": "Clients/Maple",
+        "selectable": true
+      },
+      {
+        "path": "Clients/Maple/Web",
+        "parentPath": "Clients/Maple",
+        "selectable": true
+      },
+      {
+        "path": "Studio",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Studio/Ref",
+        "parentPath": "Studio",
+        "selectable": false
+      },
+      {
+        "path": "Studio/Ref/Type",
+        "parentPath": "Studio/Ref",
+        "selectable": true
+      },
+      {
+        "path": "Studio/Ref/UX",
+        "parentPath": "Studio/Ref",
+        "selectable": true
+      },
+      {
+        "path": "Firma",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Firma/Admin",
+        "parentPath": "Firma",
+        "selectable": false
+      },
+      {
+        "path": "Firma/Admin/PL",
+        "parentPath": "Firma/Admin",
+        "selectable": true
+      },
+      {
+        "path": "Firma/Admin/DE",
+        "parentPath": "Firma/Admin",
+        "selectable": true
+      },
+      {
+        "path": "Osobiste",
+        "parentPath": null,
+        "selectable": false
+      },
+      {
+        "path": "Osobiste/Foto",
+        "parentPath": "Osobiste",
+        "selectable": false
+      },
+      {
+        "path": "Osobiste/Foto/Sprzęt",
+        "parentPath": "Osobiste/Foto",
+        "selectable": true
+      },
+      {
+        "path": "Osobiste/Foto/Plenery",
+        "parentPath": "Osobiste/Foto",
+        "selectable": true
+      }
+    ]
+  }
+]

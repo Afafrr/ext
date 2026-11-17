@@ -1,0 +1,161 @@
+{
+  "provenance": {
+    "manual": "Copied from prototype folders.described.human.js; authored from indexed titles only.",
+    "generated": {
+      "source": "folders/folders.real.js",
+      "model": "onnx-community/Qwen3-0.6B-ONNX",
+      "createdAt": "2026-11-10T14:38:14.001Z",
+      "promptVersion": 3,
+      "language": "en"
+    },
+    "domain": {
+      "source": "folders/folders.domains.js",
+      "model": "onnx-community/Qwen3-0.6B-ONNX",
+      "createdAt": "2026-11-10T15:08:21.754Z",
+      "promptVersion": 3,
+      "method": "titles-and-domain-homepages",
+      "language": "en"
+    },
+    "note": "Descriptions and domain metadata copied unchanged; homepage domains were supplied for the prototype experiment, not recovered original bookmark URLs. No evaluation content used."
+  },
+  "folders": {
+    "ksiazki": {
+      "manual": "Books to buy in the future.",
+      "generated": "Category: Books. Common content type: Books.",
+      "domain": "Category: Books.",
+      "domainContext": [
+        {
+          "origin": "https://lubimyczytac.pl",
+          "finalUrl": "https://lubimyczytac.pl/",
+          "status": "ok",
+          "title": "Największy serwis o książkach. Porównywarka cen książek, opinie, oceny, rekomendacje, wywiady, aktualności.",
+          "description": "Największa baza informacji o książkach: opinie i oceny, recenzje, cytaty, nowości i zapowiedzi, społeczność.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.amazon.com",
+          "finalUrl": "https://www.amazon.com/",
+          "status": "ok",
+          "title": "Amazon.com. Spend less. Smile more.",
+          "description": "Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.empik.com",
+          "finalUrl": "https://www.empik.com/",
+          "status": "ok",
+          "title": "Empik.com | 10 000 000 produktów i pomysłów na prezent | Dostawa za 0 zł z Empik Premium",
+          "description": "Ponad 10 000 000 pomysłów na prezent w kategoriach Książka, Muzyka, Film, Zdrowie i uroda, Zabawki, Dom i ogród, Elektronika, AGD, Sport. Z Empik Premium taniej.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "learn": {
+      "manual": "Courses and exercises for learning full stack web development and SQL.",
+      "generated": "Category: Learning and Education",
+      "domain": "Category: Learning and Education",
+      "domainContext": [
+        {
+          "origin": "https://fullstackopen.com",
+          "finalUrl": "https://fullstackopen.com/",
+          "status": "ok",
+          "title": "Full stack open",
+          "description": "Helsingin yliopiston ja Houston Inc:n kaikille avoin ja ilmainen moderniin JavaScript-pohjaiseen web-sovelluskehitykseen keskittyvä kurssi. Osallistujilta edellytetään vahvaa ohjelmointirutiinia, pitkäjänteistyyttä ja valmiuksia omatoimiseen ongelmanratkaisuun.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://sqlbolt.com",
+          "finalUrl": "https://sqlbolt.com/",
+          "status": "ok",
+          "title": "SQLBolt - Learn SQL - Introduction to SQL",
+          "description": "SQLBolt provides a set of interactive lessons and exercises to help you learn SQL",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "learn > rb": {
+      "manual": "Exercises and learning resources for Ruby and Ruby on Rails.",
+      "generated": "Category: Learning resources.",
+      "domain": "category: learning and development",
+      "domainContext": [
+        {
+          "origin": "https://exercism.org",
+          "finalUrl": "https://exercism.org/",
+          "status": "ok",
+          "title": "Exercism",
+          "description": "Learn, practice and get world-class mentoring in over 50 languages. 100% free.",
+          "siteName": "Exercism",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://www.theodinproject.com",
+          "finalUrl": "https://www.theodinproject.com/",
+          "status": "ok",
+          "title": "Your Career in Web Development Starts Here | The Odin Project",
+          "description": "The Odin Project empowers aspiring web developers to learn together for free",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "music": {
+      "manual": "Electronic music tracks and remixes to listen to on YouTube.",
+      "generated": "Category: Music. Common content type: Music.",
+      "domain": "Category: Music. Common content type: Music. Topic: Music.",
+      "domainContext": [
+        {
+          "origin": "https://www.youtube.com",
+          "finalUrl": "https://www.youtube.com/",
+          "status": "ok",
+          "title": "YouTube",
+          "description": "W YouTube możesz cieszyć się filmami i muzyką, które lubisz, przesyłać oryginalne treści i udostępniać je swoim bliskim, znajomym i całemu światu.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "ubrania": {
+      "manual": "Online clothes shopping.",
+      "generated": "Category: Polish food.",
+      "domain": "Category: Polish food.",
+      "domainContext": [
+        {
+          "origin": "https://www.hm.com",
+          "status": "unavailable",
+          "reason": "HTTP 403",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    },
+    "jobs": {
+      "manual": "Job boards listing.",
+      "generated": "Category: Job Search & Employment",
+      "domain": "Category: IT job offers.",
+      "domainContext": [
+        {
+          "origin": "https://nofluffjobs.com",
+          "finalUrl": "https://nofluffjobs.com/",
+          "status": "ok",
+          "title": "Portal with IT, marketing, sales, HR, remote work job offers | No Fluff Jobs.",
+          "description": "Job offers on No Fluff Jobs. Thousands of offers in your specialization with salary ranges. Jobs in IT, marketing, sales, HR, customer service, finance, office administration, logistics, law, consulting.",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        },
+        {
+          "origin": "https://justjoin.it",
+          "finalUrl": "https://justjoin.it/",
+          "status": "ok",
+          "title": "Jobs - 20 191 job offers (November 2026) | Just Join IT",
+          "description": "Jobs: 20 191 job offers",
+          "siteName": "",
+          "fetchedAt": "2026-11-10T15:08:09.795Z"
+        }
+      ]
+    }
+  }
+}
