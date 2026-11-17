@@ -11,10 +11,9 @@ import {
 } from '../lib/detection-state';
 
 export default defineBackground(() => {
-  const model = createModelController();
   const library = createBookmarkLibrary(() => browser.bookmarks.getTree());
+  const model = createModelController(library.get);
   const detector = createBookmarkDetector({
-    onDetected: model.onDetected,
     async load() {
       const stored = await browser.storage.session.get(STORAGE_KEY);
       return (stored[STORAGE_KEY] as DetectionState | undefined) ?? emptyState();
@@ -42,7 +41,10 @@ export default defineBackground(() => {
   for (const event of [browser.bookmarks.onCreated, browser.bookmarks.onChanged,
     browser.bookmarks.onMoved, browser.bookmarks.onRemoved, browser.bookmarks.onChildrenReordered,
     browser.bookmarks.onImportBegan, browser.bookmarks.onImportEnded]) {
-    event.addListener(() => library.invalidate());
+    event.addListener(() => {
+      library.invalidate();
+      model.onLibraryChanged();
+    });
   }
 
   // Register listeners synchronously on every worker start, before any awaits.

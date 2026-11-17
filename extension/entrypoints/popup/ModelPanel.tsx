@@ -28,12 +28,12 @@ export default function ModelPanel() {
     browser.storage.onChanged.addListener(change);
     async function load() {
       const result = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'get' });
-      if (!result?.ok) throw new Error('Nie udało się odczytać ustawień modelu.');
+      if (!result?.ok) throw new Error('Could not read model settings.');
       if (!active) return;
       if (!settingsChanged) setSettings(result.settings);
       if (!stateChanged) setState(result.state);
     }
-    void load().catch(() => { if (active) setError('Otwórz ponownie okienko, aby odczytać ustawienia.'); })
+    void load().catch(() => { if (active) setError('Reopen the popup to read settings.'); })
       .finally(() => { if (active) setBusy(false); });
     return () => { active = false; browser.storage.onChanged.removeListener(change); };
   }, []);
@@ -45,19 +45,19 @@ export default function ModelPanel() {
     setError('');
     try {
       const response = await browser.runtime.sendMessage({ type: MODEL_COMMAND, action: 'settings', settings: next });
-      if (!response?.ok) throw new Error('Nie udało się zmienić modelu.');
+      if (!response?.ok) throw new Error('Could not change the model.');
       setSettings(response.settings);
     } catch {
       setSettings(previous);
-      setError('Nie udało się zmienić ustawień. Spróbuj ponownie.');
+      setError('Could not update settings. Please try again.');
     } finally { setBusy(false); }
   }
   const labels: Record<ModelState['status'], string> = {
-    unloaded: 'Model zwolniony z pamięci', loading: 'Ładowanie modelu…',
-    running: 'Przetwarzanie zakładki…', ready: 'Model gotowy', error: 'Błąd modelu',
+    unloaded: 'Model unloaded', loading: 'Loading model…',
+    indexing: 'Indexing library…', running: 'Processing bookmark…', ready: 'Model ready', error: 'Model error',
   };
-  return <section className="model-panel" aria-label="Model AI">
-    <label className="model-field">Model AI
+  return <section className="model-panel" aria-label="AI model">
+    <label className="model-field">AI model
       <select value={settings.preset} disabled={busy}
         onChange={event => void save({ ...settings, preset: event.target.value as ModelPreset })}>
         {Object.entries(MODEL_PRESETS).map(([value, preset]) => <option key={value} value={value}>{preset.label}</option>)}
@@ -66,10 +66,18 @@ export default function ModelPanel() {
     <label className="model-toggle">
       <input type="checkbox" checked={settings.enabled} disabled={busy}
         onChange={event => void save({ ...settings, enabled: event.target.checked })} />
-      Uruchamiaj model po dodaniu zakładki
+      Enable local AI
     </label>
-    <p className="model-note">Pierwsze użycie pobiera wybrany model. Po 15 sekundach bezczynności model zwalnia pamięć.</p>
+    <p className="model-note">Enabling AI downloads the model and indexes bookmark titles and folder paths. The model unloads after 15 seconds of inactivity.</p>
     <p role="status" className="model-note">{labels[state.status]}</p>
+    {state.index && <div className="model-note" aria-label="Library index">
+      {state.status === 'loading' || state.status === 'indexing'
+        ? <><p>Indexed {state.index.completed} of {state.index.total}</p>
+          <progress aria-label="Indexing progress" value={state.index.completed} max={state.index.total || 1} /></>
+        : state.index.completed === state.index.total
+          ? <p>Index saved · {state.index.bookmarkCount} titles · {state.index.folderCount} folders</p>
+          : <p>Indexing interrupted · {state.index.completed} of {state.index.total}</p>}
+    </div>}
     {(error || state.error) && <p className="error" role="alert">{error || state.error}</p>}
   </section>;
 }

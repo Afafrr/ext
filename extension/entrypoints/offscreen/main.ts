@@ -49,6 +49,10 @@ function scheduleUnload() {
     stop();
   }, MODEL_IDLE_MS);
 }
+function resetWatchdog() {
+  clearTimeout(watchdog);
+  watchdog = setTimeout(() => stop('The model has not responded for 10 minutes.'), 600_000);
+}
 function processNext() {
   if (stopped || current) return;
   const job = queue.shift();
@@ -58,6 +62,10 @@ function processNext() {
   const cold = !worker;
   state.status = cold ? 'loading' : 'running';
   state.preset = job.preset;
+  if (job.kind === 'index') {
+    state.index = { completed: 0, total: job.entries.length,
+      folderCount: job.folderCount, bookmarkCount: job.bookmarkCount };
+  }
   delete state.error;
   if (!worker) {
     worker = new Worker(browser.runtime.getURL('/model-worker.js'), { type: 'module' });
@@ -65,11 +73,16 @@ function processNext() {
     worker.onmessage = ({ data }: MessageEvent<WorkerEvent>) => {
       if (stopped) return;
       if (data.kind === 'loaded') {
-        state.status = 'running';
+        state.status = current?.kind === 'index' ? 'indexing' : 'running';
+        publish();
+      } else if (data.kind === 'progress') {
+        state.index = data.index;
+        resetWatchdog();
         publish();
       } else if (data.kind === 'error') {
         stop(data.error);
       } else if (data.kind === 'complete') {
+        if (data.index) state.index = data.index;
         clearTimeout(watchdog);
         current = undefined;
         state.pending = queue.length;
@@ -84,7 +97,7 @@ function processNext() {
   }
   // Keep the event listener alive during long first-time downloads.
   if (!heartbeat) heartbeat = setInterval(publish, 20_000);
-  watchdog = setTimeout(() => stop('Model processing timed out after 10 minutes. The worker was terminated.'), 600_000);
+  resetWatchdog();
   state.pending = queue.length + 1;
   publish();
   worker.postMessage(job);

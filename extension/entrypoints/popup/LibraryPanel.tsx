@@ -8,10 +8,10 @@ function Folder({ folder, bookmarks }: { folder: LibraryFolder; bookmarks: Libra
     <details onToggle={event => setOpen(event.currentTarget.open)}>
       <summary>{folder.path.join(' / ')} ({bookmarks.length})</summary>
       {open && <>
-        <small>ID {folder.id} · parent {folder.parentId}{!folder.writable && ' · tylko odczyt'}</small>
-        {bookmarks.length === 0 ? <p>Brak zakładek bezpośrednio w tym folderze.</p>
+        <small>ID {folder.id} · parent {folder.parentId}{!folder.writable && ' · read-only'}</small>
+        {bookmarks.length === 0 ? <p>No bookmarks directly in this folder.</p>
           : <ul>{bookmarks.map(bookmark => <li key={bookmark.id}>
-            <strong>{bookmark.title || '(bez tytułu)'}</strong>
+            <strong>{bookmark.title || 'Untitled bookmark'}</strong>
             <small>{bookmark.url}</small>
             <small>ID {bookmark.id}</small>
           </li>)}</ul>}
@@ -40,7 +40,7 @@ export default function LibraryPanel() {
         setLibrary(result.library);
         setError('');
       } catch {
-        if (active && requestVersion === version) setError('Nie udało się odczytać biblioteki. Otwórz ponownie okienko.');
+        if (active && requestVersion === version) setError('Could not read the library. Reopen the popup.');
       } finally {
         if (active && requestVersion === version) setBusy(false);
       }
@@ -73,10 +73,10 @@ export default function LibraryPanel() {
     }
     return folders;
   }, [library]);
-  return <section className="library-panel" aria-label="Biblioteka zakładek" aria-busy={busy}>
+  return <section className="library-panel" aria-label="Bookmark library" aria-busy={busy}>
     <details onToggle={event => setExpanded(event.currentTarget.open)}>
-      <summary>Biblioteka zakładek{library && ` · ${library.folders.length} folderów · ${library.bookmarks.length} stron`}</summary>
-      {busy && <p role="status">Odczytywanie biblioteki…</p>}
+      <summary>Bookmark library{library && ` · ${library.folders.length} folders · ${library.bookmarks.length} bookmarks`}</summary>
+      {busy && <p role="status">Loading library…</p>}
       {error && <p className="error" role="alert">{error}</p>}
       {expanded && library && <ul>{library.folders.map(folder =>
         <Folder key={folder.id} folder={folder} bookmarks={grouped.get(folder.id) ?? []} />)}</ul>}

@@ -1,3 +1,5 @@
+import type { IndexJob, IndexMetadata, IndexProgress } from './model-index.ts';
+
 export const MODEL_SETTINGS_KEY = 'modelTestSettings';
 export const MODEL_STATE_KEY = 'modelTestState';
 export const MODEL_CACHE = 'bookmark-model-test-v1';
@@ -32,18 +34,17 @@ export function parseModelSettings(value: unknown): ModelSettings {
   };
 }
 export interface ModelState {
-  status: 'unloaded' | 'loading' | 'running' | 'ready' | 'error';
+  status: 'unloaded' | 'loading' | 'indexing' | 'running' | 'ready' | 'error';
   preset?: ModelPreset;
   pending: number;
   error?: string;
+  index?: IndexProgress;
 }
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });
 export const MODEL_IDLE_MS = 15_000;
-export interface ModelJob {
-  text: string;
-  preset: ModelPreset;
-}
+export type ModelJob = IndexJob | { kind: 'embed'; text: string; preset: ModelPreset };
 export type WorkerEvent =
   | { kind: 'loaded' }
-  | { kind: 'complete' }
+  | { kind: 'progress'; index: IndexProgress }
+  | { kind: 'complete'; index?: IndexMetadata }
   | { kind: 'error'; error: string };
