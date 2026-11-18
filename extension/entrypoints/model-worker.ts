@@ -3,7 +3,7 @@ import { defineUnlistedScript } from 'wxt/utils/define-unlisted-script';
 import { generateFolderDescriptions, prepareComparisonIndex } from '../lib/folder-description';
 import { rankFolders } from '../lib/folder-ranking';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
-import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex, saveGeneratedDescriptions, readFolderDescriptions } from '../lib/model-index';
+import { readIndexMetadata, readIndexEntries, reuseIndexEntries, saveIndex, saveGeneratedDescriptions, readFolderDescriptions, type IndexEntry, type VectorEntry } from '../lib/model-index';
 import { MODEL_CACHE, MODEL_PRESETS, type ModelJob, type WorkerEvent } from '../lib/model-state';
 
 export default defineUnlistedScript(() => {
@@ -104,24 +104,31 @@ export default defineUnlistedScript(() => {
           break;
         }
       } else {
-        const entries = await readIndexEntries(job.preset);
-        const comparison = await prepareComparisonIndex(job.library, job.preset,
-          await readFolderDescriptions(), entries, job.bookmarkId);
-        const { reused: vectors, pending } = reuseIndexEntries(comparison, await readIndexMetadata(job.preset), entries);
-        for (let offset = 0; offset < pending.length; offset += 8) {
-          const batch = pending.slice(offset, offset + 8);
-          const tensor = await extractor(batch.map(entry => entry.text), { pooling: preset.pooling, normalize: true });
-          try {
-            const embeddings = tensor.tolist() as number[][];
-            batch.forEach((entry, index) => vectors.push({ ...entry, vector: new Float32Array(embeddings[index]!) }));
-          } finally { tensor.dispose(); }
+        const [entries, metadata, descriptions] = await Promise.all([
+          readIndexEntries(job.preset), readIndexMetadata(job.preset), readFolderDescriptions(),
+        ]);
+        const model = extractor;
+        async function loadVectors(configuration: string, requested: IndexEntry[]): Promise<VectorEntry[]> {
+          const { reused: vectors, pending } = reuseIndexEntries({ configuration, entries: requested }, metadata, entries);
+          for (let offset = 0; offset < pending.length; offset += 8) {
+            const batch = pending.slice(offset, offset + 8);
+            const tensor = await model(batch.map(entry => entry.text), { pooling: preset.pooling, normalize: true });
+            try {
+              const embeddings = tensor.tolist() as number[][];
+              batch.forEach((entry, index) => vectors.push({ ...entry, vector: new Float32Array(embeddings[index]!) }));
+            } finally { tensor.dispose(); }
+          }
+          return vectors;
         }
+        const { index: comparison, bookmarkVectors } = await prepareComparisonIndex(job.library, job.preset,
+          descriptions, job.bookmarkId, index => loadVectors(index.configuration, index.entries.filter(entry => entry.kind === 'bookmark')));
+        const folderVectors = await loadVectors(comparison.configuration, comparison.entries.filter(entry => entry.kind === 'folder'));
         const description = job.description && await canUsePageDescription() ? job.description : undefined;
         const text = [job.text, description].filter(Boolean).join('\n').slice(0, 4000);
         const tensor = await extractor(text, { pooling: preset.pooling, normalize: true });
         try {
           const query = (tensor.tolist() as number[][])[0]!;
-          const folders = rankFolders(query, job.library, vectors, job.bookmarkId);
+          const folders = rankFolders(query, job.library, [...bookmarkVectors, ...folderVectors], job.bookmarkId);
           emit({ kind: 'complete', suggestion: { bookmarkId: job.bookmarkId, title: job.title, folders, autoMove: job.autoMove } });
         } finally { tensor.dispose(); }
       }

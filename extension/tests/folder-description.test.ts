@@ -45,7 +45,7 @@ test('comparison removes self influence from a previously empty folder and inval
   const vectors = indexed.entries.map(entry => ({ ...entry, vector: new Float32Array([1, 0]) }));
   const before = structuredClone({ library, descriptions, vectors });
 
-  const comparison = await prepareComparisonIndex(library, 'minilm-q8', descriptions, vectors, 'new');
+  const { index: comparison } = await prepareComparisonIndex(library, 'minilm-q8', descriptions, 'new', async () => vectors);
   assert.deepEqual(comparison.entries, [{ kind: 'folder', id: 'folder', text: 'Inbox' }]);
   assert.deepEqual(comparison.folders[0]!.bookmarks, []);
   assert.equal(comparison.bookmarkCount, 0);
@@ -67,13 +67,13 @@ test('comparison regenerates a populated folder description using only the other
   const initial = await prepareIndex(library, 'minilm-q8');
   const vectors = initial.entries.map(entry => ({ ...entry, vector: new Float32Array([1, 0]) }));
   const descriptions = generateFolderDescriptions(initial, vectors);
-  const comparison = await prepareComparisonIndex(library, 'minilm-q8', descriptions, vectors, 'new');
+  const { index: comparison } = await prepareComparisonIndex(library, 'minilm-q8', descriptions, 'new', async () => vectors);
   assert.equal(comparison.entries[0]!.text, 'Inbox\nInbox — Cooking');
   assert.deepEqual(comparison.entries.filter(entry => entry.kind === 'bookmark').map(entry => entry.id), ['old']);
   assert.equal(comparison.folders[0]!.bookmarks.some(entry => entry.id === 'new'), false);
 
   for (const description of ['My manual description', '']) {
-    const manual = await prepareComparisonIndex(library, 'minilm-q8', [{ id: 'folder', description }], vectors, 'new');
+    const { index: manual } = await prepareComparisonIndex(library, 'minilm-q8', [{ id: 'folder', description }], 'new', async () => vectors);
     assert.equal(manual.entries[0]!.text, ['Inbox', description].filter(Boolean).join('\n'));
   }
 });
@@ -89,7 +89,28 @@ test('comparison is independent of the evaluated bookmark placement even with pe
     const initial = await prepareIndex(library, 'minilm-q8');
     const vectors = initial.entries.map(entry => ({ ...entry, vector: new Float32Array([1, 0]) }));
     const descriptions = generateFolderDescriptions(initial, vectors);
-    comparisons.push(await prepareComparisonIndex(library, 'minilm-q8', descriptions, vectors, 'new'));
+    const { index } = await prepareComparisonIndex(library, 'minilm-q8', descriptions, 'new', async () => vectors);
+    comparisons.push(index);
   }
   assert.deepEqual(comparisons[0], comparisons[1]);
+});
+
+test('comparison refreshes stale descriptions from the latest bookmarks before the persistent index is updated', async () => {
+  const library: BookmarkLibrary = {
+    folders: ['source', 'target'].map(id => ({ id, title: id, path: [id], writable: true })),
+    bookmarks: [
+      { id: 'new', title: 'New page', url: 'https://new', parentId: 'source', folderPath: ['source'] },
+      { id: 'old', title: 'Edited title', url: 'https://old', parentId: 'target', folderPath: ['target'] },
+    ],
+  };
+  const savedDescriptions = [{ id: 'target', source: 'generated' as const, description: 'target — Old title' }];
+  const { index, bookmarkVectors } = await prepareComparisonIndex(library, 'minilm-q8', savedDescriptions, 'new', async job => {
+    const bookmarks = job.entries.filter(entry => entry.kind === 'bookmark');
+    assert.deepEqual(bookmarks.map(row => row.id), ['old']);
+    return bookmarks.map(entry => ({ ...entry, vector: new Float32Array([1, 0]) }));
+  });
+  assert.equal(index.entries.find(entry => entry.id === 'target')?.description, 'target — Edited title');
+  assert.equal(index.entries.find(entry => entry.id === 'source')?.description, undefined);
+  assert.equal(bookmarkVectors[0]?.text, 'Edited title');
+  assert.equal(savedDescriptions[0]!.description, 'target — Old title');
 });

@@ -133,7 +133,7 @@ export async function readIndexEntries(preset: ModelPreset): Promise<VectorEntry
   } finally { database.close(); }
 }
 
-export function reuseIndexEntries(job: IndexJob, previous: IndexMetadata | undefined, entries: VectorEntry[]) {
+export function reuseIndexEntries(job: Pick<IndexJob, 'entries' | 'configuration'>, previous: IndexMetadata | undefined, entries: VectorEntry[]) {
   const saved = new Map(entries.map(entry => [`${entry.kind}:${entry.id}`, entry]));
   const reused: VectorEntry[] = [];
   const pending: IndexEntry[] = [];

@@ -40,7 +40,7 @@ export default defineBackground(() => {
     });
   }
 
-  for (const event of [browser.bookmarks.onCreated, browser.bookmarks.onChanged,
+  for (const event of [browser.bookmarks.onChanged,
     browser.bookmarks.onMoved, browser.bookmarks.onRemoved, browser.bookmarks.onChildrenReordered,
     browser.bookmarks.onImportBegan, browser.bookmarks.onImportEnded]) {
     event.addListener(() => {
@@ -51,7 +51,8 @@ export default defineBackground(() => {
 
   // Register listeners synchronously on every worker start, before any awaits.
   browser.bookmarks.onCreated.addListener((id, node) => {
-    observe(detector.record(id, node));
+    library.invalidate();
+    observe(detector.record(id, node).finally(model.onLibraryChanged));
   });
   browser.bookmarks.onImportBegan.addListener(() => {
     observe(detector.setImporting(true));

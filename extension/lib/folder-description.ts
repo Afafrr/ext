@@ -2,21 +2,31 @@ import type { BookmarkLibrary } from './bookmark-library.ts';
 import { prepareIndex, type FolderDescription, type IndexJob, type VectorEntry } from './model-index.ts';
 import type { ModelPreset } from './model-state.ts';
 
-/** Build transient comparison data without the evaluated bookmark's influence. */
+export function folderDescriptionInput(folder: IndexJob['folders'][number], preset: ModelPreset): string {
+  return JSON.stringify({ path: folder.path, bookmarks: folder.bookmarks, preset });
+}
+
+/** Build transient comparison data from the current library without the evaluated bookmark. */
 export async function prepareComparisonIndex(library: BookmarkLibrary, preset: ModelPreset,
-  descriptions: FolderDescription[], vectors: VectorEntry[], bookmarkId: string): Promise<IndexJob> {
-  const bookmark = library.bookmarks.find(entry => entry.id === bookmarkId);
+  descriptions: FolderDescription[], bookmarkId: string, getBookmarkVectors: (job: IndexJob) => Promise<VectorEntry[]>) {
   const referenceLibrary = { ...library, bookmarks: library.bookmarks.filter(entry => entry.id !== bookmarkId) };
-  const affectedFolder = await prepareIndex({
-    folders: library.folders.filter(folder => folder.id === bookmark?.parentId),
-    bookmarks: referenceLibrary.bookmarks.filter(entry => entry.parentId === bookmark?.parentId),
-  }, preset);
+  const job = await prepareIndex(referenceLibrary, preset, descriptions);
+  const bookmarkVectors = await getBookmarkVectors(job);
   const byId = new Map(descriptions.map(folder => [folder.id, folder]));
-  for (const folder of generateFolderDescriptions(affectedFolder, vectors)) {
-    const existing = byId.get(folder.id);
-    if (!existing || existing.source === 'generated') byId.set(folder.id, folder);
+  const staleFolders = job.folders.filter(folder => {
+    const saved = byId.get(folder.id);
+    if (saved && saved.source !== 'generated') return false;
+    if (!folder.bookmarks.length) return Boolean(saved);
+    return saved?.input !== folderDescriptionInput(folder, preset);
+  });
+  if (!staleFolders.length) return { index: job, bookmarkVectors };
+  const refreshed = generateFolderDescriptions({ ...job, folders: staleFolders }, bookmarkVectors);
+  if (!refreshed.some(folder => folder.description !== (byId.get(folder.id)?.description ?? ''))) {
+    return { index: job, bookmarkVectors };
   }
-  return prepareIndex(referenceLibrary, preset, [...byId.values()]);
+  for (const folder of refreshed) byId.set(folder.id, folder);
+  const index = await prepareIndex(referenceLibrary, preset, [...byId.values()]);
+  return { index, bookmarkVectors };
 }
 
 /** Select titles nearest the folder centroid using the selected embedding model. */
@@ -28,7 +38,7 @@ export function generateFolderDescriptions(job: IndexJob, vectors: VectorEntry[]
       .filter((bookmark): bookmark is typeof bookmark & { vector: Float32Array } => Boolean(bookmark.vector));
     if (!bookmarks.length) {
       if (folder.bookmarks.length === 0) {
-        descriptions.push({ id: folder.id, description: '', source: 'generated', input: JSON.stringify({ path: folder.path, bookmarks: folder.bookmarks, preset: job.preset }) });
+        descriptions.push({ id: folder.id, description: '', source: 'generated', input: folderDescriptionInput(folder, job.preset) });
       }
       continue;
     }
@@ -43,7 +53,7 @@ export function generateFolderDescriptions(job: IndexJob, vectors: VectorEntry[]
     }).sort((a, b) => b.score - a.score);
     const titles = [...new Set(ranked.map(bookmark => bookmark.title.slice(0, 45)))].slice(0, 3);
     const description = `${folder.path.join(' / ').slice(-80)} — ${titles.join(' · ')}`.slice(0, 240);
-    const input = JSON.stringify({ path: folder.path, bookmarks: folder.bookmarks, preset: job.preset });
+    const input = folderDescriptionInput(folder, job.preset);
     descriptions.push({ id: folder.id, description, source: 'generated', input });
   }
   return descriptions;

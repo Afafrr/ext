@@ -2,6 +2,7 @@ import { browser } from 'wxt/browser';
 import type { BookmarkLibrary, LibraryNode } from './bookmark-library';
 import { prepareIndex, readIndexMetadata, readFolderDescriptions, saveFolderDescription, removeFolderDescriptions } from './model-index';
 import { MAX_RECENT_BOOKMARKS, type DetectedBookmark } from './detection-state';
+import { folderDescriptionInput } from './folder-description';
 import { PAGE_DESCRIPTION_PERMISSIONS, readPageDescription } from './page-description';
 import {
   MODEL_COMMAND, MODEL_EVENT, MODEL_SETTINGS_KEY, MODEL_STATE_KEY, MODEL_TARGET,
@@ -14,11 +15,14 @@ const SAVE_WINDOW_KEY = 'bookmark-organizer:save-window';
 /** Serializes lifecycle changes; inference itself runs in an offscreen worker. */
 export function createModelController(getLibrary: () => Promise<BookmarkLibrary>) {
   let chain = Promise.resolve();
+  let saveWindowQueue = Promise.resolve();
+  let latestSaveWindowId: string | undefined;
   let settings: ModelSettings;
   let state: ModelState;
   let instance: string | undefined;
   let lastSequence = 0;
   let initialized = false;
+  const pendingSuggestions = new Set<string>();
   let syncRequested = false;
   let syncTimer: ReturnType<typeof setTimeout> | undefined;
   async function hasOffscreen() {
@@ -51,10 +55,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     }
     await save();
     initialized = true;
-    if (settings.enabled && state.status !== 'error') {
-      syncRequested = true;
-      await flushIndex();
-    }
+    if (settings.enabled && state.status !== 'error') syncRequested = true;
   }
   function enqueue<T>(operation: () => Promise<T>): Promise<T> {
     const result = chain.then(async () => { await initialize(); return operation(); });
@@ -62,6 +63,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     return result;
   }
   async function close() {
+    pendingSuggestions.clear();
     if (await hasOffscreen()) await browser.offscreen.closeDocument();
     instance = undefined;
     lastSequence = 0;
@@ -105,9 +107,19 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     await save();
   }
   async function flushIndex() {
-    if (!syncRequested || !settings.enabled || state.pending > 0 || state.status === 'error') return;
+    if (!syncRequested || !settings.enabled || syncTimer !== undefined || pendingSuggestions.size || state.pending > 0 || state.status === 'error') return;
     syncRequested = false;
     await startIndex();
+  }
+  function scheduleIndexSync() {
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(() => {
+      syncTimer = undefined;
+      return enqueue(async () => {
+        syncRequested = true;
+        await flushIndex();
+      }).catch(() => {});
+    }, 250);
   }
   async function startIndex() {
     try {
@@ -120,7 +132,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
           const saved = byId.get(folder.id);
           if (saved && saved.source !== 'generated') return false;
           if (!folder.bookmarks.length) return Boolean(saved);
-          const input = JSON.stringify({ path: folder.path, bookmarks: folder.bookmarks, preset: job.preset });
+          const input = folderDescriptionInput(folder, job.preset);
           return !saved || saved.input !== input;
         });
         if (!needsDescriptions) {
@@ -234,6 +246,20 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
     if (created?.id === undefined) throw new Error('Save window was not created.');
     await browser.storage.session.set({ [SAVE_WINDOW_KEY]: created.id });
   }
+  function scheduleSaveWindow(bookmarkId: string) {
+    latestSaveWindowId = bookmarkId;
+    delete state.saveWindowError;
+    // Serialize window creation and reuse without making the model wait for Chrome's UI.
+    saveWindowQueue = saveWindowQueue.then(async () => {
+      if (latestSaveWindowId === bookmarkId) await showSaveWindow(bookmarkId);
+    }).catch(() => {
+      void enqueue(async () => {
+        if (latestSaveWindowId !== bookmarkId) return;
+        state.saveWindowError = 'Could not open the save window. Open the extension to see folder suggestions.';
+        await save();
+      }).catch(() => {});
+    });
+  }
   browser.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== browser.runtime.id) return;
     if (message?.type === MODEL_COMMAND) {
@@ -259,8 +285,11 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
           handledSuggestionId: state.handledSuggestionId, autoMoveError: state.autoMoveError,
           saveWindowError: state.saveWindowError, pendingAutoMoves: state.pendingAutoMoves };
         await save();
+        const completedId = message.state.suggestion?.bookmarkId;
+        if (completedId) pendingSuggestions.delete(completedId);
         await autoMoveBookmark();
         if (message.close) {
+          pendingSuggestions.clear();
           // Offscreen has already stopped accepting work. Old events are ignored.
           instance = undefined;
           lastSequence = 0;
@@ -273,16 +302,16 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
   });
   return {
     start() {
-      return enqueue(flushIndex);
+      return enqueue(async () => {
+        // Give bookmark events that wake the worker a chance to request a suggestion.
+        if (state.index) scheduleIndexSync();
+        else await flushIndex();
+      });
     },
     onDetected(bookmark: DetectedBookmark) {
       return enqueue(async () => {
         if (!settings.enabled) return;
-        delete state.saveWindowError;
-        await showSaveWindow(bookmark.id).catch(async () => {
-          state.saveWindowError = 'Could not open the save window. Open the extension to see folder suggestions.';
-          await save();
-        });
+        scheduleSaveWindow(bookmark.id);
         let description: string | undefined;
         if (/^https?:\/\//i.test(bookmark.url) && await browser.permissions.contains(PAGE_DESCRIPTION_PERMISSIONS)) {
           const tabs = await browser.tabs.query({});
@@ -300,11 +329,12 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         const [node] = await browser.bookmarks.get(bookmark.id).catch(() => []);
         if (node?.url !== bookmark.url) return;
         const library = await getLibrary();
-        const index = await prepareIndex(library, settings.preset, await readFolderDescriptions());
-        await submit(index);
         await submit({ kind: 'embed', preset: settings.preset, bookmarkId: node.id, title: node.title || node.url,
           text: node.title || node.url, description, library,
           ...(settings.autoMove && node.parentId ? { autoMove: { parentId: node.parentId, url: node.url } } : {}) });
+        // The offscreen state message may arrive after a sync has already been queued.
+        pendingSuggestions.add(node.id);
+        syncRequested = true;
       });
     },
     onRemoved(node: LibraryNode) {
@@ -329,14 +359,6 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
         }
       });
     },
-    onLibraryChanged() {
-      clearTimeout(syncTimer);
-      syncTimer = setTimeout(() => {
-        return enqueue(async () => {
-          syncRequested = true;
-          await flushIndex();
-        }).catch(() => {});
-      }, 250);
-    },
+    onLibraryChanged: scheduleIndexSync,
   };
 }

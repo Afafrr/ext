@@ -29,7 +29,7 @@ Expand a folder in Bookmark library to edit and save its description. Folder des
 
 Page descriptions and query embeddings are held in memory for the current job. Database version 3 removes the previous `pages` store and invalidates indexes containing persisted page descriptions so they can be rebuilt from titles. Existing title-only indexes and saved folder descriptions are retained.
 
-Switching models closes the previous worker and cancels its queue. The model unloads after 15 seconds of inactivity. Disabling processing also unloads the model. Runtime code and WASM files are bundled with the extension.
+Switching models closes the previous worker and cancels its queue. The model unloads after 60 seconds of inactivity. Disabling processing also unloads the model. Runtime code and WASM files are bundled with the extension.
 
 The index is saved in full after computation completes. Interruption preserves the last complete version. Enabling AI again checks the saved index against the current titles, paths, and model. A matching index is reused. While AI is enabled, bookmark events automatically synchronize the selected model index. Events are grouped over 250 ms, and changes during indexing are synchronized when the current job finishes. Unchanged vectors are reused, new or changed text is embedded, and deleted entries are removed. Folder changes update affected full paths. Inactive model indexes are synchronized when selected; changes made with AI disabled are synchronized when AI is enabled again.
 
@@ -37,7 +37,7 @@ Page description access is off by default. The Use page descriptions checkbox re
 
 ## Bookmark suggestion flow
 
-1. Chrome reports a new bookmark. The extension records it in recent activity and starts a suggestion job when local AI is enabled.
+1. Chrome reports a new bookmark. The extension records it in recent activity and starts a suggestion job. The suggestion reuses saved vectors and computes missing reference vectors in memory. The persistent index is synchronized after pending suggestions finish.
 2. If Use page descriptions is enabled and website access is granted, read `meta[name="description"]` from a matching open HTTP(S) tab. Fall back to `meta[property="og:description"]`, then to the bookmark title alone. Use the URL when the title is empty.
 3. Combine the current title and available page description, then compute a normalized query embedding with the selected model in the offscreen worker. Keep the page description and query embedding in memory for this job.
 4. Compare the query with the selected model's indexed folder and bookmark vectors using the ranking algorithm below.

@@ -3,7 +3,7 @@ import { registerHooks } from 'node:module';
 import test from 'node:test';
 import type { BookmarkLibrary, LibraryNode } from '../lib/bookmark-library.ts';
 import { MODEL_COMMAND, MODEL_EVENT, MODEL_SETTINGS_KEY, MODEL_STATE_KEY,
-  emptyModelState, type BookmarkSuggestion, type ModelSettings, type ModelState } from '../lib/model-state.ts';
+  emptyModelState, type BookmarkSuggestion, type ModelJob, type ModelSettings, type ModelState } from '../lib/model-state.ts';
 
 // Run the real controller with simulated Chrome events and in-memory storage.
 // Model inference and IndexedDB are unrelated to the ordering of bookmark moves.
@@ -43,6 +43,7 @@ function harness() {
   });
   type Response = { ok: boolean; settings: ModelSettings; state: ModelState };
   let listener!: (message: Record<string, unknown>, sender: { id: string }, respond: (response: Response) => undefined) => unknown;
+  const jobs: { job: ModelJob; suggestionId?: string }[] = [];
   const moves: { id: string; parentId: string }[] = [];
   const events: Promise<unknown>[] = [];
   let failMove = false;
@@ -54,13 +55,22 @@ function harness() {
       id: 'extension',
       onMessage: { addListener(next: typeof listener) { listener = next; } },
       async getContexts() { return [{}]; },
-      async sendMessage(message: { action: string }) {
-        return message.action === 'status'
-          ? { instance: 'offscreen', sequence: 0, state: emptyModelState() }
-          : { accepted: true };
+      getURL(path: string) { return `chrome-extension://extension${path}`; },
+      async sendMessage(message: { action: string; job?: ModelJob }) {
+        if (message.action === 'status') return { instance: 'offscreen', sequence: 0, state: emptyModelState() };
+        if (message.job) {
+          jobs.push({ job: message.job, suggestionId: (session[MODEL_STATE_KEY] as ModelState | undefined)?.suggestion?.bookmarkId });
+        }
+        return { accepted: true };
       },
     },
     offscreen: { async closeDocument() {} },
+    permissions: { async contains() { return false; } },
+    windows: {
+      async getLastFocused() {},
+      async get() { return undefined; },
+      async create(): Promise<{ id: number }> { return { id: 1 }; },
+    },
     bookmarks: {
       async get(id: string) {
         const node = nodes.get(id);
@@ -93,7 +103,11 @@ function harness() {
     while (events.length) await Promise.all(events.splice(0));
   }
   return {
-    nodes, moves, api,
+    nodes, moves, api, jobs,
+    async detect(id: string) {
+      const node = nodes.get(id)!;
+      await controller.onDetected({ id, title: node.title, url: node.url!, folderPath: [], folderIds: [], detectedAt: 0 });
+    },
     async ready() { await request({ type: MODEL_COMMAND, action: 'get' }); },
     async state() { return (await request({ type: MODEL_COMMAND, action: 'get' })).state; },
     async result(bookmarkId = 'bookmark') {
@@ -195,4 +209,43 @@ test('a failed initial automatic move is reported without leaving a pending corr
   assert.equal(h.nodes.get('bookmark')!.parentId, 'source');
   assert.match((await h.state()).autoMoveError!, /Could not move/);
   assert.deepEqual((await h.state()).pendingAutoMoves, []);
+});
+
+test('pending suggestions run before the index is saved, even when offscreen reports an earlier job finished', async () => {
+  const h = harness();
+  h.nodes.set('another', { id: 'another', parentId: 'source', title: 'Another page', url: 'https://example.test/another' });
+  await h.ready();
+  await Promise.all([h.detect('bookmark'), h.detect('another')]);
+  assert.deepEqual(h.jobs.map(({ job }) => job.kind), ['embed', 'embed']);
+
+  await h.result();
+  assert.deepEqual(h.jobs.map(({ job }) => job.kind), ['embed', 'embed']);
+  await h.result('another');
+
+  assert.deepEqual(h.jobs.map(({ job }) => job.kind), ['embed', 'embed', 'index']);
+  const { job, suggestionId } = h.jobs[2]!;
+  assert.equal(suggestionId, 'another');
+  assert.equal(job.kind, 'index');
+  assert.equal(job.bookmarkCount, 2);
+  assert.deepEqual(job.folders.find(folder => folder.id === 'first')?.bookmarks.map(bookmark => bookmark.id), ['bookmark', 'another']);
+});
+
+test('submits a suggestion even if the Chrome save window is still opening', { timeout: 2000 }, async () => {
+  const h = harness();
+  const open = Promise.withResolvers<{ id: number }>();
+  const started = Promise.withResolvers<void>();
+  h.api.windows.create = async () => {
+    started.resolve();
+    return open.promise;
+  };
+  await h.ready();
+  const detection = h.detect('bookmark');
+  try {
+    await started.promise;
+    await detection;
+    await h.result();
+    assert.equal((await h.state()).suggestion?.bookmarkId, 'bookmark');
+  } finally {
+    open.resolve({ id: 1 });
+  }
 });
