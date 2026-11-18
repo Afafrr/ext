@@ -1,5 +1,7 @@
 export const GET_LIBRARY_MESSAGE = 'bookmark-organizer:get-library';
 
+type BrowserFolderType = 'bookmarks-bar' | 'other' | 'mobile' | 'managed';
+
 export interface LibraryNode {
   id: string;
   parentId?: string;
@@ -7,6 +9,7 @@ export interface LibraryNode {
   url?: string;
   index?: number;
   unmodifiable?: string;
+  folderType?: BrowserFolderType;
   children?: LibraryNode[];
 }
 
@@ -18,6 +21,7 @@ export interface LibraryFolder {
   index?: number;
   writable: boolean;
   description?: string;
+  folderType?: BrowserFolderType;
 }
 
 export interface LibraryBookmark {
@@ -48,7 +52,8 @@ export function describeLibrary(tree: LibraryNode[]): BookmarkLibrary {
     const canWrite = writable && !node.unmodifiable;
     if (visible) {
       library.folders.push({ id: node.id, parentId: node.parentId, title: node.title,
-        path: folderPath, index: node.index, writable: canWrite });
+        path: folderPath, index: node.index, writable: canWrite,
+        ...(node.folderType ? { folderType: node.folderType } : {}) });
     }
     for (const child of node.children ?? []) visit(child, folderPath, canWrite);
   }

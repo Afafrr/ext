@@ -1,6 +1,8 @@
 import type { BookmarkLibrary } from './bookmark-library.ts';
 import type { VectorEntry } from './model-index.ts';
 
+const BOOKMARKS_BAR_PENALTY = .2;
+
 export interface FolderSuggestion {
   id: string;
   path: string[];
@@ -26,8 +28,13 @@ export function rankFolders(query: number[], library: BookmarkLibrary, entries: 
     const folderScore = similarities.get(`folder:${folder.id}`);
     if (!folder.writable || folderScore === undefined) continue;
     const bookmarkScore = closest.get(folder.id);
+    const score = bookmarkScore === undefined ? folderScore : .3 * folderScore + .7 * bookmarkScore;
+    // Chrome before 134 does not expose folderType; its bookmarks bar has ID 1 under root 0.
+    const isBookmarksBar = folder.folderType === 'bookmarks-bar'
+      || (folder.folderType === undefined && folder.id === '1' && folder.parentId === '0');
     suggestions.push({ id: folder.id, path: folder.path,
-      score: bookmarkScore === undefined ? folderScore : .3 * folderScore + .7 * bookmarkScore });
+      // Subtracting also keeps negative similarities from improving after the penalty.
+      score: isBookmarksBar ? score - BOOKMARKS_BAR_PENALTY * Math.abs(score) : score });
   }
   return suggestions.sort((left, right) => right.score - left.score).slice(0, 3);
 }
