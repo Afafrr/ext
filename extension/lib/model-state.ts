@@ -57,7 +57,7 @@ export interface ModelState {
   pendingAutoMoves?: { bookmarkId: string; url: string; sourceId: string; folderId: string }[];
 }
 export const emptyModelState = (): ModelState => ({ status: 'unloaded', pending: 0 });
-export const MODEL_IDLE_MS = 60_000;
+export const MODEL_IDLE_MS = 10_000;
 export type ModelJob = IndexJob | { kind: 'embed'; text: string; description?: string; preset: ModelPreset; bookmarkId: string; title: string; library: BookmarkLibrary; autoMove?: BookmarkSuggestion['autoMove'] };
 export type WorkerEvent =
   | { kind: 'page-description-permission' }

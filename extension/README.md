@@ -29,7 +29,7 @@ Expand a folder in Bookmark library to edit and save its description. Folder des
 
 Page descriptions and query embeddings are held in memory for the current job. Database version 3 removes the previous `pages` store and invalidates indexes containing persisted page descriptions so they can be rebuilt from titles. Existing title-only indexes and saved folder descriptions are retained.
 
-Switching models closes the previous worker and cancels its queue. The model unloads after 60 seconds of inactivity. Disabling processing also unloads the model. Runtime code and WASM files are bundled with the extension.
+Switching models closes the previous worker and cancels its queue. The model unloads after 10 seconds of inactivity. Disabling processing also unloads the model. Runtime code and WASM files are bundled with the extension.
 
 The index is saved in full after computation completes. Interruption preserves the last complete version. Enabling AI again checks the saved index against the current titles, paths, and model. A matching index is reused. While AI is enabled, bookmark events automatically synchronize the selected model index. Events are grouped over 250 ms, and changes during indexing are synchronized when the current job finishes. Unchanged vectors are reused, new or changed text is embedded, and deleted entries are removed. Folder changes update affected full paths. Inactive model indexes are synchronized when selected; changes made with AI disabled are synchronized when AI is enabled again.
 
