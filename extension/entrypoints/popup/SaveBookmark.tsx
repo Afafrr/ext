@@ -11,6 +11,8 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
   const [folderPath, setFolderPath] = useState('');
   const [state, setState] = useState<ModelState>(emptyModelState);
   const [error, setError] = useState('');
+  const [removing, setRemoving] = useState(false);
+  const [removeError, setRemoveError] = useState('');
 
   useEffect(() => {
     let active = true;
@@ -45,16 +47,18 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
       try {
         const [[node], result] = await Promise.all([
           browser.bookmarks.get(bookmarkId),
-          browser.runtime.sendMessage({ type: GET_LIBRARY_MESSAGE }),
+          browser.runtime.sendMessage({ type: GET_LIBRARY_MESSAGE }).catch(() => undefined),
         ]);
         if (!active || requestVersion !== version) return;
-        if (node?.url === undefined || !result?.ok) throw new Error();
-        const library = result.library as BookmarkLibrary;
+        if (node?.url === undefined) throw new Error();
+        const library = result?.ok ? result.library as BookmarkLibrary : undefined;
         setBookmark(node);
-        setFolderPath(library.folders.find(folder => folder.id === node.parentId)?.path.join(' / ') ?? 'Folder unavailable');
+        setFolderPath(library?.folders.find(folder => folder.id === node.parentId)?.path.join(' / ') ?? 'Folder unavailable');
         setError('');
       } catch {
-        if (active && requestVersion === version) setError('Could not read this bookmark. It may have been removed.');
+        if (!active || requestVersion !== version) return;
+        setBookmark(undefined);
+        setError('Could not read this bookmark. It may have been removed.');
       }
     }
     browser.bookmarks.onMoved.addListener(refresh);
@@ -69,6 +73,19 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
     };
   }, [bookmarkId]);
 
+  async function removeBookmark() {
+    setRemoving(true);
+    setRemoveError('');
+    try {
+      await browser.bookmarks.remove(bookmarkId);
+      window.close();
+    } catch {
+      setRemoveError('Could not remove this bookmark. Please try again.');
+    } finally {
+      setRemoving(false);
+    }
+  }
+
   const suggestion = state.suggestion?.bookmarkId === bookmarkId ? state.suggestion : undefined;
   return <main className="save-bookmark">
     <header className="brand">
@@ -82,11 +99,15 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
       </div>
     </>}
     {!suggestion && !state.error && !error && <p className="model-note" role="status">Finding the best folder…</p>}
-    {suggestion && <FolderSuggestions key={bookmarkId} suggestion={suggestion} />}
+    {bookmark && suggestion && !removing && <FolderSuggestions key={bookmarkId} suggestion={suggestion} />}
+    {bookmark && removeError && <p className="error" role="alert">{removeError}</p>}
     {(error || state.saveWindowError || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.saveWindowError || state.autoMoveError || state.error}</p>}
     <div className="save-bookmark-actions">
+      {bookmark && <button className="remove-bookmark-button" disabled={removing} onClick={removeBookmark}>
+        {removing ? 'Removing…' : 'Remove bookmark'}
+      </button>}
       <SettingsButton />
-      <button autoFocus onClick={() => window.close()}>Done</button>
+      <button className="save-bookmark-done" autoFocus onClick={() => window.close()}>Done</button>
     </div>
   </main>;
 }
