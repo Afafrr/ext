@@ -62,12 +62,25 @@ footer .settings-link { margin-bottom: 12px; }
 .model-field { display: grid; gap: 6px; margin: 12px 0; font-size: 11px; }
 .model-field select { width: 100%; padding: 8px; font: inherit; background: white; border: 1px solid #d5dfd2; border-radius: 6px; }
 .folder-suggestions { font-size: 12px; line-height: 1.6; }
-.folder-suggestions ol { padding-left: 20px; }
-.folder-suggestions li { padding: 6px 0; }
-.folder-suggestions li span { display: block; overflow-wrap: anywhere; }
-.folder-suggestions small { color: #68776f; }
-.folder-suggestions button { margin-top: 4px; padding: 4px 9px; border: 1px solid #d5dfd2; border-radius: 6px; background: white; color: #206a52; font-size: 11px; }
-.folder-suggestions button:disabled { opacity: .5; cursor: default; }
+.folder-suggestion-hint { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; margin-top: 7px; padding: 6px 8px; border: 1px solid #d9e5d8; border-radius: 6px; background: #edf3ed; color: #365246; font-size: 11px; }
+.folder-suggestion-hint span { display: inline-flex; align-items: center; gap: 4px; }
+.folder-suggestion-hint kbd { min-width: 17px; padding: 0 3px; border: 1px solid #c0d0c4; border-radius: 3px; background: white; color: #174e3b; font: inherit; font-weight: 650; text-align: center; }
+.folder-suggestions ol { display: grid; gap: 7px; list-style: none; padding: 0; margin: 8px 0; }
+.folder-suggestion { position: relative; padding: 8px 10px; background: white; border: 1px solid #d5dfd2; border-radius: 8px; }
+.folder-suggestion:hover, .folder-suggestion:focus-within { border-color: #83ab99; background: #f4f8f3; }
+.folder-suggestion-save { display: flex; gap: 8px; align-items: baseline; width: 100%; border: 0; padding: 0; background: transparent; color: #23342e; text-align: left; }
+.folder-suggestion-save::after { content: ''; position: absolute; inset: 0; border-radius: 7px; }
+.folder-suggestion-save:focus-visible { outline: none; }
+.folder-suggestion-save:focus-visible::after { outline: 2px solid #206a52; outline-offset: 1px; }
+.folder-suggestion-save strong { overflow-wrap: anywhere; }
+.folder-suggestion-save small { color: #4e6557; }
+.folder-suggestion-arrow { margin-left: auto; color: #206a52; font-size: 16px; line-height: 1; }
+.folder-breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin-top: 4px; color: #4e6557; overflow-wrap: anywhere; font-size: 11px; }
+.folder-breadcrumb { display: inline-flex; min-width: 0; max-width: 100%; align-items: center; gap: 2px; }
+.folder-breadcrumbs button { position: relative; z-index: 1; min-width: 0; border: 0; border-radius: 4px; padding: 1px 5px; background: transparent; color: #206a52; overflow-wrap: anywhere; }
+.folder-breadcrumbs button[aria-pressed="true"] { background: #dcece2; color: #174e3b; font-weight: 650; }
+.folder-breadcrumbs button:hover:enabled { text-decoration: underline; }
+.folder-suggestions button:disabled, .folder-suggestions button[aria-disabled="true"] { cursor: default; opacity: .55; }
 .save-bookmark-title { margin-top: 18px; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
 .save-bookmark-folder { padding: 10px 12px; background: white; border: 1px solid #d5dfd2; border-radius: 6px; line-height: 1.6; overflow-wrap: anywhere; }
 .save-bookmark-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 18px; }

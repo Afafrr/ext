@@ -213,7 +213,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
       await browser.bookmarks.move(bookmark.id, { parentId: folder.id });
     } catch {
       state.pendingAutoMoves = state.pendingAutoMoves?.filter(move => move.bookmarkId !== suggestion.bookmarkId);
-      state.autoMoveError = 'Could not move the bookmark automatically. Choose a folder and try Move here.';
+      state.autoMoveError = 'Could not move the bookmark automatically. Choose a destination and click its suggestion.';
       await save();
     }
   }
@@ -354,7 +354,7 @@ export function createModelController(getLibrary: () => Promise<BookmarkLibrary>
           if (bookmark?.url !== move.url || bookmark.parentId !== move.sourceId) return;
           await browser.bookmarks.move(id, { parentId: move.folderId });
         } catch {
-          state.autoMoveError = 'Could not restore the AI folder after the bookmark was moved. Choose a folder and try Move here.';
+          state.autoMoveError = 'Could not restore the AI folder after the bookmark was moved. Choose a destination and click its suggestion.';
           await save();
         }
       });

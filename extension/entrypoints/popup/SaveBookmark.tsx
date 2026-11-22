@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { browser } from 'wxt/browser';
 import { GET_LIBRARY_MESSAGE, type BookmarkLibrary, type LibraryNode } from '../../lib/bookmark-library';
 import { MODEL_COMMAND, MODEL_STATE_KEY, emptyModelState, type ModelState } from '../../lib/model-state';
@@ -7,6 +7,7 @@ import SettingsButton from './SettingsButton';
 
 export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId: string }) {
   const bookmarkId = initialBookmarkId;
+  const doneButton = useRef<HTMLButtonElement>(null);
   const [bookmark, setBookmark] = useState<LibraryNode>();
   const [folderPath, setFolderPath] = useState('');
   const [state, setState] = useState<ModelState>(emptyModelState);
@@ -99,7 +100,7 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
       </div>
     </>}
     {!suggestion && !state.error && !error && <p className="model-note" role="status">Finding the best folder…</p>}
-    {bookmark && suggestion && !removing && <FolderSuggestions key={bookmarkId} suggestion={suggestion} />}
+    {bookmark && suggestion && !removing && <FolderSuggestions key={bookmarkId} suggestion={suggestion} defaultFocus={doneButton} />}
     {bookmark && removeError && <p className="error" role="alert">{removeError}</p>}
     {(error || state.saveWindowError || state.autoMoveError || state.error) && <p className="error" role="alert">{error || state.saveWindowError || state.autoMoveError || state.error}</p>}
     <div className="save-bookmark-actions">
@@ -107,7 +108,7 @@ export default function SaveBookmark({ initialBookmarkId }: { initialBookmarkId:
         {removing ? 'Removing…' : 'Remove bookmark'}
       </button>}
       <SettingsButton />
-      <button className="save-bookmark-done" autoFocus onClick={() => window.close()}>Done</button>
+      <button className="save-bookmark-done" ref={doneButton} autoFocus onClick={() => window.close()}>Done</button>
     </div>
   </main>;
 }

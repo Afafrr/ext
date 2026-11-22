@@ -530,9 +530,15 @@ try {
   assert.deepEqual(await readDescriptions(), comparisonDescriptions);
 
   const suggestionsPanel = page.getByLabel('Folder suggestions', { exact: true });
-  const matchingFolders = suggestionsPanel.getByRole('listitem').filter({ hasText: comparisonFixture.right.title });
-  assert.equal(await matchingFolders.getByText('Current folder', { exact: true }).count(), 1);
-  await matchingFolders.getByRole('button', { name: 'Move here', exact: true }).click();
+  const leftSuggestion = suggestionsPanel.locator(`[data-folder-id="${comparisonFixture.left.id}"]`);
+  const rightSuggestion = suggestionsPanel.locator(`[data-folder-id="${comparisonFixture.right.id}"]`);
+  assert.equal(await leftSuggestion.getByText('Current folder', { exact: true }).count(), 1);
+  const rootCrumb = rightSuggestion.getByRole('button', { name: `Select ${fixture.root.title}`, exact: true });
+  await rootCrumb.click();
+  assert.equal(await rootCrumb.getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.evaluate(async id => (await chrome.bookmarks.get(id))[0].parentId, comparisonFixture.bookmark.id), comparisonFixture.left.id);
+  await rightSuggestion.getByRole('button', { name: `Save to ${fixture.root.title}`, exact: true }).press('ArrowRight');
+  await rightSuggestion.getByRole('button', { name: `Save to ${fixture.root.title} / ${comparisonFixture.right.title}`, exact: true }).click();
   await until(() => page.evaluate(async ({ id, parentId }) => (await chrome.bookmarks.get(id))[0].parentId === parentId,
     { id: comparisonFixture.bookmark.id, parentId: comparisonFixture.right.id }));
   await until(async () => (await suggestionsPanel.innerText()).includes('Bookmark moved.'));
@@ -545,17 +551,17 @@ try {
   await waitIndex();
   await suggestionsPanel.screenshot({ path: join(temp, 'bookmark-moved.png') });
   await page.reload();
-  await until(async () => await matchingFolders.getByText('Current folder', { exact: true }).count() === 1);
+  await until(async () => await rightSuggestion.getByText('Current folder', { exact: true }).count() === 1);
 
   // A stale suggestion must report a failed move and preserve the bookmark.
   await page.evaluate(id => chrome.bookmarks.removeTree(id), comparisonFixture.left.id);
-  await matchingFolders.getByRole('button', { name: 'Move here', exact: true }).click();
+  await leftSuggestion.getByRole('button', { name: /^Save to / }).click();
   await until(async () => (await suggestionsPanel.innerText()).includes('Could not move the bookmark.'));
   assert.equal(await page.evaluate(async id => (await chrome.bookmarks.get(id))[0].parentId, comparisonFixture.bookmark.id), comparisonFixture.right.id);
   // Ancestor removal must disable moves even without an event for the bookmark ID.
   await page.evaluate(id => chrome.bookmarks.removeTree(id), comparisonFixture.right.id);
   await until(async () => (await suggestionsPanel.innerText()).includes('This bookmark is unavailable.'));
-  assert(await suggestionsPanel.getByRole('button', { name: 'Move here', exact: true }).evaluateAll(buttons => buttons.every(button => button.disabled)));
+  assert(await suggestionsPanel.getByRole('button', { name: /^Save to / }).evaluateAll(buttons => buttons.every(button => button.disabled)));
 
   await page.getByLabel(autoMoveLabel, { exact: true }).check();
   await until(async () => (await request('get')).settings.autoMove === true);
